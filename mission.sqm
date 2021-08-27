@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=275;
+		nextID=284;
 	};
 	class Camera
 	{
-		pos[]={5166.0322,14.59924,3640.0347};
-		dir[]={-0.66909373,-0.73711526,-0.095287077};
-		up[]={-0.72975731,0.67574245,-0.10392683};
-		aside[]={-0.1409965,5.5772762e-007,0.99005222};
+		pos[]={5163.2446,7.8949699,3647.1934};
+		dir[]={-0.71704108,-0.37201759,-0.58945316};
+		up[]={-0.28737825,0.92822564,-0.23624313};
+		aside[]={-0.63503218,1.4901161e-008,0.77248567};
 	};
 };
 binarizationWanted=0;
@@ -50,13 +50,23 @@ addons[]=
 	"WW2_Objects_c_Misc_IF_EditorPreview_c",
 	"A3_Structures_F_Civ_Camping",
 	"cba_xeh",
-	"JMSL_roman"
+	"JMSL_roman",
+	"JMSL_weapons",
+	"RM_Fire_torch_pat",
+	"A3_Weapons_F",
+	"WW2_Assets_c_Weapons_InfantryWeapons_c",
+	"JMSL_roman_helmets",
+	"JMSL_roman_clothing",
+	"A3_Weapons_F_Items",
+	"ace_medical_engine",
+	"ace_medical_treatment",
+	"JMSL_roman_armor"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=28;
 		class Item0
 		{
 			className="A3_Modules_F_Heli";
@@ -175,6 +185,61 @@ class AddonsMetaData
 		{
 			className="JMSL_roman";
 			name="JMSL_roman";
+			author="JMax";
+		};
+		class Item19
+		{
+			className="JMSL_weapons";
+			name="JMSL_weapons";
+			author="JMax";
+		};
+		class Item20
+		{
+			className="RM_Fire_torch_pat";
+			name="RM_Fire_torch_pat";
+		};
+		class Item21
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item22
+		{
+			className="WW2_Assets_c_Weapons_InfantryWeapons_c";
+			name="WW2_Assets_c_Weapons_InfantryWeapons_c";
+		};
+		class Item23
+		{
+			className="JMSL_roman_helmets";
+			name="JMSL_roman_helmets";
+			author="JMax";
+		};
+		class Item24
+		{
+			className="JMSL_roman_clothing";
+			name="JMSL_roman_clothing";
+			author="JMax";
+		};
+		class Item25
+		{
+			className="ace_medical_engine";
+			name="ACE3 - Medical Engine";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item26
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item27
+		{
+			className="JMSL_roman_armor";
+			name="JMSL_roman_armor";
 			author="JMax";
 		};
 	};
@@ -6633,16 +6698,16 @@ class Mission
 		wavesForced=1;
 		windForced=1;
 		year=2035;
-		month=7;
+		month=2;
 		day=6;
-		hour=12;
-		minute=0;
+		hour=0;
+		minute=3;
 		startFogDecay=0.092538379;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=160;
+		items=159;
 		class Item0
 		{
 			dataType="Layer";
@@ -7822,7 +7887,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={273.85941,285.37906,288.93799};
-								angles[]={-0,0,6.2544465};
+								angles[]={0,0,6.2544465};
 							};
 							title="Infanterietrupp (AT)";
 							id=1463;
@@ -17907,7 +17972,7 @@ class Mission
 					};
 					id=1685;
 					type="Wooden_fort_main_gate";
-					atlOffset=0.0052676201;
+					atlOffset=0.0052673817;
 				};
 				class Item1
 				{
@@ -17924,7 +17989,7 @@ class Mission
 					};
 					id=1684;
 					type="wooden_fort_wall";
-					atlOffset=0.032664776;
+					atlOffset=0.032665014;
 				};
 				class Item2
 				{
@@ -17941,7 +18006,7 @@ class Mission
 					};
 					id=1711;
 					type="wooden_fort_wall";
-					atlOffset=-5.8412552e-006;
+					atlOffset=-5.9604645e-006;
 				};
 				class Item3
 				{
@@ -17958,7 +18023,7 @@ class Mission
 					};
 					id=1712;
 					type="wooden_fort_wall";
-					atlOffset=-8.4638596e-006;
+					atlOffset=-8.5830688e-006;
 				};
 				class Item4
 				{
@@ -17975,7 +18040,7 @@ class Mission
 					};
 					id=1713;
 					type="wooden_fort_wall";
-					atlOffset=-1;
+					atlOffset=-0.99999994;
 				};
 				class Item5
 				{
@@ -17992,6 +18057,7 @@ class Mission
 					};
 					id=1714;
 					type="wooden_fort_wall";
+					atlOffset=-2.9802322e-008;
 				};
 				class Item6
 				{
@@ -18025,7 +18091,7 @@ class Mission
 					};
 					id=1716;
 					type="wooden_fort_wall";
-					atlOffset=5.6028366e-006;
+					atlOffset=5.4836273e-006;
 				};
 				class Item8
 				{
@@ -18076,7 +18142,7 @@ class Mission
 					};
 					id=1719;
 					type="wooden_fort_wall";
-					atlOffset=-3.4332275e-005;
+					atlOffset=-3.4093857e-005;
 				};
 				class Item11
 				{
@@ -18126,7 +18192,7 @@ class Mission
 					};
 					id=1727;
 					type="wooden_fort_wall";
-					atlOffset=2.6345253e-005;
+					atlOffset=2.6226044e-005;
 				};
 				class Item14
 				{
@@ -18143,7 +18209,7 @@ class Mission
 					};
 					id=1728;
 					type="wooden_fort_wall";
-					atlOffset=5.2928925e-005;
+					atlOffset=5.3048134e-005;
 				};
 				class Item15
 				{
@@ -18160,7 +18226,7 @@ class Mission
 					};
 					id=1729;
 					type="wooden_fort_wall";
-					atlOffset=8.5011125e-005;
+					atlOffset=8.5130334e-005;
 				};
 				class Item16
 				{
@@ -18226,7 +18292,7 @@ class Mission
 					};
 					id=1726;
 					type="wooden_fort_wall_Right";
-					atlOffset=-1.001358e-005;
+					atlOffset=-9.7751617e-006;
 				};
 				class Item20
 				{
@@ -18243,7 +18309,7 @@ class Mission
 					};
 					id=1672;
 					type="wooden_fort_wall_stairs";
-					atlOffset=0.0038181543;
+					atlOffset=0.0038180351;
 				};
 				class Item21
 				{
@@ -18277,7 +18343,7 @@ class Mission
 					};
 					id=1671;
 					type="Roman_tower";
-					atlOffset=-6.4373016e-006;
+					atlOffset=-6.5565109e-006;
 				};
 				class Item23
 				{
@@ -18294,7 +18360,7 @@ class Mission
 					};
 					id=1691;
 					type="Roman_tower";
-					atlOffset=-0.003518343;
+					atlOffset=-0.0035185814;
 				};
 				class Item24
 				{
@@ -18311,7 +18377,7 @@ class Mission
 					};
 					id=1692;
 					type="Sudes_fence";
-					atlOffset=-0.42327237;
+					atlOffset=-0.42327213;
 				};
 				class Item25
 				{
@@ -18328,7 +18394,7 @@ class Mission
 					};
 					id=1694;
 					type="Sudes_fence";
-					atlOffset=-0.5;
+					atlOffset=-0.50000012;
 				};
 				class Item26
 				{
@@ -18345,7 +18411,7 @@ class Mission
 					};
 					id=1695;
 					type="Sudes_fence";
-					atlOffset=-0.5;
+					atlOffset=-0.49999988;
 				};
 				class Item27
 				{
@@ -18362,7 +18428,7 @@ class Mission
 					};
 					id=1696;
 					type="Sudes_fence";
-					atlOffset=-0.5;
+					atlOffset=-0.50000012;
 				};
 				class Item28
 				{
@@ -18379,7 +18445,7 @@ class Mission
 					};
 					id=1697;
 					type="Sudes_fence";
-					atlOffset=-1;
+					atlOffset=-0.99999988;
 				};
 				class Item29
 				{
@@ -18396,6 +18462,7 @@ class Mission
 					};
 					id=1702;
 					type="roman_small_tent";
+					atlOffset=-1.1920929e-007;
 				};
 				class Item30
 				{
@@ -18508,6 +18575,7 @@ class Mission
 					};
 					id=1709;
 					type="roman_small_tent";
+					atlOffset=-1.1920929e-007;
 				};
 				class Item37
 				{
@@ -18575,7 +18643,7 @@ class Mission
 			};
 			id=1731;
 			type="roman_tiki_torch";
-			atlOffset=-0.011799812;
+			atlOffset=-0.039665461;
 		};
 		class Item113
 		{
@@ -18591,7 +18659,7 @@ class Mission
 			};
 			id=1732;
 			type="roman_tiki_torch";
-			atlOffset=7.891655e-005;
+			atlOffset=0.0020160675;
 		};
 		class Item114
 		{
@@ -18607,7 +18675,7 @@ class Mission
 			};
 			id=1733;
 			type="roman_brazier";
-			atlOffset=-0.011002779;
+			atlOffset=-0.012006283;
 		};
 		class Item115
 		{
@@ -18990,7 +19058,7 @@ class Mission
 			};
 			id=1752;
 			type="Roman_wine_barrel";
-			atlOffset=1.4305115e-006;
+			atlOffset=-0.0029779673;
 		};
 		class Item131
 		{
@@ -19007,7 +19075,7 @@ class Mission
 			};
 			id=1753;
 			type="Roman_wine_barrel";
-			atlOffset=1.4305115e-006;
+			atlOffset=1.3113022e-006;
 		};
 		class Item132
 		{
@@ -19024,7 +19092,7 @@ class Mission
 			};
 			id=1754;
 			type="Roman_wine_barrel";
-			atlOffset=2.1457672e-005;
+			atlOffset=2.1338463e-005;
 		};
 		class Item133
 		{
@@ -19139,7 +19207,7 @@ class Mission
 			};
 			id=1762;
 			type="Roman_wine_barrel";
-			atlOffset=1.4305115e-006;
+			atlOffset=-0.00030827522;
 		};
 		class Item140
 		{
@@ -19156,7 +19224,7 @@ class Mission
 			};
 			id=1763;
 			type="Roman_wine_barrel";
-			atlOffset=1.4305115e-006;
+			atlOffset=-0.0010573864;
 		};
 		class Item141
 		{
@@ -19207,7 +19275,7 @@ class Mission
 			};
 			id=1766;
 			type="Roman_wine_barrel";
-			atlOffset=-1.3589859e-005;
+			atlOffset=-0.00053906441;
 		};
 		class Item144
 		{
@@ -19224,7 +19292,7 @@ class Mission
 			};
 			id=1767;
 			type="Roman_wine_barrel";
-			atlOffset=6.1988831e-006;
+			atlOffset=1.6212463e-005;
 		};
 		class Item145
 		{
@@ -19241,7 +19309,7 @@ class Mission
 			};
 			id=1771;
 			type="Campfire_burning_F";
-			atlOffset=-1.8358231e-005;
+			atlOffset=-7.8678131e-006;
 		};
 		class Item146
 		{
@@ -19364,6 +19432,53 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="JMSL_W_Aquila";
+								class primaryMuzzleMag
+								{
+									name="JMSL_WM_Spear_Mag";
+									ammoLeft=99999;
+								};
+							};
+							class handgun
+							{
+								name="RM_Fire_torch";
+							};
+							class uniform
+							{
+								typeName="JMSL_Rome_tunic_red2_F_CombatUniform";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="JMSL_Rome_AquiliferHamata_A";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="JMSL_WM_Spear_Mag";
+										count=1;
+										ammoLeft=99999;
+									};
+								};
+							};
+							map="ItemMap";
+							headgear="JMSL_Rome_LegionerHelmet_1_4s_H";
+						};
 					};
 					id=1780;
 					type="Roman_legioner_aquila_red";
@@ -19426,16 +19541,6 @@ class Mission
 		{
 			dataType="Group";
 			side="East";
-			class Attributes
-			{
-			};
-			id=1784;
-			atlOffset=-281.96515;
-		};
-		class Item154
-		{
-			dataType="Group";
-			side="East";
 			class Entities
 			{
 				items=1;
@@ -19461,7 +19566,7 @@ class Mission
 			};
 			id=1796;
 		};
-		class Item155
+		class Item154
 		{
 			dataType="Group";
 			side="East";
@@ -19490,7 +19595,7 @@ class Mission
 			};
 			id=1797;
 		};
-		class Item156
+		class Item155
 		{
 			dataType="Group";
 			side="East";
@@ -19519,7 +19624,7 @@ class Mission
 			};
 			id=1798;
 		};
-		class Item157
+		class Item156
 		{
 			dataType="Group";
 			side="East";
@@ -19550,7 +19655,7 @@ class Mission
 			id=1799;
 			atlOffset=2.3841858e-007;
 		};
-		class Item158
+		class Item157
 		{
 			dataType="Group";
 			side="East";
@@ -19581,7 +19686,7 @@ class Mission
 			id=1800;
 			atlOffset=1.1920929e-007;
 		};
-		class Item159
+		class Item158
 		{
 			dataType="Group";
 			side="East";
