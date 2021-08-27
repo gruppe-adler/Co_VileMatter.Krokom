@@ -1,0 +1,26 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class Camera
+	{
+		pos[]={6225.0396,145.51804,5084.478};
+		dir[]={-0.42537418,-0.27781308,0.86132383};
+		up[]={-0.12301703,0.9606353,0.24909244};
+		aside[]={0.89661956,2.3734174e-008,0.44280526};
+	};
+};
+binarizationWanted=0;
+sourceName="Co_VileMatter";
+class AddonsMetaData
+{
+};
+randomSeed=11401696;
+class ScenarioData
+{
+	author="nomisum";
+};
