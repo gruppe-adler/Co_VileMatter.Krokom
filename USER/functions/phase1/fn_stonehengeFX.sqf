@@ -43,7 +43,7 @@ _sparksColumn = "#particlesource" createVehicleLocal _pos;
 _sparksColumn setParticleCircle [1,[0,0,0]];  
 _sparksColumn setParticleRandom [10,[0,0,0],[0,0,1],0,0,[0,0,0,0],1,0];  
 // _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,120,[0,0,.5],[0,0,5],13,9.999,7.9,0.005,[.1,15,20,40],[[1,1,1,1],[0,1,0,1],[0,0.3,0.7,0.5],[0.9,0,0.7,1],[0.4,0,0.2,0]],[0.08],1,1,"","",_stoneHengeCenter];
-_sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,60,[0,0,.5],[0,0,5],13,9.999,7.9,0.005,[.01,.02,.03,.3],[[1,.5,0,1],[1,0,0,1],[0,0.3,0.7,0.5],[0.9,0,0.7,1],[0.4,0,0.2,0]],[0.08],1,0.1,"","",_stoneHengeCenter,0,true,1,[[200,100,0,10],[200,000,0,1]]];
+_sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,10,[0,0,.5],[0,0,5],13,9.999,7.9,0.005,[.01,.01,.01,.1],[[1,.5,0,1],[1,0,0,1],[0,0.3,0.7,0.5],[0.9,0,0.7,1],[0.4,0,0.2,0]],[0.08],1,0.1,"","",_stoneHengeCenter,0,true,1,[[200,100,0,10],[200,000,0,1]]];
 _sparksColumn setDropInterval 0.05;
 _sparksColumn setPos _pos;
 
