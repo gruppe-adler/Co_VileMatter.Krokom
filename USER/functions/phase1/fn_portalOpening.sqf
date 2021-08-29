@@ -145,8 +145,8 @@ private _handle = [{
         
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
-        private _maxSize = 100;
-        private _minSize = 25;
+        private _maxSize = 200;
+        private _minSize = 150;
         private _distanceToPoint = player distance _lightPoint;
         private _currentMaxSize = (_maxSize * ((1/_distanceToPoint) min 1));
         private _currentMinSize = (_minSize * ((1/_distanceToPoint) min 1));
@@ -162,23 +162,32 @@ private _handle = [{
         };
 
         if (_lightFlareExpanding) then {
-            _lightFlareSize = _lightFlareSize + random 2;
+            _lightFlareSize = _lightFlareSize + random 0.5;
             _lightPoint setLightFlareSize _lightFlareSize;
         } else {
-            _lightFlareSize = _lightFlareSize - random 2;
+            _lightFlareSize = _lightFlareSize - random 0.5;
             _lightPoint setLightFlareSize _lightFlareSize;
         };
 
 
-        if (_currentMaxSize > 19) then {
-            hint "max size";
-            execVM "USER\functions\phase1\fn_portalOrb.sqf";
+        if (_currentMaxSize > 45) then {
+            // hint "max size";
+            // execVM "USER\functions\phase1\fn_portalOrb.sqf";
+            "whiteOutLayer" cutText ["", "WHITE OUT", 1];
+
+            [[getpos player],"USER\functions\phase1\fn_despawnEffect.sqf"] remoteExec ["BIS_fnc_execVM", 0];
+
+            [{
+
+                player setPos getPos portalPos;
+                "whiteOutLayer" cutText ["", "WHITE IN", 1];
+            }, [], 1] call CBA_fnc_waitAndExecute;
         };
 
         _stoneHengeCenter setVariable ["gradVM_lightFlareSize", _lightFlareSize];
 
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,2,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
-        systemChat str _currentMaxSize;
+        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,4,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
+        // systemChat str _currentMaxSize;
 
 
     }, 0.02, [_lightPoint, _stoneHengeCenter]] call CBA_fnc_addPerFrameHandler;
