@@ -1,4 +1,4 @@
-params ["_stoneHengeCenter"];
+params ["_stoneHengeCenter", "_gradVM_portalPhaseEnd"];
 
 private _stoneCircle = nearestObjects [_stoneHengeCenter, ["Land_Bare_boulder_04_F"], 30];
 private _effectDuration = 20;
@@ -11,7 +11,7 @@ private _effectDuration = 20;
     [_light, -90, 0] call BIS_fnc_setPitchBank; 
     _light setObjectScale 30;
 
-
+    /*
     [{
         params ["_args", "_handle"];
         _args params ["_light"];
@@ -32,10 +32,11 @@ private _effectDuration = 20;
        // systemChat str _random;
 
     }, 0, [_light]] call CBA_fnc_addPerFrameHandler;
+    */
 
-    [{
+    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{
         deleteVehicle (_this select 0);
-    }, [_light], _effectDuration] call CBA_fnc_waitAndExecute;
+    }, [_light]] call CBA_fnc_waitUntilAndExecute;
 } forEach _stoneCircle;
 
 private _pos = getPosWorld _stoneHengeCenter;
@@ -56,19 +57,20 @@ _sparksRandom setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard"
 _sparksRandom setDropInterval 0.05;
 _sparksRandom setPos _pos;
 
-[{
+[{gradVM_portalPhase == 1},{
         { deleteVehicle _x; } forEach _this;
-}, [_sparksColumn, _sparksRandom], _effectDuration] call CBA_fnc_waitAndExecute;
+}, [_sparksColumn, _sparksRandom]] call CBA_fnc_waitUntilAndExecute;
 
 
+// central big light
 private _light = createSimpleObject ["\A3\data_f\VolumeLight", _pos, true];
 [_light, -90, 0] call BIS_fnc_setPitchBank; 
 _light setObjectScale 150;
 
-[{
-        systemChat (str (_this select 0));
+[{gradVM_portalPhase == gradVM_portalPhaseEnd},{
+        // systemChat (str (_this select 0));
         deleteVehicle (_this select 0);
-}, [_light], _effectDuration] call CBA_fnc_waitAndExecute;
+}, [_light]] call CBA_fnc_waitUntilAndExecute;
 
     /*
 

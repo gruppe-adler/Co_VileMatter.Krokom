@@ -1,7 +1,15 @@
 params ["_stoneHengeCenter"];
 
+gradVM_portalPhase = 0; // initial step
+gradVM_portalPhaseEnd = 4;
+gradVM_beams = [];
+
+phase1Timeout = 12;
 
 [_stoneHengeCenter] execVM "User\functions\phase1\fn_stoneHengeFX.sqf";
+
+// reset
+_stoneHengeCenter setVariable ["gradVM_zPos", -3];
 
 private _stoneCircle = nearestObjects [_stoneHengeCenter, ["Land_Bare_boulder_04_F"], 30];
 private _effectDuration = 5;
@@ -9,8 +17,6 @@ private _stoneTips = [];
 private _stoneHengeCenterTop = getPosWorld _stoneHengeCenter;
 _stoneHengeCenterTop set [2,3];
 
-
-gradVM_portalPhase = 0; // initial step
 
 
 {
@@ -121,73 +127,93 @@ private _handle = [{
 [{gradVM_portalPhase == 1},
 {
     params ["_stoneHengeCenter", "_stoneHengeCenterTop"];
-    private _lightPoint = "#lightpoint" createvehiclelocal (getPos _stoneHengeCenter);
+    private _lightPoint = "#lightpoint" createvehiclelocal _stoneHengeCenterTop;
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
     _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;   
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
     _lightPoint setLightBrightness 10;
 
-
-    // lightpoint rising in center of stonehenge
+    // lightpoint moving in center of stoneHenge
+    
     [{
         params ["_args", "_handle"];
-        _args params ["_lightPoint", "_stoneHengeCenterTop"];
-            
-        private _position = getPos _lightPoint;
-        private _speed = _lightPoint getVariable ["gradVM_speed", 0.1];
-        _speed = _speed + 1;
-        _lightPoint setVariable ["gradVM_speed", _speed];
-        _position set [2, (_position select 2) + _speed];
+        _args params ["_lightPoint", "_stoneHengeCenter"];
 
-        _lightpoint setPos _position;
+        private _lightFlareSize = _stoneHengeCenter getVariable ["gradVM_lightFlareSize", 5];
+        private _lightFlareExpanding = _stoneHengeCenter getVariable ["gradVM_lightFlareExpanding", true];
+        
+        if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
-        // drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        // drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
-
-
-        if (((getPos _lightpoint) select 2) > 500) exitWith {
-            { deleteVehicle _x; } forEach _lightPoints;
-            [_handle] call CBA_fnc_removePerFrameHandler;
+        if (_lightFlareSize > 8) then {
+            _lightFlareExpanding = false;
+            _stoneHengeCenter setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
         };
 
+        if (_lightFlareSize < 5) then {
+            _lightFlareExpanding = true;
+            _stoneHengeCenter setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+        };
 
-    }, 0.02, [_lightPoint, _stoneHengeCenterTop]] call CBA_fnc_addPerFrameHandler;
+        if (_lightFlareExpanding) then {
+            _lightFlareSize = _lightFlareSize + random 1;
+            _lightPoint setLightFlareSize _lightFlareSize;
+        } else {
+            _lightFlareSize = _lightFlareSize - random 1;
+            _lightPoint setLightFlareSize _lightFlareSize;
+        };
+        _stoneHengeCenter setVariable ["gradVM_lightFlareSize", _lightFlareSize];
+
+        systemChat str _lightFlareSize;
+
+
+    }, 0.02, [_lightPoint, _stoneHengeCenter]] call CBA_fnc_addPerFrameHandler;
+    
+    
+    // clean up
+    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ 
+        deleteVehicle (_this select 0);
+    }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
+
+
+    [{
+        gradVM_portalPhase = 4;
+    }, [], 30] call CBA_fnc_waitAndExecute;
+
 
 
     // tail of beams
     [{
         params ["_args", "_handle"];
-        _args params ["_lightPoint"];
+        _args params ["_stoneHengeCenter", "_lightPoint"];
 
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
-        
-        private _pos = getPos _lightpoint;
+         private _zPos = _stoneHengeCenter getVariable ["gradVM_zPos", -3];
+        _zPos = _zPos + 3;
+        _stoneHengeCenter setVariable ["gradVM_zPos", _zPos];
+
+        // systemChat str _zPos;
+
+        if (_zPos > 300) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+
+        private _pos = getPosWorld _stoneHengeCenter;
         private _dir = random 360;
+        _pos set [2, ((_pos select 2) + _zPos)];
 
         private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", _pos, true];
 
         _beam setDir _dir;
-        [_beam, -88, 0] call BIS_fnc_setPitchBank;
-        
-        /*
-        _risingEffect = "#particlesource" createVehicleLocal _pos;  
-        _risingEffect setVectorDirAndUp [[0,0,-1], [0,1,0]]; 
-        _risingEffect setParticleCircle [0,[0,0,0]];
-        _risingEffect setParticleRandom [0,[0,0,0],[0,0,0],0,1,[0,0,0,0],0,0];   
-        _risingEffect setParticleParams [["A3\data_f\VolumeLight_searchLight.p3d",1,0,1,0],"","SpaceObject",1,60,[0,0,0],[0,0,0],13,9.999,7.9,0.005,[.01,3],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0],0,0,"","",_stoneHengeCenter,0,true,0,[[100,100,100,10]],[1,0,0]]; 
-        _risingEffect setDropInterval 0.05;
-        _risingEffect setPos _pos;
-        */
+        [_beam, -90, 0] call BIS_fnc_setPitchBank;
 
-        [{ deleteVehicle (_this select 0);
-        }, [_beam], 30] call CBA_fnc_waitAndExecute;
+        // clean up
+        [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
 
-    }, 0.02, [_lightPoint]] call CBA_fnc_addPerFrameHandler;
+    }, 0.02, [_stoneHengeCenter, _lightPoint]] call CBA_fnc_addPerFrameHandler;
 
 
 
+    /*
     private _pos = getPosWorld _stoneHengeCenter;
     _sparksColumn = "#particlesource" createVehicleLocal _pos;  
     _sparksColumn setParticleCircle [0.1,[0,0,0]];
@@ -202,11 +228,11 @@ private _handle = [{
             _sparksColumn setParticleCircle [0.1,[0,0,0]];
             _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,0.2,[0,0,0,0],0.1,0.1];   
             _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]]; 
-            _sparksColumn setDropInterval 0.05;
-            if (_i == 10) then { deleteVehicle _sparksColumn; };
-        }, [_sparksColumn, _i], _i] call CBA_fnc_waitAndExecute;
-        
+            _sparksColumn setDropInterval (random 1);
+        }, [_sparksColumn, _i], _i] call CBA_fnc_waitAndExecute;        
     };
 
-
+    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_sparksColumn]] call CBA_fnc_waitUntilAndExecute;
+    */
+    
 }, [_stoneHengeCenter, _stoneHengeCenterTop]] call CBA_fnc_waitUntilAndExecute;
