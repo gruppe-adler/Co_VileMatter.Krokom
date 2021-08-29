@@ -107,7 +107,7 @@ private _handle = [{
         _lightpoint setPos _position;
 
         drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
+        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.7,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
         if (_lightpoint distance2d _stoneHengeCenterTop < 0.1) exitWith {
@@ -145,26 +145,40 @@ private _handle = [{
         
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
-        if (_lightFlareSize > 8) then {
+        private _maxSize = 100;
+        private _minSize = 25;
+        private _distanceToPoint = player distance _lightPoint;
+        private _currentMaxSize = (_maxSize * ((1/_distanceToPoint) min 1));
+        private _currentMinSize = (_minSize * ((1/_distanceToPoint) min 1));
+
+        if (_lightFlareSize > _currentMaxSize) then {
             _lightFlareExpanding = false;
             _stoneHengeCenter setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
         };
 
-        if (_lightFlareSize < 5) then {
+        if (_lightFlareSize < _currentMinSize) then {
             _lightFlareExpanding = true;
             _stoneHengeCenter setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareExpanding) then {
-            _lightFlareSize = _lightFlareSize + random 1;
+            _lightFlareSize = _lightFlareSize + random 2;
             _lightPoint setLightFlareSize _lightFlareSize;
         } else {
-            _lightFlareSize = _lightFlareSize - random 1;
+            _lightFlareSize = _lightFlareSize - random 2;
             _lightPoint setLightFlareSize _lightFlareSize;
         };
+
+
+        if (_currentMaxSize > 19) then {
+            hint "max size";
+            execVM "USER\functions\phase1\fn_portalOrb.sqf";
+        };
+
         _stoneHengeCenter setVariable ["gradVM_lightFlareSize", _lightFlareSize];
 
-        systemChat str _lightFlareSize;
+        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,2,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
+        systemChat str _currentMaxSize;
 
 
     }, 0.02, [_lightPoint, _stoneHengeCenter]] call CBA_fnc_addPerFrameHandler;
@@ -176,9 +190,11 @@ private _handle = [{
     }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
 
+    /*
     [{
         gradVM_portalPhase = 4;
     }, [], 30] call CBA_fnc_waitAndExecute;
+    */
 
 
 
