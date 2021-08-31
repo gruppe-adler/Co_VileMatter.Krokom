@@ -1,5 +1,7 @@
 params ["_targetPosition", "_duration"];
 
+playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", player];
+
 private _count = count (playableUnits + switchableUnits);
 {
     private _unit = _x;
