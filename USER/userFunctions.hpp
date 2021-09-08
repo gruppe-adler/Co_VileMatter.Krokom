@@ -13,7 +13,13 @@ class VM {
 
     class phase0 {
         file = "USER\functions\phase0";
+        class lightningBetween;
+        class portalOpening_phase1;
         class blueLight { postInit = 1; };
+        class sparksEffectClient { postInit = 1; };
+        class sparksEffectServer;
+        class sparksGetPos;
+        class sparkSmall { postInit = 1; };
     };
 
     class horrorEffects {

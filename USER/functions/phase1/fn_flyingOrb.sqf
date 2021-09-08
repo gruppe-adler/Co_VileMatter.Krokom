@@ -1,3 +1,5 @@
+// NOT USED
+
 _orb_obj = "#lightpoint" createvehiclelocal getmarkerpos _ufo;
 _orb_obj setLightDayLight true;_orb_obj setLightUseFlare true;
 _orb_obj setLightFlareSize 5; _orb_obj setLightFlareMaxDistance 5000;   

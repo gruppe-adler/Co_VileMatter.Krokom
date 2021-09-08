@@ -22,4 +22,7 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
     [{gradVM_portalPhase == gradVM_portalPhaseEnd},{
         deleteVehicle (_this select 0);
     }, [_light]] call CBA_fnc_waitUntilAndExecute;
-} forEach _stoneCircle;
+} forEach _machineCircle;
+
+
+[_machineCircle] call grad_VM_fnc_sparksEffectServer;
