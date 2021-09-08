@@ -18,32 +18,65 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 
 */
 
+fnc_SetPitchBankYaw = {
+    private ["_object","_rotations","_aroundX","_aroundY","_aroundZ","_dirX","_dirY",
+    "_dirZ","_upX","_upY","_upZ","_dir","_up","_dirXTemp","_upXTemp"];
+    _object = _this select 0;
+    _rotations = _this select 1;
+    _aroundX = _rotations select 0;
+    _aroundY = _rotations select 1;
+    _aroundZ = (360 - (_rotations select 2)) - 360;
+    _dirX = 0;
+    _dirY = 1;
+    _dirZ = 0;
+    _upX = 0;
+    _upY = 0;
+    _upZ = 1;
+    if (_aroundX != 0) then {
+        _dirY = cos _aroundX;
+        _dirZ = sin _aroundX;
+        _upY = -sin _aroundX;
+        _upZ = cos _aroundX;
+    };
+    if (_aroundY != 0) then {
+        _dirX = _dirZ * sin _aroundY;
+        _dirZ = _dirZ * cos _aroundY;
+        _upX = _upZ * sin _aroundY;
+        _upZ = _upZ * cos _aroundY;
+    };
+    if (_aroundZ != 0) then {
+        _dirXTemp = _dirX;
+        _dirX = (_dirXTemp* cos _aroundZ) - (_dirY * sin _aroundZ);
+        _dirY = (_dirY * cos _aroundZ) + (_dirXTemp * sin _aroundZ);
+        _upXTemp = _upX;
+        _upX = (_upXTemp * cos _aroundZ) - (_upY * sin _aroundZ);
+        _upY = (_upY * cos _aroundZ) + (_upXTemp * sin _aroundZ);
+    };
+    _dir = [_dirX,_dirY,_dirZ];
+    _up = [_upX,_upY,_upZ];
+    _object setVectorDirAndUp [_dir,_up];
+};
+
 private _startpoint = [-100,0,1000];
 private _pipes = [];
 private _props = [];
+private _duration = 60;
 
 for "_i" from 0 to 100 do {
     _startpoint set [1, _i*2.85];
     private _concretePipe = createSimpleObject ["Land_ConcretePipe_F", _startpoint, true];
-    _pipes pushbackunique _concretePipe;
-
-    {
-        _x params ["_distance", "_color"];
-        if (_i == _distance) then {
-            private _lightPoint = "#lightpoint" createvehiclelocal _startpoint;
-            _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-            _lightPoint setLightAmbient _color; _lightPoint setLightColor _color;
-            _lightPoint setLightAttenuation [4, 8, 12, 24, 36, 200];
-            _lightPoint setLightBrightness 6000;
-            _props pushbackunique _lightPoint;
-        };
-    } forEach [
-        [100,[1,0,0]],
-        [200,[1,0.5,0]],
-        [300,[0,0.7,1]],
-        [400,[0.5,0.7,1]],
-        [500,[1,1,1]]
-    ];
+    _pipes pushbackunique _concretePipe;   
+       
+    
+    private _color = [random 1 max 0.3, 0, random 1 max 0.3];
+    private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _startpoint);
+    _lightPoint setLightDayLight true;_lightPoint setLightUseFlare false;
+    _lightPoint setLightAmbient _color; _lightPoint setLightColor _color;
+    _lightPoint setLightAttenuation [2, 4, 4, 0, 0, 1];
+    _lightPoint setLightBrightness 1;
+    _lightPoint setPos (ASLtoAGL _startpoint);
+    _props pushbackunique _lightPoint;
+    
 
     if (_i == 350) then {
         private _helmet = createSimpleObject ["JMSL_roman\helms\LegionerHelmet_3.p3d", _startpoint, true];
@@ -69,13 +102,9 @@ _cam camCommit 0;
 _cam camCommand "inertia on";
 
 _cam camSetPos _lastPipePos;
-_cam camSetFov 0.01;
-_cam camCommit 100;
+_cam camSetFov 0.7;
+_cam camCommit _duration;
 
-
-private _smoke = "test_EmptyObjectForSmoke" createvehiclelocal _firstPipePos;
-_smoke attachTo [_cam, [0,10,0]];
-_props pushbackunique _smoke;
 
 private _firefly = "#particlesource" createvehiclelocal _firstPipePos; 
 _firefly setParticleRandom [0,[0,0,0],[1,1,0.1],1,0,[0,0,0,0.1],1,1]; 
@@ -88,40 +117,35 @@ _refract setParticleParams [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",
 _refract setDropInterval 0.5; 
 
 private _lightPoint = "#lightpoint" createvehiclelocal _firstPipePos;
-_lightPoint setLightDayLight true;_lightPoint setLightUseFlare false;
-_lightPoint setLightFlareSize 100; _lightPoint setLightFlareMaxDistance 5000;   
-_lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.9,0.7,0.9];
-_lightPoint setLightAttenuation [1, 2, 3, 4, 5, 100];
-_lightPoint setLightBrightness 300; 
-
-_lightPoint lightAttachObject [_cam, [0,100,0]];
+_lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
+_lightPoint setLightFlareSize 10; _lightPoint setLightFlareMaxDistance 5000;   
+_lightPoint setLightAmbient[0.5,0.2,1]; _lightPoint setLightColor[0.5,0.2,0.9];
+_lightPoint setLightAttenuation [0, 1, 1, 2, 4, 100];
+_lightPoint setLightBrightness 30; 
 
 gradVM_cameraBank = 0;
+gradVM_cameraBankChange = 0.03;
 [{
     params ["_args", "_handle"];
-    _args params ["_cam"];
+    _args params ["_pipes", "_cam", "_lightPoint", "_lastPipePos"];
 
     if (isNull _cam) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
-    _cam setVectorDirAndUp [
-        [0 * 1, 1 * 1, 0],
-        [[sin gradVM_cameraBank, 0, cos gradVM_cameraBank * 1], 0] call BIS_fnc_rotateVector2D;
-    ];
+    {
+        gradVM_cameraBank = gradVM_cameraBank + gradVM_cameraBankChange;
+        [_x,[0,gradVM_cameraBank,0]] call fnc_SetPitchBankYaw; 
+    } forEach _pipes;
 
-    gradVM_cameraBank = gradVM_cameraBank + 0.1;
+    private _lightPos = (_cam getRelPos [20,0]);
+    _lightPos set [2, _lastPipePos select 2];
+    _lightPoint setPos _lightPos;
+
+}, 0, [_pipes, _cam, _lightPoint, _lastPipePos]] call CBA_fnc_addPerFramehandler;
+
+[_pipes, _props, _cam, _firefly, _refract, _lightPoint, _duration] spawn {
+    params ["_pipes", "_props", "_cam", "_firefly", "_refract", "_lightPoint", "_duration"];
     
-
-}, 0, [_cam]] call CBA_fnc_addPerFramehandler;
-
-[_pipes, _props, _cam, _firefly, _refract, _lightPoint] spawn {
-    params ["_pipes", "_props", "_cam", "_firefly", "_refract", "_lightPoint"];
-    for "_i" from 0 to 10 do {
-        _cam camSetFov (selectRandom [8.5, 5]);
-        _cam camCommit 5;
-        sleep 5;
-    };
-    skiptime 10;
-    sleep 50;
+    sleep _duration;
     {
         deleteVehicle _x;
     } forEach (_pipes + _props);
@@ -129,6 +153,7 @@ gradVM_cameraBank = 0;
     deleteVehicle _refract;
     deleteVehicle _lightPoint;
     camDestroy _cam;
+    _pipes = [];
 };
 
 
