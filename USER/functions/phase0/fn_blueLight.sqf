@@ -1,0 +1,25 @@
+if (!isServer) exitWith {};
+
+(getPos light_phase0) params ["_posX", "_posY", "_posZ"]; 
+light_phase0 setPos [_posX, _posY, 10]; 
+[light_phase0, -90, 0] call BIS_fnc_setPitchBank; 
+light_phase0 setObjectScale 150;
+
+
+gradVM_portalPhase = 0;
+gradVM_portalPhaseEnd = 1;
+
+private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer_F"], 30];
+
+{
+    private _pos = getPosWorld _x;
+    _pos params ["", "", "_posZ"];
+    _pos set [2, _posZ - 5];
+    private _light = createSimpleObject ["\A3\data_f\VolumeLight", _pos, true];
+    [_light, -90, 0] call BIS_fnc_setPitchBank; 
+    _light setObjectScale 30;
+
+    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{
+        deleteVehicle (_this select 0);
+    }, [_light]] call CBA_fnc_waitUntilAndExecute;
+} forEach _stoneCircle;

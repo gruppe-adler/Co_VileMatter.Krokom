@@ -11,6 +11,11 @@ class VM {
         class objectIsOnScreen {};
     };
 
+    class phase0 {
+        file = "USER\functions\phase0";
+        class blueLight { postInit = 1; };
+    };
+
     class horrorEffects {
         file = "USER\functions\horrorEffects";
         class stalked {};
