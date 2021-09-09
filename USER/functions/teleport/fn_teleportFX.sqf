@@ -1,4 +1,4 @@
-params ["_unit"];
+params ["_unit", "_destinationPosition", "_index"];
 
 private _currentPosition = getPos _unit;
 
@@ -18,6 +18,14 @@ getPosWorld _unit params ["_xPos", "_yPos"];
 _beam setPos [_xPos, _yPos, 2];
 [_beam, 90, 0] call BIS_fnc_setPitchBank;
 
+// park unit off map for tunnel fx
+_unit setPos [_index * -1000, _index * -1000, 0];
+
+
+_unit setVariable ["grad_VM_teleportDone", false];
+[_unit] exeCVM "USER\functions\teleport\fn_wormHole.sqf";
+
+
 
 [{
         params ["_firefly"];
@@ -25,10 +33,10 @@ _beam setPos [_xPos, _yPos, 2];
 }, [_firefly], 1.7] call CBA_fnc_waitAndExecute;
 
 [{
-    params ["_currentPosition", "_unit", "_beam"];
+    params ["_currentPosition", "_destinationPosition", "_unit", "_beam"];
     _currentPosition distance2d _unit > 200
 },{
-    params ["_currentPosition", "_unit", "_beam"];
+    params ["_currentPosition", "_destinationPosition", "_unit", "_beam"];
 
     deleteVehicle _beam;
 
@@ -63,7 +71,7 @@ _beam setPos [_xPos, _yPos, 2];
     }, [_lightPoint], 0.2] call CBA_fnc_waitAndExecute;
 
     
-        
+    [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
 
     private _fireflyEnd = "#particlesource" createvehiclelocal [_currentPosition select 0, _currentPosition select 1, 1];
     _fireflyEnd setParticleCircle [0,[0,0,0]];
@@ -76,6 +84,16 @@ _beam setPos [_xPos, _yPos, 2];
         deleteVehicle _fireflyEnd;
     }, [_fireflyEnd], 0.2] call CBA_fnc_waitAndExecute;
 
+
+    [{
+        params ["_destinationPosition", "_unit"];
+        _unit getVariable ["grad_VM_teleportDone", false]
+    },{
+        params ["_destinationPosition", "_unit"];
+        titleCut ["", "WHITE OUT", 1.5];
+        _unit setPos (_destinationPosition findEmptyPosition [0,15]);
+
+    }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;
     
 
-}, [_currentPosition, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;
+}, [_currentPosition, _destinationPosition, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;

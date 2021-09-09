@@ -175,6 +175,8 @@ gradVM_cameraBankChange = 0.02;
     
     sleep (_duration-2);
     titleCut ["", "WHITE IN", 1.5];
+    sleep 1.5;
+    player setVariable ["grad_VM_teleportDone", true];
     {
         deleteVehicle _x;
     } forEach (_pipes + _props);

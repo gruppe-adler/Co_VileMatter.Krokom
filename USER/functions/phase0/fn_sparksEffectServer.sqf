@@ -17,7 +17,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     params ["_args", "_handle"];
     _args params ["_fenceParts", "_classnames"];
 
-        if (random 1 > 0.8 && gradVM_portalPhase == 0) exitWith {};
+        if (random 1 > 0.8 && gradVM_portalPhase_0 == 0) exitWith {};
         // get all fences in range of any player
         private _fences = [];
         {
@@ -54,7 +54,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
 
 
 [
-    { gradVM_portalPhase == 1 },
+    { gradVM_portalPhase_0 == 1 },
     {
         {
             _x params ["_object1", "_object2"];
@@ -77,6 +77,18 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
             [phase0_transformer9,phase0_transformer1]
         ];
 
-        [] call GRAD_VM_fnc_portalOpening_phase1;
+        [] call GRAD_VM_fnc_portalOpening_phase0;
+
+}] call CBA_fnc_waitUntilAndExecute;
+
+
+
+[
+    { gradVM_portalPhase_0 == 3 },
+    {
+        {
+             [_x, [0,0,0], _forEachIndex] execVM "User\functions\teleport\fn_teleport.sqf";
+            
+        } forEach playableUnits + switchableUnits;
 
 }] call CBA_fnc_waitUntilAndExecute;

@@ -13,7 +13,7 @@ _switch addAction
         _target animateSource ["SwitchLight", 0];
         _target animateSource ["SwitchPosition", 1];
 
-        gradVM_portalPhase = 1;
+        gradVM_portalPhase_0 = 1;
     },
     nil,
     1.5,

@@ -37,7 +37,7 @@ _object_1 say3D ["GRAD_electricFence_sound_hum", 75];
     { deleteVehicle _x; } forEach _dummies;
     deleteVehicle _light;
 
-    gradVM_portalPhase = 2;
+    gradVM_portalPhase_0 = 2;
     
 }, [_light, _dummies], _duration] call CBA_fnc_waitAndExecute;
 

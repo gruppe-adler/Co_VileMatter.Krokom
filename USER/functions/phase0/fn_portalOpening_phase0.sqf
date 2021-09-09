@@ -1,6 +1,3 @@
-gradVM_portalPhase = 0; // initial step
-gradVM_portalPhaseEnd = 4;
-
 // reset
 teleportcenter_phase0 setVariable ["gradVM_zPos", -3];
 
@@ -58,10 +55,10 @@ systemChat str _lightPoints;
         drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
-        if (_lightpoint distance2d _light_top < 0.1) exitWith {
+        if (_lightpoint distance2d _light_top < 0.2) exitWith {
+            gradVM_portalPhase_0 = 3;
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
-            gradVM_portalPhase = 2;
         };
     } forEach _lightPoints;
 
@@ -120,14 +117,14 @@ systemChat str _lightPoints;
 }, 0.02, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
 
 
-[{gradVM_portalPhase == 2},
+[{gradVM_portalPhase_0 == 3},
 {
     params ["_light_top"];
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
     _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;   
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
-    _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
+    _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 500];
     _lightPoint setLightBrightness 10;
 
     // lightpoint moving in center of stoneHenge
@@ -141,8 +138,8 @@ systemChat str _lightPoints;
         
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
-        private _maxSize = 200;
-        private _minSize = 150;
+        private _maxSize = 100;
+        private _minSize = 50;
         private _distanceToPoint = player distance2d _lightPoint;
         private _currentMaxSize = (_maxSize * ((1/_distanceToPoint) min 1));
         private _currentMinSize = (_minSize * ((1/_distanceToPoint) min 1));
@@ -166,6 +163,7 @@ systemChat str _lightPoints;
         };
 
 
+        /*
         if (_currentMaxSize > 45) then {
             // hint "max size";
             // execVM "USER\functions\phase1\fn_portalOrb.sqf";
@@ -179,6 +177,7 @@ systemChat str _lightPoints;
                 "whiteOutLayer" cutText ["", "WHITE IN", 1];
             }, [], 1] call CBA_fnc_waitAndExecute;
         };
+        */
 
         teleportcenter_phase0 setVariable ["gradVM_lightFlareSize", _lightFlareSize];
 
@@ -190,7 +189,7 @@ systemChat str _lightPoints;
     
     
     // clean up
-    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ 
+    [{gradVM_portalPhase_0 == gradVM_portalPhaseEnd_0},{ 
         deleteVehicle (_this select 0);
     }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
@@ -230,7 +229,7 @@ systemChat str _lightPoints;
         [_beam, -90, 0] call BIS_fnc_setPitchBank;
 
         // clean up
-        [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
+        [{gradVM_portalPhase_0 == gradVM_portalPhaseEnd_0},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
 
     }, 0.02, [_lightPoint]] call CBA_fnc_addPerFrameHandler;
 
