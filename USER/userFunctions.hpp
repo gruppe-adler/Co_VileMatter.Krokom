@@ -14,7 +14,7 @@ class VM {
     class phase0 {
         file = "USER\functions\phase0";
         class lightningBetween;
-        class portalOpening_phase1;
+        class portalOpening_phase0;
         class blueLight { postInit = 1; };
         class sparksEffectClient { postInit = 1; };
         class sparksEffectServer;

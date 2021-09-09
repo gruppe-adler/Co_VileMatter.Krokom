@@ -16,7 +16,7 @@ private _brightness = 0.1;
 private _light = "#lightpoint" createVehicleLocal _position;
 _light setLightBrightness _brightness;
 _light setLightAmbient [1.0, 0.25, 0.25];
-_light setLightColor [1.0, 0.5, 0.5];
+_light setLightColor [1.0, 0.25, 0.25];
 // _light lightAttachObject [_object, [0,0,0]];
 
 
