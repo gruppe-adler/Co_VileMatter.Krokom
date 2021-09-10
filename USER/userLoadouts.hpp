@@ -5,25 +5,50 @@
 
 class vm_vilematter_phase0 {
 
+    class AllUnits {
+        uniform = "rhs_uniform_g3_rgr";
+        vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
+        backpack = "B_ViperLightHarness_oli_F";
+        headgear = "H_HelmetSpecB_snakeskin";
+        primaryWeapon = "arifle_TRG21_F";
+        primaryWeaponMagazine = "30Rnd_556x45_Stanag_Tracer_Yellow";
+        primaryWeaponMuzzle = "muzzle_snds_m_khk_F";
+        primaryWeaponPointer = "rhsusf_acc_anpeq15side";
+        primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
+        primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
+        primaryWeaponUnderbarrelMagazine = "";
+        secondaryWeapon = "";
+        secondaryWeaponMagazine = "";
+        handgunWeapon = "rhsusf_weap_glock17g4";
+        handgunWeaponMagazine = "rhsusf_mag_17Rnd_9x19_JHP";
+        binoculars = "Binocular";
+        map = "ItemMap";
+        compass = "ItemCompass";
+        watch = "ItemWatch";
+        gps = "ItemGPS";
+        radio = "tfar_anprc152";
+        nvgoggles = "NVGogglesB_grn_F";
+    };
+
     class Type {
         //Rifleman
         class Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red"),LIST_3("11Rnd_45ACP_Mag")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow"),LIST_3("11Rnd_45ACP_Mag")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine")};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -36,21 +61,21 @@ class vm_vilematter_phase0 {
         //Asst. Autorifleman
         class soldier_AAR_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red"),LIST_3("11Rnd_45ACP_Mag")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow"),LIST_3("11Rnd_45ACP_Mag")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine")};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -63,21 +88,21 @@ class vm_vilematter_phase0 {
         //Asst. Gunner (MMG) / Ammo Bearer
         class soldier_A_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk_light";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_3("11Rnd_45ACP_Mag"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_3("11Rnd_45ACP_Mag"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
             backpack = "B_Carryall_oli";
             addItemsToBackpack[] = {LIST_4("150Rnd_762x54_Box_Tracer")};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_yellow";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -103,21 +128,21 @@ class vm_vilematter_phase0 {
         //Asst. Missile Specialist (AT)
         class soldier_AAT_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk_light";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_3("11Rnd_45ACP_Mag"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_3("11Rnd_45ACP_Mag"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
             backpack = "B_Carryall_oli";
             addItemsToBackpack[] = {};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_yellow";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -130,21 +155,21 @@ class vm_vilematter_phase0 {
         //Autorifleman
         class soldier_AR_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
+            uniform = "rhs_uniform_g3_rgr";
             addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_3("11Rnd_45ACP_Mag"),LIST_2("rhs_mag_100Rnd_556x45_M855A1_cmag_mixed")};
-            vest = "LOP_V_CarrierLite_OLV";
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade"),LIST_2("rhs_mag_100Rnd_556x45_M855A1_cmag_mixed")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine"),"rhs_mag_100Rnd_556x45_M855A1_cmag_mixed"};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -157,21 +182,21 @@ class vm_vilematter_phase0 {
         //Combat Life Saver
         class medic_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_8("ACE_packingBandage"),LIST_20("ACE_elasticBandage"),LIST_20("ACE_quikclot"),LIST_6("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red"),LIST_2("11Rnd_45ACP_Mag")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_8("ACE_packingBandage"),LIST_20("ACE_elasticBandage"),LIST_20("ACE_quikclot"),LIST_6("30Rnd_556x45_Stanag_Tracer_Yellow"),LIST_2("11Rnd_45ACP_Mag")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_12("ACE_packingBandage"),LIST_2("SmokeShell"),LIST_2("HandGrenade")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_6("ACE_tourniquet"),LIST_12("ACE_splint"),LIST_15("ACE_epinephrine"),LIST_15("ACE_morphine"),LIST_10("ACE_bloodIV_500"),LIST_10("ACE_salineIV_500")};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -215,13 +240,13 @@ class vm_vilematter_phase0 {
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
+            uniform = "rhs_uniform_g3_rgr";
             addItemsToUniform[] = {LIST_3("11Rnd_45ACP_Mag")};
-            vest = "LOP_V_CarrierLite_OLV";
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade"),"150Rnd_762x54_Box"};
             backpack = "B_Carryall_oli";
             addItemsToBackpack[] = {LIST_3("150Rnd_762x54_Box"),LIST_3("150Rnd_762x54_Box_Tracer")};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_yellow";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -264,22 +289,22 @@ class vm_vilematter_phase0 {
         //Missile Specialist (AT)
         class soldier_AT_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk_light";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             secondaryWeapon = "rhs_weap_fgm148";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {"FirstAidKit",LIST_3("11Rnd_45ACP_Mag"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {"FirstAidKit",LIST_3("11Rnd_45ACP_Mag"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
             backpack = "B_Carryall_oli";
             addItemsToBackpack[] = {"rhs_fgm148_magazine_AT"};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_yellow";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -301,22 +326,22 @@ class vm_vilematter_phase0 {
         //Rifleman (AT)
         class soldier_LAT_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             secondaryWeapon = "rhs_weap_M136_hedp";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red"),LIST_3("11Rnd_45ACP_Mag")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow"),LIST_3("11Rnd_45ACP_Mag")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine"),"ACE_EntrenchingTool"};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
             gps = "ItemGPS";
@@ -329,21 +354,21 @@ class vm_vilematter_phase0 {
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red"),LIST_3("11Rnd_45ACP_Mag")};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow"),LIST_3("11Rnd_45ACP_Mag")};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine"),"ACE_EntrenchingTool"};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             binoculars = "Laserdesignator_03";
             map = "ItemMap";
@@ -357,21 +382,21 @@ class vm_vilematter_phase0 {
         //Team Leader
         class Soldier_TL_F: Soldier_F {
             primaryWeapon = "arifle_TRG21_F";
-            primaryWeaponMagazine= "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+            primaryWeaponMagazine= "30Rnd_556x45_Stanag_Tracer_Yellow";
             primaryWeaponMuzzle = "muzzle_snds_M";
             primaryWeaponPointer = "rhsusf_acc_anpeq15_bk";
-            primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+            primaryWeaponOptics = "rhsusf_acc_eotech_552_wd";
             handgunWeapon = "hgun_Pistol_heavy_01_green_F";
             handgunWeaponMuzzle = "hlc_muzzle_Evo40";
             handgunWeaponPointer = "hlc_acc_DBALPL";
             handgunWeaponOptics = "optic_MRD_black";
-            uniform = "LOP_U_IRA_Fatigue_GRK_OLV";
-            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red"),LIST_3("11Rnd_45ACP_Mag"),"ACE_EntrenchingTool"};
-            vest = "LOP_V_CarrierLite_OLV";
+            uniform = "rhs_uniform_g3_rgr";
+            addItemsToUniform[] = {LIST_4("ACE_packingBandage"),LIST_4("ACE_elasticBandage"),LIST_4("ACE_quikclot"),LIST_9("30Rnd_556x45_Stanag_Tracer_Yellow"),LIST_3("11Rnd_45ACP_Mag"),"ACE_EntrenchingTool"};
+            vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_4("SmokeShell"),LIST_4("HandGrenade")};
-            backpack = "B_AssaultPack_blk";
+            backpack = "B_ViperLightHarness_oli_F";
             addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine")};
-            headgear = "rhsusf_opscore_fg_pelt_cam";
+            headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
             gps = "ItemGPS";

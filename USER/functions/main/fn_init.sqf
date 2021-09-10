@@ -45,7 +45,7 @@ if (hasInterface) then {
                 "normal" cutText ["", "BLACK IN", 5];
 
                     enableCamShake true;
-                    addCamShake [5, 5, 5];
+                    addCamShake [20, 2, 15];
             }, [], 5] call CBA_fnc_waitAndExecute;
 
         }, []] call CBA_fnc_waitUntilAndExecute;

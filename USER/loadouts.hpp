@@ -18,7 +18,7 @@
 */
 
 
-loadoutFactionBlu = "IsraeliDefenseForce";
+loadoutFactionBlu = "vm_vilematter_phase0";
 loadoutFactionOpf = "";
 loadoutFactionInd = "";
 
