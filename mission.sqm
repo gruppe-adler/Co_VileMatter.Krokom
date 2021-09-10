@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=3385;
+		nextID=3392;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={514.39722,333.03851,642.38269};
-		dir[]={-0.21896984,-0.89687902,-0.38426918};
-		up[]={-0.44404054,0.44227365,-0.77924478};
-		aside[]={-0.8688401,-8.4080966e-008,0.49509522};
+		pos[]={519.65222,333.99603,651.12738};
+		dir[]={-0.14800844,-0.90026039,-0.40945965};
+		up[]={-0.30604219,0.43532881,-0.84665245};
+		aside[]={-0.9404611,3.2308162e-007,0.33995241};
 	};
 };
 binarizationWanted=0;
@@ -7134,7 +7134,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=401;
+		items=407;
 		class Item0
 		{
 			dataType="Layer";
@@ -23650,16 +23650,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6251.2998,48.555061,2850.717};
+						position[]={522.14746,288.33905,633.65955};
 					};
 					side="West";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						isPlayer=1;
 					};
 					id=2136;
 					type="B_Survivor_F";
+					atlOffset=4.9776306;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23767,6 +23768,7 @@ class Mission
 			{
 			};
 			id=2135;
+			atlOffset=4.9776306;
 		};
 		class Item370
 		{
@@ -35478,11 +35480,136 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="[this] call GRAD_VM_common_fnc_ropeCreate;";
+				name="ropeMiddle_1";
 			};
 			id=3384;
 			type="Sign_Sphere25cm_F";
 			atlOffset=36.816956;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="#(argb,8,8,3)color(1,0.6,0.1,0,ca)";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item401
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={514.43701,289.35999,635.52698};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ropeEnd_1";
+			};
+			id=3385;
+			type="Sign_Sphere25cm_F";
+			atlOffset=4.6739502;
+		};
+		class Item402
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={517.24127,324.30817,643.8363};
+				angles[]={3.1417229,4.6890526,1.0728115};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=3386;
+			type="land_gm_euro_powerline_01_01";
+			atlOffset=13.951141;
+		};
+		class Item403
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={517.617,324.56,643.72101};
+				angles[]={0,4.860445,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ropeMiddle_2";
+			};
+			id=3388;
+			type="Sign_Sphere25cm_F";
+			atlOffset=15.611023;
+		};
+		class Item404
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={519.37115,290.59097,643.3252};
+				angles[]={0,4.860445,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ropeEnd_2";
+			};
+			id=3389;
+			type="Sign_Sphere25cm_F";
+			atlOffset=5.9049377;
+		};
+		class Item405
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={508.31699,322.573,639.289};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[ropeStart_1, ropeMiddle_1, ropeEnd_1] execVM ""USER\functions\common\fn_ropeCreate.sqf"";";
+				name="ropeStart_1";
+			};
+			id=3390;
+			type="Sign_Sphere25cm_F";
+			atlOffset=0.052734375;
+		};
+		class Item406
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={510.34399,322.92999,643.59698};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[ropeStart_2, ropeMiddle_2, ropeEnd_2] execVM ""USER\functions\common\fn_ropeCreate.sqf"";";
+				name="ropeStart_2";
+			};
+			id=3391;
+			type="Sign_Sphere25cm_F";
+			atlOffset=38.243958;
 		};
 	};
 	class Connections
