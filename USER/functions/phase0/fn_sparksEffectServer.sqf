@@ -58,13 +58,13 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     {
         {
             _x params ["_object1", "_object2"];
-            
+
             [{
                 params ["_object1", "_object2"];
                 [_object1, _object2, 10] remoteExec ["grad_VM_fnc_lightningBetween", 0];
 
             }, [_object1, _object2], _forEachIndex * 0.1] call CBA_fnc_waitAndExecute;
-            
+
         } forEach [
             [phase0_transformer1,phase0_transformer2],
             [phase0_transformer2,phase0_transformer3],
@@ -87,8 +87,8 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     { gradVM_portalPhase_0 == 3 },
     {
         {
-             [_x, [0,0,0], _forEachIndex] execVM "User\functions\teleport\fn_teleport.sqf";
-            
+             [_x, [0,0,0], _forEachIndex] call GRAD_VM_teleport_fnc_teleport.sqf;
+
         } forEach playableUnits + switchableUnits;
 
 }] call CBA_fnc_waitUntilAndExecute;

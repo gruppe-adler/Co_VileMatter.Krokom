@@ -18,12 +18,14 @@ getPosWorld _unit params ["_xPos", "_yPos"];
 _beam setPos [_xPos, _yPos, 2];
 [_beam, 90, 0] call BIS_fnc_setPitchBank;
 
+[getpos _unit] call GRAD_VM_teleport_fnc_despawnEffect;
+
 // park unit off map for tunnel fx
 _unit setPos [_index * -1000, _index * -1000, 0];
 
 
 _unit setVariable ["grad_VM_teleportDone", false];
-[_unit] exeCVM "USER\functions\teleport\fn_wormHole.sqf";
+[_unit] call GRAD_VM_teleport_fnc_wormHole;
 
 
 
@@ -46,7 +48,7 @@ _unit setVariable ["grad_VM_teleportDone", false];
 
     private _lightPoint = "#lightpoint" createvehiclelocal [_posX, _posY, 1];
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 10; _lightPoint setLightFlareMaxDistance 5000;   
+    _lightPoint setLightFlareSize 10; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.9,0.7,0.9];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
     _lightPoint setLightBrightness 3;
@@ -60,7 +62,7 @@ _unit setVariable ["grad_VM_teleportDone", false];
 
     private _lightPoint = "#lightpoint" createvehiclelocal [_posXNew, _posYNew, 1];
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 10; _lightPoint setLightFlareMaxDistance 5000;   
+    _lightPoint setLightFlareSize 10; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.9,0.7,0.9];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
     _lightPoint setLightBrightness 3;
@@ -70,7 +72,7 @@ _unit setVariable ["grad_VM_teleportDone", false];
             deleteVehicle _lightPoint;
     }, [_lightPoint], 0.2] call CBA_fnc_waitAndExecute;
 
-    
+
     [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
 
     private _fireflyEnd = "#particlesource" createvehiclelocal [_currentPosition select 0, _currentPosition select 1, 1];
@@ -94,6 +96,6 @@ _unit setVariable ["grad_VM_teleportDone", false];
         _unit setPos (_destinationPosition findEmptyPosition [0,15]);
 
     }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;
-    
+
 
 }, [_currentPosition, _destinationPosition, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;

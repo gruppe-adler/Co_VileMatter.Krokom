@@ -1,3 +1,9 @@
+/*
+
+  [object1, object2, 10] call GRAD_VM_phase0_fnc_lightningBetween;
+
+*/
+
 params ["_object_1", "_object_2", "_duration"];
 
 playSound "gradVM_drone";
@@ -38,7 +44,7 @@ _object_1 say3D ["GRAD_electricFence_sound_hum", 75];
     deleteVehicle _light;
 
     gradVM_portalPhase_0 = 2;
-    
+
 }, [_light, _dummies], _duration] call CBA_fnc_waitAndExecute;
 
 

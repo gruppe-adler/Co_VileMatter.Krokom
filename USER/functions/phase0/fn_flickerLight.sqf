@@ -1,3 +1,9 @@
+/*
+
+  [this] call GRAD_VM_phase0_fnc_flickerLight;
+
+*/
+
 params ["_lamp"];
 
 if (!isServer) exitWith {};

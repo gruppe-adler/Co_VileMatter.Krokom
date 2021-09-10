@@ -34,9 +34,9 @@ private _lightPoints = [];
 
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _x);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;   
+    _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
-    _lightPoint setLightAttenuation [2, 4, 4, 0, 9, 10];// [0,0,0,0,0,4000]; 
+    _lightPoint setLightAttenuation [2, 4, 4, 0, 9, 10];// [0,0,0,0,0,4000];
     _lightPoint setLightBrightness .1;
 
     _lightPoints pushBackUnique _lightPoint;
@@ -129,20 +129,20 @@ private _handle = [{
     params ["_stoneHengeCenter", "_stoneHengeCenterTop"];
     private _lightPoint = "#lightpoint" createvehiclelocal _stoneHengeCenterTop;
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;   
+    _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
     _lightPoint setLightBrightness 10;
 
     // lightpoint moving in center of stoneHenge
-    
+
     [{
         params ["_args", "_handle"];
         _args params ["_lightPoint", "_stoneHengeCenter"];
 
         private _lightFlareSize = _stoneHengeCenter getVariable ["gradVM_lightFlareSize", 5];
         private _lightFlareExpanding = _stoneHengeCenter getVariable ["gradVM_lightFlareExpanding", true];
-        
+
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
         private _maxSize = 200;
@@ -170,19 +170,6 @@ private _handle = [{
         };
 
 
-        if (_currentMaxSize > 45) then {
-            // hint "max size";
-            // execVM "USER\functions\phase1\fn_portalOrb.sqf";
-            "whiteOutLayer" cutText ["", "WHITE OUT", 1];
-
-            [[getpos player],"USER\functions\phase1\fn_despawnEffect.sqf"] remoteExec ["BIS_fnc_execVM", 0];
-
-            [{
-
-                player setPos getPos portalPos;
-                "whiteOutLayer" cutText ["", "WHITE IN", 1];
-            }, [], 1] call CBA_fnc_waitAndExecute;
-        };
 
         _stoneHengeCenter setVariable ["gradVM_lightFlareSize", _lightFlareSize];
 
@@ -191,10 +178,10 @@ private _handle = [{
 
 
     }, 0.02, [_lightPoint, _stoneHengeCenter]] call CBA_fnc_addPerFrameHandler;
-    
-    
+
+
     // clean up
-    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ 
+    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{
         deleteVehicle (_this select 0);
     }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
@@ -240,24 +227,24 @@ private _handle = [{
 
     /*
     private _pos = getPosWorld _stoneHengeCenter;
-    _sparksColumn = "#particlesource" createVehicleLocal _pos;  
+    _sparksColumn = "#particlesource" createVehicleLocal _pos;
     _sparksColumn setParticleCircle [0.1,[0,0,0]];
-    _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,1,[0,0,0,0],0.1,0.1];   
-    _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]]; 
+    _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,1,[0,0,0,0],0.1,0.1];
+    _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]];
     _sparksColumn setDropInterval 0.05;
     _sparksColumn setPos _pos;
 
     for "_i" from 1 to 10 do {
-        [{  
+        [{
             params ["_sparksColumn", "_i"];
             _sparksColumn setParticleCircle [0.1,[0,0,0]];
-            _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,0.2,[0,0,0,0],0.1,0.1];   
-            _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]]; 
+            _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,0.2,[0,0,0,0],0.1,0.1];
+            _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]];
             _sparksColumn setDropInterval (random 1);
-        }, [_sparksColumn, _i], _i] call CBA_fnc_waitAndExecute;        
+        }, [_sparksColumn, _i], _i] call CBA_fnc_waitAndExecute;
     };
 
     [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_sparksColumn]] call CBA_fnc_waitUntilAndExecute;
     */
-    
+
 }, [_stoneHengeCenter, _stoneHengeCenterTop]] call CBA_fnc_waitUntilAndExecute;
