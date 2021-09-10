@@ -22,7 +22,7 @@ class VM {
   class main {
     tag = "GRAD_VM_main";
     file = "USER\functions\main";
-    class init { postInit = 1; };
+    class init { preInit = 1; };
   };
 
   class phase0 {

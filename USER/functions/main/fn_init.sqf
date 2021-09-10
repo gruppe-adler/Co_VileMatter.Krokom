@@ -25,3 +25,31 @@ gradVM_portalPhaseTarget = getMarkerPos "mrk_phase_2_teleportTarget";
 gradVM_portalPhase_3 = 0;
 gradVM_portalPhaseEnd_3 = 4;
 gradVM_portalPhaseTarget = getMarkerPos "mrk_phase_3_teleportTarget";
+
+
+if (hasInterface) then {
+
+    ["CBA_loadingScreenDone", {
+
+        [{
+            !isGamePaused && isGameFocused
+        },{
+
+            "normal" cutText ["", "BLACK FADED", 5];  
+
+            [{
+                playSound "gradVM_ropethump";
+            }, [], 1] call CBA_fnc_waitAndExecute;
+
+            [{
+                "normal" cutText ["", "BLACK IN", 5];
+
+                    enableCamShake true;
+                    addCamShake [5, 5, 5];
+            }, [], 5] call CBA_fnc_waitAndExecute;
+
+        }, []] call CBA_fnc_waitUntilAndExecute;
+
+    }] call CBA_fnc_addEventHandler;
+
+};

@@ -62,3 +62,10 @@ class gradVM_hum2
     sound[] = {"USER\sounds\hum2.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
+
+class gradVM_ropethump
+{
+    name = "gradVM_ropethump";
+    sound[] = {"USER\sounds\ropethump.ogg", VOLUME, 1, DISTANCE};
+    titles[] = {0, ""};
+};
