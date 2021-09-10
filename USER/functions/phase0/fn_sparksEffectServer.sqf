@@ -87,7 +87,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     { gradVM_portalPhase_0 == 3 },
     {
         {
-             [_x, [0,0,0], _forEachIndex] call GRAD_VM_teleport_fnc_teleport.sqf;
+             [_x, [0,0,0], _forEachIndex] call GRAD_VM_teleport_fnc_teleport;
 
         } forEach playableUnits + switchableUnits;
 

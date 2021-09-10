@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=3365;
+		nextID=3385;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=387;
+		nextID=397;
 	};
 	class Camera
 	{
-		pos[]={674.19861,293.3696,677.40808};
-		dir[]={0.8443256,-0.42938665,0.32053301};
-		up[]={0.40143266,0.90312076,0.15239668};
-		aside[]={0.35491711,0,-0.93489784};
+		pos[]={514.39722,333.03851,642.38269};
+		dir[]={-0.21896984,-0.89687902,-0.38426918};
+		up[]={-0.44404054,0.44227365,-0.77924478};
+		aside[]={-0.8688401,-8.4080966e-008,0.49509522};
 	};
 };
 binarizationWanted=0;
@@ -7134,7 +7134,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=398;
+		items=401;
 		class Item0
 		{
 			dataType="Layer";
@@ -24472,6 +24472,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="phase 0";
+			state=1;
 			class Entities
 			{
 				items=627;
@@ -35432,6 +35433,56 @@ class Mission
 			};
 			id=3359;
 			type="Land_TripodScreen_01_dual_v1_F";
+		};
+		class Item398
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={510.27277,320.96521,638.63043};
+				angles[]={4.8782616,2.9701488,5.3290501};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=3378;
+			type="land_gm_euro_powerline_01_01";
+			atlOffset=36.279175;
+		};
+		class Item399
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={508.51279,317.91772,640.03448};
+				angles[]={5.5984497,1.9684389,5.5842829};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=3379;
+			type="land_gm_euro_powerline_01_01";
+			atlOffset=33.231689;
+		};
+		class Item400
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={514.62,321.50299,635.44098};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this] call GRAD_VM_common_fnc_ropeCreate;";
+			};
+			id=3384;
+			type="Sign_Sphere25cm_F";
+			atlOffset=36.816956;
 		};
 	};
 	class Connections

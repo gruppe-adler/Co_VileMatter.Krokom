@@ -10,6 +10,7 @@ class VM {
     file = "USER\functions\common";
     class replaceRoads { postInit = 1; };
     class objectIsOnScreen {};
+    class ropeCreate;
   };
 
   class horrorEffects {
