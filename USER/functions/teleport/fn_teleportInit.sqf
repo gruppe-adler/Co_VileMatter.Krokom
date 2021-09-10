@@ -10,7 +10,7 @@ private _count = count (playableUnits + switchableUnits);
     [{
         params ["_unit", "_targetPosition"];
 
-            [_unit, _targetPosition, _index] call GRAD_VM_teleport_fnc_teleport;
+            [_unit, _targetPosition, _index, _duration] call GRAD_VM_teleport_fnc_teleport;
 
     }, [_unit, _targetPosition], (_index/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
 

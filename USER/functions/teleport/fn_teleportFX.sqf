@@ -1,4 +1,4 @@
-params ["_unit", "_destinationPosition", "_index"];
+params ["_unit", "_destinationPosition", "_index", "_duration"];
 
 private _currentPosition = getPos _unit;
 
@@ -25,7 +25,7 @@ _unit setPos [_index * -1000, _index * -1000, 0];
 
 
 _unit setVariable ["grad_VM_teleportDone", false];
-[_unit] call GRAD_VM_teleport_fnc_wormHole;
+[_unit, _duration] call GRAD_VM_teleport_fnc_wormHole;
 
 
 

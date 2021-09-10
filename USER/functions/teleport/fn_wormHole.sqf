@@ -18,7 +18,7 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 
 */
 
-params [["_startpoint",[-100,0,1000]]];
+params [["_startpoint",[-100,0,1000]], ["_duration", 10]];
 
 private _pipes = [];
 private _props = [];

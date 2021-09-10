@@ -1,10 +1,10 @@
-params ["_unit", "_position", "_index"];
+params ["_unit", "_position", "_index", "_duration"];
 
 
 // debug
 if (isPlayer _unit) then {
 
-        [_unit, _position, _index] call GRAD_VM_teleport_fnc_teleportFX;
+        [_unit, _position, _index, _duration] call GRAD_VM_teleport_fnc_teleportFX;
 
         [{
                 params ["_unit", "_position"];
