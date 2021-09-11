@@ -1,6 +1,7 @@
 params ["_rider", "_horse"];
 
 _rider setVariable ["GRAD_VM_isRider", true, true];
+_horse setVariable ["GRAD_VM_isHorse", true, true];
 _rider setVariable ["GRAD_VM_originalGroup", group _rider, true];
 
 _rider switchmove "Horse_Rider";
