@@ -69,3 +69,10 @@ class gradVM_ropethump
     sound[] = {"USER\sounds\ropethump.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
+
+class gradVM_crescendo
+{
+    name = gradVM_crescendo
+    sound[] = {"USER\sounds\crescendo.ogg", VOLUME, 1, DISTANCE};
+    titles[] = {0, ""};
+};
