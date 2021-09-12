@@ -29,13 +29,12 @@ gradVM_portalPhaseTarget = getMarkerPos "mrk_phase_3_teleportTarget";
 
 if (hasInterface) then {
 
-    ["CBA_loadingScreenDone", {
+    "normal" cutText ["", "BLACK FADED", 5]; 
 
+    ["CBA_loadingScreenDone", {
         [{
             !isGamePaused && isGameFocused
         },{
-
-            "normal" cutText ["", "BLACK FADED", 5];  
 
             [{
                 playSound "gradVM_ropethump";
