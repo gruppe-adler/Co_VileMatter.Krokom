@@ -49,6 +49,9 @@ class vm_vilematter_phase1 {
             primaryWeaponMagazine= "JMSL_WM_Arrow_Mag";
             handgunWeapon = "JMSL_W_Melee_Celt_sword_1";
             vest = "JMSL_Celt_CapeMail_1_A";
+            addItemsToBackpack[] = { LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag")};
+            backpack = "JMSL_back_arrowpack_full_1";
+            nvgoggles = "";
             };
 
         //Asst. Gunner (HMG/GMG)
@@ -65,6 +68,7 @@ class vm_vilematter_phase1 {
             primaryWeaponMagazine= "JMSL_WM_Arrow_Mag";
             handgunWeapon = "JMSL_W_Melee_Celt_sword_1";
             vest = "JMSL_Celt_CapeMail_1_A";
+            nvgoggles = "";
         };
 
         //Autorifleman
@@ -73,7 +77,7 @@ class vm_vilematter_phase1 {
             primaryWeaponMagazine= "";
             handgunWeapon = "JMSL_W_Melee_Celt_sword_1";
             vest = "JMSL_Celt_CapeMail_1_A";
-            backpack = "JMSL_back_arrowpack_full_1";
+            backpack = "";
         };
 
         //Combat Life Saver
@@ -138,7 +142,6 @@ class vm_vilematter_phase1 {
             headgear = "JMSL_Celtic_Helmet_2_1_stal_H";
             handgunWeapon = "RM_Fire_Torch";
             handgunWeaponMuzzle = "RM_torch_fluid";
-            vest = "JMSL_Celt_CapeMail_1_A";
             addItemsToBackpack[] = { LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag")};
         };
 
