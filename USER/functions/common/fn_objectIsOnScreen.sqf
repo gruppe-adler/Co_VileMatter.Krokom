@@ -28,15 +28,14 @@ if (_posOnScreen isEqualTo []) exitWith {
 private _xPos = _posOnScreen select 0;
 private _yPos = _posOnScreen select 1;
 private _xVisible = (_xPos > safeZoneX * 2.2) && (_xPos < (safeZoneX + safeZoneW) * 2.2);
-private _yVisible = (_yPos > safeZoneY * 1.7) && (_yPos < (safeZoneY + safeZoneH) * 1.7);
+private _yVisible = (_yPos > safeZoneY * 2.5) && (_yPos < (safeZoneY + safeZoneH) * 2.5);
 if !(_xVisible && _yVisible) exitWith {
 	false
 };
 
 // in case an object blocks the view, but worldToScreen still returns coordinates
-private _visibility = [_ignore, "VIEW"] checkVisibility [eyePos player, AGLtoASL _targetPos];
-if (_visibility isEqualTo 0) exitWith {
-	systemChat "blub";
+private _intersect = lineIntersectsSurfaces [AGLToASL (positionCameraToWorld [0,0,0]), AGLToASL _targetPos, player, _ignore, true, 1, "GEOM"];
+if (_intersect isNotEqualTo []) exitWith {
 	false
 };
 
