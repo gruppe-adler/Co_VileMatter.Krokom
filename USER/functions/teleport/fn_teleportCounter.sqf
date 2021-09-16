@@ -27,7 +27,7 @@ _control ctrlCommit 1;
     params ["_args", "_handle"];
     _args params ["_firstPipePos", "_lastPipePos", "_startDate", "_endDate", "_control"];
 
-    private _dateResult = linearConversion [0, _firstPipePos distance _lastPipePos, gradVM_cameraPosition, _startDate, _endDate, true];
+    private _dateResult = linearConversion [(_firstPipePos distance _lastPipePos), 0, (gradVM_cameraPosition distance _lastPipePos), _startDate, _endDate, true];
     _control ctrlSetStructuredText parseText format ["<t shadow='0' color='#000000' size='6' align='center'>%1</t>", str _dateResult];
     _control ctrlCommit 0;
 
@@ -37,7 +37,7 @@ _control ctrlCommit 1;
          }, _control, 10] call CBA_fnc_waitAndExecute;
          [_handle] call CBA_fnc_removePerFrameHandler;
     };
-    
+
 }, 0, [_firstPipePos, _lastPipePos, _startDate, _endDate, _control]] call CBA_fnc_addPerFramehandler;
 
 
