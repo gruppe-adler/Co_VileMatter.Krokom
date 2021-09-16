@@ -5,6 +5,7 @@ class GRAD_VM_teleport {
         class despawnEffect;
         class setPitchBankYaw;
         class teleport;
+        class teleportCounter;
         class teleportFX;
         class teleportInit;
         class wormHole;

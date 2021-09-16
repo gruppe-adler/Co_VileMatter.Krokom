@@ -25,7 +25,7 @@ _unit setPos [_index * -1000, _index * -1000, 0];
 
 
 _unit setVariable ["grad_VM_teleportDone", false];
-[_unit, _duration] call GRAD_VM_teleport_fnc_wormHole;
+[[-100,1000*index,1000], _duration] call GRAD_VM_teleport_fnc_wormHole;
 
 
 

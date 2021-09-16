@@ -27,7 +27,7 @@ private _brightnessMultiplicator = getLighting select 1;
 titleCut ["", "WHITE OUT", 2];
 
 for "_i" from 0 to 100 do {
-    _startpoint set [1, _i*2.85];
+    _startpoint set [1, (_i*2.85)];
     private _concretePipe = createSimpleObject ["Land_ConcretePipe_F", _startpoint, true];
     _pipes pushbackunique _concretePipe;
 
@@ -117,7 +117,7 @@ gradVM_cameraBank = 0;
 gradVM_cameraBankChange = 0.02;
 gradVM_cameraPosition = _lastPipePos;
 
-[] call GRAD_VM_teleport_fnc_teleportCounter;
+[_firstPipePos, _lastPipePos, _startDate, _endDate] call GRAD_VM_teleport_fnc_teleportCounter;
 
 [{
     params ["_args", "_handle"];
