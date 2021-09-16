@@ -18,11 +18,10 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 
 */
 
-params [["_startpoint",[-100,0,1000]], ["_duration", 10]];
+params [["_startpoint",[-100,0,1000]], ["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
 
 private _pipes = [];
 private _props = [];
-private _duration = 60;
 private _brightnessMultiplicator = getLighting select 1;
 
 titleCut ["", "WHITE OUT", 2];
@@ -116,6 +115,10 @@ _props pushbackunique _lightPointEnd;
 
 gradVM_cameraBank = 0;
 gradVM_cameraBankChange = 0.02;
+gradVM_cameraPosition = _lastPipePos;
+
+[] call GRAD_VM_teleport_fnc_teleportCounter;
+
 [{
     params ["_args", "_handle"];
     _args params ["_pipes", "_cam", "_lightPoint", "_lastPipePos"];
@@ -130,6 +133,8 @@ gradVM_cameraBankChange = 0.02;
     private _lightPos = (_cam getRelPos [10,0]);
     _lightPos set [2, _lastPipePos select 2];
     _lightPoint setPos _lightPos;
+
+    gradVM_cameraPosition = _lightPos;
 
 }, 0, [_pipes, _cam, _lightPoint, _lastPipePos]] call CBA_fnc_addPerFramehandler;
 
