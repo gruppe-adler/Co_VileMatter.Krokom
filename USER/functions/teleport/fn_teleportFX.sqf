@@ -30,7 +30,9 @@ getPosWorld _unit params ["_xPos", "_yPos"];
 _beam setPos [_xPos, _yPos, 2];
 [_beam, 90, 0] call BIS_fnc_setPitchBank;
 
-[getpos _unit] call GRAD_VM_teleport_fnc_despawnEffect;
+[getpos _unit] remoteExec ["GRAD_VM_teleport_fnc_despawnEffect", 0];
+
+playSound "teleport";
 
 // park unit off map for tunnel fx
 _unit setPos [(_index * -1000), (_index * -1000), 0];
@@ -104,7 +106,6 @@ _unit setVariable ["grad_VM_teleportDone", false];
         _unit getVariable ["grad_VM_teleportDone", false]
     },{
         params ["_destinationPosition", "_unit"];
-        titleCut ["", "WHITE OUT", 1.5];
         _unit setPos (_destinationPosition findEmptyPosition [0,15]);
 
     }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;

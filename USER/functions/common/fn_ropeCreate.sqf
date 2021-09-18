@@ -1,6 +1,6 @@
 if (!isServer) exitWith {};
 
-params [["_startObject", ropeStart_1], ["_middleObject", ropeMiddle_1], ["_endObject", ropeEnd_1]];
+params [["_startObject", objNull], ["_middleObject", objNull], ["_endObject", objNull]];
 
 private _ropeStart = "ace_fastroping_helper" createVehicle [0, 0, 0];
 _ropeStart allowDamage false;

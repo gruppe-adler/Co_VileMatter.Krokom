@@ -1,9 +1,5 @@
 params ["_firstPipePos", "_lastPipePos", ["_startDate", 2035], ["_endDate", 9]];
 
-if (!canSuspend) exitWith {
-    [_firstPipePos, _lastPipePos, _startDate, _endDate] execVM "USER\functions\teleport\fn_teleportCounter.sqf";
-};
-
 private _verticalCenter = safeZoneH * 0.25;
 private _height = safeZoneH * 0.5;
 
@@ -44,17 +40,16 @@ _control ctrlCommit 2;
 
     if (_dateResult == _endDate) exitWith {
         _control ctrlSetFade 1;
-        _control ctrlCommit 5;
+        _control ctrlCommit 2;
          [{
             ctrlDelete _this;
          }, _control, 5] call CBA_fnc_waitAndExecute;
          [_handle] call CBA_fnc_removePerFrameHandler;
-        
     };
 
 }, 0, [_firstPipePos, _lastPipePos, _startDate, _endDate, _control]] call CBA_fnc_addPerFramehandler;
 
-
+_control
 /*
 "VILE MATTER"
 "TIME TRAVEL"

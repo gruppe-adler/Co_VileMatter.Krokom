@@ -20,7 +20,7 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 
 params [["_mask", controlNull], ["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
 
-1 fadeSound 0;
+1 fadeEnvironment 0;
 
 
 // gradVM_wormholePipes
@@ -49,7 +49,7 @@ for "_i" from 0 to 100 do {
         };
 };
 
-[_firstPipePos, _lastPipePos, _startDate, _endDate] spawn GRAD_VM_teleport_fnc_teleportCounter;
+private _counterControl = [_firstPipePos, _lastPipePos, _startDate, _endDate] call GRAD_VM_teleport_fnc_teleportCounter;
 
 
 private _cam = "camera" camCreate _firstPipePos;
@@ -59,10 +59,10 @@ _cam camSetFov 8.5;
 _cam camPreload 3;
 
 [{
-    params ["_mask", "_cam", "_duration"];
+    params ["_counterControl", "_mask", "_cam", "_duration"];
     camPreloaded _cam
 },{
-    params ["_mask", "_cam", "_duration", "_firstPipePos", "_lastPipePos", "_brightnessMultiplicator"];
+    params ["_counterControl", "_mask", "_cam", "_duration", "_firstPipePos", "_lastPipePos", "_brightnessMultiplicator"];
     _cam camCommand "inertia on";
     _cam cameraEffect ["internal", "BACK"];
     _cam camCommit 0;
@@ -72,6 +72,8 @@ _cam camPreload 3;
 
     _mask ctrlSetFade 1;
     _mask ctrlCommit 2;
+
+    _cam say3d "gradVM_circus";
 
     private _firefly = "#particlesource" createvehiclelocal (_firstPipePos);
     _firefly setParticleRandom [0,[0,0,0],[1,1,0.1],1,0,[0,0,0,0.1],1,1];
@@ -121,30 +123,42 @@ _cam camPreload 3;
         _lightPos set [2, (getPos _cam) select 2];
         _lightPoint setPos _lightPos;
 
-        systemChat str (getpos _lightPoint);
+        // systemChat str (getpos _lightPoint);
 
         gradVM_cameraPosition = getPos _cam;
 
     }, 0, [_cam, _lightPoint, _lastPipePos]] call CBA_fnc_addPerFramehandler;
 
-    [_cam, _firefly, _refract, _lightPoint, _duration, _mask] spawn {
-        params ["_cam", "_firefly", "_refract", "_lightPoint", "_duration", "_mask"];
+     [{
+        params ["_counterControl", "_cam"];
+        isNull _counterControl
+    },{
+        params ["_counterControl", "_cam", "_firefly", "_refract", "_lightPoint", "_duration", "_mask"];
 
-        sleep (_duration-2);
-        sleep 1.5;
-        player setVariable ["grad_VM_teleportDone", true];
-        deleteVehicle _firefly;
-        deleteVehicle _refract;
-        deleteVehicle _lightPoint;
-        camDestroy _cam;
         _mask ctrlSetFade 0;
         _mask ctrlCommit 2;
-        3 fadeSound 1;
-        sleep 2;
-        _mask ctrlSetFade 1;
-        _mask ctrlCommit 2;
-    };
+        3 fadeEnvironment 1;
+        [{
+            params ["_cam", "_firefly", "_refract", "_lightPoint", "_duration", "_mask"];
+            player setVariable ["grad_VM_teleportDone", true, true];
+            deleteVehicle _firefly;
+            deleteVehicle _refract;
+            deleteVehicle _lightPoint;
+            _cam cameraEffect ["terminate","back"];
+            camDestroy _cam;
+
+            [{
+                _this ctrlSetFade 1;
+                _this ctrlCommit 2;
+                [{
+                    ctrlDelete _this;
+                }, _this, 2] call CBA_fnc_waitAndExecute;
+            }, _mask, 2] call CBA_fnc_waitAndExecute;
+
+        }, [_cam, _firefly, _refract, _lightPoint, _duration, _mask], 2] call CBA_fnc_waitAndExecute;
+        
+    }, [_counterControl, _cam, _firefly, _refract, _lightPoint, _duration, _mask]] call CBA_fnc_waitUntilAndExecute;
 
 
 
-}, [_mask, _cam, _duration, _firstPipePos, _lastPipePos, _brightnessMultiplicator]] call CBA_fnc_waitUntilAndExecute;
+}, [_counterControl, _mask, _cam, _duration, _firstPipePos, _lastPipePos, _brightnessMultiplicator]] call CBA_fnc_waitUntilAndExecute;

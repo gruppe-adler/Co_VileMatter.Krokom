@@ -77,7 +77,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
             [phase0_transformer9,phase0_transformer1]
         ];
 
-        [] call GRAD_VM_phase0_fnc_portalOpening;
+        [] remoteExec ["GRAD_VM_phase0_fnc_portalOpening", 0];
 
 }] call CBA_fnc_waitUntilAndExecute;
 
@@ -86,9 +86,11 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
 [
     { gradVM_portalPhase_0 == 3 },
     {
-        {
-             [_x, [0,0,0], _forEachIndex, 20] call GRAD_VM_teleport_fnc_teleport;
+        [{
+            {
+                 [_x, gradVM_portalPhaseTarget_0, _forEachIndex, 20] call GRAD_VM_teleport_fnc_teleport;
 
-        } forEach playableUnits + switchableUnits;
+            } forEach playableUnits + switchableUnits;
+        }, [], 4] call CBA_fnc_waitAndExecute;
 
 }] call CBA_fnc_waitUntilAndExecute;

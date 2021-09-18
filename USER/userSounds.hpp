@@ -76,3 +76,10 @@ class gradVM_crescendo
     sound[] = {"USER\sounds\crescendo.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
+
+class gradVM_circus
+{
+    name = "gradVM_circus";
+    sound[] = {"USER\sounds\circus.ogg", VOLUME, 1, DISTANCE};
+    titles[] = {0, ""};
+};

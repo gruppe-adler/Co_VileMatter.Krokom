@@ -36,7 +36,7 @@ private _lightPoints = [];
 
 } forEach _transformerTips;
 
-systemChat str _lightPoints;
+// systemChat str _lightPoints;
 
 // lightpoints moving to center
 [{
@@ -56,7 +56,11 @@ systemChat str _lightPoints;
 
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
-            gradVM_portalPhase_0 = 3;
+            // first player sends signal
+            if (gradVM_portalPhase_0 != 3) then {
+                gradVM_portalPhase_0 = 3;
+                publicVariable "gradVM_portalPhase_0";
+            };
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
         };
