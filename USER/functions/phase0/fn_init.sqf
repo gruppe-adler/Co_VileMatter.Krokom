@@ -21,4 +21,4 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 } forEach _machineCircle;
 
 
-[_machineCircle] call grad_VM_fnc_sparksEffectServer;
+[_machineCircle] call grad_VM_phase0_fnc_sparksEffectServer;

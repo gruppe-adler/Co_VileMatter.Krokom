@@ -34,7 +34,7 @@ params [
 
 if !(hasInterface) exitWith {};
 if (missionNameSpace getVariable ["diwako_ambientFogglets", false]) exitWith {};
-if !(canSuspend) exitWith { _this spawn GRAD_VM_fnc_rainbowRing; };
+if !(canSuspend) exitWith { _this spawn GRAD_VM_localEffects_fnc_rainbowRing; };
 
 diwako_ambientFogglets = true;
 
@@ -120,11 +120,11 @@ diwako_ambientFogglets = true;
 ] ] call CBA_fnc_addPerFrameHandler;
 
 while {true} do {
-	[[255, 165, 0], [255, 0, 0], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
-	[[255, 255, 0], [255, 165, 0], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
-	[[0, 128, 0], [255, 255, 0], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
-	[[0, 0, 255], [0, 128, 0], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
-	[[75, 0, 130], [0, 0, 255], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
-	[[238, 130, 238], [75, 0, 130], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
-	[[255, 0, 0], [238, 130, 238], _dropTimer] call GRAD_VM_fnc_changeEffectColor;
+	[[255, 165, 0], [255, 0, 0], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
+	[[255, 255, 0], [255, 165, 0], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
+	[[0, 128, 0], [255, 255, 0], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
+	[[0, 0, 255], [0, 128, 0], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
+	[[75, 0, 130], [0, 0, 255], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
+	[[238, 130, 238], [75, 0, 130], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
+	[[255, 0, 0], [238, 130, 238], _dropTimer] call GRAD_VM_localEffects_fnc_changeEffectColor;
 };

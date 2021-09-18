@@ -69,6 +69,8 @@ class CfgFunctions
 
 //DIALOGS ======================================================================
 #include "node_modules\grad-fortifications\grad_fortifications.hpp"
+#include "USER\functions\phase0\keypad\AF_KP_defines.hpp"
+#include "USER\functions\phase0\keypad\AF_KP_dialogs.hpp"
 
 class RscTitles {
 	#include "node_modules\grad-fortifications\dialog\hint\title.hpp"

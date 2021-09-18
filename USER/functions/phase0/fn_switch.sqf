@@ -14,6 +14,7 @@ _switch addAction
         _target animateSource ["SwitchPosition", 1];
 
         gradVM_portalPhase_0 = 1;
+        publicVariable "gradVM_portalPhase_0";
     },
     nil,
     1.5,

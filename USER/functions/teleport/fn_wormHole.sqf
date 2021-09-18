@@ -18,13 +18,14 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 
 */
 
-params [["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
+params [["_mask", controlNull], ["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
+
+1 fadeSound 0;
+
 
 // gradVM_wormholePipes
 // gradVM_wormholeProps
 private _brightnessMultiplicator = (getLighting select 1);
-
-titleCut ["", "WHITE OUT", 2];
 
 
 private _firstPipePos = getPos (gradVM_wormholePipes select 0);
@@ -58,16 +59,19 @@ _cam camSetFov 8.5;
 _cam camPreload 3;
 
 [{
-    params ["_cam", "_duration"];
+    params ["_mask", "_cam", "_duration"];
     camPreloaded _cam
 },{
-    params ["_cam", "_duration", "_firstPipePos", "_lastPipePos", "_brightnessMultiplicator"];
+    params ["_mask", "_cam", "_duration", "_firstPipePos", "_lastPipePos", "_brightnessMultiplicator"];
     _cam camCommand "inertia on";
     _cam cameraEffect ["internal", "BACK"];
     _cam camCommit 0;
     _cam camSetFov 0.7;
     _cam camSetPos _lastPipePos;
     _cam camCommit _duration;
+
+    _mask ctrlSetFade 1;
+    _mask ctrlCommit 2;
 
     private _firefly = "#particlesource" createvehiclelocal (_firstPipePos);
     _firefly setParticleRandom [0,[0,0,0],[1,1,0.1],1,0,[0,0,0,0.1],1,1];
@@ -81,10 +85,10 @@ _cam camPreload 3;
 
     private _lightPoint = "#lightpoint" createvehiclelocal (_firstPipePos);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 20*_brightnessMultiplicator; _lightPoint setLightFlareMaxDistance 5000;
+    _lightPoint setLightFlareSize 10*_brightnessMultiplicator; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[1,0.2,1]; _lightPoint setLightColor[1,0.2,0.9];
     _lightPoint setLightAttenuation [0, 1, 1, 2, 4, 100];
-    _lightPoint setLightBrightness 10*_brightnessMultiplicator;
+    _lightPoint setLightBrightness 5*_brightnessMultiplicator;
 
     private _lightPointStart = "#lightpoint" createvehiclelocal (_firstPipePos);
     _lightPointStart setLightDayLight true;_lightPointStart setLightUseFlare true;
@@ -123,19 +127,24 @@ _cam camPreload 3;
 
     }, 0, [_cam, _lightPoint, _lastPipePos]] call CBA_fnc_addPerFramehandler;
 
-    [_cam, _firefly, _refract, _lightPoint, _duration] spawn {
-        params ["_cam", "_firefly", "_refract", "_lightPoint", "_duration"];
+    [_cam, _firefly, _refract, _lightPoint, _duration, _mask] spawn {
+        params ["_cam", "_firefly", "_refract", "_lightPoint", "_duration", "_mask"];
 
         sleep (_duration-2);
-        titleCut ["", "WHITE IN", 1.5];
         sleep 1.5;
         player setVariable ["grad_VM_teleportDone", true];
         deleteVehicle _firefly;
         deleteVehicle _refract;
         deleteVehicle _lightPoint;
         camDestroy _cam;
+        _mask ctrlSetFade 0;
+        _mask ctrlCommit 2;
+        3 fadeSound 1;
+        sleep 2;
+        _mask ctrlSetFade 1;
+        _mask ctrlCommit 2;
     };
 
 
 
-}, [_cam, _duration, _firstPipePos, _lastPipePos, _brightnessMultiplicator]] call CBA_fnc_waitUntilAndExecute;
+}, [_mask, _cam, _duration, _firstPipePos, _lastPipePos, _brightnessMultiplicator]] call CBA_fnc_waitUntilAndExecute;

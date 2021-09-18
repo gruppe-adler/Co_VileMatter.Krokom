@@ -2,9 +2,13 @@ class GRAD_VM_phase0 {
    tag = "GRAD_VM_phase0";
    class phase0 {
     file = "USER\functions\phase0";
-    class blueLight;
+    class addActionKeypad;
+    class init { postInit = 1; };
+    class civAnimate;
     class flickerLight;
     class introText;
+    class keyPadInit { postInit = 1; };
+    class keyPadUnlock;
     class lightningBetween;
     class portalOpening;
     class sparksEffectClient { postInit = 1; };

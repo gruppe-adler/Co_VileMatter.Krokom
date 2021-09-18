@@ -8,7 +8,7 @@
  * The object can be seen <BOOL>
  *
  * Example:
- * [monster] call Grad_VM_fnc_objectIsOnScreen;
+ * [monster] call Grad_VM_localEffects_fnc_objectIsOnScreen;
  */
 
 params ["_target"];

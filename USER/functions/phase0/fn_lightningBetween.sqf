@@ -8,8 +8,8 @@ params ["_object_1", "_object_2", "_duration"];
 
 playSound "gradVM_drone";
 
-private _startpoint = ([_object_1] call grad_VM_fnc_sparksGetPos);
-private _endpoint = ([_object_2] call grad_VM_fnc_sparksGetPos);
+private _startpoint = ([_object_1] call grad_VM_phase0_fnc_sparksGetPos);
+private _endpoint = ([_object_2] call grad_VM_phase0_fnc_sparksGetPos);
 private _reldir = _startpoint getDir _endpoint;
 private _distance = _object_1 distance _object_2;
 private _midPoint = _startpoint getPos [_distance/2, _reldir];

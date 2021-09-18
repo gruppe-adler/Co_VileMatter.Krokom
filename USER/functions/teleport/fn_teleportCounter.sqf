@@ -4,7 +4,7 @@ if (!canSuspend) exitWith {
     [_firstPipePos, _lastPipePos, _startDate, _endDate] execVM "USER\functions\teleport\fn_teleportCounter.sqf";
 };
 
-private _verticalCenter = safeZoneH * 0.2;
+private _verticalCenter = safeZoneH * 0.25;
 private _height = safeZoneH * 0.5;
 
 private _display = findDisplay 46;

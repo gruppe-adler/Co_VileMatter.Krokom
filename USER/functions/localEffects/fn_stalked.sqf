@@ -8,13 +8,13 @@
  * The object can be seen <BOOL>
  *
  * Example:
- * [monster] call Grad_VM_fnc_objectIsOnScreen;
+ * [monster] call Grad_VM_localEffects_fnc_objectIsOnScreen;
  */
 
 params ["_monsterType"];
 
 if !(canSuspend) exitWith {
-	_this spawn Grad_VM_fnc_stalked;
+	_this spawn Grad_VM_localEffects_fnc_stalked;
 };
 
 private _alreadyRunning = player getVariable ["GRAD_VM_stalkedIsRunning", false];
@@ -25,7 +25,7 @@ private _counter = 0;
 private _spawnPos = [worldSize / 2, worldSize / 2, 0];
 while {_counter < 100} do {
 	private _pos = [player, 30, 60, 1] call BIS_fnc_findSafePos;
-	if !([[_pos # 0, _pos # 1, 0]] call Grad_VM_fnc_objectIsOnScreen) exitWith {
+	if !([[_pos # 0, _pos # 1, 0]] call Grad_VM_localEffects_fnc_objectIsOnScreen) exitWith {
 		_spawnPos = _pos;
 	};
 	_counter = _counter + 1;
@@ -56,12 +56,12 @@ private _handler =
 			[_handle] call CBA_fnc_removePerFrameHandler;
 			player setVariable ["GRAD_VM_stalkedIsRunning", false, true];
 			deleteVehicle _monster;
-			[_monsterType] call Grad_VM_fnc_stalked;			
+			[_monsterType] call Grad_VM_localEffects_fnc_stalked;			
 		};
 		
-		private _topVisible = [_monster modelToWorld _top] call Grad_VM_fnc_objectIsOnScreen;
-		private _leftVisible = [_monster modelToWorld _left] call Grad_VM_fnc_objectIsOnScreen;
-		private _rightVisible = [_monster modelToWorld _right] call Grad_VM_fnc_objectIsOnScreen;
+		private _topVisible = [_monster modelToWorld _top] call Grad_VM_localEffects_fnc_objectIsOnScreen;
+		private _leftVisible = [_monster modelToWorld _left] call Grad_VM_localEffects_fnc_objectIsOnScreen;
+		private _rightVisible = [_monster modelToWorld _right] call Grad_VM_localEffects_fnc_objectIsOnScreen;
 
 		// createVehicle ["Sign_Sphere10cm_F", _monster modelToWorld _top, [], 0, "CAN_COLLIDE"];
 		// createVehicle ["Sign_Sphere10cm_F", _monster modelToWorld _left, [], 0, "CAN_COLLIDE"];

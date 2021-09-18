@@ -1,5 +1,5 @@
 if !(canSuspend) exitWith {
-	_this spawn GRAD_VM_fnc_refractingOrb;
+	_this spawn GRAD_VM_localEffects_fnc_refractingOrb;
 };
 
 private _pos = player getRelPos [75, random 360];
@@ -25,17 +25,17 @@ private _counter = 5;
 while { _iterations < _counter } do {
 	private _targetPos = player getPos [75, _orb getDir player];
 	_targetPos set [2, 5];
-	[_orb, _lightpoint, _targetPos] call GRAD_VM_fnc_moveOrb;
+	[_orb, _lightpoint, _targetPos] call GRAD_VM_localEffects_fnc_moveOrb;
 	waitUntil { ((getPos _orb) distance _targetPos) < 2 };
 	sleep (random 0.2) + 0.5;
 
 	_targetPos = player getRelPos [75, random 360];
 	_targetPos set [2, 5];
-	[_orb, _lightpoint, _targetPos] call GRAD_VM_fnc_moveOrb;	
+	[_orb, _lightpoint, _targetPos] call GRAD_VM_localEffects_fnc_moveOrb;	
 	waitUntil { ((getPos _orb) distance _targetPos) < 2 };
 	sleep (random 2) + 0.5;
 
 	_iterations = _iterations + 1;
 };
 
-[_orb, _lightpoint] call GRAD_VM_fnc_endOrb;
+[_orb, _lightpoint] call GRAD_VM_localEffects_fnc_endOrb;

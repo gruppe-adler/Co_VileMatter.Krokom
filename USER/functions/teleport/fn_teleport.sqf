@@ -1,10 +1,10 @@
-params ["_unit", "_position", "_index", "_duration"];
+params ["_unit", "_position", "_index", ["_duration", 10]];
 
 
 // debug
 if (isPlayer _unit) then {
 
-        [_unit, _position, _index, _duration] call GRAD_VM_teleport_fnc_teleportFX;
+        [_unit, _position, _index, _duration] remoteExec ["GRAD_VM_teleport_fnc_teleportFX", _unit];
 
         [{
                 params ["_unit", "_position"];

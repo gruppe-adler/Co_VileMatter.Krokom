@@ -42,7 +42,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
             private _fence = selectRandom _fences;
             // systemChat str _fence;
             // diag_log str _fence;
-            private _position = [_fence] call grad_VM_fnc_sparksGetPos;
+            private _position = [_fence] call grad_VM_phase0_fnc_sparksGetPos;
 
             // systemChat format ["position is %1", _position];
             // diag_log format ["position is %1", _position];
@@ -61,7 +61,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
 
             [{
                 params ["_object1", "_object2"];
-                [_object1, _object2, 10] remoteExec ["grad_VM_fnc_lightningBetween", 0];
+                [_object1, _object2, 10] remoteExec ["grad_VM_phase0_fnc_lightningBetween", 0];
 
             }, [_object1, _object2], _forEachIndex * 0.1] call CBA_fnc_waitAndExecute;
 
@@ -77,7 +77,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
             [phase0_transformer9,phase0_transformer1]
         ];
 
-        [] call GRAD_VM_fnc_portalOpening_phase0;
+        [] call GRAD_VM_phase0_fnc_portalOpening;
 
 }] call CBA_fnc_waitUntilAndExecute;
 
@@ -87,7 +87,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     { gradVM_portalPhase_0 == 3 },
     {
         {
-             [_x, [0,0,0], _forEachIndex] call GRAD_VM_teleport_fnc_teleport;
+             [_x, [0,0,0], _forEachIndex, 20] call GRAD_VM_teleport_fnc_teleport;
 
         } forEach playableUnits + switchableUnits;
 

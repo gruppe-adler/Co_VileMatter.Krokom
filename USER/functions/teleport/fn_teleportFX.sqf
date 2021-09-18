@@ -4,13 +4,25 @@ private _currentPosition = getPos _unit;
 
 drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,5,[1,1,0],[0,0,0],0,9,7,0,[.5,.5],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
-private _position = getPos _unit;
-private _firefly = "#particlesource" createVehicleLocal _position;
+private _firefly = "#particlesource" createVehicleLocal _currentPosition;
 _firefly setParticleCircle [.5,[0,0,0]];
 _firefly setParticleRandom [0,[0,0,0],[0,0,0],0,0,[0,0,0,0],1,0];
 _firefly setParticleParams [["\A3\data_f\proxies\muzzle_flash\mf_machineGun_Cheetah.p3d",1,0,1],"","SpaceObject",1,1,[0,0,0],[0,0,2],3,1.3,1,0,[0.1,0.1],[[1,1,1,1],[0,0,0,0]],[0],0,0,"","",_firefly, 0,true,0,[[255,255,255,10],[255,0,0,0]],[0,1,0]];
 _firefly setDropInterval 0.001;
 _firefly attachTo [_unit, [0,0,-1]];
+
+_unit playMoveNow "anim_jump_FlipForward"; // make unit float
+
+
+private _display = findDisplay 46;
+disableSerialization;
+private _mask = _display ctrlCreate ["RscText", -1];
+_mask ctrlSetPosition [safeZoneX,safeZoneY, safeZoneW,safeZoneH];
+_mask ctrlSetBackgroundColor [1,1,1,1];
+_mask ctrlSetFade 1;
+_mask ctrlCommit 0;
+_mask ctrlSetFade 0;
+_mask ctrlCommit 2;
 
 
 private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", getPosWorld _unit, true];
@@ -25,7 +37,7 @@ _unit setPos [(_index * -1000), (_index * -1000), 0];
 
 
 _unit setVariable ["grad_VM_teleportDone", false];
-[_duration] call GRAD_VM_teleport_fnc_wormHole;
+[_mask, _duration] call GRAD_VM_teleport_fnc_wormHole;
 
 
 
