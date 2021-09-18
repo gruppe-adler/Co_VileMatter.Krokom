@@ -21,11 +21,11 @@ _beam setPos [_xPos, _yPos, 2];
 [getpos _unit] call GRAD_VM_teleport_fnc_despawnEffect;
 
 // park unit off map for tunnel fx
-_unit setPos [_index * -1000, _index * -1000, 0];
+_unit setPos [(_index * -1000), (_index * -1000), 0];
 
 
 _unit setVariable ["grad_VM_teleportDone", false];
-[[-100,1000*index,1000], _duration] call GRAD_VM_teleport_fnc_wormHole;
+[_duration] call GRAD_VM_teleport_fnc_wormHole;
 
 
 

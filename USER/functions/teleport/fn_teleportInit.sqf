@@ -8,10 +8,10 @@ private _count = count (playableUnits + switchableUnits);
     private _index = _forEachIndex;
 
     [{
-        params ["_unit", "_targetPosition"];
+        params ["_unit", "_targetPosition", "_index"];
 
             [_unit, _targetPosition, _index, _duration] call GRAD_VM_teleport_fnc_teleport;
 
-    }, [_unit, _targetPosition], (_index/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
+    }, [_unit, _targetPosition, _index], (_index/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
 
 } forEach (playableUnits + switchableUnits);

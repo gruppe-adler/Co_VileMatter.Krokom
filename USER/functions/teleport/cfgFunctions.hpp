@@ -9,5 +9,6 @@ class GRAD_VM_teleport {
         class teleportFX;
         class teleportInit;
         class wormHole;
+        class wormHolePreload { postInit = 1; };
     };
 };
