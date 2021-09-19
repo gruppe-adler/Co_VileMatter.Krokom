@@ -17,7 +17,7 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     params ["_args", "_handle"];
     _args params ["_fenceParts", "_classnames"];
 
-        if (random 1 > 0.8 && gradVM_portalPhase_0 == 0) exitWith {};
+        if (random 1 > 0.97 && gradVM_portalPhase_0 == 0) exitWith {};
         // get all fences in range of any player
         private _fences = [];
         {
@@ -50,47 +50,4 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
             ["GRAD_electricFence_sparkSmall", [_fence, _position]] call CBA_fnc_globalEvent;
         };
 
-}, 0.1, [_fenceParts, _classnames]] call CBA_fnc_addPerFrameHandler;
-
-
-[
-    { gradVM_portalPhase_0 == 1 },
-    {
-        {
-            _x params ["_object1", "_object2"];
-
-            [{
-                params ["_object1", "_object2"];
-                [_object1, _object2, 10] remoteExec ["grad_VM_phase0_fnc_lightningBetween", 0];
-
-            }, [_object1, _object2], _forEachIndex * 0.1] call CBA_fnc_waitAndExecute;
-
-        } forEach [
-            [phase0_transformer1,phase0_transformer2],
-            [phase0_transformer2,phase0_transformer3],
-            [phase0_transformer3,phase0_transformer4],
-            [phase0_transformer4,phase0_transformer5],
-            [phase0_transformer5,phase0_transformer6],
-            [phase0_transformer6,phase0_transformer7],
-            [phase0_transformer7,phase0_transformer8],
-            [phase0_transformer8,phase0_transformer9],
-            [phase0_transformer9,phase0_transformer1]
-        ];
-
-        [] remoteExec ["GRAD_VM_phase0_fnc_portalOpening", 0];
-
-}] call CBA_fnc_waitUntilAndExecute;
-
-
-
-[
-    { gradVM_portalPhase_0 == 3 },
-    {
-        [{
-            {
-                 [_x, gradVM_portalPhaseTarget_0, _forEachIndex, 20] call GRAD_VM_teleport_fnc_teleport;
-
-            } forEach playableUnits + switchableUnits;
-        }, [], 4] call CBA_fnc_waitAndExecute;
-
-}] call CBA_fnc_waitUntilAndExecute;
+}, 0.2, [_fenceParts, _classnames]] call CBA_fnc_addPerFrameHandler;

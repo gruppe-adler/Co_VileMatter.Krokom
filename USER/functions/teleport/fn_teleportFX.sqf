@@ -11,42 +11,45 @@ _firefly setParticleParams [["\A3\data_f\proxies\muzzle_flash\mf_machineGun_Chee
 _firefly setDropInterval 0.001;
 _firefly attachTo [_unit, [0,0,-1]];
 
-_unit playMoveNow "anim_jump_FlipForward"; // make unit float
-
-
-private _display = findDisplay 46;
-disableSerialization;
-private _mask = _display ctrlCreate ["RscText", -1];
-_mask ctrlSetPosition [safeZoneX,safeZoneY, safeZoneW,safeZoneH];
-_mask ctrlSetBackgroundColor [1,1,1,1];
-_mask ctrlSetFade 1;
-_mask ctrlCommit 0;
-_mask ctrlSetFade 0;
-_mask ctrlCommit 2;
-
 
 private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", getPosWorld _unit, true];
 getPosWorld _unit params ["_xPos", "_yPos"];
 _beam setPos [_xPos, _yPos, 2];
 [_beam, 90, 0] call BIS_fnc_setPitchBank;
 
-[getpos _unit] remoteExec ["GRAD_VM_teleport_fnc_despawnEffect", 0];
+[getpos _unit] call GRAD_VM_teleport_fnc_despawnEffect;
 
-playSound "teleport";
+if (local _unit) then {
 
-// park unit off map for tunnel fx
-_unit setPos [(_index * -1000), (_index * -1000), 0];
+    private _display = findDisplay 46;
+    disableSerialization;
+    private _mask = _display ctrlCreate ["RscText", -1];
+    uiNamespace setVariable ["GRAD_VM_teleportMask", _mask];
+    _mask ctrlSetPosition [safeZoneX,safeZoneY, safeZoneW,safeZoneH];
+    _mask ctrlSetBackgroundColor [1,1,1,1];
+    _mask ctrlSetFade 1;
+    _mask ctrlCommit 0;
+    _mask ctrlSetFade 0;
+    _mask ctrlCommit 1;
 
+    [{
+        ctrlCommitted (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull])
+    },{
+        params ["_unit", "_index", "_duration"];
+        
+        systemChat "control";
 
-_unit setVariable ["grad_VM_teleportDone", false];
-[_mask, _duration] call GRAD_VM_teleport_fnc_wormHole;
-
-
+        // park unit off map for tunnel fx
+        _unit setPos [(_index * -1000), (_index * -1000), 0];
+        _unit setVariable ["grad_VM_teleportDone", false];
+        [_duration] call GRAD_VM_teleport_fnc_wormHole;
+    }, [_unit, _index, _duration]] call CBA_fnc_waitUntilAndExecute;
+};
 
 [{
         params ["_firefly"];
         deleteVehicle _firefly;
-}, [_firefly], 1.7] call CBA_fnc_waitAndExecute;
+}, [_firefly], 2.5] call CBA_fnc_waitAndExecute;
 
 [{
     params ["_currentPosition", "_destinationPosition", "_unit", "_beam"];
@@ -87,8 +90,6 @@ _unit setVariable ["grad_VM_teleportDone", false];
     }, [_lightPoint], 0.2] call CBA_fnc_waitAndExecute;
 
 
-    [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
-
     private _fireflyEnd = "#particlesource" createvehiclelocal [_currentPosition select 0, _currentPosition select 1, 1];
     _fireflyEnd setParticleCircle [0,[0,0,0]];
     _fireflyEnd setParticleRandom [0,[0,0,0],[0.1,0.1,0.1],1,0,[0,0,0,0.1],1,1];
@@ -101,14 +102,21 @@ _unit setVariable ["grad_VM_teleportDone", false];
     }, [_fireflyEnd], 0.2] call CBA_fnc_waitAndExecute;
 
 
-    [{
-        params ["_destinationPosition", "_unit"];
-        _unit getVariable ["grad_VM_teleportDone", false]
-    },{
-        params ["_destinationPosition", "_unit"];
-        _unit setPos (_destinationPosition findEmptyPosition [0,15]);
+    if (local _unit) then {
+        [{
+            params ["_destinationPosition", "_unit"];
+            _unit getVariable ["grad_VM_teleportDone", false]
+        },{
+            params ["_destinationPosition", "_unit"];
+             
+            [_unit] call grad_loadout_fnc_doLoadoutForUnit;
+            
+            _unit setPos (_destinationPosition findEmptyPosition [0,15]);
+            [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
+            [] execVM "USER\functions\phase0\fn_introText.sqf";
 
-    }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;
+        }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;
+    };
 
 
 }, [_currentPosition, _destinationPosition, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;

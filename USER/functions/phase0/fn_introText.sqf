@@ -2,6 +2,8 @@ if (!canSuspend) exitWith {
     [] execVM "USER\functions\phase0\fn_introText.sqf";
 };
 
+sleep 3;
+
 playSound "gradVM_crescendo";
 
 private _leftCorner = safeZoneX;
@@ -43,7 +45,7 @@ private _display = findDisplay 46; // createDisplay "RscDisplayEmpty";
 sleep 8;
 {
     private _character = _x;
-    private _duration = 8;
+    private _duration = 10;
     switch (_forEachIndex) do {
         // V
         case (0): {
@@ -111,7 +113,7 @@ _underline ctrlSetPosition [0,_verticalCenter,0,0.02];
 _underline ctrlSetBackgroundColor [1,1,1,1];
 _underline ctrlCommit 0;
 _underline ctrlSetPosition [0,_verticalCenter,1,0.02];
-_underline ctrlCommit 5;
+_underline ctrlCommit 10;
 
 sleep 9;
 {

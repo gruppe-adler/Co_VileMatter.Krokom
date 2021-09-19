@@ -1,6 +1,6 @@
 params ["_firstPipePos", "_lastPipePos", ["_startDate", 2035], ["_endDate", 9]];
 
-private _verticalCenter = safeZoneH * 0.25;
+private _verticalCenter = safeZoneH * 0.245;
 private _height = safeZoneH * 0.5;
 
 private _display = findDisplay 46;
@@ -43,7 +43,7 @@ _control ctrlCommit 2;
         _control ctrlCommit 2;
          [{
             ctrlDelete _this;
-         }, _control, 5] call CBA_fnc_waitAndExecute;
+         }, _control, 2] call CBA_fnc_waitAndExecute;
          [_handle] call CBA_fnc_removePerFrameHandler;
     };
 

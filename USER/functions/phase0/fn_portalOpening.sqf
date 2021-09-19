@@ -132,7 +132,6 @@ private _lightPoints = [];
     _lightPoint setLightBrightness 10;
 
     // lightpoint moving in center of stoneHenge
-
     [{
         params ["_args", "_handle"];
         _args params ["_lightPoint"];
@@ -182,13 +181,10 @@ private _lightPoints = [];
     }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
 
-    /*
-    [{
-        gradVM_portalPhase = 4;
-    }, [], 30] call CBA_fnc_waitAndExecute;
-    */
 
     _lightPoint say3D "gradVM_hum2";
+
+    drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,5,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
     // tail of beams
