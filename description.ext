@@ -139,3 +139,22 @@ class CfgGradCivs {
 class CfgGradFortifications {
     #include "USER\userFortifications.hpp"
 };
+
+
+class CfgSFX
+{
+	class GRAD_VM_Alarm
+	{
+		sound0[] = {"USER\sounds\alarm.ogg", db+7, 1.0, 1000, 0, 0, 0, 0};  // path to addon sound
+		sounds[] = {sound0};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
+};
+
+class CfgVehicles
+{
+	class GRAD_VM_AlarmSound // class name to be used with createSoundSource
+	{
+		sound = "GRAD_VM_Alarm"; // reference to CfgSFX class
+	};
+};

@@ -97,3 +97,116 @@ class gradVM_teleport3
     sound[] = {"USER\sounds\teleport4.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
+
+class Teleport_phase3
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Teleport_phase3";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Teleport_phase3.ogg", 3, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class Ship_Detected
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Ship_Detected";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Capital_Ship_Detected_normal.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+// Space-Marine voicelines:
+
+// class Captain_voiceLine
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Captain_voiceLine";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Captain_voiceLine.ogg", 4, 1, 600 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class For_the_Emperor_2
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "For_the_Emperor_2";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\For_the_Emperor_2.ogg", 4, 1, 600 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_1
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_1";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_1.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_2
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_2";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_2.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_3
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_3";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_3.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_4
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_4";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_4.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_5
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_5";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_5.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_6
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_6";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_6.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };
+
+// class Marine_Death_7
+// {
+//     // how the sound is referred to in the editor (e.g. trigger effects)
+//     name = "Marine_Death_7";
+//     // filename, volume, pitch, distance (optional)
+//     sound[] = { "sounds\Marine_Death_7.ogg", 3, 1, 500 };
+//     // subtitle delay in seconds, subtitle text
+//     titles[] = {  };
+// };

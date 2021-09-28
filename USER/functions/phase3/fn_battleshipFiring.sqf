@@ -1,0 +1,41 @@
+params ["_startPos", "_endPos", ["_projectileType", "TIOW_IG_PlasmaCannon_Rnd"], ["_projectileScale", 20], ["_projectileSpeed", 55]];
+
+private _projectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _startPos;
+_projectile setPosASL _startPos;
+private _flightVec = _startPos vectorFromTo _endPos;
+
+_projectile setVectorDir _flightVec;
+_projectile setVectorUp (_flightVec vectorCrossProduct [_flightVec # 1, _flightVec # 0, 0]);
+_projectileSpeed = _flightVec vectorMultiply _projectileSpeed;
+
+private _lightPoint = "#lightpoint" createvehiclelocal _startPos;
+_lightPoint setPosASL _startPos;
+_lightPoint setLightDayLight true;
+_lightPoint setLightColor[0, 0.1, 0.8];
+_lightPoint setLightAttenuation [0, 0, 0, 0, 0, 10000];
+_lightPoint setLightBrightness 40;
+
+[
+	{
+		params ["_args", "_handle"];
+		_args params ["_projectile", "_flightVec", "_projectileScale", "_projectileSpeed", "_lightPoint"];
+
+		if (isNull _projectile) exitWith {
+			[_handle] call CBA_fnc_removeperFrameHandler;
+			deleteVehicle _lightPoint;
+		};
+		_projectile setVectorDir _flightVec;
+		_projectile setVectorUp (_flightVec vectorCrossProduct [_flightVec # 1, _flightVec # 0, 0]);
+		private _newPos = (getPosASL _projectile) vectorAdd _projectileSpeed;
+		_projectile setPosASL _newPos;
+		_lightPoint setPosASL _newPos;
+		_projectile setObjectScale _projectileScale;
+		if (((ASLToAGL _newPos) select 2) < 5) then {
+			[_handle] call CBA_fnc_removeperFrameHandler;
+			_projectile setVelocity _flightVec;
+			deleteVehicle _lightPoint;
+		};
+	},
+	0,
+	[_projectile, _flightVec, _projectileScale, _projectileSpeed, _lightPoint]
+] call CBA_fnc_addPerFrameHandler;
