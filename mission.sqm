@@ -31960,7 +31960,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								init="light_phase0 = createSimpleObject [""\A3\data_f\VolumeLight"", position this, true]; " \n "[light_phase0, -90, 0] call BIS_fnc_setPitchBank;  " \n "light_phase0 setObjectScale 150;";
+								init="";
 								name="teleportcenter_phase0";
 							};
 							id=2750;
@@ -32927,7 +32927,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4107;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33588,7 +33588,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4169;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33606,7 +33606,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4170;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33624,7 +33624,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4171;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33642,7 +33642,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4172;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33660,7 +33660,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4173;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33678,7 +33678,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4174;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33696,7 +33696,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4175;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33714,7 +33714,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4176;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33732,7 +33732,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4177;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33750,7 +33750,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4178;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33768,7 +33768,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4179;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33786,7 +33786,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4180;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33804,7 +33804,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4181;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33822,7 +33822,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4182;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33840,7 +33840,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4183;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33858,7 +33858,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4184;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33876,7 +33876,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4185;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33894,7 +33894,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4186;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33912,7 +33912,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4187;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33930,7 +33930,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4188;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33948,7 +33948,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4189;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33966,7 +33966,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4190;
 			type="land_gm_euro_misc_tank_01_e";
@@ -33984,7 +33984,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4191;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34002,7 +34002,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4192;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34020,7 +34020,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4193;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34038,7 +34038,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4194;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34056,7 +34056,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4195;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34074,7 +34074,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4196;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34092,7 +34092,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4197;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34110,7 +34110,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4198;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34128,7 +34128,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4199;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34146,7 +34146,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4200;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34164,7 +34164,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4201;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34182,7 +34182,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4202;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34200,7 +34200,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4203;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34218,7 +34218,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4204;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34236,7 +34236,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4205;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34254,7 +34254,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4206;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34272,7 +34272,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4207;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34290,7 +34290,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4208;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34308,7 +34308,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4209;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34326,7 +34326,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4210;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34344,7 +34344,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4211;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34362,7 +34362,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4212;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34380,7 +34380,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4213;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34398,7 +34398,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4214;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34416,7 +34416,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4215;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34434,7 +34434,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4216;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34452,7 +34452,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4217;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34470,7 +34470,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4218;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34488,7 +34488,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4219;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34506,7 +34506,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4220;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34524,7 +34524,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4221;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34542,7 +34542,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4222;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34560,7 +34560,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4223;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34578,7 +34578,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4224;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34596,7 +34596,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4225;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34614,7 +34614,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4226;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34632,7 +34632,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4227;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34650,7 +34650,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4228;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34668,7 +34668,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4229;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34686,7 +34686,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4230;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34704,7 +34704,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4231;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34722,7 +34722,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4232;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34740,7 +34740,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4233;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34758,7 +34758,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4234;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34776,7 +34776,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4235;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34794,7 +34794,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4236;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34812,7 +34812,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4237;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34830,7 +34830,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4238;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34848,7 +34848,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4239;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34866,7 +34866,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4240;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34884,7 +34884,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4241;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34902,7 +34902,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4242;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34920,7 +34920,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4243;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34938,7 +34938,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4244;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34956,7 +34956,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4245;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34974,7 +34974,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4246;
 			type="land_gm_euro_misc_tank_01_e";
@@ -34992,7 +34992,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4247;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35010,7 +35010,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4248;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35028,7 +35028,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4249;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35046,7 +35046,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4250;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35064,7 +35064,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4251;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35082,7 +35082,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4252;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35100,7 +35100,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4253;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35118,7 +35118,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4254;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35136,7 +35136,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4255;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35154,7 +35154,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4256;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35172,7 +35172,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4257;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35190,7 +35190,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4258;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35208,7 +35208,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4259;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35226,7 +35226,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4260;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35244,7 +35244,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4261;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35262,7 +35262,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4262;
 			type="land_gm_euro_misc_tank_01_e";
@@ -35280,7 +35280,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
-				init="if (isServer) then { this setObjectScale 0.2; };";
+				init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
 			};
 			id=4263;
 			type="land_gm_euro_misc_tank_01_e";
@@ -46364,7 +46364,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="if(isserver) then {this setObjectScale 3;};";
+								init="[this, 3] call GRAD_VM_common_fnc_setObjectScaleSafe;";
 								name="flag_1";
 							};
 							id=7161;
@@ -46405,7 +46405,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="if(isserver) then {this setObjectScale 3;};";
+								init="[this, 3] call GRAD_VM_common_fnc_setObjectScaleSafe;";
 								name="flag_2";
 							};
 							id=7162;
@@ -162727,7 +162727,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="if (isServer) then {" \n "   this setObjectScale 1.5;" \n "};";
+				init="[this, 1.5] call GRAD_VM_common_fnc_setObjectScaleSafe;";
 			};
 			id=11289;
 			type="UserTexture_1x2_F";

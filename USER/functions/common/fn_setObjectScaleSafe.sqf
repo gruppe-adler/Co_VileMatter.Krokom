@@ -1,3 +1,5 @@
+if (!isServer) exitWith {};
+
 params ["_object", "_scale"];
 
 [{

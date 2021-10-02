@@ -1,9 +1,13 @@
 if (!isServer) exitWith {};
 
-(getPos light_phase0) params ["_posX", "_posY", "_posZ"];
+
+
+(getPos teleportcenter_phase0) params ["_posX", "_posY", "_posZ"];
+light_phase0 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]]; 
+
 light_phase0 setPos [_posX, _posY, 10];
 [light_phase0, -90, 0] call BIS_fnc_setPitchBank;
-light_phase0 setObjectScale 150;
+[light_phase0, 150] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer_F"], 30];
 
