@@ -33,7 +33,7 @@ drop [
 
 private _position = _battleship modelToWorld [200,400,100];
 private _lightPoint = "#lightpoint" createvehiclelocal _position;
-_lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
+_lightPoint setLightDayLight true; _lightPoint setLightUseFlare true;
 _lightPoint setLightFlareSize 2; _lightPoint setLightFlareMaxDistance 10000;
 _lightPoint setLightAmbient[1,1,1]; _lightPoint setLightColor[1,1,1];
 _lightPoint setLightAttenuation [2, 4, 4, 0, 1000, 10000];// [0,0,0,0,0,4000];
@@ -50,6 +50,7 @@ flareShrinking = false;
 		private _flareSize = _battleship getVariable ["flareSize", 0];
 		_flareSize = if (!flareShrinking) then {  _flareSize+1000 } else {  _flareSize-1000 };
 		_battleship setVariable ["flareSize", _flareSize];
+		_lightPoint setLightUseFlare true;
 		_lightPoint setLightFlareSize _flareSize;
 		_lightPoint setLightBrightness _flareSize/10;
 
