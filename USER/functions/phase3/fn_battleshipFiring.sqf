@@ -1,6 +1,11 @@
-params ["_startPos", "_endPos", ["_projectileType", "TIOW_IG_PlasmaCannon_Rnd"], ["_projectileScale", 20], ["_projectileSpeed", 55]];
+params ["_cannon", "_endPos", ["_projectileType", "TIOW_IG_PlasmaCannon_Rnd"], ["_projectileScale", 20], ["_projectileSpeed", 55]];
 
-private _projectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _startPos;
+// private _cannon = selectRandom ["GRAD_VM_cannonPos_1", "GRAD_VM_cannonPos_2", "GRAD_VM_cannonPos_3", "GRAD_VM_cannonPos_4"];
+private _ship = player getVariable "GRAD_VM_localBattleship";
+private _startPos = AGLToASL (_ship modelToWorld (GRAD_VM_battleship getVariable _cannon));
+
+// private _projectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _startPos; 
+private _projectile = createSimpleObject ["TIOW_IG_PlasmaCannon_Rnd", _startPos, true];
 _projectile setPosASL _startPos;
 private _flightVec = _startPos vectorFromTo _endPos;
 
@@ -32,8 +37,11 @@ _lightPoint setLightBrightness 40;
 		_projectile setObjectScale _projectileScale;
 		if (((ASLToAGL _newPos) select 2) < 5) then {
 			[_handle] call CBA_fnc_removeperFrameHandler;
-			_projectile setVelocity _flightVec;
+			_trueProjectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _newPos; 
+			_trueProjectile setPosASL _newPos;
+			_trueProjectile setVelocity _flightVec;
 			deleteVehicle _lightPoint;
+			deleteVehicle _projectile;
 		};
 	},
 	0,

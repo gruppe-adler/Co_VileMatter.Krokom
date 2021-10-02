@@ -9,31 +9,33 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 playSound3D [getMissionPath "USER\sounds\Hyperspace_Jump_Loud.ogg", GRAD_VM_BattleshipSound, false, getPosASL GRAD_VM_BattleshipSound, 5];
 sleep 11;
 
-[] remoteExec ["GRAD_VM_phase3_fnc_jumpEffect", [0, -2] select isMultiplayer];
-// execVM "functions\phase3\fn_jumpEffect.sqf";
+[] remoteExec ["GRAD_VM_phase3_fnc_handleBattleshipLocal", [0, -2] select isMultiplayer];
 
-movementSpeed = 10; 
-private _pfhHandler = [ 
- { 
-  params ["_args", "_handle"]; 
-  _args params ["_shipPos"]; 
- 
-  movementSpeed = movementSpeed/1.03; 
-  private _newPos = GRAD_VM_Battleship getRelPos [movementSpeed, 180]; 
-  _newPos = AGLToASL _newPos; 
-  _newPos set [2, _shipPos # 2]; 
- 
-  if (movementSpeed < 1) then { 
-	movementSpeed = 0.025;
-  }; 
- 
-  GRAD_VM_Battleship setPosASL _newPos; 
- }, 
- 0, 
- [getPosASL GRAD_VM_Battleship] 
-] call CBA_fnc_addPerFrameHandler;
+// [] remoteExec ["GRAD_VM_phase3_fnc_jumpEffect", [0, -2] select isMultiplayer];
+// // execVM "functions\phase3\fn_jumpEffect.sqf";
 
-sleep 3;
+// movementSpeed = 10; 
+// private _pfhHandler = [ 
+//  { 
+//   params ["_args", "_handle"]; 
+//   _args params ["_shipPos"]; 
+ 
+//   movementSpeed = movementSpeed/1.03; 
+//   private _newPos = GRAD_VM_Battleship getRelPos [movementSpeed, 180]; 
+//   _newPos = AGLToASL _newPos; 
+//   _newPos set [2, _shipPos # 2]; 
+ 
+//   if (movementSpeed < 1) then { 
+// 	movementSpeed = 0.025;
+//   }; 
+ 
+//   GRAD_VM_Battleship setPosASL _newPos; 
+//  }, 
+//  0, 
+//  [getPosASL GRAD_VM_Battleship] 
+// ] call CBA_fnc_addPerFrameHandler;
+
+sleep 4;
 
 private _soundSource = createSoundSource ["GRAD_VM_AlarmSound", Grad_VM_commsArray, [], 0];
 

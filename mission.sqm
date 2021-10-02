@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=671;
+		nextID=712;
 	};
 	class Camera
 	{
-		pos[]={5781.9653,377.25922,2534.5349};
-		dir[]={-0.93355018,-0.098076977,-0.34484321};
-		up[]={-0.092021957,0.99517739,-0.033991776};
-		aside[]={-0.34651452,-1.8998981e-007,0.93807095};
+		pos[]={4991.0332,523.3819,2287.0759};
+		dir[]={-0.77504528,-0.44571221,-0.44795638};
+		up[]={-0.38589975,0.8951726,-0.22303979};
+		aside[]={-0.50040954,-7.3574483e-008,0.86579871};
 	};
 };
 binarizationWanted=0;
@@ -1329,7 +1329,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=108;
+									items=110;
 									class Item0
 									{
 										class data
@@ -2842,6 +2842,34 @@ class CustomAttributes
 											value="ims_bluntweapon";
 										};
 									};
+									class Item108
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_overheating_enabled";
+										};
+									};
+									class Item109
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_medical_treatment_allowlittercreation";
+										};
+									};
 								};
 							};
 						};
@@ -2858,7 +2886,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=108;
+									items=110;
 									class Item0
 									{
 										class data
@@ -5674,7 +5702,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -5719,7 +5747,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=2;
+														value=0;
 													};
 												};
 												class Item1
@@ -5809,7 +5837,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -7700,6 +7728,96 @@ class CustomAttributes
 															};
 														};
 														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item108
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item109
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
 													};
 												};
 												class Item1
@@ -104348,6 +104466,7 @@ class Mission
 					class Attributes
 					{
 						lock="LOCKED";
+						createAsSimpleObject=1;
 						disableSimulation=1;
 					};
 					id=8004;
@@ -104366,6 +104485,7 @@ class Mission
 					class Attributes
 					{
 						lock="LOCKED";
+						createAsSimpleObject=1;
 						disableSimulation=1;
 					};
 					id=8005;
@@ -164172,7 +164292,7 @@ class Mission
 		class Item1057
 		{
 			dataType="Trigger";
-			position[]={4767.4121,131.35686,2677.5337};
+			position[]={4745.6123,140.5239,2582.2114};
 			angle=1.5707964;
 			class Attributes
 			{
@@ -164182,7 +164302,6 @@ class Mission
 			};
 			id=11339;
 			type="EmptyDetectorAreaR250";
-			atlOffset=-2.4694366;
 		};
 		class Item1058
 		{

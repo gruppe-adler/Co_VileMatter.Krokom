@@ -10,6 +10,7 @@ class GRAD_VM_phase3 {
       class marineSpawnEffect {};
       class spawnGuardsmen {};
       class guardsmenSpawnEffect {};
-      class activateCaveLamp {};    
+      class activateCaveLamp {};
+      class handleBattleshipLocal {};
    };
 };

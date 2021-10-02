@@ -6,9 +6,9 @@ while {true} do {
 	if (_targetPos inArea GRAD_VM_barrageExclusionArea) then { continue };
 	_targetPos = AGLToASL _targetPos;
 	private _cannon = selectRandom ["GRAD_VM_cannonPos_1", "GRAD_VM_cannonPos_2", "GRAD_VM_cannonPos_3", "GRAD_VM_cannonPos_4"];
-	private _cannonPos = AGLToASL (GRAD_VM_battleship modelToWorld (GRAD_VM_battleship getVariable _cannon));
+	// private _cannonPos = AGLToASL (GRAD_VM_battleship modelToWorld (GRAD_VM_battleship getVariable _cannon));
 
-	[_cannonPos, _targetPos] remoteExec ["Grad_VM_phase3_fnc_battleshipFiring", [0, -2] select isMultiplayer];
+	[_cannon, _targetPos] remoteExec ["Grad_VM_phase3_fnc_battleshipFiring", [0, -2] select isMultiplayer];
 
 	sleep ((random 4) + 3);
 };
