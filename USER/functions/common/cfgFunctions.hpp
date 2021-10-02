@@ -6,5 +6,6 @@ class GRAD_VM_common {
         class replaceRoads { postInit = 1; };
         class objectIsOnScreen {};
         class ropeCreate;
+        class setObjectScaleSafe;
     };
 };
