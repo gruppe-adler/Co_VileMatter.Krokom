@@ -1,3 +1,5 @@
+if (!isServer) exitWith {};
+
 private _roads = [worldSize/2, worldsize/2] nearRoads (worldsize/2);
 
 /*
@@ -40,7 +42,7 @@ private _offsets = [
             private _positionOffsetX = _road getPos [_offsetX, _dir];
             private _positionOffsetXY = _positionOffsetX getPos [_offsetY, _dir];
             private _position = AGLtoASL _positionOffsetXY;
-            private _decal = createSimpleObject [selectRandom _decalTypes, _position, true];
+            private _decal = createSimpleObject [selectRandom _decalTypes, _position, false];
             _decal setDir (random 360);
         } forEach _offsets;
     };
