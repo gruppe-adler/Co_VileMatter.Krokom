@@ -2,7 +2,7 @@ params ["_unit", "_position", "_index", ["_duration", 10], ["_numberStart", 2035
 
 
 // debug
-if (isPlayer _unit) then {
+if (!isPlayer _unit) then {
 
         [_unit, _position, _index, _duration, _numberStart, _numberEnd] remoteExec ["GRAD_VM_teleport_fnc_teleportFX", _unit];
 
