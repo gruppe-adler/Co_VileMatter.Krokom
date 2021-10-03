@@ -1,4 +1,4 @@
-params ["_unit", "_destinationPosition", "_index", "_duration"];
+params ["_unit", "_destinationPosition", "_index", "_duration", "_numberStart", "_numberEnd"];
 
 private _currentPosition = getPos _unit;
 
@@ -21,6 +21,8 @@ _beam setPos [_xPos, _yPos, 2];
 
 if (local _unit) then {
 
+    diwako_dui_main_toggled_off = true;
+
     private _display = findDisplay 46;
     disableSerialization;
     private _mask = _display ctrlCreate ["RscText", -1];
@@ -37,12 +39,12 @@ if (local _unit) then {
     },{
         params ["_unit", "_index", "_duration"];
         
-        systemChat "control";
+        // systemChat "control";
 
         // park unit off map for tunnel fx
         _unit setPos [(_index * -1000), (_index * -1000), 0];
         _unit setVariable ["grad_VM_teleportDone", false];
-        [_duration] call GRAD_VM_teleport_fnc_wormHole;
+        [_duration, _numberStart, _numberEnd] call GRAD_VM_teleport_fnc_wormHole;
     }, [_unit, _index, _duration]] call CBA_fnc_waitUntilAndExecute;
 };
 
@@ -114,6 +116,7 @@ if (local _unit) then {
             _unit setPos (_destinationPosition findEmptyPosition [0,15]);
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
             [] execVM "USER\functions\phase0\fn_introText.sqf";
+
 
         }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;
     };

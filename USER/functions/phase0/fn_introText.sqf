@@ -126,6 +126,9 @@ sleep 9;
     
 } forEach (_characters + [_underline]);
 
+sleep 3;
+diwako_dui_main_toggled_off = false;
+
 
 /*
 "VILE MATTER"
