@@ -9,6 +9,9 @@ _crystal addAction
         gradVM_portalPhase_1 = 1;
         publicVariable "gradVM_portalPhase_1";
 
+        private _position = getPosWorld phase1_pedestal;
+        _position set [2, _position#2 + 0.2];
+        _target setPosWorld _position;
         // todo set crystal on pedestal
     },
     nil,        // arguments

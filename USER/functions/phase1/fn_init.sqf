@@ -13,7 +13,7 @@ if (!isServer) exitWith {};
     gradVM_portalPhase_1 > 0
 },
 {
-  // [stoneHengerCenter] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
+  [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 
@@ -21,7 +21,7 @@ if (!isServer) exitWith {};
 [
     { gradVM_portalPhase_1 == 3 },
     {
-        // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
+        playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
         private _duration = 38;
         {
             [{
