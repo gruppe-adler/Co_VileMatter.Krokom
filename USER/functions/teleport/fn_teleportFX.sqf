@@ -19,7 +19,7 @@ _beam setPos [_xPos, _yPos, 2];
 
 [getpos _unit] call GRAD_VM_teleport_fnc_despawnEffect;
 
-if (local _unit) then {
+if (local _unit && isPlayer _unit) then {
 
     diwako_dui_main_toggled_off = true;
 
@@ -44,7 +44,9 @@ if (local _unit) then {
         // park unit off map for tunnel fx
         _unit setPos [(_index * -1000), (_index * -1000), 0];
         _unit setVariable ["grad_VM_teleportDone", false];
+        
         [_duration, _numberStart, _numberEnd] call GRAD_VM_teleport_fnc_wormHole;
+
     }, [_unit, _index, _duration]] call CBA_fnc_waitUntilAndExecute;
 };
 

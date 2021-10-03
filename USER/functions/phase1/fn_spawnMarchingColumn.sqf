@@ -6,6 +6,9 @@ params ["_position", "_dir", ["_rows", 3]];
 private _group = createGroup EAST;
 private _leader = _group createUnit ["Roman_legioner_cent_IMS_red", _position, [], 0, "NONE"];
 _leader setDir _dir;
+
+_leader setVariable ["GRAD_VM_isRoman", true, true];
+
 _group setFormDir _dir;
 
 _leader addWeapon "RM_Fire_torch";

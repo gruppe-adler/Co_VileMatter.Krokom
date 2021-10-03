@@ -85,6 +85,8 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
+            [] call GRAD_VM_phase1_fnc_init; // start next management step
+
         }, [], (_duration+5)] call CBA_fnc_waitAndExecute;
 
 }, []] call CBA_fnc_waitUntilAndExecute;

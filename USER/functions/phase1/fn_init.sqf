@@ -8,7 +8,6 @@ if (!isServer) exitWith {};
 
 // todo insert correct object
 
-
 [{
     gradVM_portalPhase_1 > 0
 },
