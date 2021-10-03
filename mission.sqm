@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=999;
+		nextID=1040;
 	};
 	class Camera
 	{
@@ -55,8 +55,6 @@ addons[]=
 	"JMSL_roman_helmets",
 	"JMSL_roman_clothing",
 	"A3_Weapons_F_Items",
-	"ace_medical_engine",
-	"ace_medical_treatment",
 	"JMSL_roman_armor",
 	"JMS_st_plants",
 	"A3_Structures_F_Tank_Decals_Horizontal",
@@ -69,7 +67,6 @@ addons[]=
 	"A3_Structures_F_Enoch_Industrial_Materials",
 	"A3_Structures_F_Civ_Accessories",
 	"A3_Structures_F_EPA_Civ_Camping",
-	"acex_sitting",
 	"A3_Structures_F_Items_Tools",
 	"CUP_Misc3_Config",
 	"A3_Structures_F_Heli_VR_Helpers",
@@ -136,7 +133,6 @@ addons[]=
 	"WW2_Objects_c_Structures_WW2_BET_Militia_c",
 	"WW2_Objects_c_Misc_WW2_EditorPreview_c",
 	"WW2_Objects_c_Misc_WW2_SimpleObjects_c_WW2",
-	"acex_field_rations",
 	"CUP_CAStructures_E_Misc_Misc_Interier",
 	"A3_Props_F_Exp_Commercial_Market",
 	"ace_dragging",
@@ -272,7 +268,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=170;
+		items=166;
 		class Item0
 		{
 			className="A3_Modules_F_Heli";
@@ -407,852 +403,824 @@ class AddonsMetaData
 		};
 		class Item22
 		{
-			className="ace_medical_engine";
-			name="ACE3 - Medical Engine";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item23
-		{
-			className="ace_medical_treatment";
-			name="ACE3 - Medical Treatment";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item24
-		{
 			className="JMSL_roman_armor";
 			name="JMSL_roman_armor";
 			author="JMax";
 		};
-		class Item25
+		class Item23
 		{
 			className="JMS_st_plants";
 			name="JMS_st_plants";
 			author="JMax";
 		};
-		class Item26
+		class Item24
 		{
 			className="A3_Structures_F_Tank";
 			name="Arma 3 Tank - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item25
 		{
 			className="WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP";
 			name="WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP";
 		};
-		class Item28
+		class Item26
 		{
 			className="A3_Structures_F_Exp_Cultural";
 			name="Arma 3 Apex - Cultural Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item29
+		class Item27
 		{
 			className="A3_Structures_F_Exp_Infrastructure";
 			name="Arma 3 Apex - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item28
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item31
+		class Item29
 		{
 			className="A3_Rocks_F_Enoch";
 			name="Arma 3 Contact Platform - Rocks and Stones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item32
+		class Item30
 		{
 			className="CUP_CAMisc";
 			name="CUP_CAMisc";
 		};
-		class Item33
+		class Item31
 		{
 			className="A3_Structures_F_Enoch_Industrial";
 			name="Arma 3 Contact Platform - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item32
 		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
-		{
-			className="acex_sitting";
-			name="ACEX - Sitting";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item36
+		class Item33
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item37
+		class Item34
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item35
 		{
 			className="A3_Misc_F";
 			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item36
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item40
+		class Item37
 		{
 			className="CUP_CAStructures_Nav_pier";
 			name="CUP_CAStructures_Nav_pier";
 		};
-		class Item41
+		class Item38
 		{
 			className="A3_Rocks_F_Exp";
 			name="Arma 3 Apex - Rocks and Stones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item42
+		class Item39
 		{
 			className="A3_Props_F_Orange";
 			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item43
+		class Item40
 		{
 			className="gm_structures_euro_80";
 			name="gm_structures_euro_80";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item44
+		class Item41
 		{
 			className="A3_Props_F_Enoch";
 			name="Arma 3 Contact Platform - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item45
+		class Item42
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item46
+		class Item43
 		{
 			className="TIOW_structures";
 			name="TIOW_structures";
 		};
-		class Item47
+		class Item44
 		{
 			className="A3_Structures_F_Enoch_Infrastructure";
 			name="Arma 3 Contact Platform - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item45
 		{
 			className="JMS_st_crystals";
 			name="JMS_st_crystals";
 			author="JMax";
 		};
-		class Item49
+		class Item46
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item50
+		class Item47
 		{
 			className="CUP_Misc_e_Config";
 			name="CUP_Misc_e_Config";
 		};
-		class Item51
+		class Item48
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item52
+		class Item49
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item53
+		class Item50
 		{
 			className="ace_repair";
 			name="ACE3 - Repair";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item54
+		class Item51
 		{
 			className="CUP_ind_silomale";
 			name="CUP_ind_silomale";
 		};
-		class Item55
+		class Item52
 		{
 			className="CUP_Ind_Dopravnik";
 			name="CUP_Ind_Dopravnik";
 		};
-		class Item56
+		class Item53
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item57
+		class Item54
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item58
+		class Item55
 		{
 			className="CUP_Editor_A2_Roads_Config";
 			name="CUP_Editor_A2_Roads_Config";
 		};
-		class Item59
+		class Item56
 		{
 			className="A3_Structures_F_Exp_Industrial";
 			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item60
+		class Item57
 		{
 			className="A3_Props_F_Tank";
 			name="Arma 3 Tank - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item61
+		class Item58
 		{
 			className="A3_Structures_F_Enoch_Civilian";
 			name="Arma 3 Contact Platform - Civilian Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item62
+		class Item59
 		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item63
+		class Item60
 		{
 			className="sfp_signs";
 			name="sfp_signs";
 		};
-		class Item64
+		class Item61
 		{
 			className="sfp_objects_ui";
 			name="sfp_objects_ui";
 		};
-		class Item65
+		class Item62
 		{
 			className="gm_objects_computers";
 			name="gm_objects_computers";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item66
+		class Item63
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item67
+		class Item64
 		{
 			className="A3_Structures_F_EPB";
 			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item68
+		class Item65
 		{
 			className="WHObjects3";
 			name="WHObjects3";
 		};
-		class Item69
+		class Item66
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item70
+		class Item67
 		{
 			className="WW2_Objects_c_Structures_WW2_BET_Militia_c";
 			name="WW2_Objects_c_Structures_WW2_BET_Militia_c";
 		};
-		class Item71
+		class Item68
 		{
 			className="WW2_Objects_c_Misc_WW2_EditorPreview_c";
 			name="WW2_Objects_c_Misc_WW2_EditorPreview_c";
 		};
-		class Item72
+		class Item69
 		{
 			className="WW2_Objects_c_Misc_WW2_SimpleObjects_c_WW2";
 			name="WW2_Objects_c_Misc_WW2_SimpleObjects_c_WW2";
 		};
-		class Item73
-		{
-			className="acex_field_rations";
-			name="ACEX - Field Rations";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item74
+		class Item70
 		{
 			className="CUP_CAStructures_E_Misc_Misc_Interier";
 			name="CUP_CAStructures_E_Misc_Misc_Interier";
 		};
-		class Item75
+		class Item71
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item76
+		class Item72
 		{
 			className="rhsgref_c_troops";
 			name="GREF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item77
+		class Item73
 		{
 			className="JMS_st_objectsCorridors";
 			name="JMS_st_objectsCorridors";
 			author="JMax";
 		};
-		class Item78
+		class Item74
 		{
 			className="JMS_st_objectsLights";
 			name="JMS_st_objectsLights";
 		};
-		class Item79
+		class Item75
 		{
 			className="JMS_st_objectsColAcces";
 			name="JMS_st_objectsColAcces";
 			author="JMax";
 		};
-		class Item80
+		class Item76
 		{
 			className="gm_characters_gc_civilians";
 			name="gm_characters_gc_civilians";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item81
+		class Item77
 		{
 			className="ace_nouniformrestrictions";
 			name="ACE3 - No Uniform Restrictions";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item82
+		class Item78
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item83
+		class Item79
 		{
 			className="A3_Characters_F_AoW";
 			name="Arma 3 Art of War - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item84
+		class Item80
 		{
 			className="A3_Rocks_F";
 			name="Arma 3 - Rocks and Stones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item85
+		class Item81
 		{
 			className="CUP_CAStructures_Castle";
 			name="CUP_CAStructures_Castle";
 		};
-		class Item86
+		class Item82
 		{
 			className="WildBoar_F";
 			name="WildBoar_F";
 		};
-		class Item87
+		class Item83
 		{
 			className="WW2_Assets_c_Misc_Dead_c";
 			name="WW2_Assets_c_Misc_Dead_c";
 		};
-		class Item88
+		class Item84
 		{
 			className="WW2_Core_c_WW2_EditorPreviews_c";
 			name="WW2_Core_c_WW2_EditorPreviews_c";
 		};
-		class Item89
+		class Item85
 		{
 			className="Edaly_Animals_Tiger";
 			name="Edaly_Animals_Tiger";
 			author="Projets Edaly";
 		};
-		class Item90
+		class Item86
 		{
 			className="emr_main";
 			name="Enhanced Movement Rework";
 			author="Simplex Team";
 		};
-		class Item91
+		class Item87
 		{
 			className="WW2_Objects_c_Misc_I44_ShowClassInEditor_Buildings_c";
 			name="WW2_Objects_c_Misc_I44_ShowClassInEditor_Buildings_c";
 		};
-		class Item92
+		class Item88
 		{
 			className="WW2_Objects_c_Misc_WW2_SimpleObjects_c_I44";
 			name="WW2_Objects_c_Misc_WW2_SimpleObjects_c_I44";
 		};
-		class Item93
+		class Item89
 		{
 			className="WW2_Objects_c_Misc_I44_EditorMapSizeAndIcon_c";
 			name="WW2_Objects_c_Misc_I44_EditorMapSizeAndIcon_c";
 		};
-		class Item94
+		class Item90
 		{
 			className="WW2_Objects_c_Misc_I44_EditorPreviews_c";
 			name="WW2_Objects_c_Misc_I44_EditorPreviews_c";
 		};
-		class Item95
+		class Item91
 		{
 			className="WW2_Objects_c_Misc_WW2_Walls_c_SWU_Walls";
 			name="WW2_Objects_c_Misc_WW2_Walls_c_SWU_Walls";
 		};
-		class Item96
+		class Item92
 		{
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item97
+		class Item93
 		{
 			className="WW2_Objects_c_Misc_I44_Objects_Beach_c";
 			name="WW2_Objects_c_Misc_I44_Objects_Beach_c";
 		};
-		class Item98
+		class Item94
 		{
 			className="DragonsTeeth";
 			name="DragonsTeeth";
 		};
-		class Item99
+		class Item95
 		{
 			className="WW2_Objects_c_Vegetation_IF_Bushes_c";
 			name="WW2_Objects_c_Vegetation_IF_Bushes_c";
 		};
-		class Item100
+		class Item96
 		{
 			className="WW2_Objects_c_Vegetation_IF_Misc_c";
 			name="WW2_Objects_c_Vegetation_IF_Misc_c";
 		};
-		class Item101
+		class Item97
 		{
 			className="WW2_Assets_c_Vehicles_StaticWeapons_c_Flak36";
 			name="WW2_Assets_c_Vehicles_StaticWeapons_c_Flak36";
 		};
-		class Item102
+		class Item98
 		{
 			className="gm_objects_fortification";
 			name="gm_objects_fortification";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item103
+		class Item99
 		{
 			className="WW2_Assets_c_Vehicles_StaticWeapons_c";
 			name="WW2_Assets_c_Vehicles_StaticWeapons_c";
 		};
-		class Item104
+		class Item100
 		{
 			className="WW2_Assets_c_Vehicles_Pictures_c";
 			name="WW2_Assets_c_Vehicles_Pictures_c";
 		};
-		class Item105
+		class Item101
 		{
 			className="CUP_Editor_Plants_Config";
 			name="CUP_Editor_Plants_Config";
 		};
-		class Item106
+		class Item102
 		{
 			className="WW2_Assets_c_Misc_SimpleObjects_c";
 			name="WW2_Assets_c_Misc_SimpleObjects_c";
 		};
-		class Item107
+		class Item103
 		{
 			className="WW2_Objects_c_Structures_WW2_BET_Signs_c";
 			name="WW2_Objects_c_Structures_WW2_BET_Signs_c";
 		};
-		class Item108
+		class Item104
 		{
 			className="HAG_Ponds";
 			name="HAG_Ponds";
 		};
-		class Item109
+		class Item105
 		{
 			className="A3_Structures_F_Oldman";
 			name="Arma 3 Oldman - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item110
+		class Item106
 		{
 			className="WW2_Assets_c_Vehicles_Planes_c_Ju87";
 			name="WW2_Assets_c_Vehicles_Planes_c_Ju87";
 		};
-		class Item111
+		class Item107
 		{
 			className="WW2_Assets_c_Vehicles_SimpleObjects_c";
 			name="WW2_Assets_c_Vehicles_SimpleObjects_c";
 		};
-		class Item112
+		class Item108
 		{
 			className="WW2_Assets_c_Vehicles_Wrecks_c";
 			name="WW2_Assets_c_Vehicles_Wrecks_c";
 		};
-		class Item113
+		class Item109
 		{
 			className="WW2_Assets_c_Vehicles_Planes_c_P47";
 			name="WW2_Assets_c_Vehicles_Planes_c_P47";
 		};
-		class Item114
+		class Item110
 		{
 			className="WW2_Assets_c_Vehicles_StaticWeapons_c_Pak40";
 			name="WW2_Assets_c_Vehicles_StaticWeapons_c_Pak40";
 		};
-		class Item115
+		class Item111
 		{
 			className="WW2_Assets_c_Vehicles_Planes_c_StaticLine";
 			name="WW2_Assets_c_Vehicles_Planes_c_StaticLine";
 		};
-		class Item116
+		class Item112
 		{
 			className="WW2_Assets_c_Vehicles_Planes_c_WACO";
 			name="WW2_Assets_c_Vehicles_Planes_c_WACO";
 		};
-		class Item117
+		class Item113
 		{
 			className="WW2_Assets_c_Vehicles_Wheeled_c_GazM1";
 			name="WW2_Assets_c_Vehicles_Wheeled_c_GazM1";
 		};
-		class Item118
+		class Item114
 		{
 			className="Jbad_Misc_Construction";
 			name="Jbad_Misc_Construction";
 		};
-		class Item119
+		class Item115
 		{
 			className="gm_weapons_cannons_122mm_2a18";
 			name="gm_weapons_cannons_122mm_2a18";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item120
+		class Item116
 		{
 			className="A3_Props_F_Argo";
 			name="Arma 3 Malden - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item121
+		class Item117
 		{
 			className="WW2_Assets_c_Misc_Items_c";
 			name="WW2_Assets_c_Misc_Items_c";
 		};
-		class Item122
+		class Item118
 		{
 			className="WW2_Assets_c_Weapons_Misc_c_Arsenal";
 			name="WW2_Assets_c_Weapons_Misc_c_Arsenal";
 		};
-		class Item123
+		class Item119
 		{
 			className="WW2_Objects_c_Structures_I44_War_Buildings_c";
 			name="WW2_Objects_c_Structures_I44_War_Buildings_c";
 		};
-		class Item124
+		class Item120
 		{
 			className="WW2_Objects_c_Structures_IF_BuildingsWinter_c";
 			name="WW2_Objects_c_Structures_IF_BuildingsWinter_c";
 		};
-		class Item125
+		class Item121
 		{
 			className="CUP_CAHouseBlock_B";
 			name="CUP_CAHouseBlock_B";
 		};
-		class Item126
+		class Item122
 		{
 			className="CUP_CAHouseBlock_D";
 			name="CUP_CAHouseBlock_D";
 		};
-		class Item127
+		class Item123
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item128
+		class Item124
 		{
 			className="WW2_Objects_c_Structures_IF_Buildings2_c";
 			name="WW2_Objects_c_Structures_IF_Buildings2_c";
 		};
-		class Item129
+		class Item125
 		{
 			className="CUP_CAStructures_PMC_Ruins";
 			name="CUP_CAStructures_PMC_Ruins";
 		};
-		class Item130
+		class Item126
 		{
 			className="CUP_CAStructures_Ruins";
 			name="CUP_CAStructures_Ruins";
 		};
-		class Item131
+		class Item127
 		{
 			className="jbad_opxmisc2_wall";
 			name="jbad_opxmisc2_wall";
 		};
-		class Item132
+		class Item128
 		{
 			className="WW2_Objects_c_Structures_IF_BuildingsRWWinter_c";
 			name="WW2_Objects_c_Structures_IF_BuildingsRWWinter_c";
 		};
-		class Item133
+		class Item129
 		{
 			className="A3_Structures_F_Enoch_Commercial";
 			name="Arma 3 Contact Platform - Commercial Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item134
+		class Item130
 		{
 			className="WW2_Objects_c_Structures_I44_Churches_c";
 			name="WW2_Objects_c_Structures_I44_Churches_c";
 		};
-		class Item135
+		class Item131
 		{
 			className="A3_Structures_F_Exp_Civilian";
 			name="Arma 3 Apex - Civilian Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item136
+		class Item132
 		{
 			className="Jbad_Misc_Fountain";
 			name="Jbad_Misc_Fountain";
 		};
-		class Item137
+		class Item133
 		{
 			className="WW2_Objects_c_Structures_CUP_BuildingsWinter_c";
 			name="WW2_Objects_c_Structures_CUP_BuildingsWinter_c";
 		};
-		class Item138
+		class Item134
 		{
 			className="Jbad_Misc_Cables";
 			name="Jbad_Misc_Cables";
 		};
-		class Item139
+		class Item135
 		{
 			className="WW2_Objects_c_Misc_WW2_Misc_c";
 			name="WW2_Objects_c_Misc_WW2_Misc_c";
 		};
-		class Item140
+		class Item136
 		{
 			className="CUP_CAStructures_E_Misc_Misc_Construction";
 			name="CUP_CAStructures_E_Misc_Misc_Construction";
 		};
-		class Item141
+		class Item137
 		{
 			className="CUP_Editor_Structures_Config";
 			name="CUP_Editor_Structures_Config";
 		};
-		class Item142
+		class Item138
 		{
 			className="A3_Data_F";
 			name="Arma 3 - Main Configuration";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item143
+		class Item139
 		{
 			className="shf_assets";
 			name="shf_assets";
 		};
-		class Item144
+		class Item140
 		{
 			className="WW2_Objects_c_Misc_IF_CoreData_c";
 			name="WW2_Objects_c_Misc_IF_CoreData_c";
 		};
-		class Item145
+		class Item141
 		{
 			className="WW2_Objects_c_Vegetation_IF_Burnt_c";
 			name="WW2_Objects_c_Vegetation_IF_Burnt_c";
 		};
-		class Item146
+		class Item142
 		{
 			className="A3_nature_sm";
 			name="Arma_Natures";
 			author="Arma_Natures";
 		};
-		class Item147
+		class Item143
 		{
 			className="WW2_Objects_c_Structures_IF_Castle_c";
 			name="WW2_Objects_c_Structures_IF_Castle_c";
 		};
-		class Item148
+		class Item144
 		{
 			className="CUP_CA_Config";
 			name="CUP_CA_Config";
 		};
-		class Item149
+		class Item145
 		{
 			className="CUP_Ind_Shed_01";
 			name="CUP_Ind_Shed_01";
 		};
-		class Item150
+		class Item146
 		{
 			className="CUP_CAStructures_E_Wall_Wall_L";
 			name="CUP_CAStructures_E_Wall_Wall_L";
 		};
-		class Item151
+		class Item147
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item152
+		class Item148
 		{
 			className="WW2_Core_c_WW2_Core_c";
 			name="WW2_Core_c_WW2_Core_c";
 		};
-		class Item153
+		class Item149
 		{
 			className="CUP_ibr_plants";
 			name="CUP_ibr_plants";
 		};
-		class Item154
+		class Item150
 		{
 			className="CUP_Editor_Rocks_Config";
 			name="CUP_Editor_Rocks_Config";
 		};
-		class Item155
+		class Item151
 		{
 			className="WHObjects2";
 			name="WHObjects2";
 		};
-		class Item156
+		class Item152
 		{
 			className="DRCAssets";
 			name="DRCAssets";
 		};
-		class Item157
+		class Item153
 		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item158
+		class Item154
 		{
 			className="TIOW_40k_Tau";
 			name="TIOW_40k_Tau";
 		};
-		class Item159
+		class Item155
 		{
 			className="DMCLS_weapons_c";
 			name="dmcls_weapons_c";
 			author="Sokolonko";
 		};
-		class Item160
+		class Item156
 		{
 			className="DMCLS_attachments_c";
 			name="dmcls_attachments_c";
 			author="Sokolonko";
 		};
-		class Item161
+		class Item157
 		{
 			className="TIOW_tau_40k_weapons";
 			name="40k";
 			author="TIOW_Sokolonko";
 		};
-		class Item162
+		class Item158
 		{
 			className="TIOW_Tau_Headgear";
 			name="TIOW_Tau_Headgear";
 		};
-		class Item163
+		class Item159
 		{
 			className="My_grenades";
 			name="My_grenades";
 		};
-		class Item164
+		class Item160
 		{
 			className="TIOW_Tau_Gear";
 			name="TIOW_Tau_Gear";
 		};
-		class Item165
+		class Item161
 		{
 			className="Sentinel_addons";
 			name="Sentinel_addons";
 		};
-		class Item166
+		class Item162
 		{
 			className="WHObjects";
 			name="WHObjects";
 		};
-		class Item167
+		class Item163
 		{
 			className="Valkyrie";
 			name="There is Only War Valkyries";
 			author="Battlestad+SabreOne";
 		};
-		class Item168
+		class Item164
 		{
 			className="Renegades_Foot";
 			name="Renegades_Foot";
 		};
-		class Item169
+		class Item165
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
