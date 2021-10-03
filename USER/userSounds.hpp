@@ -103,7 +103,7 @@ class Teleport_phase3
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "Teleport_phase3";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Teleport_phase3.ogg", 3, 1, 500 };
+    sound[] = { "USER\sounds\Teleport_phase3.ogg", 5, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -118,6 +118,15 @@ class Ship_Detected
     titles[] = {  };
 };
 
+class Hyperspace_Jump
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Hyperspace_Jump";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Hyperspace_Jump_Loud.ogg", 5, 1, 10000 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 
 class ite_lucem_angry_def
 {

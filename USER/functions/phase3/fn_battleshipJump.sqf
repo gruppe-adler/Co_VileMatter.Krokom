@@ -6,7 +6,8 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 ["Ship_Detected"] remoteExec ["playSound", [0, -2] select isMultiplayer];
 [3500] remoteExec ["setViewDistance", [0, -2] select isMultiplayer];
 
-playSound3D [getMissionPath "USER\sounds\Hyperspace_Jump_Loud.ogg", GRAD_VM_BattleshipSound, false, getPosASL GRAD_VM_BattleshipSound, 5];
+// playSound3D [getMissionPath "USER\sounds\Hyperspace_Jump_Loud.ogg", GRAD_VM_BattleshipSound, false, getPosASL GRAD_VM_BattleshipSound, 5];
+[GRAD_VM_BattleshipSound, ["Hyperspace_Jump", 10000, 1, false, 0]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 sleep 11;
 
 [] remoteExec ["GRAD_VM_phase3_fnc_handleBattleshipLocal", [0, -2] select isMultiplayer];

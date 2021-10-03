@@ -1,7 +1,7 @@
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, [0, -2] select isMultiplayer]; };
 // if !(canSuspend) exitWith { _this spawn Grad_VM_fnc_startBattleshipBarrage; };
 
-while {true} do {
+while { missionNamespace getVariable ["GRAD_VM_phase3Active", true] } do {
 	private _targetPos = GRAD_VM_barrageArea call BIS_fnc_randomPosTrigger;
 	if (_targetPos inArea GRAD_VM_barrageExclusionArea) then { continue };
 	_targetPos = AGLToASL _targetPos;
@@ -10,5 +10,5 @@ while {true} do {
 
 	[_cannon, _targetPos] remoteExec ["Grad_VM_phase3_fnc_battleshipFiring", [0, -2] select isMultiplayer];
 
-	sleep ((random 4) + 3);
+	sleep ((random 5) + 3);
 };

@@ -14,7 +14,8 @@ private _group = createGroup independent;
 	_unit setDir (getDir _x);
 	// _unit disableAI "MOVE";
 	// _unit allowDamage false;
-	_unit say3D ["Teleport_phase3", 500, 0.85];
+	// _unit say3D ["Teleport_phase3", 500, 0.85];
+	[_unit, ["Teleport_phase3", 500, 0.85]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 
 	sleep (random 0.4);
 
