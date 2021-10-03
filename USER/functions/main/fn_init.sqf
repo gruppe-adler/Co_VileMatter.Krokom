@@ -27,6 +27,18 @@ gradVM_portalPhaseEnd_3 = 4;
 gradVM_portalPhaseTarget_3 = getMarkerPos "mrk_phase_3_teleportTarget";
 
 
+// EXTEND REVIVE BLEEDOUT TO INFINITY
+if (isServer) then {
+    [{
+        time > 1
+    },{
+        bis_revive_bleedOutDuration = 99999;
+        publicVariable "bis_revive_bleedOutDuration";
+    }, []] call CBA_fnc_waitUntilAndExecute;
+};
+
+
+// LOADING SCREEN MASK
 if (hasInterface) then {
 
     "normal" cutText ["", "BLACK FADED", 15];
@@ -43,9 +55,6 @@ if (hasInterface) then {
 
             [{
                 "normal" cutText ["", "BLACK IN", 5];
-
-                    enableCamShake true;
-                    addCamShake [20, 2, 15];
             }, [], 15] call CBA_fnc_waitAndExecute;
 
         }, []] call CBA_fnc_waitUntilAndExecute;

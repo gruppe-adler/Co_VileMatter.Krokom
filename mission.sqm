@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4813.3833,200.24889,2244.6108};
-		dir[]={-0.7296142,-0.54944682,-0.40720409};
-		up[]={-0.47978178,0.83553106,-0.26777145};
-		aside[]={-0.48735619,2.3748726e-007,0.87322897};
+		pos[]={4148.2563,175.72444,1089.7773};
+		dir[]={0.86012149,-0.45411518,-0.23243842};
+		up[]={0.4383921,0.89094263,-0.11846954};
+		aside[]={-0.2608887,3.936002e-007,-0.96539706};
 	};
 };
 binarizationWanted=0;
@@ -1250,6 +1250,123 @@ class ScenarioData
 class CustomAttributes
 {
 	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="ReviveBleedOutDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=300;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ReviveDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=21.831438;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="ReviveMedicSpeedMultiplier";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=3;
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=5;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
