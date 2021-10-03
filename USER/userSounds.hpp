@@ -119,6 +119,67 @@ class Ship_Detected
 };
 
 
+class ite_lucem_angry_def
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "ite_lucem_angry_def";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\ite_lucem_angry_def.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class ite_lucem_angry_slo
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "ite_lucem_angry_slo";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\ite_lucem_angry_slo.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+class ite_lucem_plead_def
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "ite_lucem_plead_def";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\ite_lucem_plead_def.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class ite_lucem_plead_slo
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "ite_lucem_plead_slo";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\ite_lucem_plead_slo.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class ite_lucem_sin_def
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "ite_lucem_sin_def";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\ite_lucem_sin_def.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class ite_lucem_sin_slo
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "ite_lucem_sin_slo";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\ite_lucem_sin_slo.ogg", 3, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
 // Space-Marine voicelines:
 
 // class Captain_voiceLine
