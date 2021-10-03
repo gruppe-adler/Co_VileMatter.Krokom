@@ -1,10 +1,15 @@
+/*
+
+  clientside
+
+*/
+
+// JIP check
+if (gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1) exitWith {};
+
 params ["_stoneHengeCenter"];
 
-gradVM_portalPhase = 0; // initial step
-gradVM_portalPhaseEnd = 4;
 gradVM_beams = [];
-
-phase1Timeout = 12;
 
 [_stoneHengeCenter] execVM "User\functions\phase1\fn_stoneHengeFX.sqf";
 
@@ -62,7 +67,12 @@ private _handle = [{
         if (_lightpoint distance2d _stoneHengeCenterTop < 0.1) exitWith {
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
-            gradVM_portalPhase = 1;
+
+            // JIP proof execution
+            if (gradVM_portalPhase_1 < 1) then {
+              gradVM_portalPhase_1 = 1;
+              publicVariable "gradVM_portalPhase_1";
+            };
         };
     } forEach _lightPoints;
 
@@ -123,8 +133,8 @@ private _handle = [{
 
 
 
-
-[{gradVM_portalPhase == 1},
+// JIP proof execution
+[{gradVM_portalPhase_1 >= 1},
 {
     params ["_stoneHengeCenter", "_stoneHengeCenterTop"];
     private _lightPoint = "#lightpoint" createvehiclelocal _stoneHengeCenterTop;
@@ -181,7 +191,7 @@ private _handle = [{
 
 
     // clean up
-    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{
+    [{gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1},{
         deleteVehicle (_this select 0);
     }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
@@ -219,7 +229,7 @@ private _handle = [{
         [_beam, -90, 0] call BIS_fnc_setPitchBank;
 
         // clean up
-        [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
+        [{gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
 
     }, 0.02, [_stoneHengeCenter, _lightPoint]] call CBA_fnc_addPerFrameHandler;
 

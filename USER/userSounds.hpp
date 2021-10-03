@@ -3,7 +3,7 @@
 *   Ist in CfgSounds included.
 */
 
-#define VOLUME 5
+#define VOLUME 3
 #define DISTANCE 15
 
 class teleport
@@ -103,7 +103,7 @@ class Teleport_phase3
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "Teleport_phase3";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Teleport_phase3.ogg", 5, 1, 500 };
+    sound[] = { "USER\sounds\Teleport_phase3.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -113,7 +113,7 @@ class Ship_Detected
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "Ship_Detected";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Capital_Ship_Detected_normal.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\Capital_Ship_Detected_normal.ogg", 2, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -123,7 +123,7 @@ class Hyperspace_Jump
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "Hyperspace_Jump";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Hyperspace_Jump_Loud.ogg", 5, 1, 10000 };
+    sound[] = { "USER\sounds\Hyperspace_Jump_Loud.ogg", VOLUME, 1, 10000 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -133,7 +133,7 @@ class ite_lucem_angry_def
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_angry_def";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_angry_def.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_angry_def.ogg", VOLUME, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -143,7 +143,7 @@ class ite_lucem_angry_slo
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_angry_slo";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_angry_slo.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_angry_slo.ogg", VOLUME, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -154,7 +154,7 @@ class ite_lucem_plead_def
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_plead_def";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_plead_def.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_plead_def.ogg", VOLUME, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -164,7 +164,7 @@ class ite_lucem_plead_slo
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_plead_slo";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_plead_slo.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_plead_slo.ogg", VOLUME, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -174,7 +174,7 @@ class ite_lucem_sin_def
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_sin_def";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_sin_def.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_sin_def.ogg", VOLUME, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -184,7 +184,7 @@ class ite_lucem_sin_slo
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_sin_slo";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_sin_slo.ogg", 3, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_sin_slo.ogg", VOLUME, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -216,7 +216,7 @@ class ite_lucem_sin_slo
 //     // how the sound is referred to in the editor (e.g. trigger effects)
 //     name = "Marine_Death_1";
 //     // filename, volume, pitch, distance (optional)
-//     sound[] = { "sounds\Marine_Death_1.ogg", 3, 1, 500 };
+//     sound[] = { "sounds\Marine_Death_1.ogg", VOLUME, 1, 500 };
 //     // subtitle delay in seconds, subtitle text
 //     titles[] = {  };
 // };

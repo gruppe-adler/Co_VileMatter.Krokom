@@ -29,7 +29,7 @@ gradVM_portalPhaseTarget_3 = getMarkerPos "mrk_phase_3_teleportTarget";
 
 if (hasInterface) then {
 
-    "normal" cutText ["", "BLACK FADED", 5]; 
+    "normal" cutText ["", "BLACK FADED", 15];
 
     ["CBA_loadingScreenDone", {
         [{
@@ -38,14 +38,15 @@ if (hasInterface) then {
 
             [{
                 playSound "gradVM_ropethump";
-            }, [], 1] call CBA_fnc_waitAndExecute;
+                [player] call grad_loadout_fnc_doLoadoutForUnit;
+            }, [], 5] call CBA_fnc_waitAndExecute;
 
             [{
                 "normal" cutText ["", "BLACK IN", 5];
 
                     enableCamShake true;
                     addCamShake [20, 2, 15];
-            }, [], 5] call CBA_fnc_waitAndExecute;
+            }, [], 15] call CBA_fnc_waitAndExecute;
 
         }, []] call CBA_fnc_waitUntilAndExecute;
 

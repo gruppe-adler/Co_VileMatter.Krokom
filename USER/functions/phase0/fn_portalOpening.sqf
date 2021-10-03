@@ -57,7 +57,7 @@ private _lightPoints = [];
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
             // first player sends signal
-            if (gradVM_portalPhase_0 != 3) then {
+            if (gradVM_portalPhase_0 < 3) then {
                 gradVM_portalPhase_0 = 3;
                 publicVariable "gradVM_portalPhase_0";
             };
@@ -121,7 +121,8 @@ private _lightPoints = [];
 }, 0.02, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
 
 
-[{gradVM_portalPhase_0 == 3},
+// JIP proof execution
+[{gradVM_portalPhase_0 >= 3},
 {
     params ["_light_top"];
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);

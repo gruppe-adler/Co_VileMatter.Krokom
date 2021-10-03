@@ -1,9 +1,13 @@
+/*
+
+    server side, manages phase 0
+
+*/
+
 if (!isServer) exitWith {};
 
-
-
 (getPos teleportcenter_phase0) params ["_posX", "_posY", "_posZ"];
-light_phase0 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]]; 
+light_phase0 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 
 light_phase0 setPos [_posX, _posY, 10];
 [light_phase0, -90, 0] call BIS_fnc_setPitchBank;
@@ -78,6 +82,7 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
             gradVM_portalPhase_0 = 4;
             publicVariable "gradVM_portalPhase_0";
 
+            // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
         }, [], (_duration+5)] call CBA_fnc_waitAndExecute;
@@ -86,5 +91,3 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 
 
 // phase 4 (close effects)
-
-
