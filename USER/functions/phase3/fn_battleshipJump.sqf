@@ -40,9 +40,16 @@ sleep 4;
 
 private _soundSource = createSoundSource ["GRAD_VM_AlarmSound", Grad_VM_commsArray, [], 0];
 
-sleep 10;
+sleep 2.5;
 
-// systemChat "Barrage";
+[Grad_VM_commsArray, ["The_slaves_are_here", 800, 1, false, 0]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+
+sleep 3.5;
+
+[Grad_VM_commsArray, ["Imperial_Maggots", 800, 0.9, false, 0]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+
+sleep 7;
+
 [] spawn Grad_VM_phase3_fnc_startBattleshipBarrage;
 
 sleep 5;

@@ -128,6 +128,46 @@ class Hyperspace_Jump
     titles[] = {  };
 };
 
+class The_slaves_are_here
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "The_slaves_are_here";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\The_emperors_slaves_are_here.ogg", 4, 1, 800 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class Imperial_Maggots
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Imperial_Maggots";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Imperial_Maggots.ogg", 5, 1, 800 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class There_is_no_stopping
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "There_is_no_stopping";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\There_is_no_stopping_the_dark_gods.ogg", 4, 1, 800 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class Death_to_all_who_oppose_chaos
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Death_to_all_who_oppose_chaos";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Death_to_All_who_oppose_chaos.ogg", 4, 1, 800 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
 class ite_lucem_angry_def
 {
     // how the sound is referred to in the editor (e.g. trigger effects)

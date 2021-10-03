@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=917;
+		nextID=999;
 	};
 	class Camera
 	{
-		pos[]={4729.2593,177.31194,2180.6626};
-		dir[]={0.91444278,-0.39698744,0.079079747};
-		up[]={0.39552158,0.91781783,0.034204118};
-		aside[]={0.086159028,5.128677e-007,-0.99630731};
+		pos[]={4813.3833,200.24889,2244.6108};
+		dir[]={-0.7296142,-0.54944682,-0.40720409};
+		up[]={-0.47978178,0.83553106,-0.26777145};
+		aside[]={-0.48735619,2.3748726e-007,0.87322897};
 	};
 };
 binarizationWanted=0;
@@ -167330,7 +167330,7 @@ class Mission
 		class Item1056
 		{
 			dataType="Trigger";
-			position[]={4745.6123,140.5239,2582.2114};
+			position[]={4757.2925,141.05078,2538.6992};
 			angle=1.5707964;
 			class Attributes
 			{
@@ -167340,6 +167340,7 @@ class Mission
 			};
 			id=11339;
 			type="EmptyDetectorAreaR250";
+			atlOffset=-1.3423157;
 		};
 		class Item1057
 		{
@@ -167348,8 +167349,8 @@ class Mission
 			class Attributes
 			{
 				name="GRAD_VM_barrageExclusionArea";
-				sizeA=180;
-				sizeB=180;
+				sizeA=200;
+				sizeB=200;
 			};
 			id=11340;
 			type="EmptyDetectorAreaR250";
