@@ -10,7 +10,7 @@ if (!isServer) exitWith {};
 
 
 [{
-    gradVM_portalPhase_3 > 0
+    grad_VM_portalPhase_3 > 0
 },
 {
   // [stoneHengerCenter] remoteExec ["GRAD_VM_phase3_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
@@ -19,7 +19,7 @@ if (!isServer) exitWith {};
 
 // phase 3 init
 [
-    { gradVM_portalPhase_3 == 3 },
+    { grad_VM_portalPhase_3 == 3 },
     {
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
         private _duration = 38;
@@ -33,7 +33,7 @@ if (!isServer) exitWith {};
 
         // end light effects
         [{
-            ["gradVM_phaseControl", [3, 4]] call CBA_fnc_serverEvent;
+            ["grad_VM_phaseControl", [3, 4]] call CBA_fnc_serverEvent;
 
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase0", true] call GRAD_Loadout_fnc_FactionSetLoadout;

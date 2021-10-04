@@ -19,25 +19,25 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 */
 
 // store for immediate access
-gradVM_wormholePipes = [];
-gradVM_wormholeProps = [];
-gradVM_cameraBank = 0;
-gradVM_cameraBankChange = 0.02;
+grad_VM_wormholePipes = [];
+grad_VM_wormholeProps = [];
+grad_VM_cameraBank = 0;
+grad_VM_cameraBankChange = 0.02;
 
 private _startpoint = [-100,0,8000];
 
 for "_i" from 0 to 100 do {
     _startpoint set [1, (_i*2.85)];
     private _concretePipe = createSimpleObject ["Land_ConcretePipe_F", _startpoint, true];
-    gradVM_wormholePipes pushbackunique _concretePipe;
+    grad_VM_wormholePipes pushbackunique _concretePipe;
 
     if (_i == 100) then {
         private _endCube = createSimpleObject ["Land_VR_Shape_01_cube_1m_F", _startpoint, true];
         _endCube setObjectScale 5;
-        gradVM_wormholeProps pushbackunique _endCube;
+        grad_VM_wormholeProps pushbackunique _endCube;
     };
 };
 
-private _firstPipePos = getPos (gradVM_wormholePipes select 0);
+private _firstPipePos = getPos (grad_VM_wormholePipes select 0);
 _firstPipePos set [2, (_firstPipePos select 2) - 1.5];
-gradVM_cameraPosition = _firstPipePos;
+grad_VM_cameraPosition = _firstPipePos;

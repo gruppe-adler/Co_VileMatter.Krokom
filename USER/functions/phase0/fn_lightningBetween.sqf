@@ -6,7 +6,7 @@
 
 params ["_object_1", "_object_2", "_duration"];
 
-playSound "gradVM_drone";
+playSound "grad_VM_drone";
 
 private _startpoint = ([_object_1] call grad_VM_phase0_fnc_sparksGetPos);
 private _endpoint = ([_object_2] call grad_VM_phase0_fnc_sparksGetPos);

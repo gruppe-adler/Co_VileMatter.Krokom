@@ -6,7 +6,7 @@ _switch addAction
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 
-        _target setVariable ['gradVM_switchUsable', false, true];
+        _target setVariable ['grad_VM_switchUsable', false, true];
 
         _target animateSource ["Power_1", 1];
         _target animateSource ["Power_2", 1];
@@ -20,7 +20,7 @@ _switch addAction
     true,
     true,
     "",
-    "_target getVariable ['gradVM_switchUsable', true]",
+    "_target getVariable ['grad_VM_switchUsable', true]",
     10,
     false,
     "",

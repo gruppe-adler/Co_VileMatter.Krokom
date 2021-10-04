@@ -4,7 +4,7 @@ if ([0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getP
 params ["_teleportcenter_phase0"];
 
 // reset
-_teleportcenter_phase0 setVariable ["gradVM_zPos", -3];
+_teleportcenter_phase0 setVariable ["grad_VM_zPos", -3];
 
 private _transformers = nearestObjects [_teleportcenter_phase0, ["Land_DPP_01_transformer_F"], 30];
 private _transformerTips = [];
@@ -62,10 +62,9 @@ private _lightPoints = [];
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
             // first player sends signal
-            private _currentPhase = [0] call GRAD_VM_main_fnc_getCurrentPhase;
             private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
             if (_currentPhaseProgress < 3) then {
-                ["gradVM_phaseControl", [_currentPhase, 3]] call CBA_fnc_serverEvent;
+                ["grad_VM_phaseControl", [0, 3]] call CBA_fnc_serverEvent;
             };
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
@@ -145,8 +144,8 @@ private _lightPoints = [];
         params ["_args", "_handle"];
         _args params ["_lightPoint", "_teleportcenter_phase0"];
 
-        private _lightFlareSize = _teleportcenter_phase0 getVariable ["gradVM_lightFlareSize", 5];
-        private _lightFlareExpanding = _teleportcenter_phase0 getVariable ["gradVM_lightFlareExpanding", true];
+        private _lightFlareSize = _teleportcenter_phase0 getVariable ["grad_VM_lightFlareSize", 5];
+        private _lightFlareExpanding = _teleportcenter_phase0 getVariable ["grad_VM_lightFlareExpanding", true];
 
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
@@ -158,12 +157,12 @@ private _lightPoints = [];
 
         if (_lightFlareSize > _currentMaxSize) then {
             _lightFlareExpanding = false;
-            _teleportcenter_phase0 setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+            _teleportcenter_phase0 setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareSize < _currentMinSize) then {
             _lightFlareExpanding = true;
-            _teleportcenter_phase0 setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+            _teleportcenter_phase0 setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareExpanding) then {
@@ -175,7 +174,7 @@ private _lightPoints = [];
         };
 
 
-        _teleportcenter_phase0 setVariable ["gradVM_lightFlareSize", _lightFlareSize];
+        _teleportcenter_phase0 setVariable ["grad_VM_lightFlareSize", _lightFlareSize];
 
         drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,4,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
         // systemChat str _currentMaxSize;
@@ -183,18 +182,18 @@ private _lightPoints = [];
 
     }, 0.02, [_lightPoint, _teleportcenter_phase0]] call CBA_fnc_addPerFrameHandler;
 
-    _lightPoint say3D "gradVM_hum2";
+    _lightPoint say3D "grad_VM_hum2";
 
     drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,5,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
     // tail of beams
     private _beams = [];
-    private _zPos = _teleportcenter_phase0 getVariable ["gradVM_zPos", -3];
+    private _zPos = _teleportcenter_phase0 getVariable ["grad_VM_zPos", -3];
     for "_i" from 1 to 30 do {
 
        _zPos = _zPos + 3;
-       _teleportcenter_phase0 setVariable ["gradVM_zPos", _zPos];
+       _teleportcenter_phase0 setVariable ["grad_VM_zPos", _zPos];
 
        private _pos = getPosWorld _teleportcenter_phase0;
        private _dir = random 360;

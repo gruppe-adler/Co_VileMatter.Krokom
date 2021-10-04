@@ -10,7 +10,7 @@
 if (isServer) then {
 
     // current Phase, max Phase
-    private _gradVM_portalPhase = [
+    private _grad_VM_portalPhase = [
       0,
       [
         [0,4],
@@ -19,7 +19,7 @@ if (isServer) then {
         [0,4]
       ]
     ];
-    missionNamespace setVariable ["gradVM_portalPhase", _gradVM_portalPhase, true];
+    missionNamespace setVariable ["grad_VM_portalPhase", _grad_VM_portalPhase, true];
     ["BLU_F", "vm_vilematter_phase0", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
     // relevant only for AI
@@ -63,7 +63,7 @@ if (hasInterface) then {
         },{
 
             [{
-                playSound "gradVM_ropethump";
+                playSound "grad_VM_ropethump";
                 [player] call grad_loadout_fnc_doLoadoutForUnit;
             }, [], 5] call CBA_fnc_waitAndExecute;
 

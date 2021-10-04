@@ -22,7 +22,7 @@ _control ctrlCommit 2;
     _args params ["_firstPipePos", "_lastPipePos", "_startDate", "_endDate", "_control"];
 
     private _fullDistance = (_firstPipePos distance _lastPipePos);
-    private _currentDistance = (gradVM_cameraPosition distance _lastPipePos);
+    private _currentDistance = (grad_VM_cameraPosition distance _lastPipePos);
 
     // systemChat format ["%1, %2, %3, %4", _fullDistance, _currentDistance, _startDate, _endDate];
 

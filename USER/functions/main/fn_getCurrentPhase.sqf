@@ -1,3 +1,3 @@
-(missionNamespace getVariable ["gradVM_portalPhase", []]) params ["_currentPhase", "_phase"];
+(missionNamespace getVariable ["grad_VM_portalPhase", []]) params ["_currentPhase", "_phase"];
 
 _currentPhase

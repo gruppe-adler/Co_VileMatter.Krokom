@@ -4,7 +4,7 @@ if (!canSuspend) exitWith {
 
 sleep 3;
 
-playSound "gradVM_crescendo";
+playSound "grad_VM_crescendo";
 
 private _leftCorner = safeZoneX;
 private _rightCorner = 1;

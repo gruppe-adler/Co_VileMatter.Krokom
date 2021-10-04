@@ -12,7 +12,7 @@ params ["_stoneHengeCenter"];
 [_stoneHengeCenter] execVM "User\functions\phase1\fn_stoneHengeFX.sqf";
 
 // reset
-_stoneHengeCenter setVariable ["gradVM_zPos", -3];
+_stoneHengeCenter setVariable ["grad_VM_zPos", -3];
 
 private _stoneCircle = nearestObjects [_stoneHengeCenter, ["Land_Bare_boulder_04_F"], 30];
 private _effectDuration = 5;
@@ -67,9 +67,9 @@ private _handle = [{
             [_handle] call CBA_fnc_removePerFrameHandler;
 
             // JIP proof execution
-            if (gradVM_portalPhase_1 < 1) then {
-              gradVM_portalPhase_1 = 1;
-              publicVariable "gradVM_portalPhase_1";
+            if (grad_VM_portalPhase_1 < 1) then {
+              grad_VM_portalPhase_1 = 1;
+              publicVariable "grad_VM_portalPhase_1";
             };
         };
     } forEach _lightPoints;
@@ -151,8 +151,8 @@ private _handle = [{
         params ["_args", "_handle"];
         _args params ["_lightPoint", "_stoneHengeCenter"];
 
-        private _lightFlareSize = _stoneHengeCenter getVariable ["gradVM_lightFlareSize", 5];
-        private _lightFlareExpanding = _stoneHengeCenter getVariable ["gradVM_lightFlareExpanding", true];
+        private _lightFlareSize = _stoneHengeCenter getVariable ["grad_VM_lightFlareSize", 5];
+        private _lightFlareExpanding = _stoneHengeCenter getVariable ["grad_VM_lightFlareExpanding", true];
 
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
@@ -164,12 +164,12 @@ private _handle = [{
 
         if (_lightFlareSize > _currentMaxSize) then {
             _lightFlareExpanding = false;
-            _stoneHengeCenter setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+            _stoneHengeCenter setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareSize < _currentMinSize) then {
             _lightFlareExpanding = true;
-            _stoneHengeCenter setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+            _stoneHengeCenter setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareExpanding) then {
@@ -182,7 +182,7 @@ private _handle = [{
 
 
 
-        _stoneHengeCenter setVariable ["gradVM_lightFlareSize", _lightFlareSize];
+        _stoneHengeCenter setVariable ["grad_VM_lightFlareSize", _lightFlareSize];
 
         drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,4,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
         // systemChat str _currentMaxSize;
@@ -192,11 +192,11 @@ private _handle = [{
 
 
     private _beams = [];
-    private _zPos = _stoneHengeCenter getVariable ["gradVM_zPos", -3];
+    private _zPos = _stoneHengeCenter getVariable ["grad_VM_zPos", -3];
     for "_i" from 1 to 30 do {
 
        _zPos = _zPos + 3;
-       _stoneHengeCenter setVariable ["gradVM_zPos", _zPos];
+       _stoneHengeCenter setVariable ["grad_VM_zPos", _zPos];
 
        private _pos = getPosWorld _stoneHengeCenter;
        private _dir = random 360;

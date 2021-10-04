@@ -20,7 +20,7 @@ if (!isServer) exitWith {};
 
 // phase 3 init
 [
-    { gradVM_portalPhase_2 == 3 },
+    { grad_VM_portalPhase_2 == 3 },
     {
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
         private _duration = 38;
@@ -34,7 +34,7 @@ if (!isServer) exitWith {};
 
         // end light effects
         [{
-            ["gradVM_phaseControl", [2, 4]] call CBA_fnc_serverEvent;
+            ["grad_VM_phaseControl", [2, 4]] call CBA_fnc_serverEvent;
 
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase3", true] call GRAD_Loadout_fnc_FactionSetLoadout;

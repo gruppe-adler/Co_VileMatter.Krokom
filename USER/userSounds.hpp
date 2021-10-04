@@ -49,51 +49,51 @@ class GRAD_electricFence_sound_spark3
     titles[] = {0, ""};
 };
 
-class gradVM_drone
+class grad_VM_drone
 {
-    name = "gradVM_drone";
+    name = "grad_VM_drone";
     sound[] = {"USER\sounds\drone.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
-class gradVM_hum2
+class grad_VM_hum2
 {
-    name = "gradVM_hum2";
+    name = "grad_VM_hum2";
     sound[] = {"USER\sounds\hum2.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
-class gradVM_ropethump
+class grad_VM_ropethump
 {
-    name = "gradVM_ropethump";
+    name = "grad_VM_ropethump";
     sound[] = {"USER\sounds\ropethump.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
-class gradVM_crescendo
+class grad_VM_crescendo
 {
-    name = "gradVM_crescendo";
+    name = "grad_VM_crescendo";
     sound[] = {"USER\sounds\crescendo.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
-class gradVM_circus
+class grad_VM_circus
 {
-    name = "gradVM_circus";
+    name = "grad_VM_circus";
     sound[] = {"USER\sounds\circus.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
-class gradVM_teleportEnd
+class grad_VM_teleportEnd
 {
-    name = "gradVM_teleportEnd";
+    name = "grad_VM_teleportEnd";
     sound[] = {"USER\sounds\teleportEnd.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
-class gradVM_teleport3
+class grad_VM_teleport3
 {
-    name = "gradVM_teleport3";
+    name = "grad_VM_teleport3";
     sound[] = {"USER\sounds\teleport4.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };

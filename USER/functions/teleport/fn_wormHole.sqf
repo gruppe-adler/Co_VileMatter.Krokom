@@ -23,14 +23,14 @@ params [["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
 1 fadeEnvironment 0;
 // systemchat "wormhole";
 
-// gradVM_wormholePipes
-// gradVM_wormholeProps
+// grad_VM_wormholePipes
+// grad_VM_wormholeProps
 private _brightnessMultiplicator = (getLighting select 1);
 
 
-private _firstPipePos = getPos (gradVM_wormholePipes select 0);
+private _firstPipePos = getPos (grad_VM_wormholePipes select 0);
 _firstPipePos set [2, (_firstPipePos select 2) - 1.5];
-private _lastPipePos = getPos (gradVM_wormholePipes select ((count gradVM_wormholePipes) - 2));
+private _lastPipePos = getPos (grad_VM_wormholePipes select ((count grad_VM_wormholePipes) - 2));
 _lastPipePos set [2, (_lastPipePos select 2) - 1.5];
 
 private _startpoint = [-100,0,8000];
@@ -45,7 +45,7 @@ for "_i" from 0 to 100 do {
             _lightPoint setLightAttenuation [2, 4, 4, 8, 16, 1];
             _lightPoint setLightBrightness ((random 10 max 2.5)*_brightnessMultiplicator);
             _lightPoint setPos (ASLtoAGL _startpoint);
-            gradVM_wormholeProps pushbackunique _lightPoint;
+            grad_VM_wormholeProps pushbackunique _lightPoint;
         };
 };
 
@@ -70,7 +70,7 @@ _cam camPreload 3;
     _cam camSetPos _lastPipePos;
     _cam camCommit _duration;
 
-    _cam say3d "gradVM_teleport3";
+    _cam say3d "grad_VM_teleport3";
 
     (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlSetFade 1;
     (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlCommit 2;
@@ -98,7 +98,7 @@ _cam camPreload 3;
     _lightPointStart setLightAmbient[0.1,0.2,1]; _lightPointStart setLightColor[0.1,0.2,0.9];
     _lightPointStart setLightAttenuation [0, 1, 1, 2, 4, 100];
     _lightPointStart setLightBrightness 7*_brightnessMultiplicator;
-    gradVM_wormholeProps pushbackunique _lightPointStart;
+    grad_VM_wormholeProps pushbackunique _lightPointStart;
 
     private _lightPointEnd = "#lightpoint" createvehiclelocal (_lastPipePos);
     _lightPointEnd setLightDayLight true;_lightPointEnd setLightUseFlare false;
@@ -106,7 +106,7 @@ _cam camPreload 3;
     _lightPointEnd setLightAmbient[0.5,0.2,1]; _lightPointEnd setLightColor[0.5,0.2,0.9];
     _lightPointEnd setLightAttenuation [0, 1, 1, 2, 4, 100];
     _lightPointEnd setLightBrightness 10*_brightnessMultiplicator;
-    gradVM_wormholeProps pushbackunique _lightPointEnd;
+    grad_VM_wormholeProps pushbackunique _lightPointEnd;
 
     [{
         params ["_args", "_handle"];
@@ -115,9 +115,9 @@ _cam camPreload 3;
         if (isNull _cam) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
         {
-            gradVM_cameraBank = gradVM_cameraBank + gradVM_cameraBankChange;
-            [_x,[0,gradVM_cameraBank,0]] call GRAD_VM_teleport_fnc_setPitchBankYaw;
-        } forEach gradVM_wormholePipes;
+            grad_VM_cameraBank = grad_VM_cameraBank + grad_VM_cameraBankChange;
+            [_x,[0,grad_VM_cameraBank,0]] call GRAD_VM_teleport_fnc_setPitchBankYaw;
+        } forEach grad_VM_wormholePipes;
 
         private _lightPos = (_cam getPos [20,0]);
         _lightPos set [2, (getPos _cam) select 2];
@@ -125,7 +125,7 @@ _cam camPreload 3;
 
         // systemChat str (getpos _lightPoint);
 
-        gradVM_cameraPosition = getPos _cam;
+        grad_VM_cameraPosition = getPos _cam;
 
     }, 0, [_cam, _lightPoint, _lastPipePos]] call CBA_fnc_addPerFramehandler;
 
@@ -139,7 +139,7 @@ _cam camPreload 3;
         (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlCommit 2;
         3 fadeEnvironment 1;
 
-        playSound "gradVM_teleportEnd";
+        playSound "grad_VM_teleportEnd";
         [{
             params ["_cam", "_firefly", "_refract", "_lightPoint", "_duration"];
             player setVariable ["grad_VM_teleportDone", true, true];

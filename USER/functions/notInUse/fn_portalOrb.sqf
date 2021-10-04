@@ -18,7 +18,7 @@ portalSphere setObjectTexture [0, "#(argb,512,512,1)r2t(bliasd,1)"];
     private _scale = getObjectScale portalSphere;
 
     if (_scale > 3) then {
-        gradVM_portalPhase_1 = gradVM_portalPhaseEnd_1;
+        grad_VM_portalPhase_1 = grad_VM_portalPhaseEnd_1;
         [_handle] call CBA_fnc_removePerFrameHandler;
         // portalSphere setObjectScale (0.1);
     };
