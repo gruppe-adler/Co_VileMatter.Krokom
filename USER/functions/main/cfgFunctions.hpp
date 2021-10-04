@@ -11,6 +11,6 @@ class GRAD_VM_main {
       class initPhase1;
       class initPhase2;
       class initPhase3;
-      class phaseEventHandler;
+      class phaseEventHandler { postInit = 1; };
    };
 };

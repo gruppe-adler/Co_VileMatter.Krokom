@@ -10,8 +10,8 @@
 if (isServer) then {
 
     // current Phase, max Phase
-    gradVM_portalPhase = [
-      [0],
+    private _gradVM_portalPhase = [
+      0,
       [
         [0,4],
         [0,4],
@@ -19,7 +19,9 @@ if (isServer) then {
         [0,4]
       ]
     ];
-    publicVariable "gradVM_portalPhase";
+    missionNamespace setVariable ["gradVM_portalPhase", _gradVM_portalPhase, true];
+
+    call GRAD_VM_main_fnc_initPhase0;
 
     // iran cave
     gradVM_portalPhaseTarget_0 = getMarkerPos "mrk_phase_0_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_0";
