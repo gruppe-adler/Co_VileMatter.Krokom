@@ -131,7 +131,7 @@ private _lightPoints = [];
     [0] call GRAD_VM_main_fnc_getPhaseProgress >= 3
 },
 {
-    params ["_light_top"];
+    params ["_light_top", "_teleportcenter_phase0"];
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
     _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
@@ -214,4 +214,4 @@ private _lightPoints = [];
       deleteVehicle _lightPoint;
     }, [_beams, _lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
-}, [_light_top]] call CBA_fnc_waitUntilAndExecute;
+}, [_light_top, _teleportcenter_phase0]] call CBA_fnc_waitUntilAndExecute;
