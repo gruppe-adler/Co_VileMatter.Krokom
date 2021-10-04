@@ -5,6 +5,7 @@ class GRAD_VM_phase3 {
       class battleshipJump {};
       class battleshipFiring {};
       class startBattleshipBarrage {};
+      class fireAA {};
       class jumpEffect {};
       class spawnMarines {};
       class marineSpawnEffect {};

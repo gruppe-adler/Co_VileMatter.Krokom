@@ -3,7 +3,7 @@ private _battleship = "TIOW_Oberon" createVehicleLocal [0, 0, 0];
 _battleship hideObject true;
 _battleship setPosASL (getPosASL GRAD_VM_Battleship);
 _battleship setDir (getDir GRAD_VM_Battleship);
-player setVariable ["GRAD_VM_localBattleship", _battleship];
+player setVariable ["GRAD_VM_localBattleship", _battleship, true];
 
 [_battleship] call GRAD_VM_phase3_fnc_jumpEffect;
 
@@ -19,7 +19,7 @@ private _pfhHandler = [
 	_newPos set [2, _shipPos # 2]; 
 	
 	if (movementSpeed < 1) then { 
-		movementSpeed = 0.02;
+		movementSpeed = 0.04;
 	}; 
 	
 		_ship setPosASL _newPos; 

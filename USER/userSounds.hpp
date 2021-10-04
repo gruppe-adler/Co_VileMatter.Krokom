@@ -168,6 +168,26 @@ class Death_to_all_who_oppose_chaos
     titles[] = {  };
 };
 
+class Charge
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Charge";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Charge.ogg", 5, 1, 1000 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class For_the_empirium_of_man
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "For_the_empirium_of_man";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\For_the_empirium_of_man.ogg", 5, 1, 1000 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
 class ite_lucem_angry_def
 {
     // how the sound is referred to in the editor (e.g. trigger effects)

@@ -145,7 +145,7 @@ class CfgSFX
 {
 	class GRAD_VM_Alarm
 	{
-		sound0[] = {"USER\sounds\alarm.ogg", db+6, 1.0, 1000, 0, 0, 0, 0};  // path to addon sound
+		sound0[] = {"USER\sounds\alarm.ogg", db+6, 1.0, 1200, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};

@@ -1,4 +1,4 @@
-params ["_cannon", "_endPos", ["_projectileType", "TIOW_IG_PlasmaCannon_Rnd"], ["_projectileScale", 20], ["_projectileSpeed", 50]];
+params ["_cannon", "_endPos", ["_projectileType", "TIOW_IG_PlasmaCannon_Rnd"], ["_projectileScale", 20], ["_projectileSpeed", 50], ["_targetToDestroy", objNull]];
 
 // private _cannon = selectRandom ["GRAD_VM_cannonPos_1", "GRAD_VM_cannonPos_2", "GRAD_VM_cannonPos_3", "GRAD_VM_cannonPos_4"];
 private _ship = player getVariable "GRAD_VM_localBattleship";
@@ -23,7 +23,7 @@ _lightPoint setLightBrightness 40;
 [
 	{
 		params ["_args", "_handle"];
-		_args params ["_projectile", "_flightVec", "_projectileScale", "_projectileSpeed", "_lightPoint"];
+		_args params ["_projectile", "_flightVec", "_projectileScale", "_projectileSpeed", "_lightPoint", "_targetToDestroy"];
 
 		if (isNull _projectile) exitWith {
 			[_handle] call CBA_fnc_removeperFrameHandler;
@@ -42,8 +42,11 @@ _lightPoint setLightBrightness 40;
 			_trueProjectile setVelocity _flightVec;
 			deleteVehicle _lightPoint;
 			deleteVehicle _projectile;
+			if (_targetToDestroy isNotEqualTo objNull) then {
+				_targetToDestroy setDamage 1;
+			};
 		};
 	},
 	0,
-	[_projectile, _flightVec, _projectileScale, _projectileSpeed, _lightPoint]
+	[_projectile, _flightVec, _projectileScale, _projectileSpeed, _lightPoint, _targetToDestroy]
 ] call CBA_fnc_addPerFrameHandler;
