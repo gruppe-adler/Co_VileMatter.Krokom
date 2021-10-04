@@ -30,18 +30,7 @@ if (isServer) then {
     // start phase 0 manually
     call GRAD_VM_main_fnc_initPhase0;
 
-    // iran cave
-    gradVM_portalPhaseTarget_0 = getMarkerPos "mrk_phase_0_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_0";
-
-    // stonehenge
-    gradVM_portalPhaseTarget_1 = getMarkerPos "mrk_phase_1_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_1";
-
-    // ww2 reichstag
-    gradVM_portalPhaseTarget_2 = getMarkerPos "mrk_phase_2_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_2";
-
-    // warhammer future arena
-    gradVM_portalPhaseTarget_3 = getMarkerPos "mrk_phase_3_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_3";
-
+ 
     [{
         time > 1
     },{

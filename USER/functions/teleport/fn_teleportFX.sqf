@@ -1,4 +1,4 @@
-params ["_unit", "_destinationPosition", "_index", "_duration", "_numberStart", "_numberEnd"];
+params ["_unit", "_destinationPositions", "_index", "_duration", "_numberStart", "_numberEnd"];
 
 private _currentPosition = getPos _unit;
 
@@ -56,10 +56,10 @@ if (local _unit && isPlayer _unit) then {
 }, [_firefly], 2.5] call CBA_fnc_waitAndExecute;
 
 [{
-    params ["_currentPosition", "_destinationPosition", "_unit", "_beam"];
+    params ["_currentPosition", "_destinationPositions", "_unit", "_beam"];
     _currentPosition distance2d _unit > 200
 },{
-    params ["_currentPosition", "_destinationPosition", "_unit", "_beam"];
+    params ["_currentPosition", "_destinationPositions", "_unit", "_beam"];
 
     deleteVehicle _beam;
 
@@ -108,20 +108,21 @@ if (local _unit && isPlayer _unit) then {
 
     if (local _unit) then {
         [{
-            params ["_destinationPosition", "_unit"];
+            params ["_destinationPositions", "_unit"];
             _unit getVariable ["grad_VM_teleportDone", false]
         },{
-            params ["_destinationPosition", "_unit"];
+            params ["_destinationPositions", "_unit"];
              
             [_unit] call grad_loadout_fnc_doLoadoutForUnit;
             
-            _unit setPos (_destinationPosition findEmptyPosition [0,15]);
+            private _customPosition = selectRandom _destinationPositions;
+            _unit setPos (_customPosition findEmptyPosition [0,8]);
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
             [] execVM "USER\functions\phase0\fn_introText.sqf";
 
 
-        }, [_destinationPosition, _unit]] call CBA_fnc_waitUntilAndExecute;
+        }, [_destinationPositions, _unit]] call CBA_fnc_waitUntilAndExecute;
     };
 
 
-}, [_currentPosition, _destinationPosition, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;
+}, [_currentPosition, _destinationPositions, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;

@@ -62,7 +62,7 @@ private _lightPoints = [];
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
             // first player sends signal
-            private _currentPhase = [0] call GRAD_VM_main_fnc_getPhase;
+            private _currentPhase = [0] call GRAD_VM_main_fnc_getCurrentPhase;
             private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
             if (_currentPhaseProgress < 3) then {
                 ["gradVM_phaseControl", [_currentPhase, 3]] call CBA_fnc_serverEvent;
@@ -129,8 +129,8 @@ private _lightPoints = [];
 
 [{
     // JIP proof execution
-    private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
-  _currentPhaseProgress >= 3},
+    [0] call GRAD_VM_main_fnc_getPhaseProgress >= 3
+},
 {
     params ["_light_top"];
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);

@@ -4,6 +4,7 @@ class GRAD_VM_main {
   class main {
       file = "USER\functions\main";
       class getCurrentPhase;
+      class getCurrentTeleportTarget; 
       class getPhaseMaxProgress;
       class getPhaseProgress;
       class init { postInit = 1; };
