@@ -13,7 +13,7 @@ _switch addAction
         _target animateSource ["SwitchLight", 0];
         _target animateSource ["SwitchPosition", 1];
 
-        [0, 1] call CBA_fnc_serverEvent;
+        ["GRAD_VM_phaseControl", [0, 1]] call CBA_fnc_serverEvent;
     },
     nil,
     1.5,

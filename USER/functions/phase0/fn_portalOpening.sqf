@@ -60,7 +60,7 @@ private _lightPoints = [];
             private _currentPhase = call GRAD_VM_main_fnc_getPhase;
             private _currentPhaseProgress = call GRAD_VM_main_fnc_getPhaseProgress;
             if (_currentPhaseProgress < 3) then {
-                [_currentPhase, 3] call CBA_fnc_serverEvent;
+                ["gradVM_phaseControl", [_currentPhase, 3]] call CBA_fnc_serverEvent;
             };
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;

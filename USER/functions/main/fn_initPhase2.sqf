@@ -10,7 +10,8 @@ if (!isServer) exitWith {};
 
 
 [{
-    gradVM_portalPhase_2 > 0
+  private _currentPhaseProgress = [2] call GRAD_VM_main_fnc_getPhaseProgress;
+  _currentPhaseProgress > 0
 },
 {
   // [stoneHengerCenter] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
