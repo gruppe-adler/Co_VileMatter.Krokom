@@ -1,7 +1,7 @@
 // JIP check
 if ([0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
 
-params ["_teleportcenter_phase0"]
+params ["_teleportcenter_phase0"];
 
 // reset
 _teleportcenter_phase0 setVariable ["gradVM_zPos", -3];

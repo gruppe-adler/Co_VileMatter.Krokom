@@ -9,8 +9,6 @@ if ([1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getP
 
 params ["_stoneHengeCenter"];
 
-gradVM_beams = [];
-
 [_stoneHengeCenter] execVM "User\functions\phase1\fn_stoneHengeFX.sqf";
 
 // reset

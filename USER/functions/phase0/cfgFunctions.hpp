@@ -3,7 +3,6 @@ class GRAD_VM_phase0 {
    class phase0 {
     file = "USER\functions\phase0";
     class addActionKeypad;
-    class init { postInit = 1; };
     class createDruid;
     class civAnimate;
     class flickerLight;
