@@ -57,9 +57,10 @@ private _lightPoints = [];
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
             // first player sends signal
-            if (gradVM_portalPhase_0 < 3) then {
-                gradVM_portalPhase_0 = 3;
-                publicVariable "gradVM_portalPhase_0";
+            private _currentPhase = call GRAD_VM_main_fnc_getPhase;
+            private _currentPhaseProgress = call GRAD_VM_main_fnc_getPhaseProgress;
+            if (_currentPhaseProgress < 3) then {
+                [_currentPhase, 3] call CBA_fnc_serverEvent;
             };
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
@@ -122,7 +123,8 @@ private _lightPoints = [];
 
 
 // JIP proof execution
-[{gradVM_portalPhase_0 >= 3},
+private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
+[{_currentPhaseProgress >= 3},
 {
     params ["_light_top"];
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);
@@ -177,7 +179,10 @@ private _lightPoints = [];
 
 
     // clean up
-    [{gradVM_portalPhase_0 == gradVM_portalPhaseEnd_0},{
+    [{
+      private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
+      private _currentPhaseMaxProgress = [0] call GRAD_VM_main_fnc_getPhaseMaxProgress;
+      _currentPhaseProgress == _currentPhaseMaxProgress},{
         deleteVehicle (_this select 0);
     }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
@@ -214,7 +219,11 @@ private _lightPoints = [];
         [_beam, -90, 0] call BIS_fnc_setPitchBank;
 
         // clean up
-        [{gradVM_portalPhase_0 == gradVM_portalPhaseEnd_0},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
+        [{
+          private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
+          private _currentPhaseMaxProgress = [0] call GRAD_VM_main_fnc_getPhaseMaxProgress;
+          _currentPhaseProgress == _currentPhaseMaxProgress
+        },{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
 
     }, 0.02, [_lightPoint]] call CBA_fnc_addPerFrameHandler;
 

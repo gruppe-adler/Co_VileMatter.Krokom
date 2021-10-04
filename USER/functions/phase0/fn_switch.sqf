@@ -13,8 +13,7 @@ _switch addAction
         _target animateSource ["SwitchLight", 0];
         _target animateSource ["SwitchPosition", 1];
 
-        gradVM_portalPhase_0 = 1;
-        publicVariable "gradVM_portalPhase_0";
+        [0, 1] call CBA_fnc_serverEvent;
     },
     nil,
     1.5,

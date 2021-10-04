@@ -41,7 +41,13 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 
             [{
                 params ["_object1", "_object2"];
-                [_object1, _object2, 10] remoteExec ["grad_VM_phase0_fnc_lightningBetween", 0];
+
+                private _duration = 10;
+                [_object1, _object2, _duration] remoteExec ["grad_VM_phase0_fnc_lightningBetween", 0];
+
+                [{
+                    [0,2] call CBA_fnc_serverEvent;
+                }, [], _duration] call CBA_fnc_waitAndExecute;
 
             }, [_object1, _object2], _forEachIndex * 0.1] call CBA_fnc_waitAndExecute;
 
@@ -79,8 +85,7 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 
         // end light effects
         [{
-            gradVM_portalPhase_0 = 4;
-            publicVariable "gradVM_portalPhase_0";
+            [0, 4] call CBA_fnc_serverEvent;
 
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
