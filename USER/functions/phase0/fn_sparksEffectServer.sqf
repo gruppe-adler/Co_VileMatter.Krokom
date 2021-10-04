@@ -17,7 +17,8 @@ if (count _fenceParts < 1) exitWith { diag_log "no fence parts found"; };
     params ["_args", "_handle"];
     _args params ["_fenceParts", "_classnames"];
 
-        if (random 1 > 0.97 && gradVM_portalPhase_0 == 0) exitWith {};
+        if ([] call GRAD_VM_main_fnc_getCurrentPhase != 0) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+        if (random 1 > 0.97) exitWith {};
         // get all fences in range of any player
         private _fences = [];
         {

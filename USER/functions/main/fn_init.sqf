@@ -22,6 +22,12 @@ if (isServer) then {
     missionNamespace setVariable ["gradVM_portalPhase", _gradVM_portalPhase, true];
     ["BLU_F", "vm_vilematter_phase0", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
+    // relevant only for AI
+    { 
+        [_x] call grad_loadout_fnc_doLoadoutForUnit;
+    } forEach playableUnits + switchableUnits;
+
+    // start phase 0 manually
     call GRAD_VM_main_fnc_initPhase0;
 
     // iran cave

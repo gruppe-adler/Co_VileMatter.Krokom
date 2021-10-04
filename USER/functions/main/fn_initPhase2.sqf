@@ -34,8 +34,7 @@ if (!isServer) exitWith {};
 
         // end light effects
         [{
-            gradVM_portalPhase_2 = 4;
-            publicVariable "gradVM_portalPhase_2";
+            ["gradVM_phaseControl", [2, 4]] call CBA_fnc_serverEvent;
 
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase3", true] call GRAD_Loadout_fnc_FactionSetLoadout;

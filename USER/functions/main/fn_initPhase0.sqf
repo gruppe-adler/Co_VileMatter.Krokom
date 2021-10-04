@@ -6,6 +6,8 @@
 
 if (!isServer) exitWith {};
 
+
+
 (getPos teleportcenter_phase0) params ["_posX", "_posY", "_posZ"];
 private _light_phase0 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 
@@ -97,8 +99,6 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
 
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
-
-            [] call GRAD_VM_phase1_fnc_init; // start next management step
 
         }, [], (_duration+5)] call CBA_fnc_waitAndExecute;
 

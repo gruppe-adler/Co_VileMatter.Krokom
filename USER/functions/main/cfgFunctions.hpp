@@ -6,7 +6,7 @@ class GRAD_VM_main {
       class getCurrentPhase;
       class getPhaseMaxProgress;
       class getPhaseProgress;
-      class init { preInit = 1; };
+      class init { postInit = 1; };
       class initPhase0;
       class initPhase1;
       class initPhase2;
