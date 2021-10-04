@@ -1,9 +1,14 @@
-// reset
-teleportcenter_phase0 setVariable ["gradVM_zPos", -3];
+// JIP check
+if ([0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
 
-private _transformers = nearestObjects [teleportcenter_phase0, ["Land_DPP_01_transformer_F"], 30];
+params ["_teleportcenter_phase0"];
+
+// reset
+_teleportcenter_phase0 setVariable ["gradVM_zPos", -3];
+
+private _transformers = nearestObjects [_teleportcenter_phase0, ["Land_DPP_01_transformer_F"], 30];
 private _transformerTips = [];
-private _light_top = getPosASL teleportcenter_phase0;
+private _light_top = getPosASL _teleportcenter_phase0;
 
 
 
@@ -57,9 +62,10 @@ private _lightPoints = [];
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
             // first player sends signal
-            if (gradVM_portalPhase_0 < 3) then {
-                gradVM_portalPhase_0 = 3;
-                publicVariable "gradVM_portalPhase_0";
+            private _currentPhase = [0] call GRAD_VM_main_fnc_getCurrentPhase;
+            private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
+            if (_currentPhaseProgress < 3) then {
+                ["gradVM_phaseControl", [_currentPhase, 3]] call CBA_fnc_serverEvent;
             };
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
@@ -121,8 +127,10 @@ private _lightPoints = [];
 }, 0.02, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
 
 
-// JIP proof execution
-[{gradVM_portalPhase_0 >= 3},
+[{
+    // JIP proof execution
+    [0] call GRAD_VM_main_fnc_getPhaseProgress >= 3
+},
 {
     params ["_light_top"];
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);
@@ -135,10 +143,10 @@ private _lightPoints = [];
     // lightpoint moving in center of stoneHenge
     [{
         params ["_args", "_handle"];
-        _args params ["_lightPoint"];
+        _args params ["_lightPoint", "_teleportcenter_phase0"];
 
-        private _lightFlareSize = teleportcenter_phase0 getVariable ["gradVM_lightFlareSize", 5];
-        private _lightFlareExpanding = teleportcenter_phase0 getVariable ["gradVM_lightFlareExpanding", true];
+        private _lightFlareSize = _teleportcenter_phase0 getVariable ["gradVM_lightFlareSize", 5];
+        private _lightFlareExpanding = _teleportcenter_phase0 getVariable ["gradVM_lightFlareExpanding", true];
 
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
@@ -150,12 +158,12 @@ private _lightPoints = [];
 
         if (_lightFlareSize > _currentMaxSize) then {
             _lightFlareExpanding = false;
-            teleportcenter_phase0 setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+            _teleportcenter_phase0 setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareSize < _currentMinSize) then {
             _lightFlareExpanding = true;
-            teleportcenter_phase0 setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
+            _teleportcenter_phase0 setVariable ["gradVM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareExpanding) then {
@@ -167,21 +175,13 @@ private _lightPoints = [];
         };
 
 
-        teleportcenter_phase0 setVariable ["gradVM_lightFlareSize", _lightFlareSize];
+        _teleportcenter_phase0 setVariable ["gradVM_lightFlareSize", _lightFlareSize];
 
         drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,4,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
         // systemChat str _currentMaxSize;
 
 
-    }, 0.02, [_lightPoint]] call CBA_fnc_addPerFrameHandler;
-
-
-    // clean up
-    [{gradVM_portalPhase_0 == gradVM_portalPhaseEnd_0},{
-        deleteVehicle (_this select 0);
-    }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
-
-
+    }, 0.02, [_lightPoint, _teleportcenter_phase0]] call CBA_fnc_addPerFrameHandler;
 
     _lightPoint say3D "gradVM_hum2";
 
@@ -189,57 +189,30 @@ private _lightPoints = [];
 
 
     // tail of beams
-    [{
-        params ["_args", "_handle"];
-        _args params ["_lightPoint"];
+    private _beams = [];
+    private _zPos = _teleportcenter_phase0 getVariable ["gradVM_zPos", -3];
+    for "_i" from 1 to 30 do {
 
-        if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+       _zPos = _zPos + 3;
+       _teleportcenter_phase0 setVariable ["gradVM_zPos", _zPos];
 
-         private _zPos = teleportcenter_phase0 getVariable ["gradVM_zPos", -3];
-        _zPos = _zPos + 3;
-        teleportcenter_phase0 setVariable ["gradVM_zPos", _zPos];
+       private _pos = getPosWorld _teleportcenter_phase0;
+       private _dir = random 360;
+       _pos set [2, ((_pos select 2) + _zPos)];
 
-        // systemChat str _zPos;
+       private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", _pos, true];
 
-        if (_zPos > 300) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+       _beam setDir _dir;
+       [_beam, -90, 0] call BIS_fnc_setPitchBank;
 
-        private _pos = getPosASL teleportcenter_phase0;
-        private _dir = random 360;
-        _pos set [2, ((_pos select 2) + _zPos)];
-
-        private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", [0,0,0], true];
-        _beam setPosASL _pos;
-
-        _beam setDir _dir;
-        [_beam, -90, 0] call BIS_fnc_setPitchBank;
-
-        // clean up
-        [{gradVM_portalPhase_0 == gradVM_portalPhaseEnd_0},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
-
-    }, 0.02, [_lightPoint]] call CBA_fnc_addPerFrameHandler;
-
-
-
-    /*
-    private _pos = getPosWorld teleportcenter_phase0;
-    _sparksColumn = "#particlesource" createVehicleLocal _pos;
-    _sparksColumn setParticleCircle [0.1,[0,0,0]];
-    _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,1,[0,0,0,0],0.1,0.1];
-    _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",teleportcenter_phase0,0,true,1,[[100,100,100,10],[100,100,100,10]]];
-    _sparksColumn setDropInterval 0.05;
-    _sparksColumn setPos _pos;
-
-    for "_i" from 1 to 10 do {
-        [{
-            params ["_sparksColumn", "_i"];
-            _sparksColumn setParticleCircle [0.1,[0,0,0]];
-            _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,0.2,[0,0,0,0],0.1,0.1];
-            _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",teleportcenter_phase0,0,true,1,[[100,100,100,10],[100,100,100,10]]];
-            _sparksColumn setDropInterval (random 1);
-        }, [_sparksColumn, _i], _i] call CBA_fnc_waitAndExecute;
+       _beams pushBack _beam;
     };
 
-    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_sparksColumn]] call CBA_fnc_waitUntilAndExecute;
-    */
+    // clean up
+    [{[0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getPhaseMaxProgress},{
+      params ["_beams", "_lightPoint"];
+      { deleteVehicle _x; } forEach _beams;
+      deleteVehicle _lightPoint;
+    }, [_beams, _lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
 }, [_light_top]] call CBA_fnc_waitUntilAndExecute;

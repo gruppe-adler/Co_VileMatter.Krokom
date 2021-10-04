@@ -6,8 +6,7 @@ _crystal addAction
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        gradVM_portalPhase_1 = 1;
-        publicVariable "gradVM_portalPhase_1";
+        ["GRAD_VM_phaseControl", [1,1]] call CBA_fnc_serverEvent;
 
         private _position = getPosWorld phase1_pedestal;
         _position set [2, _position#2 + 0.2];
@@ -19,7 +18,7 @@ _crystal addAction
     true,       // showWindow
     true,       // hideOnUse
     "",         // shortcut
-    "gradVM_portalPhase_1 < 1",     // condition
+    "[1] call GRAD_VM_main_fnc_getPhaseProgress < 1",     // condition
     3,         // radius
     false,      // unconscious
     "",         // selection

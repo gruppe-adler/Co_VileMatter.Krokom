@@ -9,27 +9,28 @@
 // EXTEND REVIVE BLEEDOUT TO INFINITY
 if (isServer) then {
 
+    // current Phase, max Phase
+    private _gradVM_portalPhase = [
+      0,
+      [
+        [0,4],
+        [0,4],
+        [0,4],
+        [0,4]
+      ]
+    ];
+    missionNamespace setVariable ["gradVM_portalPhase", _gradVM_portalPhase, true];
+    ["BLU_F", "vm_vilematter_phase0", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
-    // start compound
-    gradVM_portalPhase_0 = 0; publicVariable "gradVM_portalPhase_0";
-    gradVM_portalPhaseEnd_0 = 4; publicVariable "gradVM_portalPhaseEnd_0";
-    gradVM_portalPhaseTarget_0 = getMarkerPos "mrk_phase_0_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_0";
+    // relevant only for AI
+    { 
+        [_x] call grad_loadout_fnc_doLoadoutForUnit;
+    } forEach playableUnits + switchableUnits;
 
-    // stonehenge
-    gradVM_portalPhase_1 = 0; publicVariable "gradVM_portalPhase_1";
-    gradVM_portalPhaseEnd_1 = 4; publicVariable "gradVM_portalPhaseEnd_1";
-    gradVM_portalPhaseTarget_1 = getMarkerPos "mrk_phase_1_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_1";
+    // start phase 0 manually
+    call GRAD_VM_main_fnc_initPhase0;
 
-    // ww2 reichstag
-    gradVM_portalPhase_2 = 0; publicVariable "gradVM_portalPhase_2";
-    gradVM_portalPhaseEnd_2 = 4; publicVariable "gradVM_portalPhaseEnd_2";
-    gradVM_portalPhaseTarget_2 = getMarkerPos "mrk_phase_2_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_2";
-
-    // warhammer future arena
-    gradVM_portalPhase_3 = 0; publicVariable "gradVM_portalPhase_3";
-    gradVM_portalPhaseEnd_3 = 4; publicVariable "gradVM_portalPhaseEnd_3";
-    gradVM_portalPhaseTarget_3 = getMarkerPos "mrk_phase_3_teleportTarget"; publicVariable "gradVM_portalPhaseTarget_3";
-
+ 
     [{
         time > 1
     },{
@@ -40,7 +41,7 @@ if (isServer) then {
     // MARCHING FIX
     ["lambs_danger_OnContact", {
         params ["_unit", "_group"];
-        
+
         if (_unit getVariable ["GRAD_VM_isRoman", false]) then {
             {
                 detach _x;

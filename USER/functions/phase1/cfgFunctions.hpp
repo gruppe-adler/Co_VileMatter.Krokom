@@ -6,7 +6,6 @@ class GRAD_VM_phase1 {
     class addTorch;
     class horseDismountAI;
     class horseMountAI;
-    class init;
     class initPanther;
     class portalOpening;
     class spawnMarchingColumn;

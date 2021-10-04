@@ -1,3 +1,9 @@
+/*
+
+    animates mystic guy
+
+*/
+
 if (!isServer) exitWith {};
 
 params ["_unit"];
@@ -18,7 +24,7 @@ private _sounds = [
     params ["_args", "_handle"];
     _args params ["_unit", "_sounds"];
 
-    if (!alive _unit) exitWith {
+    if (isNull _unit || !alive _unit) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
@@ -37,7 +43,7 @@ private _sounds = [
 }, 10, [_unit, _sounds]] call CBA_fnc_addPerFramehandler;
 
 /*
-    
+
     Acts_SittingWounded_loop
     Acts_SittingWounded_wave
 

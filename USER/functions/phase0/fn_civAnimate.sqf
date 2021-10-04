@@ -1,3 +1,9 @@
+/*
+
+    animates panicky civ
+
+*/
+
 if (!isServer) exitWith {};
 
 params ["_unit"];
