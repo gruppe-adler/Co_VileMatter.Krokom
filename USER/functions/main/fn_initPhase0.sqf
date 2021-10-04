@@ -70,7 +70,7 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
             [phase0_transformer9,phase0_transformer1]
         ];
 
-        [] remoteExec ["GRAD_VM_phase0_fnc_portalOpening", 0];
+        [teleportcenter_phase0] remoteExec ["GRAD_VM_phase0_fnc_portalOpening", 0, true];
 
 }] call CBA_fnc_waitUntilAndExecute;
 

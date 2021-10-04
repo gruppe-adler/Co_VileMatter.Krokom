@@ -5,7 +5,7 @@
 */
 
 // JIP check
-if (gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1) exitWith {};
+if ([1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
 
 params ["_stoneHengeCenter"];
 
@@ -133,8 +133,11 @@ private _handle = [{
 
 
 
-// JIP proof execution
-[{gradVM_portalPhase_1 >= 1},
+
+[{
+  // JIP proof execution
+  private _currentPhaseProgress = [1] call GRAD_VM_main_fnc_getPhaseProgress;
+  _currentPhaseProgress >= 1},
 {
     params ["_stoneHengeCenter", "_stoneHengeCenterTop"];
     private _lightPoint = "#lightpoint" createvehiclelocal _stoneHengeCenterTop;
@@ -190,71 +193,31 @@ private _handle = [{
     }, 0.02, [_lightPoint, _stoneHengeCenter]] call CBA_fnc_addPerFrameHandler;
 
 
-    // clean up
-    [{gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1},{
-        deleteVehicle (_this select 0);
-    }, [_lightPoint]] call CBA_fnc_waitUntilAndExecute;
+    private _beams = [];
+    private _zPos = _stoneHengeCenter getVariable ["gradVM_zPos", -3];
+    for "_i" from 1 to 30 do {
 
+       _zPos = _zPos + 3;
+       _stoneHengeCenter setVariable ["gradVM_zPos", _zPos];
 
-    /*
-    [{
-        gradVM_portalPhase = 4;
-    }, [], 30] call CBA_fnc_waitAndExecute;
-    */
+       private _pos = getPosWorld _stoneHengeCenter;
+       private _dir = random 360;
+       _pos set [2, ((_pos select 2) + _zPos)];
 
+       private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", _pos, true];
 
+       _beam setDir _dir;
+       [_beam, -90, 0] call BIS_fnc_setPitchBank;
 
-    // tail of beams
-    [{
-        params ["_args", "_handle"];
-        _args params ["_stoneHengeCenter", "_lightPoint"];
-
-        if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
-
-         private _zPos = _stoneHengeCenter getVariable ["gradVM_zPos", -3];
-        _zPos = _zPos + 3;
-        _stoneHengeCenter setVariable ["gradVM_zPos", _zPos];
-
-        // systemChat str _zPos;
-
-        if (_zPos > 300) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
-
-        private _pos = getPosWorld _stoneHengeCenter;
-        private _dir = random 360;
-        _pos set [2, ((_pos select 2) + _zPos)];
-
-        private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", _pos, true];
-
-        _beam setDir _dir;
-        [_beam, -90, 0] call BIS_fnc_setPitchBank;
-
-        // clean up
-        [{gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1},{ deleteVehicle (_this select 0);}, [_beam]] call CBA_fnc_waitUntilAndExecute;
-
-    }, 0.02, [_stoneHengeCenter, _lightPoint]] call CBA_fnc_addPerFrameHandler;
-
-
-
-    /*
-    private _pos = getPosWorld _stoneHengeCenter;
-    _sparksColumn = "#particlesource" createVehicleLocal _pos;
-    _sparksColumn setParticleCircle [0.1,[0,0,0]];
-    _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,1,[0,0,0,0],0.1,0.1];
-    _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]];
-    _sparksColumn setDropInterval 0.05;
-    _sparksColumn setPos _pos;
-
-    for "_i" from 1 to 10 do {
-        [{
-            params ["_sparksColumn", "_i"];
-            _sparksColumn setParticleCircle [0.1,[0,0,0]];
-            _sparksColumn setParticleRandom [1,[0,0,0],[0,0,1],0,0.2,[0,0,0,0],0.1,0.1];
-            _sparksColumn setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,3,[0,0,0],[0,0,10],13,9.999,7.9,0.005,[1,1,1,0.1],[[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,0]],[0.08],1,0,"","",_stoneHengeCenter,0,true,1,[[100,100,100,10],[100,100,100,10]]];
-            _sparksColumn setDropInterval (random 1);
-        }, [_sparksColumn, _i], _i] call CBA_fnc_waitAndExecute;
+       _beams pushBack _beam;
     };
 
-    [{gradVM_portalPhase == gradVM_portalPhaseEnd},{ deleteVehicle (_this select 0);}, [_sparksColumn]] call CBA_fnc_waitUntilAndExecute;
-    */
+    // clean up
+    [{[1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getPhaseMaxProgress},{
+      params ["_beams", "_lightPoint"];
+      { deleteVehicle _x; } forEach _beams;
+      deleteVehicle _lightPoint;
+    }, [_beams, _lightPoint]] call CBA_fnc_waitUntilAndExecute;
+
 
 }, [_stoneHengeCenter, _stoneHengeCenterTop]] call CBA_fnc_waitUntilAndExecute;

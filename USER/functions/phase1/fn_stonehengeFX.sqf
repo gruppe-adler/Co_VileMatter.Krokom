@@ -5,7 +5,8 @@
 */
 
 // JIP check
-if (gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1) exitWith {};
+if ([0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
+
 
 params ["_stoneHengeCenter"];
 
@@ -20,31 +21,8 @@ private _effectDuration = 20;
     [_light, -90, 0] call BIS_fnc_setPitchBank;
     _light setObjectScale 30;
 
-    /*
-    [{
-        params ["_args", "_handle"];
-        _args params ["_light"];
-
-        if (isNull _light) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
-
-        private _dir = getDir _light;
-        _light setDir (_dir + 0.1);
-        [_light, -90, 0] call BIS_fnc_setPitchBank;
-        // (_light call BIS_fnc_getPitchBank) params ["_pitch", "_bank"];
-        //[_light, -90, _random] call BIS_fnc_setPitchBank;
-
-        _light setObjectScale 30;
-
-        // private _objectScale = getObjectScale _light;
-        // _light setObjectScale (_objectScale + (random 0.2 - random 0.2));
-
-       // systemChat str _random;
-
-    }, 0, [_light]] call CBA_fnc_addPerFrameHandler;
-    */
-
     // JIP proof deletion
-    [{gradVM_portalPhase_1 >= gradVM_portalPhaseEnd_1},{
+    [{[1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getPhaseMaxProgress},{
         deleteVehicle (_this select 0);
     }, [_light]] call CBA_fnc_waitUntilAndExecute;
 } forEach _stoneCircle;
@@ -68,7 +46,7 @@ _sparksRandom setDropInterval 0.05;
 _sparksRandom setPos _pos;
 
 // JIP proof deletion
-[{gradVM_portalPhase_1 >= 1},{
+[{[1] call GRAD_VM_main_fnc_getPhaseProgress >= 1},{
         { deleteVehicle _x; } forEach _this;
 }, [_sparksColumn, _sparksRandom]] call CBA_fnc_waitUntilAndExecute;
 
@@ -79,21 +57,7 @@ private _light = createSimpleObject ["\A3\data_f\VolumeLight", _pos, true];
 _light setObjectScale 150;
 
 // end all effects when phase1 is done
-[{gradVM_portalPhase_1 == gradVM_portalPhaseEnd_1},{
+[{[1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getPhaseMaxProgress},{
         // systemChat (str (_this select 0));
         deleteVehicle (_this select 0);
 }, [_light]] call CBA_fnc_waitUntilAndExecute;
-
-    /*
-
-
-    private _plasma_wave = "#particlesource" createVehicleLocal (getPosATL player);
- _plasma_wave setParticleCircle [0,[0,0,0]];
-
- _plasma_wave setParticleRandom [5,[2500,20,10],[0,0,0],10,0,[0,0,0,0],1,0];
- _plasma_wave setParticleParams [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,180,[0,0,0],[0,0,0],13,9.999,7.9,0.005,[150,150,150,300],[[0,1,0,0],[0,1,0,1],[0,0.3,0.7,0.5],[0.9,0,0.7,1],[0.4,0,0.2,0]],[0.08],1,0,"","",_sky_obj];
- _plasma_wave setDropInterval 0.05;
-
-[{ params ["_plasma_wave"]; deleteVehicle _plasma_wave; }, [_plasma_wave], 10] call CBA_fnc_waitAndExecute;
-
-*/
