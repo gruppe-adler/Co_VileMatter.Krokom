@@ -7,26 +7,25 @@
 if (!isServer) exitWith {};
 
 (getPos teleportcenter_phase0) params ["_posX", "_posY", "_posZ"];
-light_phase0 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+private _light_phase0 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 
-light_phase0 setPos [_posX, _posY, 10];
-[light_phase0, -90, 0] call BIS_fnc_setPitchBank;
-[light_phase0, 150] call GRAD_VM_common_fnc_setObjectScaleSafe;
+_light_phase0 setPos [_posX, _posY, 10];
+[_light_phase0, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase0, 150] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
-private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer_F"], 30];
+private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transformer_F"], 30];
 
 {
     private _pos = getPosWorld _x;
     _pos params ["", "", "_posZ"];
     _pos set [2, _posZ - 5];
-    private _light = createSimpleObject ["\A3\data_f\VolumeLight", _pos, true];
+    private _light = createSimpleObject ["\A3\data_f\VolumeLight", _pos];
     [_light, -90, 0] call BIS_fnc_setPitchBank;
     _light setObjectScale 30;
 
     [{
-      private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
-      private _currentPhaseMaxProgress = [0] call GRAD_VM_main_fnc_getPhaseMaxProgress;
-      _currentPhaseProgress == _currentPhaseMaxProgress
+      [0] call GRAD_VM_main_fnc_getPhaseProgress == 
+      [0] call GRAD_VM_main_fnc_getPhaseMaxProgress
       },{
         deleteVehicle (_this select 0);
     }, [_light]] call CBA_fnc_waitUntilAndExecute;
@@ -39,9 +38,8 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 // phase 0 init
 [
     {
-      private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
-      _currentPhaseProgress == 1
-     },
+        ([0] call GRAD_VM_main_fnc_getPhaseProgress) == 1
+    },
     {
         {
             _x params ["_object1", "_object2"];
@@ -72,17 +70,18 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 
         [teleportcenter_phase0] remoteExec ["GRAD_VM_phase0_fnc_portalOpening", 0, true];
 
-}] call CBA_fnc_waitUntilAndExecute;
+}, []] call CBA_fnc_waitUntilAndExecute;
 
 
 
 // phase 3 init
 [
     {
-      private _currentPhaseProgress = [0] call GRAD_VM_main_fnc_getPhaseProgress;
-    _currentPhaseProgress == 3 },
+        ([0] call GRAD_VM_main_fnc_getPhaseProgress) == 3 
+    },
     {
-        playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
+        params ["_light_phase0"];
+        playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", _light_phase0];
         private _duration = 38;
         {
             [{
@@ -103,7 +102,7 @@ private _machineCircle = nearestObjects [light_phase0, ["Land_DPP_01_transformer
 
         }, [], (_duration+5)] call CBA_fnc_waitAndExecute;
 
-}, []] call CBA_fnc_waitUntilAndExecute;
+}, [_light_phase0]] call CBA_fnc_waitUntilAndExecute;
 
 
 // phase 4 (close effects)

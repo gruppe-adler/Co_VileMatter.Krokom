@@ -20,8 +20,7 @@ if (!isServer) exitWith {};
 // phase 3 init
 [
     {
-      private _currentPhaseProgress = [1] call GRAD_VM_main_fnc_getPhaseProgress;
-      _currentPhaseProgress == 3
+      [1] call GRAD_VM_main_fnc_getPhaseProgress == 3
     },
     {
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
