@@ -35,7 +35,7 @@ if (!isServer) exitWith {};
         // end light effects
         [{
             ["grad_VM_phaseControl", [2, 4]] call CBA_fnc_serverEvent;
-
+            call GRAD_VM_main_fnc_initPhase3;
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase3", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 

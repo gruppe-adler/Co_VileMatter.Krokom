@@ -98,7 +98,7 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
         // end light effects
         [{
             ["grad_VM_phaseControl", [0,4]] call CBA_fnc_serverEvent;
-
+            call GRAD_VM_main_fnc_initPhase1;
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
