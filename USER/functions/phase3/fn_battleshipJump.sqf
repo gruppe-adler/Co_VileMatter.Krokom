@@ -4,7 +4,8 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 // playSound3D [getMissionPath "sounds\Capital_Ship_Detected.ogg", Grad_VM_commsArray, false, getPosASL Grad_VM_commsArray, 5];
 // playSound "Ship_Detected";
 ["Ship_Detected"] remoteExec ["playSound", [0, -2] select isMultiplayer];
-[3500] remoteExec ["setViewDistance", [0, -2] select isMultiplayer];
+// [3500] remoteExec ["setViewDistance", [0, -2] select isMultiplayer];
+[7, false] remoteExecCall ["ace_viewdistance_fnc_changeViewDistance", [0, -2] select isMultiplayer];
 
 // playSound3D [getMissionPath "USER\sounds\Hyperspace_Jump_Loud.ogg", GRAD_VM_BattleshipSound, false, getPosASL GRAD_VM_BattleshipSound, 5];
 [GRAD_VM_BattleshipSound, ["Hyperspace_Jump", 10000, 1, false, 0]] remoteExec ["say3D", [0, -2] select isMultiplayer];
@@ -40,7 +41,7 @@ sleep 4;
 
 private _soundSource = createSoundSource ["GRAD_VM_AlarmSound", Grad_VM_commsArray, [], 0];
 
-sleep 3;
+sleep 3.5;
 
 [Grad_VM_commsArray, ["The_slaves_are_here", 800, 1, false, 0]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 
@@ -53,20 +54,22 @@ sleep 1.5;
 private _allHydras = [Grad_VM_AAphase3_1, Grad_VM_AAphase3_2, Grad_VM_AAphase3_3];
 {
 	[_x] spawn Grad_VM_phase3_fnc_fireAA;
-	sleep (random 1);
+	sleep (random 2);
 } forEach _allHydras;
 
-sleep 7;
+sleep 10;
 
 {
 	private _cannon = selectRandom ["GRAD_VM_cannonPos_1", "GRAD_VM_cannonPos_2", "GRAD_VM_cannonPos_3", "GRAD_VM_cannonPos_4"];
 	[_cannon, getPosASL _x, "TIOW_IG_PlasmaCannon_Rnd", 20, 50, _x] remoteExec ["Grad_VM_phase3_fnc_battleshipFiring", [0, -2] select isMultiplayer];
-	sleep ((random 2) + 3);
+	sleep ((random 3) + 3);
 } forEach _allHydras;
+
+sleep 5;
 
 [] call Grad_VM_phase3_fnc_spawnGuardsmen;
 
-sleep 5;
+sleep 7;
 
 // systemChat "Guardsmen";
 [] spawn Grad_VM_phase3_fnc_startBattleshipBarrage;

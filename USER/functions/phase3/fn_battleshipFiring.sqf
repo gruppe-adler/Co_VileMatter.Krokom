@@ -43,6 +43,9 @@ _lightPoint setLightBrightness 40;
 			deleteVehicle _lightPoint;
 			deleteVehicle _projectile;
 			if (_targetToDestroy isNotEqualTo objNull) then {
+				{
+					deleteVehicle _x;	
+				} forEach (crew _targetToDestroy);
 				_targetToDestroy setDamage 1;
 			};
 		};

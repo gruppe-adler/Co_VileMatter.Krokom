@@ -5,10 +5,11 @@ _pos set [2, 1.9];
 
 private _lightPoint = "#lightpoint" createvehiclelocal _pos;
 _lightPoint setPos _pos;
+_lightPoint setLightColor[0.13, 0.17, 0.07];
 _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
 _lightPoint setLightFlareSize 50; _lightPoint setLightFlareMaxDistance 5000;
 // _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.9,0.7,0.9];
-_lightPoint setLightAmbient[0.13, 0.17, 0.07]; _lightPoint setLightColor[0.13, 0.17, 0.07];
+_lightPoint setLightAmbient[0.13, 0.17, 0.07];
 _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
 _lightPoint setLightBrightness 2;
 

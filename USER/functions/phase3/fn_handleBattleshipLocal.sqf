@@ -19,7 +19,7 @@ private _pfhHandler = [
 	_newPos set [2, _shipPos # 2]; 
 	
 	if (movementSpeed < 1) then { 
-		movementSpeed = 0.04;
+		movementSpeed = 0.035;
 	}; 
 	
 		_ship setPosASL _newPos; 

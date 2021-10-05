@@ -1,7 +1,7 @@
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, [0, -2] select isMultiplayer]; };
 // if !(canSuspend) exitWith { _this spawn Grad_VM_fnc_startBattleshipBarrage; };
 
-while { missionNamespace getVariable ["GRAD_VM_phase3Active", true] } do {
+while { ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3 } do {
 	private _targetPos = GRAD_VM_barrageArea call BIS_fnc_randomPosTrigger;
 	if (_targetPos inArea GRAD_VM_barrageExclusionArea) then { continue };
 	_targetPos = AGLToASL _targetPos;

@@ -33,9 +33,10 @@ drop [
 
 private _position = _battleship modelToWorld [200,400,100];
 private _lightPoint = "#lightpoint" createvehiclelocal _position;
+_lightPoint setLightColor[1,1,1];
 _lightPoint setLightDayLight true; _lightPoint setLightUseFlare true;
 _lightPoint setLightFlareSize 2; _lightPoint setLightFlareMaxDistance 10000;
-_lightPoint setLightAmbient[1,1,1]; _lightPoint setLightColor[1,1,1];
+_lightPoint setLightAmbient[1,1,1];
 _lightPoint setLightAttenuation [2, 4, 4, 0, 1000, 10000];// [0,0,0,0,0,4000];
 _lightPoint setLightBrightness 0;
 
