@@ -1,3 +1,17 @@
+/*
+* Spawns a lightpoint to attach to a specific object.
+*
+* Arguments:
+* 0: The lamp <OBJECT>
+* 1: The brightness <NUMBER>
+*
+* Return Value:
+* None
+*
+* Example:
+* [lamp1, 5] call Grad_VM_phase3_fnc_activateCaveLamp;
+*/
+
 params ["_lamp", "_brightness"];
 
 private _pos = getPos _lamp;

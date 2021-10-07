@@ -1,8 +1,23 @@
+/*
+* Adds a flare effect to the guardsman spawning. 
+*
+* Arguments:
+* 0: The pad the guardsman will spawn on <OBJECT>
+*
+* Return Value:
+* None
+*
+* Example:
+* [paddyThePad] call Grad_VM_phase3_fnc_guardsmenSpawnEffect;
+*/
+
 params ["_pad"];
 
+// the effect will spaw over the guardsman head, so the flare isn't obscured.
 private _pos = getPos _pad;
 _pos set [2, 1.9];
 
+// spawn the actual lightpoint with flare
 private _lightPoint = "#lightpoint" createvehiclelocal _pos;
 _lightPoint setPos _pos;
 _lightPoint setLightColor[0.13, 0.17, 0.07];
@@ -13,6 +28,7 @@ _lightPoint setLightAmbient[0.13, 0.17, 0.07];
 _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
 _lightPoint setLightBrightness 2;
 
+// add a pfh that decreases the light's flare
 private _pfhHandler = [
 	{
 		params ["_args", "_handle"];

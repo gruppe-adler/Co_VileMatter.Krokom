@@ -1,3 +1,16 @@
+/*
+* Creates and moves the local battleship of a player. 
+*
+* Arguments:
+* None
+*
+* Return Value:
+* None
+*
+* Example:
+* [] call Grad_VM_phase3_fnc_handleBattleshipLocal;
+*/
+
 // create the local battleship
 private _battleship = "TIOW_Oberon" createVehicleLocal [0, 0, 0];
 _battleship hideObject true;
@@ -5,8 +18,10 @@ _battleship setPosASL (getPosASL GRAD_VM_Battleship);
 _battleship setDir (getDir GRAD_VM_Battleship);
 player setVariable ["GRAD_VM_localBattleship", _battleship, true];
 
+// add the battleship's spawn effect
 [_battleship] call GRAD_VM_phase3_fnc_jumpEffect;
 
+// add the pfh to move the battleship
 movementSpeed = 10; 
 private _pfhHandler = [ 
 	{ 

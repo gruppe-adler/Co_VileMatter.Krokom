@@ -1,3 +1,16 @@
+/*
+* Adds a flare effect to the marines spawning. 
+*
+* Arguments:
+* 0: The pad the marine will spawn on <OBJECT>
+*
+* Return Value:
+* None
+*
+* Example:
+* [paddyThePad] call Grad_VM_phase3_fnc_marineSpawnEffect;
+*/
+
 params ["_pad"];
 
 private _pos = getPos _pad;

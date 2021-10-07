@@ -1,13 +1,25 @@
+/*
+* Adds a light effect to the battleship spawning. 
+*
+* Arguments:
+* 0: The battleship <OBJECT>
+*
+* Return Value:
+* None
+*
+* Example:
+* [berndTheBattleship] call Grad_VM_phase3_fnc_jumpEffect;
+*/
+
 params ["_battleship"];
 
 diwako_dui_main_toggled_off = true;
 
-// flash start
+// convert color from rgb to rgb percent
 private _colour = [173,216, 230] apply {_x / 255};
-private _alpha = 0;
-
 _battleship hideObject true;
 
+// refract effect around the ship
 drop [  
 		     ["\A3\data_f\ParticleEffects\Universal\Refract.p3d", 1, 0, 1],  
 		     "",  
@@ -31,6 +43,7 @@ drop [
 		      _battleship  
 		 ];	
 
+// spawn the very bright light with flare
 private _position = _battleship modelToWorld [200,400,100];
 private _lightPoint = "#lightpoint" createvehiclelocal _position;
 _lightPoint setLightColor[1,1,1];
@@ -40,6 +53,8 @@ _lightPoint setLightAmbient[1,1,1];
 _lightPoint setLightAttenuation [2, 4, 4, 0, 1000, 10000];// [0,0,0,0,0,4000];
 _lightPoint setLightBrightness 0;
 
+// add the pfh that first increases and then decreases the flare size.
+// at full flare size, the battleship is revealed
 flareShrinking = false;
 [{
 	params ["_lightPoint", "_position", "_battleship"];

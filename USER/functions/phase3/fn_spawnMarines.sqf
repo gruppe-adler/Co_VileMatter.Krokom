@@ -1,4 +1,16 @@
-// if !(canSuspend) exitWith { _this spawn Grad_VM_fnc_spawnMarines; };
+/*
+* Spawns a marine squad in the phase 3 arena.
+*
+* Arguments:
+* None
+*
+* Return Value:
+* None
+*
+* Example:
+* [] call Grad_VM_phase3_fnc_spawnMarines;
+*/
+
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, [0, -2] select isMultiplayer]; };
 
 params ["_spawnPads"];
