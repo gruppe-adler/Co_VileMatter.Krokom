@@ -9,14 +9,14 @@
 class teleport
 {
     name = "teleport";
-    sound[] = {"USER\sounds\teleport.ogg", VOLUME, 1, DISTANCE};
+    sound[] = {"USER\sounds\teleport.ogg", VOLUME, 1, 500};
     titles[] = {0, ""};
 };
 
 class teleport_global
 {
     name = "teleport_global";
-    sound[] = {"USER\sounds\teleport_global.ogg", VOLUME, 1, DISTANCE};
+    sound[] = {"USER\sounds\teleport_global.ogg", VOLUME, 1, 500};
     titles[] = {0, ""};
 };
 
@@ -193,7 +193,7 @@ class ite_lucem_angry_def
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_angry_def";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_angry_def.ogg", VOLUME, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_angry_def.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -203,7 +203,7 @@ class ite_lucem_angry_slo
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_angry_slo";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_angry_slo.ogg", VOLUME, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_angry_slo.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -214,7 +214,7 @@ class ite_lucem_plead_def
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_plead_def";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_plead_def.ogg", VOLUME, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_plead_def.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -224,7 +224,7 @@ class ite_lucem_plead_slo
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_plead_slo";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_plead_slo.ogg", VOLUME, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_plead_slo.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -234,7 +234,7 @@ class ite_lucem_sin_def
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_sin_def";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_sin_def.ogg", VOLUME, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_sin_def.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -244,11 +244,165 @@ class ite_lucem_sin_slo
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "ite_lucem_sin_slo";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\ite_lucem_sin_slo.ogg", VOLUME, 1, 100 };
+    sound[] = { "USER\sounds\ite_lucem_sin_slo.ogg", VOLUME, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
 
+
+class dasisteinbefehl_default
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "dasisteinbefehl_default";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\dasisteinbefehl_default.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class dasisteinbefehl_medium
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "dasisteinbefehl_medium";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\dasisteinbefehl_medium.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class dasisteinbefehl_low
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "dasisteinbefehl_low";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\dasisteinbefehl_low.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class dasisteinbefehl2_default
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "dasisteinbefehl2_default";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\dasisteinbefehl2_default.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class dasisteinbefehl2_medium
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "dasisteinbefehl2_medium";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\dasisteinbefehl2_medium.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class dasisteinbefehl2_low
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "dasisteinbefehl2_low";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\dasisteinbefehl2_low.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+class feiglinge_default
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "feiglinge_default";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\feiglinge_default.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class feiglinge_medium
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "feiglinge_medium";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\feiglinge_medium.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class feiglinge_low
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "feiglinge_low";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\feiglinge_low.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+class generalitaet_default
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "generalitaet_default";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\generalitaet_default.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class generalitaet_medium
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "generalitaet_medium";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\generalitaet_medium.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class generalitaet_low
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "generalitaet_low";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\generalitaet_low.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+
+class verraeterversager_default
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "verraeterversager_default";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\verraeterversager_default.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class verraeterversager_medium
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "verraeterversager_medium";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\verraeterversager_medium.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class verraeterversager_low
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "verraeterversager_low";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\verraeterversager_low.ogg", VOLUME, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 // Space-Marine voicelines:
 
 // class Captain_voiceLine
