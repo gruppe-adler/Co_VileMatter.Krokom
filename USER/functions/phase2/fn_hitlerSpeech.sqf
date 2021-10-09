@@ -1,25 +1,48 @@
 params ["_unit"];
 
+if (!isServer) exitWith {};
+if (!canSuspend) exitWith {
+    [_unit] spawn GRAD_VM_phase2_fnc_hitlerSpeech;
+};
+
 private _sounds = [
     ["dasisteinbefehl", 2.5],
     ["dasisteinbefehl2", 3.5],
-    ["generalitaet", 5.5],
+    ["generalitaet", 5.5]
+];
+
+private _sounds2 = [
     ["feiglinge", 1.5],
     ["verraeterversager", 1.5]
 ];
+
 
 while {true} do {
 
     if (!alive _unit) exitWith {};
 
-    private _distance = player distance _unit;
-    private _distanceString = if (_distance > 50) then { "low" } else { "medium" };
-    _distanceString = if (_distance < 30) then { "default" } else { _distanceString };
+    private _cachedSound = missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", false];
+    (selectRandom ([_sounds, _sounds2] select _cachedSound)) params ["_sound", "_duration"];
 
-    (selectRandom _sounds) params ["_sound", "_duration"];
-    private _string = _sound + "_" + _distanceString;
-    systemchat _string;
-    _unit say3D [_string, 500];
+    missionNamespace setVariable ["GRAD_VM_hitlerSoundCache", !_cachedSound];
+
+    [_unit, true] remoteExec ["setRandomLip"];
+
+    {   
+        private _player = _x;
+        private _distance = _player distance _unit;
+        private _distanceString = if (_distance > 50) then { "low" } else { "medium" };
+        _distanceString = if (_distance < 30) then { "default" } else { _distanceString };
+       
+        private _string = _sound + "_" + _distanceString;
+        [_unit, _string] remoteExec ["say3D", _player];
+
+        // systemchat _string;
+
+    } forEach allPlayers;
 
     sleep _duration;
+
+    [_unit, false] remoteExec ["setRandomLip"];
+    sleep (random 1);
 };
