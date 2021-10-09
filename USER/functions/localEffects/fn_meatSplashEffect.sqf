@@ -2,7 +2,7 @@ params ["_position"];
 
 for "_i" from 0 to (ceil(random 10)) do {
 
-    private _randomSpread = [_position, random 5, random 360] call BIS_fnc_relPos;
+    private _randomSpread = _position getpos [random 5, random 360];
 
     private _bloodPoolType = selectRandom 
     [
