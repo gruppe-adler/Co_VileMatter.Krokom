@@ -26,6 +26,8 @@ while {true} do {
 
     missionNamespace setVariable ["GRAD_VM_hitlerSoundCache", !_cachedSound];
 
+    [_unit, true] remoteExec ["setRandomLip"];
+
     {   
         private _player = _x;
         private _distance = _player distance _unit;
@@ -35,9 +37,12 @@ while {true} do {
         private _string = _sound + "_" + _distanceString;
         [_unit, _string] remoteExec ["say3D", _player];
 
-        systemchat _string;
+        // systemchat _string;
 
     } forEach allPlayers;
 
     sleep _duration;
+
+    [_unit, false] remoteExec ["setRandomLip"];
+    sleep (random 1);
 };
