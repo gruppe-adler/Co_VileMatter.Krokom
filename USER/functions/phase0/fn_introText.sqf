@@ -2,6 +2,8 @@ if (!canSuspend) exitWith {
     [] execVM "USER\functions\phase0\fn_introText.sqf";
 };
 
+if (call GRAD_VM_main_fnc_getCurrentPhase != 0) exitWith {};
+
 sleep 11;
 
 playSound "grad_VM_crescendo";

@@ -29,7 +29,8 @@ private _brightnessMultiplicator = (getLighting select 1);
 
 
 private _firstPipePos = grad_VM_cameraPositionTeleportFirst;
-private _lastPipePos = grad_VM_cameraPositionTeleportLast;
+private _lastPipePos = getPosVisual (grad_VM_wormholePipes select ((count grad_VM_wormholePipes) - 2));
+_lastPipePos set [2, (_lastPipePos select 2) - 1.5];
 
 private _startpoint = [-100,0,8000];
 

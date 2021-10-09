@@ -7,7 +7,20 @@
 if (!isServer) exitWith {};
 
 // todo insert correct object
+(getPos phase2_reichstagskuppel) params ["_posX", "_posY", "_posZ"];
 
+// enhance intensity
+private _light_phase2_1 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+[_light_phase2_1, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase2_1, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+
+private _light_phase2_2 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+[_light_phase2_2, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase2_2, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+
+private _light_phase2_3 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+[_light_phase2_3, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase2_3, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 [{
   private _currentPhaseProgress = [2] call GRAD_VM_main_fnc_getPhaseProgress;
@@ -22,6 +35,7 @@ if (!isServer) exitWith {};
 [
     { grad_VM_portalPhase_2 == 3 },
     {
+        params ["_light_phase2_1", "_light_phase2_2", "_light_phase2_3"];
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
         private _duration = 38;
         private _date = [2035,2,9,6,25];
@@ -39,13 +53,17 @@ if (!isServer) exitWith {};
 
         // end light effects
         [{
-            params ["_date"];
+            params ["_date", "_light_phase2_1", "_light_phase2_2", "_light_phase2_3"];
             ["grad_VM_phaseControl", [2, 4]] call CBA_fnc_serverEvent;
             call GRAD_VM_main_fnc_initPhase3;
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase3", true] call GRAD_Loadout_fnc_FactionSetLoadout;
             [_date] remoteExec ["setDate"];
 
-        }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
+            deleteVehicle _light_phase2_1;
+            deleteVehicle _light_phase2_2;
+            deleteVehicle _light_phase2_3;
 
-}, []] call CBA_fnc_waitUntilAndExecute;
+        }, [_date, _light_phase2_1, _light_phase2_2, _light_phase2_3], (_duration+5)] call CBA_fnc_waitAndExecute;
+
+}, [_light_phase2_1, _light_phase2_2, _light_phase2_3]] call CBA_fnc_waitUntilAndExecute;
