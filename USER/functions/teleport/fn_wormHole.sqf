@@ -28,10 +28,8 @@ params [["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
 private _brightnessMultiplicator = (getLighting select 1);
 
 
-private _firstPipePos = getPos (grad_VM_wormholePipes select 0);
-_firstPipePos set [2, (_firstPipePos select 2) - 1.5];
-private _lastPipePos = getPos (grad_VM_wormholePipes select ((count grad_VM_wormholePipes) - 2));
-_lastPipePos set [2, (_lastPipePos select 2) - 1.5];
+private _firstPipePos = grad_VM_cameraPositionTeleportFirst;
+private _lastPipePos = grad_VM_cameraPositionTeleportLast;
 
 private _startpoint = [-100,0,8000];
 
@@ -123,12 +121,12 @@ _cam camPreload 3;
         } forEach grad_VM_wormholePipes;
 
         private _lightPos = (_cam getPos [20,0]);
-        _lightPos set [2, (getPos _cam) select 2];
+        _lightPos set [2, (getPosVisual _cam) select 2];
         _lightPoint setPos _lightPos;
 
         // systemChat str (getpos _lightPoint);
 
-        grad_VM_cameraPosition = getPos _cam;
+        grad_VM_cameraPosition = getPosVisual _cam;
 
     }, 0, [_cam, _lightPoint, _lastPipePos]] call CBA_fnc_addPerFramehandler;
 

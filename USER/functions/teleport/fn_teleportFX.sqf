@@ -118,7 +118,7 @@ if (local _unit && isPlayer _unit) then {
             [_unit] call grad_loadout_fnc_doLoadoutForUnit;
             
             private _customPosition = selectRandom _destinationPositions;
-            _unit setPos (_customPosition findEmptyPosition [0,8]);
+            _unit setPos (_customPosition getPos [random 7, random 360]);
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
             [] execVM "USER\functions\phase0\fn_introText.sqf";
 

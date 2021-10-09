@@ -9,7 +9,7 @@ _crystal addAction
         ["GRAD_VM_phaseControl", [1,1]] call CBA_fnc_serverEvent;
 
         private _position = getPosWorld phase1_pedestal;
-        _position set [2, _position#2 + 0.2];
+        _position set [2, _position#2 + 0.7];
         _target setPosWorld _position;
         // todo set crystal on pedestal
     },

@@ -38,6 +38,11 @@ for "_i" from 0 to 100 do {
     };
 };
 
-private _firstPipePos = getPos (grad_VM_wormholePipes select 0);
+private _firstPipePos = getPosVisual (grad_VM_wormholePipes select 0);
 _firstPipePos set [2, (_firstPipePos select 2) - 1.5];
+
+private _lastPipePos = getPosVisual (grad_VM_wormholePipes select ((count grad_VM_wormholePipes) - 2));
+_lastPipePos set [2, (_lastPipePos select 2) - 1.5];
 grad_VM_cameraPosition = _firstPipePos;
+grad_VM_cameraPositionTeleportFirst = _firstPipePos;
+grad_VM_cameraPositionTeleportLast = _lastPipePos;
