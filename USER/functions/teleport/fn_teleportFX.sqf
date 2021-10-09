@@ -1,4 +1,4 @@
-params ["_unit", "_destinationPositions", "_index", "_duration", "_numberStart", "_numberEnd"];
+params ["_unit", "_destinationPositions", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
 
 private _currentPosition = getPos _unit;
 
@@ -37,7 +37,7 @@ if (local _unit && isPlayer _unit) then {
     [{
         ctrlCommitted (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull])
     },{
-        params ["_unit", "_index", "_duration"];
+        params ["_unit", "_index", "_duration", "_date"];
         
         // systemChat "control";
 
@@ -45,9 +45,9 @@ if (local _unit && isPlayer _unit) then {
         _unit setPos [(_index * -1000), (_index * -1000), 0];
         _unit setVariable ["grad_VM_teleportDone", false];
         
-        [_duration, _numberStart, _numberEnd] call GRAD_VM_teleport_fnc_wormHole;
+        [_duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_wormHole;
 
-    }, [_unit, _index, _duration]] call CBA_fnc_waitUntilAndExecute;
+    }, [_unit, _index, _duration, _date]] call CBA_fnc_waitUntilAndExecute;
 };
 
 [{

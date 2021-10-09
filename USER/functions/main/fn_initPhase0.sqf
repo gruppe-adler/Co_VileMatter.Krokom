@@ -97,25 +97,28 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
         private _date = [2035,2,9,7,0];
         private _numberStart = 2035;
         private _numberEnd = 9;
+        private _count = count (playableUnits + switchableUnits);
         {
             [{
                 params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase1", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
-                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
-                systemChat ("teleporting unit " + str _forEachIndex);
+                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_teleport;
+                systemChat ("teleporting unit " + str _index);
             }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
-            (_forEachIndex/_count)*_duration*((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
+            (_forEachIndex/_count)*_duration+((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
 
         } forEach playableUnits + switchableUnits;
 
         // end light effects
         [{
+            params ["_date"];
             ["grad_VM_phaseControl", [0,4]] call CBA_fnc_serverEvent;
             call GRAD_VM_main_fnc_initPhase1;
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
+            [_date] remoteExec ["setDate"];
 
-        }, [], (_duration+5)] call CBA_fnc_waitAndExecute;
+        }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
 
 }, [_light_phase0]] call CBA_fnc_waitUntilAndExecute;
 

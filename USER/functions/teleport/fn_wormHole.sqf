@@ -62,7 +62,10 @@ _cam camPreload 3;
     params ["_counterControl", "_cam", "_duration"];
     camPreloaded _cam
 },{
-    params ["_counterControl", "_cam", "_duration", "_firstPipePos", "_lastPipePos", "_brightnessMultiplicator"];
+    params ["_counterControl", "_cam", "_duration", "_firstPipePos", "_lastPipePos", "_brightnessMultiplicator", "_date"];
+
+    setDate _date;
+
     _cam camCommand "inertia on";
     _cam cameraEffect ["internal", "BACK"];
     _cam camCommit 0;
@@ -162,4 +165,4 @@ _cam camPreload 3;
 
 
 
-}, [_counterControl, _cam, _duration, _firstPipePos, _lastPipePos, _brightnessMultiplicator]] call CBA_fnc_waitUntilAndExecute;
+}, [_counterControl, _cam, _duration, _firstPipePos, _lastPipePos, _brightnessMultiplicator, _date]] call CBA_fnc_waitUntilAndExecute;
