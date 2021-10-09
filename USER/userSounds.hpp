@@ -411,6 +411,35 @@ class verraeterversager_low
     titles[] = {  };
 };
 
+class rocksFalling_1
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "rocksFalling_1";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\rocksFalling_1.ogg", 5, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class rocksFalling_2
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "rocksFalling_2";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\rocksFalling_2.ogg", 5, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class rocksFalling_3
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "rocksFalling_2";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\rocksFalling_3.ogg", 5, 1, 100 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 
 class steam
 {
