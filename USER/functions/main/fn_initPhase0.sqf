@@ -74,6 +74,13 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
 
         [teleportcenter_phase0] remoteExec ["GRAD_VM_phase0_fnc_portalOpening", 0, true];
 
+
+        {
+            [{
+                [_this] remoteExec ["GRAD_VM_phase0_fnc_steameffect"];
+            }, _x, random 2] call CBA_fnc_waitAndExecute;
+        } forEach (missionNamespace getVariable ["GRAD_VM_phase0_hatches", []]);
+
 }, []] call CBA_fnc_waitUntilAndExecute;
 
 
@@ -87,12 +94,18 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
         params ["_light_phase0"];
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", _light_phase0];
         private _duration = 38;
+        private _date = [2035,2,9,7,0];
+        private _numberStart = 2035;
+        private _numberEnd = 9;
         {
             [{
-                params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd"];
+                params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase1", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
-                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
-            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd], (_forEachIndex/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
+                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
+                systemChat ("teleporting unit " + str _forEachIndex);
+            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
+            (_forEachIndex/_count)*_duration*((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
+
         } forEach playableUnits + switchableUnits;
 
         // end light effects

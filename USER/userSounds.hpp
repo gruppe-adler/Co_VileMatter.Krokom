@@ -410,7 +410,7 @@ class steam
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "steam";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\steam.ogg", VOLUME, 1, 500 };
+    sound[] = { "USER\sounds\steam.ogg", 1, 1, 500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };

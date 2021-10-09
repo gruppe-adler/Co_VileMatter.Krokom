@@ -11,10 +11,12 @@ class GRAD_VM_phase0 {
     class keyPadUnlock;
     class lightningBetween;
     class portalOpening;
+    class replaceWithSimpleObject;
     class sparksEffectClient { postInit = 1; };
     class sparksEffectServer;
     class sparksGetPos;
     class sparkSmall { postInit = 1; };
+    class steamEffect;
     class switch;
     };
 };

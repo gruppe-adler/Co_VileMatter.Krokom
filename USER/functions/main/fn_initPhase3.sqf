@@ -29,12 +29,15 @@ if (!isServer) exitWith {};
     {
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
         private _duration = 38;
+        private _date = [2035,2,9,7,0];
+        private _numberStart = 41225;
+        private _numberEnd = 2035;
         {
             [{
-                params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd"];
+                params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase0", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
-                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
-            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, 9, 1945], (_forEachIndex/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
+                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
+            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], (_forEachIndex/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
         } forEach playableUnits + switchableUnits;
 
         // end light effects

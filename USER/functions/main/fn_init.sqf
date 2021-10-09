@@ -9,6 +9,8 @@
 // EXTEND REVIVE BLEEDOUT TO INFINITY
 if (isServer) then {
 
+    setTimeMultiplier 0.1;
+
     // current Phase, max Phase
     private _grad_VM_portalPhase = [
       0,

@@ -5,7 +5,7 @@
 */
 
 // JIP check
-if ([0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
+if ([1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
 
 
 params ["_stoneHengeCenter"];

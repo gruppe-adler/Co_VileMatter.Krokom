@@ -6,15 +6,8 @@
 
 if (!isServer) exitWith {};
 
-// todo insert correct object
+[phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
 
-[{
-  private _currentPhaseProgress = [1] call GRAD_VM_main_fnc_getPhaseProgress;
-  _currentPhaseProgress > 0
-},
-{
-  [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
-},[]] call CBA_fnc_waitUntilAndExecute;
 
 
 // phase 3 init
@@ -25,12 +18,15 @@ if (!isServer) exitWith {};
     {
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
         private _duration = 38;
+        private _date = [2035,2,9,6,25];
+        private _numberStart = 9;
+        private _numberEnd = 1945;
         {
             [{
-                params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd"];
+                params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase2", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
-                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
-            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, 9, 1945], (_forEachIndex/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
+                [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] remoteExec ["GRAD_VM_teleport_fnc_teleport", _unit];
+            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], (_forEachIndex/_count)*_duration*((random 1) min 0.5)] call CBA_fnc_waitAndExecute;
         } forEach playableUnits + switchableUnits;
 
         // end light effects
