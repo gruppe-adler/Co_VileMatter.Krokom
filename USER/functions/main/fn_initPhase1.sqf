@@ -8,7 +8,15 @@ if (!isServer) exitWith {};
 
 [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
 
+// phase 0 init
+[
+    {
+        ([0] call GRAD_VM_main_fnc_getPhaseProgress) == 1
+    },
+    {
+        [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_portalOpening", 0, true];
 
+}, []] call CBA_fnc_waitUntilAndExecute;
 
 // phase 3 init
 [

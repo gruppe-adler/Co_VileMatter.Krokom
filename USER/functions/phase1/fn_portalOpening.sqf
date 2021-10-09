@@ -18,8 +18,7 @@ private _stoneCircle = nearestObjects [_stoneHengeCenter, ["Land_Bare_boulder_04
 private _effectDuration = 5;
 private _stoneTips = [];
 private _stoneHengeCenterTop = getPosWorld _stoneHengeCenter;
-_stoneHengeCenterTop set [2,3];
-
+_stoneHengeCenterTop set [2,2];
 
 
 {
@@ -66,10 +65,10 @@ private _handle = [{
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
 
-            // JIP proof execution
-            if (grad_VM_portalPhase_1 < 1) then {
-              grad_VM_portalPhase_1 = 1;
-              publicVariable "grad_VM_portalPhase_1";
+            // first player sends signal
+            private _currentPhaseProgress = [1] call GRAD_VM_main_fnc_getPhaseProgress;
+            if (_currentPhaseProgress < 3) then {
+                ["grad_VM_phaseControl", [1, 3]] call CBA_fnc_serverEvent;
             };
         };
     } forEach _lightPoints;
@@ -144,6 +143,8 @@ private _handle = [{
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
     _lightPoint setLightBrightness 10;
+    
+    _lightPoint say3D "grad_VM_hum2";
 
     // lightpoint moving in center of stoneHenge
 
