@@ -94,7 +94,7 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
         params ["_light_phase0"];
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", _light_phase0];
         private _duration = 38;
-        private _date = [2035,2,9,7,0];
+        private _date = [2035,2,9,6,50];
         private _numberStart = 2035;
         private _numberEnd = 9;
         private _count = count (playableUnits + switchableUnits);
@@ -103,7 +103,7 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
                 params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase1", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
                 [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_teleport;
-                systemChat ("teleporting unit " + str _index);
+                // systemChat ("teleporting unit " + str _index);
             }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
             (_forEachIndex/_count)*_duration+((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
 

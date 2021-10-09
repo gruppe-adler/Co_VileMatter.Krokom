@@ -11,7 +11,7 @@ if (!isServer) exitWith {};
 // phase 0 init
 [
     {
-        ([0] call GRAD_VM_main_fnc_getPhaseProgress) == 1
+        ([1] call GRAD_VM_main_fnc_getPhaseProgress) == 1
     },
     {
         [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_portalOpening", 0, true];
@@ -24,6 +24,7 @@ if (!isServer) exitWith {};
       [1] call GRAD_VM_main_fnc_getPhaseProgress == 3
     },
     {
+        diag_log "phase 1 done";
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
         private _duration = 38;
         private _date = [2035,2,9,6,25];

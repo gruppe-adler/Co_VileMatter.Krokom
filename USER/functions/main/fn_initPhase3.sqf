@@ -30,7 +30,7 @@ if (!isServer) exitWith {};
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
         private _duration = 38;
         private _date = [2035,2,9,7,0];
-        private _numberStart = 41225;
+        private _numberStart = 40560;
         private _numberEnd = 2035;
         private _count = count (playableUnits + switchableUnits);
         {

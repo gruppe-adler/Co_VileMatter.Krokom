@@ -9,8 +9,6 @@ if ([1] call GRAD_VM_main_fnc_getPhaseProgress == [1] call GRAD_VM_main_fnc_getP
 
 params ["_stoneHengeCenter"];
 
-[_stoneHengeCenter] execVM "User\functions\phase1\fn_stoneHengeFX.sqf";
-
 // reset
 _stoneHengeCenter setVariable ["grad_VM_zPos", -3];
 
@@ -18,7 +16,7 @@ private _stoneCircle = nearestObjects [_stoneHengeCenter, ["Land_Bare_boulder_04
 private _effectDuration = 5;
 private _stoneTips = [];
 private _stoneHengeCenterTop = getPosWorld _stoneHengeCenter;
-_stoneHengeCenterTop set [2,2];
+_stoneHengeCenterTop set [2,1.5];
 
 
 {
@@ -36,7 +34,7 @@ private _lightPoints = [];
 
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _x);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
+    _lightPoint setLightFlareSize 3; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
     _lightPoint setLightAttenuation [2, 4, 4, 0, 9, 10];// [0,0,0,0,0,4000];
     _lightPoint setLightBrightness .1;
@@ -52,80 +50,30 @@ private _handle = [{
 
     {
         private _lightpoint = _x;
-        private _position = (_lightPoint getPos [0.02, (_lightpoint getRelDir _stoneHengeCenterTop)]);
+        private _position = (_lightPoint getPos [0.05, (_lightpoint getRelDir _stoneHengeCenterTop)]);
         _position set [2, 1.5];
 
         _lightpoint setPos _position;
 
         drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
+        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,2,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
-        if (_lightpoint distance2d _stoneHengeCenterTop < 0.1) exitWith {
-            { deleteVehicle _x; } forEach _lightPoints;
-            [_handle] call CBA_fnc_removePerFrameHandler;
-
+        if (_lightpoint distance2d _stoneHengeCenterTop < 0.2) exitWith {
+            diag_log "success phase1 star";
             // first player sends signal
             private _currentPhaseProgress = [1] call GRAD_VM_main_fnc_getPhaseProgress;
             if (_currentPhaseProgress < 3) then {
                 ["grad_VM_phaseControl", [1, 3]] call CBA_fnc_serverEvent;
             };
-        };
-    } forEach _lightPoints;
 
-
-}, 0.02, [_lightPoints, _stoneHengeCenterTop]] call CBA_fnc_addPerFrameHandler;
-
-
-[{
-    params ["_args", "_handle"];
-    _args params ["_lightPoints", "_stoneHengeCenterTop"];
-
-    {
-        private _lightpoint = _x;
-        private _position = (_lightPoint getPos [0.02, (_lightpoint getRelDir _stoneHengeCenterTop)]);
-        _position set [2, 1.5];
-
-        _lightpoint setPos _position;
-
-        drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
-
-
-        if (_lightpoint distance2d _stoneHengeCenterTop < 0.1) exitWith {
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
         };
     } forEach _lightPoints;
 
 
-}, 0.02, [_lightPoints, _stoneHengeCenterTop]] call CBA_fnc_addPerFrameHandler;
-
-
-[{
-    params ["_args", "_handle"];
-    _args params ["_lightPoints", "_stoneHengeCenterTop"];
-
-    {
-        private _lightpoint = _x;
-        private _position = (_lightPoint getPos [0.02, (_lightpoint getRelDir _stoneHengeCenterTop)]);
-        _position set [2, 1.5];
-
-        _lightpoint setPos _position;
-
-        drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.7,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
-
-
-        if (_lightpoint distance2d _stoneHengeCenterTop < 0.1) exitWith {
-            { deleteVehicle _x; } forEach _lightPoints;
-            [_handle] call CBA_fnc_removePerFrameHandler;
-        };
-    } forEach _lightPoints;
-
-
-}, 0.02, [_lightPoints, _stoneHengeCenterTop]] call CBA_fnc_addPerFrameHandler;
-
+}, 0.01, [_lightPoints, _stoneHengeCenterTop]] call CBA_fnc_addPerFrameHandler;
 
 
 

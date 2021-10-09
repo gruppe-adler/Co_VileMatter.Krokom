@@ -32,7 +32,7 @@ private _lightPoints = [];
 
     private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _x);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
+    _lightPoint setLightFlareSize 3; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
     _lightPoint setLightAttenuation [2, 4, 4, 0, 9, 10];// [0,0,0,0,0,4000];
     _lightPoint setLightBrightness .1;
@@ -50,14 +50,14 @@ private _lightPoints = [];
 
     {
         private _lightpoint = _x;
-        private _position = (_lightPoint getPos [0.02, (_lightpoint getRelDir _light_top)]);
+        private _position = (_lightPoint getPos [0.05, (_lightpoint getRelDir _light_top)]);
         _position set [2, _light_top select 2];
 
         _lightpoint setPosASL _position;
 
 
         drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
+        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,2,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
         if (_lightpoint distance2d _light_top < 0.2) exitWith {
@@ -72,58 +72,8 @@ private _lightPoints = [];
     } forEach _lightPoints;
 
 
-}, 0.02, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
+}, 0.01, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
 
-
-[{
-    params ["_args", "_handle"];
-    _args params ["_lightPoints", "_light_top"];
-
-    {
-        private _lightpoint = _x;
-        private _position = (_lightPoint getPos [0.02, (_lightpoint getRelDir _light_top)]);
-        _position set [2, _light_top select 2];
-
-        _lightpoint setPosASL _position;
-
-
-        drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
-
-
-        if (_lightpoint distance2d _light_top < 0.1) exitWith {
-            { deleteVehicle _x; } forEach _lightPoints;
-            [_handle] call CBA_fnc_removePerFrameHandler;
-        };
-    } forEach _lightPoints;
-
-
-}, 0.02, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
-
-
-[{
-    params ["_args", "_handle"];
-    _args params ["_lightPoints", "_light_top"];
-
-    {
-        private _lightpoint = _x;
-        private _position = (_lightPoint getPos [0.02, (_lightpoint getRelDir _light_top)]);
-        _position set [2, _light_top select 2];
-
-        _lightpoint setPosASL _position;
-
-        drop [["\A3\data_f\kouleSvetlo",1,0,1],"","Billboard",1,1,[0,0,0],[0,0,0],0,9.999,7,0,[1,5],[[0.443,0.706,0.81,0.2],[0.443,0.706,0.81,0]],[1],0,0,"","",_lightpoint];
-        drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.7,[1,1,0],[0,0,0],0,9,7,0,[.1,1,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
-
-
-        if (_lightpoint distance2d _light_top < 0.1) exitWith {
-            { deleteVehicle _x; } forEach _lightPoints;
-            [_handle] call CBA_fnc_removePerFrameHandler;
-        };
-    } forEach _lightPoints;
-
-
-}, 0.02, [_lightPoints, _light_top]] call CBA_fnc_addPerFrameHandler;
 
 
 [{

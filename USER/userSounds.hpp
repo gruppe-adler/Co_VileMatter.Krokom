@@ -87,7 +87,14 @@ class grad_VM_circus
 class grad_VM_teleportEnd
 {
     name = "grad_VM_teleportEnd";
-    sound[] = {"USER\sounds\teleportEnd.ogg", VOLUME, 1, DISTANCE};
+    sound[] = {"USER\sounds\teleport_end.ogg", VOLUME, 1, DISTANCE};
+    titles[] = {0, ""};
+};
+
+class grad_VM_teleport2
+{
+    name = "grad_VM_teleport2";
+    sound[] = {"USER\sounds\teleport2.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 

@@ -31,7 +31,7 @@ _control ctrlCommit 2;
         0, 
         _currentDistance, 
         _startDate, 
-        _endDate, 
+        _endDate,
         true
     ]);
 

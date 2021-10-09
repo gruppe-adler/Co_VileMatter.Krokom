@@ -21,6 +21,8 @@ _beam setPos [_xPos, _yPos, 2];
 
 if (local _unit && isPlayer _unit) then {
 
+    playsound "grad_VM_teleport2";
+
     diwako_dui_main_toggled_off = true;
 
     private _display = findDisplay 46;
@@ -37,7 +39,7 @@ if (local _unit && isPlayer _unit) then {
     [{
         ctrlCommitted (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull])
     },{
-        params ["_unit", "_index", "_duration", "_date"];
+        params ["_unit", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
         
         // systemChat "control";
 
@@ -47,7 +49,7 @@ if (local _unit && isPlayer _unit) then {
         
         [_duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_wormHole;
 
-    }, [_unit, _index, _duration, _date]] call CBA_fnc_waitUntilAndExecute;
+    }, [_unit, _index, _duration, _numberStart, _numberEnd, _date]] call CBA_fnc_waitUntilAndExecute;
 };
 
 [{
