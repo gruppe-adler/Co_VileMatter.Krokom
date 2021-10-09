@@ -3,6 +3,7 @@ class GRAD_VM_horrorEffects {
         class horrorEffects {
         file = "USER\functions\localEffects";
         class endOrb {};
+        class meatSplashEffect;
         class moveOrb {};
         class rainbowRing {};
         class refractingOrb {};
