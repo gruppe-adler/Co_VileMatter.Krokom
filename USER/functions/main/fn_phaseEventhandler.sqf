@@ -5,6 +5,22 @@ if (!isServer) exitWith {};
 
     private _phaseOriginal = missionNamespace getVariable ["grad_VM_portalPhase", []];
     (_phaseOriginal select 1 select _phase) set [0, _phaseStep];
+    _phaseOriginal set [0, _phase];
     missionNamespace setVariable ["grad_VM_portalPhase", _phaseOriginal, true];
 
+
 }] call CBA_fnc_addEventHandler;
+
+/*
+
+private _grad_VM_portalPhase = [
+      0,
+      [
+        [0,4],
+        [0,4],
+        [0,4],
+        [0,4]
+      ]
+    ];
+
+*/

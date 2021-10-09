@@ -2,7 +2,7 @@ if (!canSuspend) exitWith {
     [] execVM "USER\functions\phase0\fn_introText.sqf";
 };
 
-sleep 7;
+sleep 11;
 
 playSound "grad_VM_crescendo";
 
