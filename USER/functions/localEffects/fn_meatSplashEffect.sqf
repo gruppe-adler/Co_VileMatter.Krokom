@@ -2,7 +2,7 @@ params ["_position"];
 
 for "_i" from 0 to (ceil(random 10)) do {
 
-    private _randomSpread = [_position,[0,5],random 360,0] call SHK_pos;
+    private _randomSpread = [_position, random 5, random 360] call BIS_fnc_relPos;
 
     private _bloodPoolType = selectRandom 
     [
