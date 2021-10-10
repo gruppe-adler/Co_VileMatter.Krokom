@@ -20,6 +20,13 @@ class teleport_global
     titles[] = {0, ""};
 };
 
+class teleport_flash
+{
+    name = "teleport_flash";
+    sound[] = {"USER\sounds\teleport_flash.ogg", VOLUME, 1, 500};
+    titles[] = {0, ""};
+};
+
 
 class GRAD_electricFence_sound_hum
 {

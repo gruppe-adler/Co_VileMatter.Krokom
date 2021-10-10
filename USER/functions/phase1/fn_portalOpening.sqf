@@ -93,7 +93,8 @@ private _handle = [{
     _lightPoint setLightBrightness 10;
     
     _lightPoint say3D "grad_VM_hum2";
-
+    _lightPoint say3d "teleport_flash";
+    playSound "grad_VM_drone";
     // lightpoint moving in center of stoneHenge
 
     [{

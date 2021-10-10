@@ -89,6 +89,9 @@ private _lightPoints = [];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 500];
     _lightPoint setLightBrightness 10;
 
+    _lightPoint say3D "grad_VM_hum2";
+    _lightPoint say3d "teleport_flash";
+
     // lightpoint moving in center of stoneHenge
     [{
         params ["_args", "_handle"];
@@ -131,8 +134,6 @@ private _lightPoints = [];
 
 
     }, 0.02, [_lightPoint, _teleportcenter_phase0]] call CBA_fnc_addPerFrameHandler;
-
-    _lightPoint say3D "grad_VM_hum2";
 
     drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,5,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
