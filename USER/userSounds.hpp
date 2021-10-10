@@ -448,12 +448,12 @@ class rocksFalling_3
     titles[] = {  };
 };
 
-class earthquake
+class phase4_earthquake
 {
     // how the sound is referred to in the editor (e.g. trigger effects)
-    name = "earthquake";
+    name = "phase4_earthquake";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\VileMatter_phase4_Earthquake.ogg", -1, 1, 100 };
+    sound[] = { "USER\sounds\VileMatter_phase4_Earthquake.ogg", 1, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };

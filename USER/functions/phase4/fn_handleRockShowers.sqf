@@ -65,3 +65,25 @@ if (!isServer) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 		// [3, 4, 40] remoteExec ["addCamShake", [0, -2] select isMultiplayer];
 	}
 ] call CBA_fnc_waitUntilAndExecute;
+
+[
+	{
+		private _unitsPresent = (allPlayers select { side _x isEqualTo west }) inAreaArray [[643.366,746.862,4.987], 3, 8, 315.677, true, 6];
+		(count _unitsPresent) > 0
+	},
+	{
+		[getPos GRAD_VM_rockShowerSource_6, GRAD_VM_rockShowerSource_6, 10, 2] remoteExec ["GRAD_VM_phase4_fnc_spawnRockShower", [0, -2] select isMultiplayer];
+		[GRAD_VM_rockShowerSource_6, ["rocksFalling_1", 100]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+	}
+] call CBA_fnc_waitUntilAndExecute;
+
+[
+	{
+		private _unitsPresent = (allPlayers select { side _x isEqualTo west }) inAreaArray [[603.419,702.497,4.987], 2, 5, 136.915, true, 6];
+		(count _unitsPresent) > 0
+	},
+	{
+		[getPos GRAD_VM_rockShowerSource_7, GRAD_VM_rockShowerSource_7, 10, 2] remoteExec ["GRAD_VM_phase4_fnc_spawnRockShower", [0, -2] select isMultiplayer];
+		[GRAD_VM_rockShowerSource_7, ["rocksFalling_3", 100]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+	}
+] call CBA_fnc_waitUntilAndExecute;
