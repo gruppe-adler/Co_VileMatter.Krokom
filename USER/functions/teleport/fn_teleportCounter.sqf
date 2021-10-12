@@ -38,12 +38,15 @@ _control ctrlCommit 2;
     _control ctrlSetStructuredText parseText format ["<t shadow='0' color='#000000' size='6' align='center'>%1</t>", _dateResult];
     _control ctrlCommit 0;
 
-    if (_dateResult == _endDate) exitWith {
+    // fix getting stuck at a number close to end
+    if (_dateResult == _endDate || 
+        _dateResult == (_endDate+1) ||
+        _dateResult == (_endDate-1)) exitWith {
         _control ctrlSetFade 1;
-        _control ctrlCommit 2;
+        _control ctrlCommit 3;
          [{
             ctrlDelete _this;
-         }, _control, 2] call CBA_fnc_waitAndExecute;
+         }, _control, 3] call CBA_fnc_waitAndExecute;
          [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
