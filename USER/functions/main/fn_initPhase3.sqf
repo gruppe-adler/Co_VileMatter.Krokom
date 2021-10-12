@@ -14,7 +14,7 @@ if (!isServer) exitWith {};
     private _phase3Lamps = [Grad_VM_caveLamp_1, Grad_VM_caveLamp_2, Grad_VM_caveLamp_3, Grad_VM_caveLamp_4, Grad_VM_caveLamp_5, Grad_VM_caveLamp_6, Grad_VM_caveLamp_7, Grad_VM_caveLamp_8, Grad_VM_caveLamp_9, Grad_VM_caveLamp_10, Grad_VM_caveLamp_11];
     {
         private _brightness = _x getVariable ["Grad_VM_brightness", 0.42];
-        [_x, _brightness] remoteExec ["Grad_VM_fnc_activateCaveLamp", [0, -2] select isMultiplayer];
+        [_x, _brightness] remoteExec ["Grad_VM_phase3_fnc_activateCaveLamp", [0, -2] select isMultiplayer];
     } forEach _phase3Lamps;
 
     [700] remoteExec ["Grad_VM_phase3_fnc_hideTreesLocal", [0, -2] select isMultiplayer];
