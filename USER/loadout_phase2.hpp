@@ -27,6 +27,7 @@ class vm_vilematter_phase2 {
     class Type {
         //Rifleman
         class Soldier_F {
+            headgear = "H_LIB_US_Helmet";
             addItemsToUniform[] = {
                 LIST_1("LIB_ACC_M1_Bayo"),
                 LIST_1("FirstAidKit"),
@@ -58,7 +59,7 @@ class vm_vilematter_phase2 {
             uniform = "U_LIB_US_Private_1st";
             primaryWeapon = "LIB_M1918A2_BAR";
             primaryWeaponMagazine= "LIB_20Rnd_762x63";
-            handgunWeapon = "JMSL_W_Melee_Celt_sword_1";
+            handgunWeapon = "";
             vest = "V_LIB_US_Vest_Bar";
             backpack = "";
         };

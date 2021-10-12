@@ -31,9 +31,20 @@ private _light_phase2_3 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 
+// phase 0 init
+[
+    {
+        ([2] call GRAD_VM_main_fnc_getPhaseProgress) == 1
+    },
+    {
+        [phase2_devicestatue] remoteExec ["GRAD_VM_phase2_fnc_portalOpening", 0, true];
+
+}, []] call CBA_fnc_waitUntilAndExecute;
+
+
 // phase 3 init
 [
-    { grad_VM_portalPhase_2 == 3 },
+    { [2] call GRAD_VM_main_fnc_getPhaseProgress == 3 },
     {
         params ["_light_phase2_1", "_light_phase2_2", "_light_phase2_3"];
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];

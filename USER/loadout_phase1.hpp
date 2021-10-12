@@ -31,7 +31,7 @@ class vm_vilematter_phase1 {
             handgunWeapon = "JMSL_W_Melee_Celt_sword_1";
             backpack = "";
             headgear = "JMSL_Celtic_Helmet_2_stal_H";
-            nvgoggles[] = {"Shield_4", "Shield_2"};
+            nvgoggles = "";
         };
 
         //Asst. Autorifleman
@@ -69,6 +69,8 @@ class vm_vilematter_phase1 {
             handgunWeapon = "JMSL_W_Melee_Celt_sword_1";
             vest = "JMSL_Celt_CapeMail_1_A";
             nvgoggles = "";
+            backpack = "JMSL_back_arrowpack_full_1";
+            addItemsToBackpack[] = { LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag")};
         };
 
         //Autorifleman
@@ -89,6 +91,7 @@ class vm_vilematter_phase1 {
             vest = "JMSL_Celt_CapeMail_1_A";
             addItemsToBackpack[] = {"RM_torch_fluid"};
             backpack = "JMSL_back_arrowpack_full_1";
+            addItemsToBackpack[] = { LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag")};
         };
 
         //Explosive Specialist
