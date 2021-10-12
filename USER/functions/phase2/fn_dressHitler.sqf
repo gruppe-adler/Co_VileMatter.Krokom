@@ -37,9 +37,13 @@ GRAD_VM_phase2_fnc_suicideHitler = {
     sleep 3.9;
 
     sleep 0.5;
-    _unit forceWeaponFire [handgunWeapon _unit, "Single"];
-    _unit setDamage 1;
-    
+
+    _unit addEventHandler ["Fired", {
+        params ["_unit"];
+        _unit setDamage 1;
+        _unit removeEventHandler ["Fired", _thisEventHandler];
+    ];
+    _unit forceWeaponFire [handgunWeapon _unit, "Single"];    
 };
 
 

@@ -1,6 +1,4 @@
-params ["_unit", "_destinationPositions", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
-
-private _currentPosition = getPos _unit;
+params ["_unit", "_currentPosition", "_destinationPositions", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
 
 drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,5,[1,1,0],[0,0,0],0,9,7,0,[.5,.5],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
@@ -17,7 +15,7 @@ getPosWorld _unit params ["_xPos", "_yPos"];
 _beam setPos [_xPos, _yPos, 2];
 [_beam, 90, 0] call BIS_fnc_setPitchBank;
 
-[getpos _unit] call GRAD_VM_teleport_fnc_despawnEffect;
+[_currentPosition] call GRAD_VM_teleport_fnc_despawnEffect;
 
 if (local _unit && isPlayer _unit) then {
 
