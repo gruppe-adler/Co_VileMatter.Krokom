@@ -41,14 +41,17 @@ private _class = typeOf _template;
 
 if (_class == "") exitWith {["[x] Cannot retrieve classname!"] call bis_fnc_error;};
 
-//scan simulated object
+//get world position, dir and vector up
+
+private _posASL = getPosASL _template;
+private _vectorDir = VectorDir _template;
+private _vectorUp = vectorUp _template;
+
 private _data = [_template] call BIS_fnc_simpleObjectData;
 
 //get world position, dir and vector up
 //private _pos = getPosASL _template; _pos set [2, (_pos select 2) - (_data select 3)];
-private _posASL = getPosASL _template;
-private _vectorDir = VectorDir _template;
-private _vectorUp = vectorUp _template;
+_posASL set [2, (_posASL select 2) - (_data select 3)];
 
 //hide simulated object
 hideObjectGlobal _template;
@@ -57,7 +60,7 @@ hideObjectGlobal _template;
 private _object = createSimpleObject [_class, _posASL];
 
 //set position (to negate built-in auto-adjusting)
-_object setPosASL _pos;
+_object setPosASL _posASL;
 
 //set vector up
 _object setVectorDirAndUp [_vectorDir, _vectorUp];

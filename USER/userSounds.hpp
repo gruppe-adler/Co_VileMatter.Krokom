@@ -497,6 +497,16 @@ class Hitler_Monolog_far
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
+
+class lever
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "lever";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\lever.ogg", 1, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 // Space-Marine voicelines:
 
 // class Captain_voiceLine
