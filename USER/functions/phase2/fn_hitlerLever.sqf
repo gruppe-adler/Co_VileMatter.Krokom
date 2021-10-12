@@ -3,20 +3,21 @@ params ["_object"];
 
 _object addAction
 [
-    "Hebel bewegen",    // title
+    "Hebel bewegen",    
     {
-        params ["_target", "_caller", "_actionId", "_arguments"]; // script      
+        params ["_target", "_caller", "_actionId", "_arguments"]; 
         
-        
+        _target animate ["lever_rot", 1, 0.25];
+        ["GRAD_VM_phaseControl", [2,1]] call CBA_fnc_serverEvent;
     },
-    nil,        // arguments
-    1.5,        // priority
-    true,       // showWindow
-    true,       // hideOnUse
-    "",         // shortcut
-    "true",     // condition
-    1,         // radius
-    false,      // unconscious
-    "",         // selection
-    ""          // memoryPoint
+    nil,        
+    1.5,        
+    true,       
+    true,       
+    "",         
+    "[2] call GRAD_VM_main_fnc_getPhaseProgress == 0",     
+    2,         
+    false,      
+    "",         
+    ""          
 ];

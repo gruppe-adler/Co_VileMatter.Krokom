@@ -6,6 +6,9 @@ class GRAD_VM_phase2 {
     class addBunkerAction;
     class dressHitler;
     class hitlerSpeech;
+    class hitlerLever;
     class hitlerSpeechAlternative;
+    class initDevices { postInit = 1; };
+    class deviceReplaceWithSimpleObject;
    };
 };

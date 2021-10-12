@@ -46,21 +46,21 @@ private _data = [_template] call BIS_fnc_simpleObjectData;
 
 //get world position, dir and vector up
 //private _pos = getPosASL _template; _pos set [2, (_pos select 2) - (_data select 3)];
-private _pos = getPosWorld _template;
-private _dir = getDir _template;
+private _posASL = getPosASL _template;
+private _vectorDir = VectorDir _template;
 private _vectorUp = vectorUp _template;
 
 //hide simulated object
 hideObjectGlobal _template;
 
 //create simple object
-private _object = [_data,_pos,_dir,false,_forceSuperSimple] call BIS_fnc_createSimpleObject;
+private _object = createSimpleObject [_class, _posASL];
 
 //set position (to negate built-in auto-adjusting)
-_object setPosWorld _pos;
+_object setPosASL _pos;
 
 //set vector up
-_object setVectorUp _vectorUp;
+_object setVectorDirAndUp [_vectorDir, _vectorUp];
 
 
 _object
