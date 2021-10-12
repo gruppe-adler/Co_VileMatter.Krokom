@@ -2,7 +2,7 @@
 * Spawns a guardsmen squad in the phase 3 arena.
 *
 * Arguments:
-* None
+* 0: Use voicelines (optional) <BOOLEAN>
 *
 * Return Value:
 * None
@@ -10,6 +10,8 @@
 * Example:
 * [] call Grad_VM_phase3_fnc_spawnGuardsmen;
 */
+
+params [["_voicelines", true]];
 
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, [0, -2] select isMultiplayer]; };
 
@@ -26,23 +28,25 @@ private _unit = _group createUnit ["TIOW_Comissar_I", Grad_VM_marinePos_16, [], 
 _unit setDir (getDir Grad_VM_marinePos_16);
 
 // schedule the voicelines after all guardsmen are spawned
-[
-	{
-		params ["_unit", "_group"];
-		[_unit, ["Charge", 500, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+if (_voicelines) then {
+	[
+		{
+			params ["_unit", "_group"];
+			[_unit, ["Charge", 500, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 
-		[
-			{
-				params ["_unit"];
-				[_unit, ["For_the_empirium_of_man", 500, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
-			},
-			[selectRandom (units _group)],
-			5
-		] call CBA_fnc_waitAndExecute;
-	},
-	[_unit, _group],
-	6
-] call CBA_fnc_waitAndExecute;
+			[
+				{
+					params ["_unit"];
+					[_unit, ["For_the_empirium_of_man", 500, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+				},
+				[selectRandom (units _group)],
+				5
+			] call CBA_fnc_waitAndExecute;
+		},
+		[_unit, _group],
+		6
+	] call CBA_fnc_waitAndExecute;
+};
 
 // spawn all guardsmen with their respective effects
 {

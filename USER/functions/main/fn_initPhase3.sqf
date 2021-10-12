@@ -6,11 +6,9 @@
 
 if (!isServer) exitWith {};
 
-// todo insert correct object
-
 // lighten up the phase 3 cave
 [{
-    ([3] call GRAD_VM_main_fnc_getPhaseProgress) > 0
+    ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3
 },
 {
     private _phase3Lamps = [Grad_VM_caveLamp_1, Grad_VM_caveLamp_2, Grad_VM_caveLamp_3, Grad_VM_caveLamp_4, Grad_VM_caveLamp_5, Grad_VM_caveLamp_6, Grad_VM_caveLamp_7, Grad_VM_caveLamp_8, Grad_VM_caveLamp_9, Grad_VM_caveLamp_10, Grad_VM_caveLamp_11];
@@ -18,13 +16,15 @@ if (!isServer) exitWith {};
         private _brightness = _x getVariable ["Grad_VM_brightness", 0.42];
         [_x, _brightness] remoteExec ["Grad_VM_fnc_activateCaveLamp", [0, -2] select isMultiplayer];
     } forEach _phase3Lamps;
+
+    [700] remoteExec ["Grad_VM_phase3_fnc_hideTreesLocal", [0, -2] select isMultiplayer];
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 
 // phase 3 init
 [
     {
-        [3] call GRAD_VM_main_fnc_getPhaseProgress == 3
+        ([3] call GRAD_VM_main_fnc_getPhaseProgress) isEqualTo 3
     },
     {
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
@@ -46,7 +46,7 @@ if (!isServer) exitWith {};
         [{
             params ["_date"];
             ["grad_VM_phaseControl", [3, 4]] call CBA_fnc_serverEvent;
-
+            call GRAD_VM_main_fnc_initPhase4;
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase0", true] call GRAD_Loadout_fnc_FactionSetLoadout;
             [_date] remoteExec ["setDate"];

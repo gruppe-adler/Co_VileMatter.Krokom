@@ -24,7 +24,7 @@ while {true} do {
 	if (_count < _maxShake) then {
 		_count = _count + (_increasePercentage * _maxShake);
 	};
-	systemChat str _count;
+	// systemChat str _count;
 	addCamShake [_count, _sleepTime * 10, 35];
 	sleep _sleepTime;
 };

@@ -467,6 +467,36 @@ class steam
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
+
+class Hitler_Monolo_default
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Hitler_Monolo_default";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Hitler_Monolo_default.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class Hitler_Monolo_close
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Hitler_Monolo_default_close";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Hitler_Monolo_default_close.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class Hitler_Monolo_far
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "Hitler_Monolo_default_far";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\Hitler_Monolo_default_far.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 // Space-Marine voicelines:
 
 // class Captain_voiceLine

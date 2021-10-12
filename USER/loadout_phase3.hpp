@@ -4,7 +4,7 @@ class vm_vilematter_phase3 {
         uniform = "TIOW_U_Fire_Warrior_VL_B";
         vest = "TIOW_Tau_BeltB_VL";
         backpack = "TIOW_Tau_Bck_Strike_VL";
-        headgear = "TIOW_Tau_HelmetS_VL";
+        headgear = "GRAD_Tau_HelmetS_VL";
         primaryWeapon = "DMCLS_pulse_burster_VL";
         primaryWeaponMagazine = "DMCLS_pulse_mag_36";
         primaryWeaponOptics[] = {"dmcls_tau_coli_1_vl", "dmcls_tau_coli_2_vl"};
@@ -123,7 +123,7 @@ class vm_vilematter_phase3 {
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
             backpack = "TIOW_Tau_Bck_Breacher_Shasui_VL";
-            headgear = "TIOW_Tau_HelmetS_VL_sui";
+            headgear = "GRAD_Tau_HelmetS_VL_sui";
             primaryWeapon = "DMCLS_pulse_carbine_VL";
             primaryWeaponUnderbarrelMagazine = "DMCLS_tau_fusion_grenade_uglmag";
             addItemsToBackpack[] = {

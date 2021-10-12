@@ -13,5 +13,6 @@ class GRAD_VM_phase3 {
       class guardsmenSpawnEffect {};
       class activateCaveLamp {};
       class handleBattleshipLocal {};
+      class hideTreesLocal {};
    };
 };

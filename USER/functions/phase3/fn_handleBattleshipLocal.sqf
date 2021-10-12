@@ -28,6 +28,19 @@ private _pfhHandler = [
 	params ["_args", "_handle"]; 
 	_args params ["_shipPos", "_ship"]; 
 	
+	if (([] call GRAD_VM_main_fnc_getCurrentPhase) isNotEqualTo 3) exitWith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		// wait a few seconds to delete the ship, to avoid conflicts with the ship firing
+		[
+			{
+				params ["_ship"];
+				deleteVehicle _ship;
+			},
+			[_ship],
+			8.2
+		] call CBA_fnc_waitAndExecute;
+	};
+	
 	movementSpeed = movementSpeed/1.03; 
 	private _newPos = _ship getRelPos [movementSpeed, 180]; 
 	_newPos = AGLToASL _newPos; 

@@ -34,6 +34,7 @@ private _pfhHandler = [
 		if (_flareSize <= 0) exitWith {
 			[_handle] call CBA_fnc_removePerFrameHandler;
 			deleteVehicle _light;
+			_pad setVariable ["GRAD_VM_flareSize", 50];
 		};
 		_flareSize = _flareSize - 7;
 		_light setLightFlareSize _flareSize;
