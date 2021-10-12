@@ -468,32 +468,32 @@ class steam
     titles[] = {  };
 };
 
-class Hitler_Monolo_default
+class Hitler_Monolog_default
 {
     // how the sound is referred to in the editor (e.g. trigger effects)
-    name = "Hitler_Monolo_default";
+    name = "Hitler_Monolog_default";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Hitler_Monolo_default.ogg", 1, 1, 1500 };
+    sound[] = { "USER\sounds\Hitler_Monolog_default.ogg", 5, 1, 1500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
 
-class Hitler_Monolo_close
+class Hitler_Monolog_close
 {
     // how the sound is referred to in the editor (e.g. trigger effects)
-    name = "Hitler_Monolo_default_close";
+    name = "Hitler_Monolog_close";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Hitler_Monolo_default_close.ogg", 1, 1, 1500 };
+    sound[] = { "USER\sounds\Hitler_Monolog_close.ogg", 5, 1, 1500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
 
-class Hitler_Monolo_far
+class Hitler_Monolog_far
 {
     // how the sound is referred to in the editor (e.g. trigger effects)
-    name = "Hitler_Monolo_default_far";
+    name = "Hitler_Monolog_far";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Hitler_Monolo_default_far.ogg", 1, 1, 1500 };
+    sound[] = { "USER\sounds\Hitler_Monolog_far.ogg", 5, 1, 1500 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };

@@ -6,5 +6,6 @@ class GRAD_VM_phase2 {
     class addBunkerAction;
     class dressHitler;
     class hitlerSpeech;
+    class hitlerSpeechAlternative;
    };
 };
