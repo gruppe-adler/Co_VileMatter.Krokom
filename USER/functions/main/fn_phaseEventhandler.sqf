@@ -8,6 +8,10 @@ if (!isServer) exitWith {};
     _phaseOriginal set [0, _phase];
     missionNamespace setVariable ["grad_VM_portalPhase", _phaseOriginal, true];
 
+    // phase change to next phase
+    if (_phaseStep == call GRAD_VM_main_fnc_getPhaseMaxProgress) then {
+        _phaseOriginal set [0, (_phase + 1)];
+    };
 
 }] call CBA_fnc_addEventHandler;
 
