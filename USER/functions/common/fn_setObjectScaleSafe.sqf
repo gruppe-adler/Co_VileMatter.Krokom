@@ -7,5 +7,6 @@ params ["_object", "_scale"];
 }, {
     params ["_object", "_scale"];
 
-    [_object, _scale] remoteExec ["setObjectScale", _object];
+    _object attachTo [_object];
+    [_object, _scale] remoteExec ["setObjectScale", _object, _object];
 }, [_object, _scale]] call CBA_fnc_waitUntilAndExecute
