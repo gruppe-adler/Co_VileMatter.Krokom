@@ -8,3 +8,16 @@ sideChannel = 0;                                                                
 artilleryComputer = 0;                                                          // Artilleriecomputer (0/1) - wenn ausgeschaltet, benutzt KI Mörser nicht mehr für indirekten Beschuss
 
 showLogo = 0;                                                                   // Adlerlogo mit Missionsnamen anzeigen (0/1) - alternativ kann hier eine Wartebedingung festgelegt werden (siehe Wiki)
+
+class CfgIdentities
+{
+    class adi_identity
+    {
+        face = "adi_face";
+        glasses = "";
+        name = "Adolf";
+        nameSound = "Adolf";
+        pitch = 1.0;
+        speaker = "Male01ENG";
+    };
+};

@@ -4,7 +4,12 @@ _adi setUnitLoadout [[],[],["LIB_P08","","","",["LIB_8Rnd_9x19_P08",8],[],""],["
 
 [_adi, "adi_face"] remoteExec ["setFace", 0, _adi];
 
+_adi setVariable ["GRAD_VM_isHitler", true, true];
 _adi allowDamage false;
+
+[_adi, "adi_identity"] remoteExec ["setIdentity", 0, _adi];
+
+[_adi] spawn GRAD_VM_phase2_fnc_hitlerSpeech;
 
 _adi addEventHandler ["Fired", {
     params ["_adi", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
@@ -14,13 +19,37 @@ _adi addEventHandler ["Fired", {
     };
 }];
 
+
+GRAD_VM_phase2_fnc_suicideHitler = {
+    _unit = _this select 0;
+
+    objNull remoteControl _unit;     // removes the remoteControlling
+
+    _handgun = handgunWeapon _unit;
+    if (_handgun == "") exitWith {};
+
+    private _animation = "murshun_ActsPercMstpSnonWpstDnon_suicide1B";
+
+    [_unit, _animation] remoteExec ["switchMove"];
+
+    _unit selectWeapon handgunWeapon _unit;
+    
+    sleep 3.9;
+
+    sleep 0.5;
+    _unit forceWeaponFire [handgunWeapon _unit, "Single"];
+    _unit setDamage 1;
+    
+};
+
+
 _adi addAction
 [
     "Die now",    // title
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        [_target] spawn murshun_suicide_fnc;
+        [_target] spawn GRAD_VM_phase2_fnc_suicideHitler;
     },
     nil,        // arguments
     1.5,        // priority

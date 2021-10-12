@@ -4,6 +4,7 @@ class GRAD_VM_phase2 {
     file = "USER\functions\phase2";
 
     class addBunkerAction;
+    class dressHitler;
     class hitlerSpeech;
    };
 };
