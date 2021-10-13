@@ -20,7 +20,6 @@ model = "\JMSL_roman\weapon\aquila.p3d";
 
 params [["_duration", 60], ["_startDate", 2035], ["_endDate", 9]];
 
-1 fadeEnvironment 0;
 // systemchat "wormhole";
 
 // grad_VM_wormholePipes
