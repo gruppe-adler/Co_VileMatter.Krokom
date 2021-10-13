@@ -8,9 +8,8 @@ _crystal addAction
 
         ["GRAD_VM_phaseControl", [1,1]] call CBA_fnc_serverEvent;
 
-        private _position = getPosWorld phase1_pedestal;
-        _position set [2, _position#2 + 0.9];
-        _target setPosWorld _position;
+        // attachto syncs faster than setpos
+        _target attachTo [phase1_pedestal, [0,0,0.9]];
     },
     nil,        // arguments
     1.5,        // priority
