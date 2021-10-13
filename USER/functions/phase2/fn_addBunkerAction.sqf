@@ -10,7 +10,8 @@ _object addAction
         [_caller, "GetOutHelicopterCargoRfl"] remoteexec ["switchMove"];
         
         [{
-            _this setPos ((getPos bunkerEntry) getPos [random 5, random 360]);
+            (((getPos bunkerEntry) getPos [random 5, random 360]) params ["_xPos", "_yPos"];
+            _this setPos [_xPos, _yPos];
             [_this, ""] remoteexec ["switchMove"];
         }, _caller, 2] call CBA_fnc_waitAndExecute;
         

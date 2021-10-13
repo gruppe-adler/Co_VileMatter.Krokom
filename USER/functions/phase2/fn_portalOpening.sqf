@@ -58,7 +58,7 @@ private _handle = [{
             // first player sends signal
             private _currentPhaseProgress = [2] call GRAD_VM_main_fnc_getPhaseProgress;
             if (_currentPhaseProgress < 3) then {
-                ["grad_VM_phaseControl", [1, 3]] call CBA_fnc_serverEvent;
+                ["grad_VM_phaseControl", [2, 3]] call CBA_fnc_serverEvent;
             };
 
             { deleteVehicle _x; } forEach _lightPoints;
