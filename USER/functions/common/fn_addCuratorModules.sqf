@@ -19,7 +19,7 @@
 ["Vile Matter - Phase 1", "Spawn Lion", {
      params ["_positionASL", "_object"];
      
-     private _tiger = createUnit  ["Edaly_Tiger", ASLtoAGL _positionASL, [], 0, "CAN_COLLIDE"];
+     private _tiger = (creategroup east) createUnit ["Edaly_Tiger", ASLtoAGL _positionASL, [], 0, "CAN_COLLIDE"];
      _tiger setObjectTextureGlobal [1, "USER\images\lion_small.paa"];
      _tiger setObjectTextureGlobal [2, "#(rgb,8,8,3)color(0,0,0,0)"];
 
