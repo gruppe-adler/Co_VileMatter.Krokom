@@ -81,19 +81,6 @@ if (local _unit && isPlayer _unit) then {
 
     getPos _unit params ["_posXNew", "_posYNew"];
 
-    private _lightPoint = "#lightpoint" createvehiclelocal [_posXNew, _posYNew, 1];
-    _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
-    _lightPoint setLightFlareSize 10; _lightPoint setLightFlareMaxDistance 5000;
-    _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.9,0.7,0.9];
-    _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
-    _lightPoint setLightBrightness 3;
-
-    [{
-            params ["_lightPoint"];
-            deleteVehicle _lightPoint;
-    }, [_lightPoint], 0.2] call CBA_fnc_waitAndExecute;
-
-
     private _fireflyEnd = "#particlesource" createvehiclelocal [_currentPosition select 0, _currentPosition select 1, 1];
     _fireflyEnd setParticleCircle [0,[0,0,0]];
     _fireflyEnd setParticleRandom [0,[0,0,0],[0.1,0.1,0.1],1,0,[0,0,0,0.1],1,1];
@@ -119,6 +106,8 @@ if (local _unit && isPlayer _unit) then {
             private _customPosition = (_destination getPos [random 7, random 360]);
             // set correct height
             _unit setPosWorld [_customPosition#0, _customPosition#1, (_destination#2 max 0)];
+
+            [_customPosition#0, _customPosition#1, (_destination#2 max 0)] call GRAD_VM_teleport_fnc_despawnEffect;
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
             [] execVM "USER\functions\phase0\fn_introText.sqf";
 

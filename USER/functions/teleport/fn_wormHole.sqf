@@ -149,9 +149,6 @@ _cam camPreload 3;
             deleteVehicle _lightPoint;
             _cam cameraEffect ["terminate","back"];
             camDestroy _cam;
-
-            playSound "grad_VM_teleportEnd";
-
             
             (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlSetFade 1;
             (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlCommit 2;
