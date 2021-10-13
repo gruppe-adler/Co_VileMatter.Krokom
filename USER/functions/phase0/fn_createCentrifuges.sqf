@@ -20,6 +20,6 @@ for "_xMulti" from 1 to _rows do {
         _position params ["_positionX", "_positionY"];
         private _centrifugeBottom = createSimpleObject ["land_gm_euro_misc_tank_01_e", [_positionX, _positionY, _zPos+2], false];
         _centrifugeBottom setVectorUp [0,0,1];
-        _centrifugeBottom setObjectScale 0.2;
+        [_centrifugeBottom, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe;
     };
 };

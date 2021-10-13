@@ -25,7 +25,7 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
     _pos set [2, _posZ - 5];
     private _light = createSimpleObject ["\A3\data_f\VolumeLight", _pos];
     [_light, -90, 0] call BIS_fnc_setPitchBank;
-    _light setObjectScale 30;
+    [_light, 30] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
     [{
       [0] call GRAD_VM_main_fnc_getPhaseProgress == 
