@@ -37,16 +37,9 @@ _spark setDropInterval _amount;
 
 
 [{
-    params ["_spark"];
+    params ["_spark", "_light"];
     deleteVehicle _spark;
-}, [_spark], _duration] call CBA_fnc_waitAndExecute;
+    deleteVehicle _light;
 
+}, [_spark, _light], _duration] call CBA_fnc_waitAndExecute;
 
-
-for "_i" from 0 to 100 do {
-    _brightness = _brightness/2;
-    _light setLightBrightness _brightness;
-    sleep 0.1;
-};
-
-deleteVehicle _light;

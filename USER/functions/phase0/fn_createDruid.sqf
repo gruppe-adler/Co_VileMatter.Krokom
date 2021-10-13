@@ -28,12 +28,16 @@ private _sounds = [
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
+    if (!isGameFocused) exitWith {};
+
     [_unit, "Acts_SittingWounded_wave"] remoteExec ["switchMove"];
 
     private _sound = selectRandom _sounds;
 
     [_unit, _sound] remoteExec ["say3d"];
     [_unit, true] remoteExec ["setRandomLip"];
+
+    _unit disableAI "MOVE";
 
     [{
         params ["_unit"];

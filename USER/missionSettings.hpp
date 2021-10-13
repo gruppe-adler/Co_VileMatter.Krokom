@@ -21,3 +21,42 @@ class CfgIdentities
         speaker = "Male01ENG";
     };
 };
+
+class CfgVehicles
+{
+    class GRAD_VM_soundOwl // class name to be used with createSoundSource
+    {
+        sound = "OwlSfx"; // reference to CfgSFX class
+    };
+
+    class GRAD_VM_soundFrog
+    {
+        sound = "FrogSfx";
+    };
+
+    class GRAD_VM_soundFrogs
+    {
+        sound = "FrogsSfx";
+    };
+
+    class GRAD_VM_soundWolf
+    {
+        sound = "WolfSfx";
+    };
+
+    class GRAD_VM_soundCrow
+    {
+        sound = "CrowSfx";
+    };
+
+    class GRAD_VM_soundNightingale
+    {
+        sound = "nightingale";
+    };
+
+    class GRAD_VM_soundCrickets
+    {
+        sound = "CricketSfx";
+    };    
+    
+};
