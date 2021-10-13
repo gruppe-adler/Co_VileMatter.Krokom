@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.78539819;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=9;
+	toggles=137;
 	class ItemIDProvider
 	{
-		nextID=12819;
+		nextID=12832;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5081.0796,45.975224,7401.6567};
-		dir[]={0.83362901,-0.4319371,-0.3442862};
-		up[]={0.39924693,0.90189534,-0.16488852};
-		aside[]={-0.38173321,-3.1664968e-008,-0.92429721};
+		pos[]={4444.5522,293.64624,6756.3169};
+		dir[]={-0.16030675,-0.59120649,-0.7904281};
+		up[]={-0.11751025,0.80652028,-0.57941043};
+		aside[]={-0.98004746,0,0.19876346};
 	};
 };
 binarizationWanted=0;
@@ -5515,7 +5515,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=731;
+		items=743;
 		class Item0
 		{
 			dataType="Layer";
@@ -42720,6 +42720,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="phase 2";
+			state=1;
 			class Entities
 			{
 				items=27;
@@ -198502,18 +198503,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={488.04321,285.59299,466.23883};
+				position[]={488.043,285.59329,466.23901};
 				angles[]={0,3.8048177,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				name="phase2_devicestatue_1";
+				name="phase2_devicestatue";
 			};
 			id=12790;
 			type="Land_Maroula_F";
-			atlOffset=0.00030517578;
+			atlOffset=0.00061035156;
 		};
 		class Item705
 		{
@@ -198578,7 +198579,7 @@ class Mission
 			};
 			id=12794;
 			type="Land_LampDecor_F";
-			atlOffset=3.3948364;
+			atlOffset=3.3945313;
 		};
 		class Item709
 		{
@@ -198989,6 +198990,184 @@ class Mission
 			id=12817;
 			type="zidka01";
 			atlOffset=2.3096313;
+		};
+		class Item731
+		{
+			dataType="Trigger";
+			position[]={3868.45,1.640597,4071.592};
+			class Attributes
+			{
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=5;
+				effectSoundEnvironment="TreesNight";
+			};
+			id=12820;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item732
+		{
+			dataType="Trigger";
+			position[]={4105.5825,-0.44272029,4073.4058};
+			class Attributes
+			{
+				effectSoundEnvironment="TreesNight";
+			};
+			id=12821;
+			type="EmptyDetectorAreaR50";
+			atlOffset=0.0002270937;
+		};
+		class Item733
+		{
+			dataType="Trigger";
+			position[]={3719.0637,6.0623035,3923.6563};
+			class Attributes
+			{
+				effectSoundEnvironment="TreesNight";
+			};
+			id=12822;
+			type="EmptyDetectorAreaR50";
+			atlOffset=0.00022697449;
+		};
+		class Item734
+		{
+			dataType="Trigger";
+			position[]={3770.1885,0.49865422,3767.3813};
+			class Attributes
+			{
+				effectSoundEnvironment="TreesNight";
+			};
+			id=12823;
+			type="EmptyDetectorAreaR50";
+			atlOffset=0.0002270937;
+		};
+		class Item735
+		{
+			dataType="Trigger";
+			position[]={3958.0088,2.6162109,3854.4023};
+			class Attributes
+			{
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=15;
+				effectSoundTrigger="crow2";
+			};
+			id=12824;
+			type="EmptyDetectorAreaR50";
+			atlOffset=-0.00055670738;
+		};
+		class Item736
+		{
+			dataType="Trigger";
+			position[]={3967.4358,3.1460857,3730.0342};
+			class Attributes
+			{
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=15;
+				effectSoundTrigger="crow2";
+			};
+			id=12825;
+			type="EmptyDetectorAreaR50";
+			atlOffset=-0.00055670738;
+		};
+		class Item737
+		{
+			dataType="Trigger";
+			position[]={3874.2507,1.6669922,3780.0718};
+			class Attributes
+			{
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=15;
+				effectSoundTrigger="forestlark";
+			};
+			id=12826;
+			type="EmptyDetectorAreaR50";
+			atlOffset=-0.00052177906;
+		};
+		class Item738
+		{
+			dataType="Trigger";
+			position[]={4038.0979,0.74333954,4020.9509};
+			class Attributes
+			{
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=1;
+				effectSoundTrigger="FrogSfx";
+			};
+			id=12827;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item739
+		{
+			dataType="Trigger";
+			position[]={3904.7839,-0.68924099,4001.7251};
+			class Attributes
+			{
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=1;
+				effectSoundTrigger="frog2";
+			};
+			id=12828;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item740
+		{
+			dataType="Trigger";
+			position[]={3862.7908,-0.20365876,3881.0586};
+			class Attributes
+			{
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=1;
+				effectSoundTrigger="frog2";
+			};
+			id=12829;
+			type="EmptyDetectorAreaR50";
+			atlOffset=0.2325525;
+		};
+		class Item741
+		{
+			dataType="Trigger";
+			position[]={4156.9888,2.7030654,3539.2749};
+			class Attributes
+			{
+				sizeA=150;
+				sizeB=150;
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=30;
+				effectSoundTrigger="nightingale";
+			};
+			id=12830;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item742
+		{
+			dataType="Trigger";
+			position[]={3980.0457,-0.64932007,4010.2769};
+			class Attributes
+			{
+				sizeA=150;
+				sizeB=150;
+				timeout[]={5,10,15};
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				triggerInterval=1;
+				effectSoundTrigger="OwlSfx";
+			};
+			id=12831;
+			type="EmptyDetectorAreaR50";
 		};
 	};
 	class Connections
