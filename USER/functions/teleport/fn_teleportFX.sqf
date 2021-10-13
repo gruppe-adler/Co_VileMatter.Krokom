@@ -115,8 +115,10 @@ if (local _unit && isPlayer _unit) then {
              
             [_unit] call grad_loadout_fnc_doLoadoutForUnit;
             
-            private _customPosition = selectRandom _destinationPositions;
-            _unit setPos (_customPosition getPos [random 7, random 360]);
+            private _destination = selectRandom _destinationPositions;
+            private _customPosition = (_destination getPos [random 7, random 360]);
+            // set correct height
+            _unit setPosWorld [_customPosition#0, _customPosition#1, _destination#2];
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
             [] execVM "USER\functions\phase0\fn_introText.sqf";
 
