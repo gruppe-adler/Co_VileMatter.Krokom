@@ -11,7 +11,6 @@ _crystal addAction
         private _position = getPosWorld phase1_pedestal;
         _position set [2, _position#2 + 0.9];
         _target setPosWorld _position;
-        // todo set crystal on pedestal
     },
     nil,        // arguments
     1.5,        // priority

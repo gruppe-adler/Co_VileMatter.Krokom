@@ -507,6 +507,47 @@ class lever
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
+
+
+class tiger_roar_1
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "tiger_roar_1";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "Edaly_Tiger\sounds\animals_tiger_roar_1.ogg", 1, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class tiger_roar_2
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "tiger_roar_2";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "Edaly_Tiger\sounds\animals_tiger_roar_2.ogg", 1, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class tiger_roar_3
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "tiger_roar_3";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "Edaly_Tiger\sounds\animals_tiger_roar_3.ogg", 1, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class tiger_roar_4
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "tiger_roar_4";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "Edaly_Tiger\sounds\animals_tiger_roar_4.ogg", 1, 1, 500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 // Space-Marine voicelines:
 
 // class Captain_voiceLine

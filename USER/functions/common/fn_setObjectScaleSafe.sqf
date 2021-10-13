@@ -3,7 +3,7 @@ if (!isServer) exitWith {};
 params ["_object", "_scale"];
 
 [{
-    time > 1
+    time > 3
 }, {
     params ["_object", "_scale"];
 
