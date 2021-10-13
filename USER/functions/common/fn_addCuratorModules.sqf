@@ -26,7 +26,7 @@
 
      _tiger addAction
      [
-          "title",  // title
+          "Roar",  // title
           {
                params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
@@ -50,6 +50,69 @@
           "",            // selection
           ""             // memoryPoint
      ];
+
+     _tiger addAction
+     [
+          "Stretch",  // title
+          {
+               params ["_target", "_caller", "_actionId", "_arguments"]; // script
+
+               _target playMoveNow "TigerStretch";
+          },
+          nil,      // arguments
+          1.5,      // priority
+          true,          // showWindow
+          true,          // hideOnUse
+          "",            // shortcut
+          "_target == _this",   // condition
+          50,            // radius
+          false,         // unconscious
+          "",            // selection
+          ""             // memoryPoint
+     ];
+
+     _tiger addAction
+     [
+          "Lie Down",  // title
+          {
+               params ["_target", "_caller", "_actionId", "_arguments"]; // script
+
+               _target playMoveNow "TigerLyingIdle";
+          },
+          nil,      // arguments
+          1.5,      // priority
+          true,          // showWindow
+          true,          // hideOnUse
+          "",            // shortcut
+          "_target == _this",   // condition
+          50,            // radius
+          false,         // unconscious
+          "",            // selection
+          ""             // memoryPoint
+     ];
+
+
+      _tiger addAction
+     [
+          "Sleep",  // title
+          {
+               params ["_target", "_caller", "_actionId", "_arguments"]; // script
+
+               _target playMoveNow "TigerSleep";
+          },
+          nil,      // arguments
+          1.5,      // priority
+          true,          // showWindow
+          true,          // hideOnUse
+          "",            // shortcut
+          "_target == _this",   // condition
+          50,            // radius
+          false,         // unconscious
+          "",            // selection
+          ""             // memoryPoint
+     ];
+
+     
 
      
 }] call zen_custom_modules_fnc_register;
