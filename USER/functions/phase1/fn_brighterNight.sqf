@@ -10,7 +10,7 @@
     if (missionNamespace getVariable ["CHBN_running",false]) exitWith {systemChat "CHBN script is running. Addon disabled."};
     CHBN_running = true;
     
-    CHBN_adjustBrightness = missionNamespace getVariable ["CHBN_adjustBrightness",1]; // edit the level of brightness here, set to 1, can be 0.1 to however high you want it
+    CHBN_adjustBrightness = missionNamespace getVariable ["CHBN_adjustBrightness",0.3]; // edit the level of brightness here, set to 1, can be 0.1 to however high you want it
     CHBN_adjustColor = missionNamespace getVariable ["CHBN_adjustColor",[0.5,0.7,1]];
 
     if (!isNil "CHBN_light") then {deleteVehicle CHBN_light};

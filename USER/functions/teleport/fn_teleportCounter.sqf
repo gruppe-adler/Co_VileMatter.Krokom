@@ -26,7 +26,7 @@ _control ctrlCommit 2;
 
     // systemChat format ["%1, %2, %3, %4", _fullDistance, _currentDistance, _startDate, _endDate];
 
-    private _dateResult = floor (linearConversion [
+    private _dateResult = ceil (linearConversion [
         _fullDistance, 
         0, 
         _currentDistance, 
@@ -39,15 +39,16 @@ _control ctrlCommit 2;
     _control ctrlCommit 0;
 
     // fix getting stuck at a number close to end
-    if (_dateResult == _endDate || 
-        _dateResult == (_endDate+1) ||
-        _dateResult == (_endDate-1)) exitWith {
+    if (_dateResult == _endDate) exitWith {
         _control ctrlSetFade 1;
         _control ctrlCommit 3;
-         [{
+
+        [_handle] call CBA_fnc_removePerFrameHandler;
+
+        [{
             ctrlDelete _this;
-         }, _control, 3] call CBA_fnc_waitAndExecute;
-         [_handle] call CBA_fnc_removePerFrameHandler;
+        }, _control, 3] call CBA_fnc_waitAndExecute;
+         
     };
 
 }, 0, [_firstPipePos, _lastPipePos, _startDate, _endDate, _control]] call CBA_fnc_addPerFramehandler;

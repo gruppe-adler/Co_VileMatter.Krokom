@@ -29,6 +29,7 @@ private _brightnessMultiplicator = (getLighting select 1);
 
 private _firstPipePos = grad_VM_cameraPositionTeleportFirst;
 private _lastPipePos = grad_VM_cameraPositionTeleportLast;
+grad_VM_cameraPosition = _firstPipePos;
 
 private _startpoint = [-100,0,8000];
 
