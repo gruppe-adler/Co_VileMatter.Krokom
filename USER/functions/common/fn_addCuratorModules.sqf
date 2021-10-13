@@ -1,3 +1,11 @@
+["Vile Matter - Common", "Respawn Player", {
+     params ["_position", "_object"];
+     
+     if (isPlayer _x) then {
+          [_object] remoteExec ["GRAD_VM_common_fnc_respawnPlayer", _object];
+     };
+}] call zen_custom_modules_fnc_register;
+
 
 ["Vile Matter - Phase 2", "Kill Hitler", {
      params ["_position", "_object"];

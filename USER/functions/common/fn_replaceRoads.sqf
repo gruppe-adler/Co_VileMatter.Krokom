@@ -1,6 +1,7 @@
 if (!isServer) exitWith {};
 
-private _roads = [worldSize/2, worldsize/2] nearRoads (worldsize/2);
+// 1500 to reduce count
+private _roads = [worldSize/2, worldsize/2] nearRoads (1500);
 
 /*
 "Land_DirtPatch_01_6x8_F",

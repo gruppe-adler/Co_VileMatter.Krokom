@@ -8,5 +8,6 @@ class GRAD_VM_common {
         class objectIsOnScreen {};
         class ropeCreate;
         class setObjectScaleSafe;
+        class respawnPlayer;
     };
 };
