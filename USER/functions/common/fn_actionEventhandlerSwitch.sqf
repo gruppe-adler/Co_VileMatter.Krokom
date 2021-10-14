@@ -60,12 +60,12 @@ if (!isServer) exitwith {};
     private _skyshield = (getPos _object) nearestObject "TIOW_Skyshield";
 
     {
-        private _wait = _forEachIndex * 2;
+        private _wait = _forEachIndex * 3;
         private _selection = _x;
         [{ 
             params ["_skyshield", "_selection"];
 
-            _skyshield animate [("rot_" + _selection), 0, 0.25];
+            _skyshield animate [("rot_" + _selection), 0];
             private _selectionPosition = _skyshield modelToWorld (_skyshield selectionPosition _selection);
             playSound3D ["WHobjects\buildings\skyshield\sounds\heavy_door.ogg", _skyshield, false, AGLtoASL _selectionPosition];
         }, [_skyshield, _selection], _wait] call CBA_fnc_waitAndExecute;
@@ -74,7 +74,7 @@ if (!isServer) exitwith {};
 
     [{
         ["GRAD_VM_phaseControl", [3,1]] call CBA_fnc_serverEvent;
-    }, [], 3.5] call CBA_fnc_waitAndExecute;
+    }, [], 21] call CBA_fnc_waitAndExecute;
     
 
 }] call CBA_fnc_addEventHandler;

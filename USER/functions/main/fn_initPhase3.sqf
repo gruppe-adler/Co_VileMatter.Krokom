@@ -21,6 +21,17 @@ if (!isServer) exitWith {};
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 
+// phase 0 init
+[
+    {
+        ([3] call GRAD_VM_main_fnc_getPhaseProgress) == 1
+    },
+    {
+        [phase3_teleportcrystal] remoteExec ["GRAD_VM_phase3_fnc_portalOpening", 0, true];
+
+}, []] call CBA_fnc_waitUntilAndExecute;
+
+
 // phase 3 init
 [
     {

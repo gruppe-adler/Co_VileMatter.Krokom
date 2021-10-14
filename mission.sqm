@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4749.5791,159.69557,2145.9949};
+		pos[]={4749.021,172.78752,2161.6919};
 		dir[]={0.032230601,-0.4200508,-0.90692806};
 		up[]={0.014918436,0.90750057,-0.41978577};
 		aside[]={-0.99936908,1.8626451e-009,-0.035515789};
@@ -190819,6 +190819,7 @@ class Mission
 					class Attributes
 					{
 						init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
+						name="phase3_teleportcrystal";
 						disableSimulation=1;
 					};
 					id=11277;

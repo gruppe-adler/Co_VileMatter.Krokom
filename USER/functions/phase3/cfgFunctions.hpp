@@ -10,6 +10,7 @@ class GRAD_VM_phase3 {
       class jumpEffect {};
       class spawnMarines {};
       class marineSpawnEffect {};
+      class portalOpening;
       class spawnGuardsmen {};
       class guardsmenSpawnEffect {};
       class activateCaveLamp {};
