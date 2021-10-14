@@ -107,7 +107,7 @@ if (local _unit && isPlayer _unit) then {
             // set correct height
             _unit setPosWorld [_customPosition#0, _customPosition#1, (_destination#2 max 0)];
 
-            [_customPosition#0, _customPosition#1, (_destination#2 max 0)] call GRAD_VM_teleport_fnc_despawnEffect;
+            [[_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
             [] execVM "USER\functions\phase0\fn_introText.sqf";
 
