@@ -1,5 +1,9 @@
 // [position player, 0] execVM "USER\functions\phase1\fn_spawnMarchingColumn.sqf";
 
+/*
+
+[position player, 0] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
+*/
 
 params ["_position", "_dir", ["_rows", 3]];
 
@@ -18,6 +22,7 @@ _leader selectWeapon "RM_Fire_torch";
 
 [_leader] execVM "USER\functions\phase1\fn_addTorch.sqf";
 
+_leader setVariable ["GRAD_VM_inFormation", true, true];
 
 for "_i" from 1 to _rows do {
     {

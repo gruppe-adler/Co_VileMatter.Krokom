@@ -23,14 +23,19 @@ params ["_leader"];
     };
 } forEach (units group _leader);
 
-systemChat ("Added marchSoldier");
+// systemChat ("Added marchSoldier");
 
 
 // copy animation of leader to all subordinates
 _leader addEventHandler ["AnimChanged", {
     params ["_leader", "_anim"];
    
-   systemChat ("Changed: " + _anim);
+   // systemChat ("Changed: " + _anim);
+
+   if (!(_leader getVariable ["GRAD_VM_inFormation", false])) exitWith {
+        _leader removeEventHandler ["AnimChanged", _thisEventHandler];
+   };
+   
 
     {
         private _singleUnit = _x;
@@ -55,13 +60,15 @@ _leader addEventHandler ["AnimChanged", {
     } forEach (units group _leader);
 }];
 
-systemChat ("Added animChanged to leader");
+// systemChat ("Added animChanged to leader");
 
 // copy animation also when done and repeating
 _leader addEventHandler ["AnimDone", {
     params ["_leader", "_anim"];
 
-    systemChat ("Done: " + _anim);
+   if (!(_leader getVariable ["GRAD_VM_inFormation", false])) exitWith {
+        _leader removeEventHandler ["AnimDone", _thisEventHandler];
+   };
    
     {
         private _singleUnit = _x;
@@ -85,4 +92,4 @@ _leader addEventHandler ["AnimDone", {
     } forEach (units group _leader);
 }];
 
-systemChat ("Added animDone to leader");
+// systemChat ("Added animDone to leader");

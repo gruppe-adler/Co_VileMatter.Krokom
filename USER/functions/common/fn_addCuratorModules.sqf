@@ -6,6 +6,25 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 1", "Spawn marching Roman Soldiers", {
+     params ["_position", "_object"];
+     
+     [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 1", "Remove Formation", {
+     params ["_position", "_object"];
+     
+     private _leader = nearestObject [ASLtoAGL _position, "Roman_legioner_cent_IMS_red"];
+     if (!isNull _leader && {_leader getVariable ["GRAD_VM_inFormation", false]}) then {
+          _leader setVariable ["GRAD_VM_inFormation", false, true];
+          hint "released leader";
+     } else {
+          hint "no leader found";
+     };
+}] call zen_custom_modules_fnc_register;
+
+
 
 ["Vile Matter - Phase 2", "Kill Hitler", {
      params ["_position", "_object"];

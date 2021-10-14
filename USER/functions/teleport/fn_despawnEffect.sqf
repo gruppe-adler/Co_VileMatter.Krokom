@@ -16,6 +16,7 @@ for "_i" from 1 to 5 do {
 
         if (!isNull _lightPoint) then {
             _lightPoint setLightFlareSize 10/_i;
+            _lightPoint setLightBrightness 10/_i;
         };
 
     }, [_lightPoint], _i]  call CBA_fnc_waitAndExecute;
@@ -25,4 +26,4 @@ for "_i" from 1 to 5 do {
     params ["_lightPoint"];
 
     deleteVehicle _lightPoint;
-}, [_lightPoint], 5]  call CBA_fnc_waitAndExecute;
+}, [_lightPoint], 0.5]  call CBA_fnc_waitAndExecute;
