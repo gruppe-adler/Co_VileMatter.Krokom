@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={4749.5791,159.69557,2145.9949};
-		dir[]={0.032230169,-0.4200508,-0.90692806};
-		up[]={0.014918236,0.90750057,-0.41978577};
-		aside[]={-0.99936908,9.3132257e-010,-0.035515316};
+		dir[]={0.032230601,-0.4200508,-0.90692806};
+		up[]={0.014918436,0.90750057,-0.41978577};
+		aside[]={-0.99936908,1.8626451e-009,-0.035515789};
 	};
 };
 binarizationWanted=0;
@@ -5523,7 +5523,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=722;
+		items=721;
 		class Item0
 		{
 			dataType="Layer";
@@ -190279,7 +190279,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4753.9072,147.43863,2130.1484};
+						position[]={4753.2344,147.4053,2125.459};
 						angles[]={0,4.9468746,0};
 					};
 					side="Empty";
@@ -190818,6 +190818,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
+						init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
 						disableSimulation=1;
 					};
 					id=11277;
@@ -199066,23 +199067,6 @@ class Mission
 			};
 			id=12830;
 			type="EmptyDetectorAreaR50";
-		};
-		class Item721
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4748.188,153.99879,2108.887};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
-				name="skyshieldactionhelper";
-			};
-			id=12853;
-			type="Sign_sphere100cm_EP1";
-			atlOffset=3.1148834;
 		};
 	};
 	class Connections

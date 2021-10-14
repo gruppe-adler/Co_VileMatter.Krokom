@@ -60,13 +60,17 @@ if (!isServer) exitwith {};
     private _skyshield = (getPos _object) nearestObject "TIOW_Skyshield";
 
     {
+        private _wait = _forEachIndex * 2;
+        private _selection = _x;
         [{ 
-            params ["_skyshield"];
-            _skyshield animate [("rot_" + _x), 1, 0.25];
-            private _selectionPosition = _skyshield modelToWorld (_skyshield selectionPosition _x);
-            playSound3D ["WHobjects\buildings\skyshield\sounds\heavy_door.ogg", _selectionPosition];
-        }, [_skyshield], (_forEachIndex*2)] call CBA_fnc_waitAndExecute;
-    } forEach ["wall_1","wall_2","wall_3","wall_4","wall_5","wall_6","wall_7","wall_8"];
+            params ["_skyshield", "_selection"];
+
+            _skyshield animate [("rot_" + _selection), 0, 0.25];
+            private _selectionPosition = _skyshield modelToWorld (_skyshield selectionPosition _selection);
+            playSound3D ["WHobjects\buildings\skyshield\sounds\heavy_door.ogg", _skyshield, false, AGLtoASL _selectionPosition];
+        }, [_skyshield, _selection], _wait] call CBA_fnc_waitAndExecute;
+    } forEach ["wall_6","wall_7","wall_8", "wall_1","wall_2","wall_3","wall_4","wall_5"];
+    // wall_5 is the one with the ramp
 
     [{
         ["GRAD_VM_phaseControl", [3,1]] call CBA_fnc_serverEvent;

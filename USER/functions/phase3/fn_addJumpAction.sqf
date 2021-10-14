@@ -19,7 +19,7 @@ _object addAction
     true,       
     "",         
     "[3] call GRAD_VM_main_fnc_getPhaseProgress == 0",     
-    10,         
+    14,         
     false,      
     "",         
     ""          
