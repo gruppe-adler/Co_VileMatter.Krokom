@@ -50,6 +50,21 @@ if (local _unit && isPlayer _unit) then {
     }, [_unit, _index, _duration, _numberStart, _numberEnd, _date]] call CBA_fnc_waitUntilAndExecute;
 };
 
+if (local _unit && !isPlayer _unit) then {
+    // systemChat "control";
+
+    // park unit off map for tunnel fx
+    _unit setPos [(_index * -1000), (_index * -1000), 0];
+    _unit setVariable ["grad_VM_teleportDone", false];
+    
+    [{
+        params ["_unit"];
+        _unit setVariable ["grad_VM_teleportDone", true];
+    }, [_unit], _duration] call CBA_fnc_waitAndExecute;
+
+};
+
+
 [{
         params ["_firefly"];
         deleteVehicle _firefly;
@@ -109,7 +124,8 @@ if (local _unit && isPlayer _unit) then {
 
             [[_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
-            [] execVM "USER\functions\phase0\fn_introText.sqf";
+
+            [] spawn GRAD_VM_phase0_fnc_introText;
 
 
         }, [_destinationPositions, _unit]] call CBA_fnc_waitUntilAndExecute;

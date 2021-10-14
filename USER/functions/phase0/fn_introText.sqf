@@ -1,8 +1,11 @@
+if (isServer) exitWith {};
+    
 if (!canSuspend) exitWith {
-    [] execVM "USER\functions\phase0\fn_introText.sqf";
+    [] spawn GRAD_VM_phase0_fnc_introText;
 };
 
 if (call GRAD_VM_main_fnc_getCurrentPhase != 1) exitWith {};
+
 
 sleep 11;
 
