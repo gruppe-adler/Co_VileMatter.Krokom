@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=12854;
+		nextID=12857;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2841;
+		nextID=2897;
 	};
 	class Camera
 	{
-		pos[]={4749.021,172.78752,2161.6919};
-		dir[]={0.032230601,-0.4200508,-0.90692806};
-		up[]={0.014918436,0.90750057,-0.41978577};
-		aside[]={-0.99936908,1.8626451e-009,-0.035515789};
+		pos[]={4738.1421,210.37172,2149.511};
+		dir[]={0.036992345,-0.79937875,-0.59976578};
+		up[]={0.049210709,0.60081726,-0.79786909};
+		aside[]={-0.99813718,5.0426388e-007,-0.061563581};
 	};
 };
 binarizationWanted=0;
@@ -188149,7 +188149,7 @@ class Mission
 			name="Phase3_Arena";
 			class Entities
 			{
-				items=289;
+				items=292;
 				class Item0
 				{
 					dataType="Logic";
@@ -196407,9 +196407,66 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item289
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4740.7642,163.11713,2076.344};
+						angles[]={1.0091901,0.1746202,-0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
+						name="phase3_teleportcrystal_1";
+						disableSimulation=1;
+					};
+					id=12854;
+					type="JMS_st_crystal_Huge1_red";
+					atlOffset=4.3270111;
+				};
+				class Item290
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4714.563,162.66409,2085.9551};
+						angles[]={0.7862348,0.75523424,5.5661659};
+					};
+					side="Empty";
+					class Attributes
+					{
+						init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
+						name="phase3_teleportcrystal_2";
+						disableSimulation=1;
+					};
+					id=12855;
+					type="JMS_st_crystal_Huge1_red";
+					atlOffset=8.3052368;
+				};
+				class Item291
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4705.2656,163.41325,2108.8481};
+						angles[]={0,1.398113,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
+						name="phase3_teleportcrystal_3";
+						disableSimulation=1;
+					};
+					id=12856;
+					type="JMS_st_crystal_Huge1_red";
+					atlOffset=7.2081909;
+				};
 			};
 			id=12365;
-			atlOffset=3.2553558;
+			atlOffset=7.0089569;
 		};
 		class Item583
 		{

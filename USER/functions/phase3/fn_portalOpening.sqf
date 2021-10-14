@@ -1,31 +1,38 @@
 // JIP check
 if ([3] call GRAD_VM_main_fnc_getPhaseProgress == [3] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
 
-params ["_crystal"];
+params ["_statueCenter"];
 
 // reset
-_crystal setVariable ["grad_VM_zPos", -3];
+_statueCenter setVariable ["grad_VM_zPos", -3];
 
-private _cannons = ["GRAD_VM_cannonPos_1", "GRAD_VM_cannonPos_2", "GRAD_VM_cannonPos_3", "GRAD_VM_cannonPos_4"];
+private _stoneCircle = nearestObjects [_statueCenter, ["JMS_st_crystal_Huge1_red"], 100];
 private _effectDuration = 5;
-private _cannonPositions = [];
-private _crystalTop = getPosWorld _crystal;
-_crystalTop set [2,10];
+private _stoneTips = [];
+private _statueCenterTop = getPosWorld _statueCenter;
+_statueCenterTop set [2,10];
 
 
 {
-    private _ship = player getVariable "GRAD_VM_localBattleship";
-    private _position = _ship modelToWorld (GRAD_VM_battleship getVariable _cannon);
+    // systemchat str _stoneCircle;
+    // dont take center crystal into account
+    if (_foreachIndex > 0) then {
+        private _stone = _x;
+        private _position = getPosASL _stone;
+        _position set [2, ((_position select 2) + 2)];
 
-    _cannonPositions pushBackUnique _position;
-} forEach _cannons;
+        _stoneTips pushBackUnique _position;
+
+        // systemchat "bla";
+    };
+} forEach _stoneCircle;
 
 
 private _lightPoints = [];
 {
     _x params ["_xPos", "_yPos", "_zPos"];
 
-    private _lightPoint = "#lightpoint" createvehiclelocal _x;
+    private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _x);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
     _lightPoint setLightFlareSize 3; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
@@ -34,17 +41,19 @@ private _lightPoints = [];
 
     _lightPoints pushBackUnique _lightPoint;
 
-} forEach _cannonPositions;
+    systemchat "bla";
+
+} forEach _stoneTips;
 
 // lightpoints moving to center
 private _handle = [{
     params ["_args", "_handle"];
-    _args params ["_lightPoints", "_crystalTop"];
+    _args params ["_lightPoints", "_statueCenterTop"];
 
     {
         private _lightpoint = _x;
-        private _position = (_lightPoint getPos [15, (_lightpoint getRelDir _crystalTop)]);
-        _position set [2, 1.5];
+        private _position = (_lightPoint getPos [0.05, (_lightpoint getRelDir _statueCenterTop)]);
+        _position set [2, 10];
 
         _lightpoint setPos _position;
 
@@ -52,8 +61,8 @@ private _handle = [{
         drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[.1,2,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
 
 
-        if (_lightpoint distance2d _crystalTop < 0.2) exitWith {
-            diag_log "success phase3 star";
+        if (_lightpoint distance2d _statueCenterTop < 0.2) exitWith {
+            diag_log "success phase1 star";
             // first player sends signal
             private _currentPhaseProgress = [3] call GRAD_VM_main_fnc_getPhaseProgress;
             if (_currentPhaseProgress < 3) then {
@@ -66,7 +75,7 @@ private _handle = [{
     } forEach _lightPoints;
 
 
-}, 0.01, [_lightPoints, _crystalTop]] call CBA_fnc_addPerFrameHandler;
+}, 0.01, [_lightPoints, _statueCenterTop]] call CBA_fnc_addPerFrameHandler;
 
 
 
@@ -77,8 +86,8 @@ private _handle = [{
   private _currentPhaseProgress = [3] call GRAD_VM_main_fnc_getPhaseProgress;
   _currentPhaseProgress >= 1},
 {
-    params ["_crystal", "_crystalTop"];
-    private _lightPoint = "#lightpoint" createvehiclelocal _crystalTop;
+    params ["_statueCenter", "_statueCenterTop"];
+    private _lightPoint = "#lightpoint" createvehiclelocal _statueCenterTop;
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
     _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
@@ -92,10 +101,10 @@ private _handle = [{
 
     [{
         params ["_args", "_handle"];
-        _args params ["_lightPoint", "_crystal"];
+        _args params ["_lightPoint", "_statueCenter"];
 
-        private _lightFlareSize = _crystal getVariable ["grad_VM_lightFlareSize", 5];
-        private _lightFlareExpanding = _crystal getVariable ["grad_VM_lightFlareExpanding", true];
+        private _lightFlareSize = _statueCenter getVariable ["grad_VM_lightFlareSize", 5];
+        private _lightFlareExpanding = _statueCenter getVariable ["grad_VM_lightFlareExpanding", true];
 
         if (isNull _lightPoint) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
 
@@ -107,12 +116,12 @@ private _handle = [{
 
         if (_lightFlareSize > _currentMaxSize) then {
             _lightFlareExpanding = false;
-            _crystal setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
+            _statueCenter setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareSize < _currentMinSize) then {
             _lightFlareExpanding = true;
-            _crystal setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
+            _statueCenter setVariable ["grad_VM_lightFlareExpanding", _lightFlareExpanding];
         };
 
         if (_lightFlareExpanding) then {
@@ -125,23 +134,23 @@ private _handle = [{
 
 
 
-        _crystal setVariable ["grad_VM_lightFlareSize", _lightFlareSize];
+        _statueCenter setVariable ["grad_VM_lightFlareSize", _lightFlareSize];
 
         drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",.2,0.5,[1,1,0],[0,0,0],0,9,7,0,[1,4,1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_lightpoint];
         // systemChat str _currentMaxSize;
 
 
-    }, 0.02, [_lightPoint, _crystal]] call CBA_fnc_addPerFrameHandler;
+    }, 0.02, [_lightPoint, _statueCenter]] call CBA_fnc_addPerFrameHandler;
 
 
     private _beams = [];
-    private _zPos = _crystal getVariable ["grad_VM_zPos", -3];
+    private _zPos = _statueCenter getVariable ["grad_VM_zPos", -3];
     for "_i" from 1 to 30 do {
 
        _zPos = _zPos + 3;
-       _crystal setVariable ["grad_VM_zPos", _zPos];
+       _statueCenter setVariable ["grad_VM_zPos", _zPos];
 
-       private _pos = getPosWorld _crystal;
+       private _pos = getPosWorld _statueCenter;
        private _dir = random 360;
        _pos set [2, ((_pos select 2) + _zPos)];
 
@@ -161,4 +170,4 @@ private _handle = [{
     }, [_beams, _lightPoint]] call CBA_fnc_waitUntilAndExecute;
 
 
-}, [_crystal, _crystalTop]] call CBA_fnc_waitUntilAndExecute;
+}, [_statueCenter, _statueCenterTop]] call CBA_fnc_waitUntilAndExecute;
