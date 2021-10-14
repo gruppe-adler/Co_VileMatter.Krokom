@@ -6,21 +6,18 @@ _switch addAction
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 
-        _target setVariable ['grad_VM_switchUsable', false, true];
-
-        _target animateSource ["Power_1", 1];
-        _target animateSource ["Power_2", 1];
-        _target animateSource ["SwitchLight", 0];
-        _target animateSource ["SwitchPosition", 1];
-
-        ["GRAD_VM_phaseControl", [0, 1]] call CBA_fnc_serverEvent;
+        ["GRAD_VM_ACTION_start", [
+            _target,
+            player,
+            "GRAD_VM_ACTION_TELEPORT_PHASE0"
+        ]] call CBA_fnc_serverEvent;
     },
     nil,
     1.5,
     true,
     true,
     "",
-    "_target getVariable ['grad_VM_switchUsable', true]",
+    "[0] call GRAD_VM_main_fnc_getPhaseProgress < 1",
     10,
     false,
     "",

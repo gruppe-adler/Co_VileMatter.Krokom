@@ -2,14 +2,15 @@ params ["_crystal"];
 
 _crystal addAction
 [
-    "Put crystal on pedestal",    // title
+    "Kristall aufs Podest schieben",    // title
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        ["GRAD_VM_phaseControl", [1,1]] call CBA_fnc_serverEvent;
-
-        // attachto syncs faster than setpos
-        _target attachTo [phase1_pedestal, [0,0,0.9]];
+        ["GRAD_VM_ACTION_start", [
+            _target,
+            player,
+            "GRAD_VM_ACTION_TELEPORT_PHASE1"
+        ]] call CBA_fnc_serverEvent;
     },
     nil,        // arguments
     1.5,        // priority

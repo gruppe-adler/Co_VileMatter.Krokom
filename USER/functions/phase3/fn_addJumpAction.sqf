@@ -3,14 +3,14 @@ params ["_object"];
 
 _object addAction
 [
-    "Hebel bewegen",    
+    "Kristall berühren",    
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; 
         
          ["GRAD_VM_ACTION_start", [
             _target,
             player,
-            "GRAD_VM_ACTION_TELEPORT_PHASE2"
+            "GRAD_VM_ACTION_TELEPORT_PHASE3"
         ]] call CBA_fnc_serverEvent;
     },
     nil,        
@@ -18,8 +18,8 @@ _object addAction
     true,       
     true,       
     "",         
-    "[2] call GRAD_VM_main_fnc_getPhaseProgress == 0",     
-    2,         
+    "[3] call GRAD_VM_main_fnc_getPhaseProgress == 0",     
+    10,         
     false,      
     "",         
     ""          

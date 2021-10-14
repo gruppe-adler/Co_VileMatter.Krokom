@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=12853;
+		nextID=12854;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2785;
+		nextID=2841;
 	};
 	class Camera
 	{
-		pos[]={6710.1694,59.258751,2803.562};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={4749.5791,159.69557,2145.9949};
+		dir[]={0.032230169,-0.4200508,-0.90692806};
+		up[]={0.014918236,0.90750057,-0.41978577};
+		aside[]={-0.99936908,9.3132257e-010,-0.035515316};
 	};
 };
 binarizationWanted=0;
@@ -5523,7 +5523,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=721;
+		items=722;
 		class Item0
 		{
 			dataType="Layer";
@@ -6444,7 +6444,7 @@ class Mission
 						};
 					};
 					id=948;
-					atlOffset=41.557327;
+					atlOffset=0.00051116943;
 				};
 				class Item13
 				{
@@ -7952,7 +7952,7 @@ class Mission
 				};
 			};
 			id=729;
-			atlOffset=-4.0725098;
+			atlOffset=-3.7956848;
 		};
 		class Item2
 		{
@@ -180467,7 +180467,6 @@ class Mission
 					};
 					id=11411;
 					type="TIOW_O_Ren_BL_Crew";
-					atlOffset=0.004989624;
 				};
 				class Item1
 				{
@@ -180484,7 +180483,6 @@ class Mission
 					};
 					id=11412;
 					type="TIOW_O_Ren_BL_Crew";
-					atlOffset=0.004989624;
 				};
 			};
 			class Attributes
@@ -180589,7 +180587,6 @@ class Mission
 					};
 					id=11416;
 					type="TIOW_O_Ren_BL_Crew";
-					atlOffset=0.018005371;
 				};
 				class Item1
 				{
@@ -180606,7 +180603,6 @@ class Mission
 					};
 					id=11417;
 					type="TIOW_O_Ren_BL_Crew";
-					atlOffset=0.018005371;
 				};
 			};
 			class Attributes
@@ -180711,6 +180707,7 @@ class Mission
 					};
 					id=11421;
 					type="TIOW_O_Ren_BL_Crew";
+					atlOffset=-7.6293945e-006;
 				};
 				class Item1
 				{
@@ -180727,6 +180724,7 @@ class Mission
 					};
 					id=11422;
 					type="TIOW_O_Ren_BL_Crew";
+					atlOffset=-7.6293945e-006;
 				};
 			};
 			class Attributes
@@ -189787,12 +189785,12 @@ class Mission
 								angles[]={0,0.057630774,0};
 							};
 							side="East";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=11267;
 							type="TIOW_O_Ren_BL_Crew";
-							atlOffset=3.8580017;
 						};
 						class Item1
 						{
@@ -189803,13 +189801,12 @@ class Mission
 								angles[]={0,0.057630774,0};
 							};
 							side="East";
-							flags=2;
+							flags=6;
 							class Attributes
 							{
 							};
 							id=11268;
 							type="TIOW_O_Ren_BL_Crew";
-							atlOffset=3.8580017;
 						};
 					};
 					class Attributes
@@ -190815,8 +190812,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4747.9253,164.14113,2107.6226};
-						angles[]={0,0.17461696,0};
+						position[]={4747.9248,164.14145,2107.623};
+						angles[]={0,0.1746202,0};
 					};
 					side="Empty";
 					class Attributes
@@ -190825,7 +190822,7 @@ class Mission
 					};
 					id=11277;
 					type="JMS_st_crystal_Huge1_red";
-					atlOffset=1.7651825;
+					atlOffset=1.7655029;
 				};
 				class Item93
 				{
@@ -199069,6 +199066,23 @@ class Mission
 			};
 			id=12830;
 			type="EmptyDetectorAreaR50";
+		};
+		class Item721
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4748.188,153.99879,2108.887};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
+				name="skyshieldactionhelper";
+			};
+			id=12853;
+			type="Sign_sphere100cm_EP1";
+			atlOffset=3.1148834;
 		};
 	};
 	class Connections
