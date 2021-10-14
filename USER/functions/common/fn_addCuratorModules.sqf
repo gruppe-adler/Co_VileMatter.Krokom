@@ -18,6 +18,19 @@
      [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnHorseRoman;
 }] call zen_custom_modules_fnc_register;
 
+
+["Vile Matter - Phase 1", "Marching Sound", {
+     params ["_position", "_object"];
+     
+     playSound3D ["USER\sounds\marchingsoldiers.ogg", objNull, false, ASLtoAGL _position];
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 1", "Roman Horns Sound", {
+     params ["_position", "_object"];
+     
+     playSound3D ["USER\sounds\romanhorns.ogg", objNull, false, ASLtoAGL _position];
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 1", "Remove Formation", {
      params ["_position", "_object"];
      
