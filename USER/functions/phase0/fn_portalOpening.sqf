@@ -51,7 +51,7 @@ private _lightPoints = [];
     {
         private _lightpoint = _x;
         private _position = (_lightPoint getPos [0.05, (_lightpoint getRelDir _light_top)]);
-        _position set [2, _light_top select 2];
+        _position set [2, ((_light_top select 2) + 1.6)];
 
         _lightpoint setPosASL _position;
 
@@ -66,6 +66,7 @@ private _lightPoints = [];
             if (_currentPhaseProgress < 3) then {
                 ["grad_VM_phaseControl", [0, 3]] call CBA_fnc_serverEvent;
             };
+            diag_log "success phase0 star";
             { deleteVehicle _x; } forEach _lightPoints;
             [_handle] call CBA_fnc_removePerFrameHandler;
         };
