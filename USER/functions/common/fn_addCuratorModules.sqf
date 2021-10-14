@@ -12,6 +12,12 @@
      [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 1", "Spawn marching Roman Soldiers", {
+     params ["_position", "_object"];
+     
+     [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnHorseRoman;
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 1", "Remove Formation", {
      params ["_position", "_object"];
      

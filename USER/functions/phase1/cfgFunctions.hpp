@@ -10,6 +10,7 @@ class GRAD_VM_phase1 {
     class initPanther;
     class portalOpening;
     class spawnMarchingColumn;
+    class spawnHorseRoman;
     class stoneHengeFX;
    };
 };

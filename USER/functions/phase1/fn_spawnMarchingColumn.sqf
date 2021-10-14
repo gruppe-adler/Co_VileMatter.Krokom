@@ -24,12 +24,29 @@ _leader selectWeapon "RM_Fire_torch";
 
 _leader setVariable ["GRAD_VM_inFormation", true, true];
 
+// prevent prone romans
+_leader addEventHandler ["AnimStateChanged",
+{
+    params ["_unit", "_anim"];
+    if (canStand _unit && (behaviour _unit in ["AWARE","COMBAT"])) then {
+    _unit setUnitPos "UP";
+    };
+}];
+
 for "_i" from 1 to _rows do {
     {
         _x params ["_xPos", "_yPos", "_zPos"];
         private _soldier = _group createUnit ["Roman_legioner_troop_IMS_red", [0,0,0], [], 0, "NONE"];
         _soldier setPos (_leader modelToWorld [_xPos, _yPos, 0]);
         _soldier setDir _dir;
+
+        _soldier addEventHandler ["AnimStateChanged",
+        {
+            params ["_unit", "_anim"];
+            if (canStand _unit && (behaviour _unit in ["AWARE","COMBAT"])) then {
+            _unit setUnitPos "UP";
+            };
+        }];
     } forEach [
         [-1,-_i,0],
         [0,-_i,0],

@@ -108,7 +108,7 @@ class grad_VM_teleport2
 class grad_VM_teleport3
 {
     name = "grad_VM_teleport3";
-    sound[] = {"USER\sounds\teleport4.ogg", VOLUME, 1, DISTANCE};
+    sound[] = {"USER\sounds\teleport3.ogg", VOLUME, 1, DISTANCE};
     titles[] = {0, ""};
 };
 
