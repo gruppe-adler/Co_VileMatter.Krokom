@@ -11,6 +11,8 @@
 * [] spawn Grad_VM_phase3_fnc_battleshipJump;
 */
 
+#include "scriptMacros.hpp"
+
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
 // plays some sounds and sets the ace_viewdistance to 3500m, so that the battlehsip will be visible
@@ -21,6 +23,7 @@ sleep 11;
 
 // create and manage the movement of the local battleships
 [] remoteExec ["GRAD_VM_phase3_fnc_handleBattleshipLocal", [0, -2] select isMultiplayer];
+[] call GRAD_VM_phase3_fnc_handleBattleshipServer;
 sleep 4;
 
 // spawn the Alarm sound at the comms-Array
@@ -45,6 +48,19 @@ sleep 10;
 {
 	private _cannon = selectRandom ["GRAD_VM_cannonPos_1", "GRAD_VM_cannonPos_2", "GRAD_VM_cannonPos_3", "GRAD_VM_cannonPos_4"];
 	[_cannon, getPosASL _x, "TIOW_IG_PlasmaCannon_Rnd", 20, 50, _x] remoteExecCall ["Grad_VM_phase3_fnc_battleshipFiring", [0, -2] select isMultiplayer];
+	private _startPosServer = AGLToASL (GRAD_VM_battleship modelToWorld (GRAD_VM_battleship getVariable _cannon));
+	private _distance = _startPosServer distance (getPosASL _x);
+	private _estimatedTravelTime = _distance / (PROJECTILE_SPEED_METERS * PROJECTILE_SPEED_FRAMES);
+	[
+		{
+			params ["_pos"];
+			private _projectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _pos;
+			_projectile setPosASL _pos;
+			_projectile setVelocity [0,0,-1];
+		},
+		[getPosASL _x],
+		_estimatedTravelTime
+	] call CBA_fnc_waitAndExecute;
 	sleep ((random 3) + 3);
 } forEach _allHydras;
 sleep 5;

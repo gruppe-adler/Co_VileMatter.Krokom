@@ -22,7 +22,7 @@ if (!isServer) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 	{
 		private _unitsPresent = (allUnits select { side _x isEqualTo civilian }) inAreaArray [[664.518,738.426,6], 2, 3, 226.469, true, 6];
 		// [GRAD_VM_fallingStone, _unitsPresent # 0] remoteExec ["GRAD_VM_phase4_fnc_smashingRock", [0, -2] select isMultiplayer];
-		[GRAD_VM_fallingStone, test] remoteExec ["GRAD_VM_phase4_fnc_smashingRock", [0, -2] select isMultiplayer];
+		[GRAD_VM_fallingStone, missionNamespace getVariable ["GRAD_VM_phase4_bolderTarget", objNull]] remoteExec ["GRAD_VM_phase4_fnc_smashingRock", [0, -2] select isMultiplayer];
 	}
 ] call CBA_fnc_waitUntilAndExecute;
 

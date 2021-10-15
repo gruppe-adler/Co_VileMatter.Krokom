@@ -7,5 +7,6 @@ class GRAD_VM_phase4 {
       class handleRockShowers {};
       class smashingRock {};
       class initPhase4Effects {};
+      class handleEffectsLocal {};
    };
 };

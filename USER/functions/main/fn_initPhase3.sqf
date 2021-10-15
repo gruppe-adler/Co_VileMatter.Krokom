@@ -11,13 +11,24 @@ if (!isServer) exitWith {};
     ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3
 },
 {
-    private _phase3Lamps = [Grad_VM_caveLamp_1, Grad_VM_caveLamp_2, Grad_VM_caveLamp_3, Grad_VM_caveLamp_4, Grad_VM_caveLamp_5, Grad_VM_caveLamp_6, Grad_VM_caveLamp_7, Grad_VM_caveLamp_8, Grad_VM_caveLamp_9, Grad_VM_caveLamp_10, Grad_VM_caveLamp_11];
+    private _phase3Lamps = [Grad_VM_caveLamp_1, Grad_VM_caveLamp_2, Grad_VM_caveLamp_3, Grad_VM_caveLamp_4, Grad_VM_caveLamp_5, Grad_VM_caveLamp_6, Grad_VM_caveLamp_7, Grad_VM_caveLamp_8, Grad_VM_caveLamp_9, Grad_VM_caveLamp_10, Grad_VM_caveLamp_11, Grad_VM_caveLamp_12];
     {
         private _brightness = _x getVariable ["Grad_VM_brightness", 0.42];
         [_x, _brightness] remoteExec ["Grad_VM_phase3_fnc_activateCaveLamp", [0, -2] select isMultiplayer];
     } forEach _phase3Lamps;
 
-    [700] remoteExec ["Grad_VM_phase3_fnc_hideTreesLocal", [0, -2] select isMultiplayer];
+    [1000] remoteExec ["Grad_VM_phase3_fnc_hideTreesLocal", [0, -2] select isMultiplayer];
+
+    private _light = createSimpleObject ["\A3\data_f\VolumeLight", getPosASL GRAD_VM_phase3_volumeLightPos];
+    [_light, -90, 0] call BIS_fnc_setPitchBank;
+    _light setObjectScale 15;
+    private _light2 = createSimpleObject ["\A3\data_f\VolumeLight", getPosASL GRAD_VM_phase3_volumeLightPos];
+    [_light2, -90, 0] call BIS_fnc_setPitchBank;
+    _light2 setObjectScale 15;
+    private _light3 = createSimpleObject ["\A3\data_f\VolumeLight", getPosASL GRAD_VM_phase3_volumeLightPos];
+    [_light3, -90, 0] call BIS_fnc_setPitchBank;
+    _light3 setObjectScale 15;    
+
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 

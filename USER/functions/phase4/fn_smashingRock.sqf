@@ -1,5 +1,7 @@
 params ["_rock", "_target"];
 
+if (_target isEqualTo objNull) exitWith {};
+
 private _localRock = "Land_Cliff_stone_big_F" createVehicleLocal [0,0,0];
 private _vecDir = vectorDir _rock;
 private _vecUp = vectorUp _rock;

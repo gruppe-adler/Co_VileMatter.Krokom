@@ -18,6 +18,8 @@
 * [GRAD_VM_cannonPos_1, [420, 96, 42], "Super_duper_mega_bullet", 10, 20, stupidAA1] call Grad_VM_phase3_fnc_battleshipFiring;
 */
 
+#include "scriptMacros.hpp"
+
 params ["_cannon", "_endPos", ["_projectileType", "TIOW_IG_PlasmaCannon_Rnd"], ["_projectileScale", 20], ["_projectileSpeed", 50], ["_targetToDestroy", objNull]];
 
 // getting the local battleship and relative cannon position
@@ -54,15 +56,15 @@ _lightPoint setLightBrightness 40;
 		};
 		_projectile setVectorDir _flightVec;
 		_projectile setVectorUp (_flightVec vectorCrossProduct [_flightVec # 1, _flightVec # 0, 0]);
-		private _newPos = (getPosASL _projectile) vectorAdd _projectileSpeed;
+		private _newPos = (getPosASL _projectile) vectorAdd PROJECTILE_SPEED_METERS;
 		_projectile setPosASL _newPos;
 		_lightPoint setPosASL _newPos;
 		_projectile setObjectScale _projectileScale;
 		if (((ASLToAGL _newPos) select 2) < 5) then {
 			[_handle] call CBA_fnc_removeperFrameHandler;
-			_trueProjectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _newPos; 
-			_trueProjectile setPosASL _newPos;
-			_trueProjectile setVelocity _flightVec;
+			// _trueProjectile = "TIOW_IG_PlasmaCannon_Rnd" createVehicleLocal _newPos;
+			// _trueProjectile setPosASL _newPos;
+			// _trueProjectile setVelocity _flightVec;
 			deleteVehicle _lightPoint;
 			deleteVehicle _projectile;
 			if ((_targetToDestroy isNotEqualTo objNull) && (alive _targetToDestroy)) then {
