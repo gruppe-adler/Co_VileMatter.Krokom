@@ -12,3 +12,4 @@
 #include "functions\phase3\cfgFunctions.hpp"
 #include "functions\phase4\cfgFunctions.hpp"
 #include "functions\teleport\cfgFunctions.hpp"
+#include "functions\outro\cfgFunctions.hpp"
