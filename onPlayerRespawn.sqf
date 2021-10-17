@@ -7,3 +7,5 @@ if (([missionConfigFile >> "missionSettings" >> "respawnSettings","waveRespawnEn
 if (([missionConfigFile >> "missionSettings" >> "respawnSettings","miniMissionsEnabled",0] call BIS_fnc_returnConfigEntry) == 1) then {
     [] call grad_minimissions_fnc_onPlayerRespawn;
 };
+
+["GRAD_VM_curatorInfo",[player, "respawned"]] call CBA_fnc_serverEvent;

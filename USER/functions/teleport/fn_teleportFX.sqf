@@ -38,25 +38,26 @@ if (local _unit && isPlayer _unit) then {
         ctrlCommitted (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull])
     },{
         params ["_unit", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
-        
+
         // systemChat "control";
 
         // park unit off map for tunnel fx
         _unit setPos [(_index * -1000), (_index * -1000), 0];
         _unit setVariable ["grad_VM_teleportDone", false];
-        
+
         [_duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_wormHole;
 
     }, [_unit, _index, _duration, _numberStart, _numberEnd, _date]] call CBA_fnc_waitUntilAndExecute;
 };
 
+// ONLY FOR AI TESTING
 if (local _unit && !isPlayer _unit) then {
     // systemChat "control";
 
     // park unit off map for tunnel fx
     _unit setPos [(_index * -1000), (_index * -1000), 0];
     _unit setVariable ["grad_VM_teleportDone", false];
-    
+
     [{
         params ["_unit"];
         _unit setVariable ["grad_VM_teleportDone", true];
@@ -77,6 +78,8 @@ if (local _unit && !isPlayer _unit) then {
     params ["_currentPosition", "_destinationPositions", "_unit", "_beam"];
 
     deleteVehicle _beam;
+
+    ["GRAD_VM_curatorInfo",[_unit, "teleport_start"]] call CBA_fnc_serverEvent;
 
     drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,1,[1,1,0],[0,0,0],0,9,7,0,[2,2,2,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
@@ -114,13 +117,15 @@ if (local _unit && !isPlayer _unit) then {
             _unit getVariable ["grad_VM_teleportDone", false]
         },{
             params ["_destinationPositions", "_unit"];
-             
+
             [_unit] call grad_loadout_fnc_doLoadoutForUnit;
-            
+
             private _destination = selectRandom _destinationPositions;
             private _customPosition = (_destination getPos [random 7, random 360]);
             // set correct height
             _unit setPosWorld [_customPosition#0, _customPosition#1, (_destination#2 max 0)];
+
+            ["GRAD_VM_curatorInfo",[_unit, "teleport_end"]] call CBA_fnc_serverEvent;
 
             [[_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
             [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];

@@ -1,0 +1,57 @@
+/*
+
+  ["GRAD_VM_curatorInfo",[player, "phasechange"]] call CBA_fnc_serverEvent;
+
+*/
+
+if (!isServer) exitWith {};
+
+["GRAD_VM_curatorInfo", {
+    params ["_unit", "_type"];
+
+    private _message = "";
+    private _color = [0,0,0,1];
+
+    switch (_type) do {
+        case ("phasechange"): {
+            _message = format ["Phase changed to %1.", [] call GRAD_VM_main_fnc_getCurrentPhase];
+            _color = [0.5,0,0.5,1];
+        };
+        case ("teleport_start"): {
+            _message = format ["%1 started teleport sequence.", _unit];
+            _color = [0,0.5,0.5,1];
+        };
+        case ("teleport_end"): {
+            _message = format ["%1 ended teleport sequence.", _unit];
+            _color = [0,0.5,0.5,1];
+        };
+        case ("unconscious"): {
+            _message = format ["%1 was knocked out.", _unit];
+            _color = [0.5,0.1,0.1,1];
+        };
+        case ("revived"): {
+            _message = format ["%1 got revived.", _unit];
+            _color = [0.1,0.5,0.5,1];
+        };
+        case ("respawned"): {
+            _message = format ["%1 respawned.", _unit];
+            _color = [0.1,0.5,0.1,1];
+        };
+    };
+
+    // send message to all curators
+    {
+        if (!isNull (getAssignedCuratorLogic _x)) then {
+            [_x, _message, _color] call GRAD_VM_common_fnc_curatorShowFeedbackMessage;
+        };
+    } forEach allCurators;
+}];
+
+
+// not sure if works public
+[ missionNamespace, "reviveIncapacitated", {
+    params ["_unit"];
+
+    ["GRAD_VM_curatorInfo", [_unit, "revived"]] call CBA_fnc_serverEvent;
+
+} ] call BIS_fnc_addScriptedEventHandler;

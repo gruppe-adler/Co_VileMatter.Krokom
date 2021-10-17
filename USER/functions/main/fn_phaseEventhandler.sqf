@@ -10,10 +10,11 @@ if (!isServer) exitWith {};
      // phase change to next phase
     if (_phaseStep == call GRAD_VM_main_fnc_getPhaseMaxProgress) then {
         _phaseOriginal set [0, (_phase + 1)];
+        ["GRAD_VM_curatorInfo",[objNull, "phasechange"]] call CBA_fnc_serverEvent;
     };
 
     missionNamespace setVariable ["grad_VM_portalPhase", _phaseOriginal, true];
-    
+
 }] call CBA_fnc_addEventHandler;
 
 /*
