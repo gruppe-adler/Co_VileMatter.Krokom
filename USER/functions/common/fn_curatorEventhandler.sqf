@@ -4,7 +4,28 @@
 
 */
 
-if (!isServer) exitWith {};
+if (!isServer) exitWith {
+
+  // not sure if those two work as expected
+  [ missionNamespace, "reviveIncapacitated", {
+      params ["_unit"];
+
+      if (local _unit) then {
+        ["GRAD_VM_curatorInfo", [_unit, "unconscious"]] call CBA_fnc_serverEvent;
+      };
+
+  } ] call BIS_fnc_addScriptedEventHandler;
+
+  [ missionNamespace, "reviveRevived", {
+      params ["_unit"];
+
+      if (local _unit) then {
+        ["GRAD_VM_curatorInfo", [_unit, "revived"]] call CBA_fnc_serverEvent;
+      };
+
+  } ] call BIS_fnc_addScriptedEventHandler;
+
+};
 
 ["GRAD_VM_curatorInfo", {
     params ["_unit", "_type"];
@@ -46,12 +67,3 @@ if (!isServer) exitWith {};
         };
     } forEach allCurators;
 }];
-
-
-// not sure if works public
-[ missionNamespace, "reviveIncapacitated", {
-    params ["_unit"];
-
-    ["GRAD_VM_curatorInfo", [_unit, "revived"]] call CBA_fnc_serverEvent;
-
-} ] call BIS_fnc_addScriptedEventHandler;
