@@ -22,7 +22,7 @@ _object addAction
     true,       // hideOnUse
     "",         // shortcut
     "true",     // condition
-    2,         // radius
+    3,         // radius
     false,      // unconscious
     "",         // selection
     ""          // memoryPoint
