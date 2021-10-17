@@ -540,6 +540,46 @@ class chilladi
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
+
+
+class Roman_barb_horn_1
+{
+    name = "Roman_barb_horn_1";
+    sound[] = {"\Roman_props\sounds\barb_horn_1.ogg", 1, 1.0};
+    titles[] = {};
+};
+class Roman_barb_horn_2
+{
+    name = "Roman_barb_horn_2";
+    sound[] = {"\Roman_props\sounds\barb_horn_2.ogg", 1, 1.0};
+    titles[] = {};
+};
+class Roman_barb_horn_3
+{
+    name = "Roman_barb_horn_3";
+    sound[] = {"\Roman_props\sounds\barb_horn_3.ogg", 1, 1.0};
+    titles[] = {};
+};
+class Roman_falling_tree
+{
+    name = " Roman_falling_tree";
+    sound[] = {"\Roman_props\sounds\Roman_falling_tree.ogg", 1, 1.0};
+    titles[] = {};
+};
+class Roman_horn_corn
+{
+    name = "Roman_horn_corn";
+    sound[] = {"\Roman_props\sounds\Roman_horn_corn.ogg", 1, 1.0};
+    titles[] = {};
+};
+class Roman_horn_horn
+{
+    name = "Roman_horn_horn";
+    sound[] = {"\Roman_props\sounds\Roman_horn.ogg", 1, 1.0};
+    titles[] = {};
+};
+    
+
 // Space-Marine voicelines:
 
 // class Captain_voiceLine
