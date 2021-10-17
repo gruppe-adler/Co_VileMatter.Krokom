@@ -38,5 +38,5 @@ while { ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3 } do {
 		_estimatedTravelTime
 	] call CBA_fnc_waitAndExecute;	
 
-	sleep ((random 7) + 3);
+	sleep ((random 9) + 3);
 };

@@ -4,6 +4,7 @@ _cam camSetTarget GRAD_VM_outro_Target_1;
 _cam camCommit 0;
 _cam cameraEffect ["internal", "BACK"];
 
+[] call ace_goggles_fnc_removeDirtEffect;
 [2] call GRAD_VM_outro_fnc_fadeFromBlack;
 2 fadeSound 0.1;
 2 fadeSpeech 0;
@@ -35,7 +36,7 @@ private _pfh =
 		params ["_args", "_handle"];
 		_args params ["_localRock", "_height", "_xPos", "_yPos"];
 
-		private _time = player getVariable ["GRAD_VM_closingRockFallTime_1", 1];
+		private _time = player getVariable ["GRAD_VM_closingRockFallTime_1", 0.9];
 		private _pos = getPosASL _localRock;
 		_newHeight = _height - (0.5 * 9.81 * _time^2);
 
@@ -57,7 +58,7 @@ private _pfh =
 		params ["_args", "_handle"];
 		_args params ["_localRock", "_height", "_xPos", "_yPos"];
 
-		private _time = player getVariable ["GRAD_VM_closingRockFallTime_2", 1];
+		private _time = player getVariable ["GRAD_VM_closingRockFallTime_2", 0.9];
 		private _pos = getPosASL _localRock;
 		_newHeight = _height - (0.5 * 9.81 * _time^2);
 

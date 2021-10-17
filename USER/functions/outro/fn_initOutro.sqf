@@ -28,7 +28,7 @@ sleep 3;
 	_group addWaypoint [[-4156.77,1986.5,0], 0];
 	sleep 1;
 } forEach [GRAD_VM_phase4_exfilHeli_1, GRAD_VM_phase4_exfilHeli_2];
-sleep 5;
+sleep 4.5;
 
 (driver GRAD_VM_phase4_exfilHeli_1) unassignItem "NVGoggles";
 

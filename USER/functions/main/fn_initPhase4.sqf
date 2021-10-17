@@ -21,6 +21,7 @@ if (!isServer) exitWith {};
         _poorTarget setPos [672.032,719.395,6.15326];
         _poorTarget setDir 219.542;
         _poorTarget setUnitLoadout [[],[],[],["U_I_E_CBRN_Suit_01_EAF_F",[]],["rhsgref_otv_khaki",[]],["Tiger_Attack_Bag",[]],"","G_Respirator_blue_F",[],["ItemMap","","","ItemCompass","ItemWatch",""]];
+        _poorTarget disableAI "MOVE";
         missionNamespace setVariable ["GRAD_VM_phase4_bolderTarget", _poorTarget, true];       
 
         // start helis once players are close

@@ -147,7 +147,7 @@ class The_slaves_are_here
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "The_slaves_are_here";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\The_emperors_slaves_are_here.ogg", 4, 1, 800 };
+    sound[] = { "USER\sounds\The_emperors_slaves_are_here.ogg", 1.5, 1, 800 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -157,7 +157,7 @@ class Imperial_Maggots
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "Imperial_Maggots";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\Imperial_Maggots.ogg", 5, 1, 800 };
+    sound[] = { "USER\sounds\Imperial_Maggots.ogg", 2, 1, 800 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
