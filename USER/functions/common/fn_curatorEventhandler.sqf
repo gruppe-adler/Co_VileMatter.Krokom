@@ -58,6 +58,7 @@ if (!isServer) exitWith {
             _message = format ["%1 respawned.", _unit];
             _color = [0.1,0.5,0.1,1];
         };
+        default {};
     };
 
     // send message to all curators
@@ -67,4 +68,4 @@ if (!isServer) exitWith {
             [_message, _color] remoteExec ["GRAD_VM_common_fnc_curatorShowFeedbackMessage", _playerAsZeus];
         };
     } forEach allCurators;
-}];
+}] call CBA_fnc_addEventHandler;
