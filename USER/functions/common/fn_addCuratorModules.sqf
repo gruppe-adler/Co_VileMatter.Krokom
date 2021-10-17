@@ -22,13 +22,13 @@
 ["Vile Matter - Phase 1", "Marching Sound", {
      params ["_position", "_object"];
      
-     playSound3D ["USER\sounds\marchingsoldiers.ogg", objNull, false, ASLtoAGL _position];
+     playSound3D [getMissionPath "USER\sounds\marchingsoldiers.ogg", objNull, false, ASLtoAGL _position];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Roman Horns Sound", {
      params ["_position", "_object"];
      
-     playSound3D ["USER\sounds\romanhorns.ogg", objNull, false, ASLtoAGL _position];
+     playSound3D [getMissionPath "USER\sounds\romanhorns.ogg", objNull, false, ASLtoAGL _position];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Remove Formation", {

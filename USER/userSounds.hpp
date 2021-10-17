@@ -530,6 +530,16 @@ class marchingsoldiers
     titles[] = {  };
 };
 
+
+class chilladi
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "chilladi";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\chilladi.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 // Space-Marine voicelines:
 
 // class Captain_voiceLine

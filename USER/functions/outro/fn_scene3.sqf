@@ -30,6 +30,7 @@ _cam camsetFOV 0.6;
 _cam camCommit 5;
 
 sleep 5;
+_copilot lookAt (driver vehicle _copilot);
 _copilot setMimic "combat";
 _copilot setRandomLip true;
 _copilot say3D ["feiglinge_default", 5, 1, true];
