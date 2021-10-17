@@ -1,7 +1,7 @@
 params ["_rider", "_horse"];
 
 _rider setVariable ["GRAD_VM_isRider", false, true];
-_rider switchmove "";
+[_rider, ""] remoteExec ["switchmove", 0];
 detach _rider;
 _rider setvelocity [-2,-1,0];
 _horse setobjecttextureGlobal [1,""];
