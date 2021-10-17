@@ -26,4 +26,4 @@ for "_i" from 1 to 5 do {
     params ["_lightPoint"];
 
     deleteVehicle _lightPoint;
-}, [_lightPoint], 0.5]  call CBA_fnc_waitAndExecute;
+}, [_lightPoint], 5]  call CBA_fnc_waitAndExecute;
