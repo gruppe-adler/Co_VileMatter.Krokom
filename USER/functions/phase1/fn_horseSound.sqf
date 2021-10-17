@@ -8,7 +8,7 @@ private _handle = [{
     
     if (animationState _horse == "dbo_Horse_Sprint") then {
         private _sound = selectRandom ["grass_run_1", "grass_run_2", "grass_run_3", "grass_run_4"];
-        playSound3D ["dbo\dbo_horses\sounds\" + _sound + ".wss", _horse, false, getPosasl _horse, 5,1,0];
+        playSound3D ["dbo\dbo_horses\sounds\" + _sound + ".wss", _horse, false, getPosasl _horse, 2,1,300];
     };
 
 }, 0.35, [_horse]] call CBA_fnc_addPerFramehandler;
