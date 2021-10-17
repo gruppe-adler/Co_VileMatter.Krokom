@@ -134,5 +134,21 @@
 ["Vile Matter - Phase 3", "Spawn Battleship", {
      params ["_position", "_object"];
 
-     [] remoteExec ["Grad_VM_phase3_fnc_battleshipJump"];
+     private _alreadyActivated = missionNamespace getVariable ["GRAD_VM_phase3_shipJumpActivated", false];
+     if (_alreadyActivated) exitWith {
+          systemChat "'Spawn Battleship' has already been activated!";
+     };
+     missionNamespace setVariable ["GRAD_VM_phase3_shipJumpActivated", true, true];
+     [] remoteExec ["Grad_VM_phase3_fnc_battleshipJump", 2];
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 4", "Start Outro", {
+     params ["_position", "_object"];
+
+     private _alreadyActivated = missionNamespace getVariable ["GRAD_VM_outro_outroActivated", false];
+     if (_alreadyActivated) exitWith {
+          systemChat "'Start Outro' has already been activated!";
+     };
+     missionNamespace setVariable ["GRAD_VM_outro_outroActivated", true, true];
+     [] remoteExec ["Grad_VM_outro_fnc_initOutro", 2];
 }] call zen_custom_modules_fnc_register;
