@@ -56,7 +56,7 @@ _lightPoint setLightBrightness 40;
 		};
 		_projectile setVectorDir _flightVec;
 		_projectile setVectorUp (_flightVec vectorCrossProduct [_flightVec # 1, _flightVec # 0, 0]);
-		private _newPos = (getPosASL _projectile) vectorAdd PROJECTILE_SPEED_METERS;
+		private _newPos = (getPosASL _projectile) vectorAdd (_flightVec vectorMultiply PROJECTILE_SPEED_METERS);
 		_projectile setPosASL _newPos;
 		_lightPoint setPosASL _newPos;
 		_projectile setObjectScale _projectileScale;

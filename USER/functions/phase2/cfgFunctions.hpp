@@ -12,5 +12,6 @@ class GRAD_VM_phase2 {
     class initDevices { postInit = 1; };
     class deviceReplaceWithSimpleObject;
     class portalOpening;
+    class ambientSounds {};
    };
 };

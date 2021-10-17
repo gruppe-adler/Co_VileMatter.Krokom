@@ -6,6 +6,8 @@
 
 if (!isServer) exitWith {};
 
+[] spawn GRAD_VM_phase2_fnc_ambientSounds;
+
 // todo insert correct object
 (getPos phase2_reichstagskuppel) params ["_posX", "_posY", "_posZ"];
 
@@ -78,3 +80,17 @@ private _light_phase2_3 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
         }, [_date, _light_phase2_1, _light_phase2_2, _light_phase2_3], (_duration+5)] call CBA_fnc_waitAndExecute;
 
 }, [_light_phase2_1, _light_phase2_2, _light_phase2_3]] call CBA_fnc_waitUntilAndExecute;
+
+// delete phase2 sound sources
+[
+    {
+        ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3
+    },
+    {
+        private _sounds = missionNamespace getVariable ["GRAD_VM_phase2_ambientSources", []];
+        {
+            deleteVehicle _x;   
+        } forEach _sounds;
+    },
+    []
+] call CBA_fnc_waitUntilAndExecute;

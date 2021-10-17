@@ -145,10 +145,17 @@ class CfgSFX
 {
 	class GRAD_VM_Alarm
 	{
-		sound0[] = {"USER\sounds\alarm.ogg", db+1, 1.0, 1000, 0, 0, 0, 0};  // path to addon sound
+		sound0[] = {"USER\sounds\alarm.ogg", db+0, 1.0, 850, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
+
+	class phase2_ambient
+	{
+		sound0[] = {"USER\sounds\phase2_ambient.ogg", db+3, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
+		sounds[] = {sound0};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};	
 };
 
 class CfgVehicles
@@ -157,4 +164,9 @@ class CfgVehicles
 	{
 		sound = "GRAD_VM_Alarm"; // reference to CfgSFX class
 	};
+
+	class phase2_ambient_Sound // class name to be used with createSoundSource
+	{
+		sound = "phase2_ambient"; // reference to CfgSFX class
+	};	
 };
