@@ -58,6 +58,10 @@ if (!isServer) exitWith {
             _message = format ["%1 respawned.", [_unit, false, true] call ace_common_fnc_getName];
             _color = [0.1,0.5,0.1,1];
         };
+        case ("killed"): {
+            _message = format ["%1 killed.", [_unit, false, true] call ace_common_fnc_getName];
+            _color = [0.7,0.1,0.1,1];
+        };
         default {};
     };
 

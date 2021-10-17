@@ -51,7 +51,7 @@ private _data = [_template] call BIS_fnc_simpleObjectData;
 
 //get world position, dir and vector up
 //private _pos = getPosASL _template; _pos set [2, (_pos select 2) - (_data select 3)];
-// _posASL set [2, (_posASL select 2) - (_data select 3)];
+_posASL set [2, (_posASL select 2) - (_data select 3)];
 
 //hide simulated object
 hideObjectGlobal _template;

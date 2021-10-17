@@ -4,6 +4,9 @@
 
 */
 
+// JIP check
+if ([0] call GRAD_VM_main_fnc_getPhaseProgress == [0] call GRAD_VM_main_fnc_getPhaseMaxProgress) exitWith {};
+
 params ["_object_1", "_object_2", "_duration"];
 
 playSound "grad_VM_drone";

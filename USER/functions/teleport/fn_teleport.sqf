@@ -8,4 +8,5 @@ if (!isNull (getAssignedCuratorLogic _unit)) exitWith {
 
 // debug
 // server knows current position than players in the future
-[_unit, getPos _unit, _position, _index, _duration, _numberStart, _numberEnd, _date] remoteExec ["GRAD_VM_teleport_fnc_teleportFX", _unit];
+// all players want to see the effect, therefore execute everywhere
+[_unit, getPos _unit, _position, _index, _duration, _numberStart, _numberEnd, _date] remoteExec ["GRAD_VM_teleport_fnc_teleportFX", 0];

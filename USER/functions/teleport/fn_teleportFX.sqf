@@ -128,9 +128,12 @@ if (local _unit && !isPlayer _unit) then {
             ["GRAD_VM_curatorInfo",[_unit, "teleport_end"]] call CBA_fnc_serverEvent;
 
             [[_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
-            [_unit, "Acts_UnconsciousStandUp_part1"] remoteExecCall ["switchMove", 0];
+            _unit switchMove "Acts_UnconsciousStandUp_part1";
 
-            [] spawn GRAD_VM_phase0_fnc_introText;
+            // should be unnecessary but still was executed multiple times for presumingly AI :o
+            if (isPlayer _unit) then {
+                [] spawn GRAD_VM_phase0_fnc_introText;
+            };
 
 
         }, [_destinationPositions, _unit]] call CBA_fnc_waitUntilAndExecute;

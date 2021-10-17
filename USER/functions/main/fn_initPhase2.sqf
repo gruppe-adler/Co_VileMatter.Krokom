@@ -14,15 +14,27 @@ if (!isServer) exitWith {};
 // enhance intensity
 private _light_phase2_1 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_1, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_1, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_1, 50] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 private _light_phase2_2 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_2, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_2, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_2, 100] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 private _light_phase2_3 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_3, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_3, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_3, 150] call GRAD_VM_common_fnc_setObjectScaleSafe;
+
+private _light_phase2_4 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+[_light_phase2_4, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase2_4, 200] call GRAD_VM_common_fnc_setObjectScaleSafe;
+
+private _light_phase2_5 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+[_light_phase2_5, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase2_5, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+
+private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
+[_light_phase2_6, -90, 0] call BIS_fnc_setPitchBank;
+[_light_phase2_6, 300] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 [{
   private _currentPhaseProgress = [2] call GRAD_VM_main_fnc_getPhaseProgress;
