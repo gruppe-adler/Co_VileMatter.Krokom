@@ -25,5 +25,13 @@ for "_i" from 1 to 5 do {
 [{
     params ["_lightPoint"];
 
+    _lightPoint setLightBrightness 0;
+    _lightPoint setLightFlareSize 0;
+}, [_lightPoint], 1]  call CBA_fnc_waitAndExecute;
+
+
+[{
+    params ["_lightPoint"];
+
     deleteVehicle _lightPoint;
 }, [_lightPoint], 5]  call CBA_fnc_waitAndExecute;
