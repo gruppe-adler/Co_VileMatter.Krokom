@@ -47,7 +47,7 @@
      params ["_position", "_object"];
 
 
-     private _leader = nearEntities ["Roman_legioner_cent_IMS_red", 10];
+     private _leader = (ASLtoAGL _position) nearEntities ["Roman_legioner_cent_IMS_red", 10];
      if (count _leader > 0) then {
           _leader = _leader#0;
      };
