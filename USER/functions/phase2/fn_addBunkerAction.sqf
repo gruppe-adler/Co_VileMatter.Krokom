@@ -11,7 +11,7 @@ _object addAction
         
         [{
             ((getPos bunkerEntry) getPos [random 5, random 360]) params ["_xPos", "_yPos"];
-            _this setPos [_xPos, _yPos];
+            _this setPos [_xPos, _yPos, 0.5];
             [_this, ""] remoteexec ["switchMove"];
         }, _caller, 2] call CBA_fnc_waitAndExecute;
         
