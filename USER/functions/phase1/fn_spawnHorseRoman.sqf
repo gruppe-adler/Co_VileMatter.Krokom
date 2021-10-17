@@ -1,5 +1,7 @@
 params ["_position"];
 
+private _group = createGroup east;
+
 private _horse = _group createUnit ["dbo_horse_snow", [0,0,0], [], 0, "NONE"];
 _horse setPos _position;
 _horse setDir _dir;
