@@ -62,6 +62,20 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 1", "Add enhanced Horse Sound", {
+     params ["_position", "_object"];
+
+     [_object] call GRAD_VM_phase1_fnc_horseSound;
+
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 1", "Remove enhanced Horse Sound", {
+     params ["_position", "_object"];
+
+     _object setVariable ["GRAD_VM_horseSound", false, true];
+     
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 1", "Spawn Lion", {
      params ["_positionASL", "_object"];
 

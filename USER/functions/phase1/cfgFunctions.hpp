@@ -7,6 +7,7 @@ class GRAD_VM_phase1 {
     class brighterNight;
     class horseDismountAI;
     class horseMountAI;
+    class horseSound;
     class initPanther;
     class portalOpening;
     class spawnMarchingColumn;
