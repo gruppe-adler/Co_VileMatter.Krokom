@@ -12,7 +12,7 @@
      [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
 }] call zen_custom_modules_fnc_register;
 
-["Vile Matter - Phase 1", "Spawn marching Roman Soldiers", {
+["Vile Matter - Phase 1", "Spawn Roman on Horse", {
      params ["_position", "_object"];
 
      [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnHorseRoman;
@@ -22,19 +22,38 @@
 ["Vile Matter - Phase 1", "Marching Sound", {
      params ["_position", "_object"];
 
-     playSound3D [getMissionPath "USER\sounds\marchingsoldiers.ogg", objNull, false, ASLtoAGL _position];
+     playSound3D [getMissionPath "USER\sounds\marchingsoldiers.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Roman Horns Sound", {
      params ["_position", "_object"];
 
-     playSound3D [getMissionPath "USER\sounds\romanhorns.ogg", objNull, false, ASLtoAGL _position];
+     playSound3D [getMissionPath "USER\sounds\romanhorns.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 1", "Roman Horns Sound 2", {
+     params ["_position", "_object"];
+
+     playSound3D ["\Roman_props\sounds\Roman_horn_corn.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 1", "Barb Horn", {
+     params ["_position", "_object"];
+
+     playSound3D ["\Roman_props\sounds\barb_horn_3.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Remove Formation", {
      params ["_position", "_object"];
 
-     private _leader = nearestObject [ASLtoAGL _position, "Roman_legioner_cent_IMS_red"];
+
+     private _leader = (ASLtoAGL _position) nearEntities ["Roman_legioner_cent_IMS_red", 10];
+     if (count _leader > 0) then {
+          _leader = _leader#0;
+     };
+     if (!isNull _object) then {
+          _leader = _object;
+     };
      if (!isNull _leader && {_leader getVariable ["GRAD_VM_inFormation", false]}) then {
           _leader setVariable ["GRAD_VM_inFormation", false, true];
           hint "released leader";

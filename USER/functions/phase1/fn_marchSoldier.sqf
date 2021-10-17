@@ -34,6 +34,7 @@ _leader addEventHandler ["AnimChanged", {
 
    if (!(_leader getVariable ["GRAD_VM_inFormation", false])) exitWith {
         _leader removeEventHandler ["AnimChanged", _thisEventHandler];
+        { detach _x; } forEach attachedObjects _leader;
    };
    
 
@@ -68,6 +69,7 @@ _leader addEventHandler ["AnimDone", {
 
    if (!(_leader getVariable ["GRAD_VM_inFormation", false])) exitWith {
         _leader removeEventHandler ["AnimDone", _thisEventHandler];
+        { detach _x; } forEach attachedObjects _leader;
    };
    
     {
