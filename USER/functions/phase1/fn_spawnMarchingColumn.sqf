@@ -63,6 +63,6 @@ private _rearlight = _group createUnit ["Roman_legioner_sign_red", [0,0,0], [], 
 _rearlight setPos (_leader modelToWorld [0, -(_rows+5), 0]);
 _rearlight setDir _dir;
 
-[_rearlight, _horse] execVM "USER\functions\phase1\fn_horseMountAI.sqf";
+[_rearlight, _horse] call GRAD_VM_phase1_fnc_horseMountAI;
 
 [_leader] execVM "USER\functions\phase1\fn_marchSoldier.sqf";
