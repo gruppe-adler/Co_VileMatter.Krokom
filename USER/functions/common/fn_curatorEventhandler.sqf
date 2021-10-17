@@ -62,8 +62,9 @@ if (!isServer) exitWith {
 
     // send message to all curators
     {
-        if (!isNull (getAssignedCuratorLogic _x)) then {
-            [_x, _message, _color] call GRAD_VM_common_fnc_curatorShowFeedbackMessage;
+        private _playerAsZeus = getAssignedCuratorUnit _x;
+        if (!isNull _playerAsZeus) then {
+            [_message, _color] remoteExec ["GRAD_VM_common_fnc_curatorShowFeedbackMessage", _playerAsZeus];
         };
     } forEach allCurators;
 }];
