@@ -8,6 +8,9 @@ class GRAD_VM_common {
         class actionEventhandlerSwitch { postInit = 1; };
         class activateAction;
         class addCuratorModules { preInit = 1; };
+
+        class curatorEventhandler { postInit = 1; };
+        class curatorShowFeedbackMessage;
         class replaceRoads { preInit = 1; };
         class objectIsOnScreen {};
         class ropeCreate;
