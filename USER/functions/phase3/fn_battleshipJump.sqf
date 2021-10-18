@@ -61,7 +61,7 @@ sleep 10;
 		[getPosASL _x],
 		_estimatedTravelTime
 	] call CBA_fnc_waitAndExecute;
-	sleep ((random 3) + 3);
+	sleep ((random 2) + 2);
 } forEach _allHydras;
 sleep 5;
 
