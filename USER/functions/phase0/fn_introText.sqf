@@ -4,9 +4,6 @@ if (!canSuspend) exitWith {
     [] spawn GRAD_VM_phase0_fnc_introText;
 };
 
-if (call GRAD_VM_main_fnc_getCurrentPhase != 1) exitWith {};
-
-
 sleep 11;
 
 playSound "grad_VM_crescendo";

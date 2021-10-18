@@ -132,10 +132,9 @@ if (local _unit && !isPlayer _unit) then {
             [_unit] call zen_common_fnc_healUnit
 
             // should be unnecessary but still was executed multiple times for presumingly AI :o
-            if (isPlayer _unit) then {
+            if (isPlayer _unit && (call GRAD_VM_main_fnc_getCurrentPhase == 0)) then {
                 [] spawn GRAD_VM_phase0_fnc_introText;
             };
-
 
         }, [_destinationPositions, _unit]] call CBA_fnc_waitUntilAndExecute;
     };
