@@ -59,7 +59,7 @@ class vm_vilematter_phase0 {
         };
 
         class B_soldier_exp_F: Soldier_F {
-            addItemsToBackpack[] = {LIST_2("SatchelCharge_Remote_Mag"),LIST_1("ACE_Clacker")
+            addItemsToBackpack[] = {LIST_2("SatchelCharge_Remote_Mag"),LIST_1("ACE_Clacker")};
         };
 
         //Asst. Autorifleman

@@ -1317,7 +1317,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -1398,7 +1398,7 @@ class CustomAttributes
 		};
 		nAttributes=5;
 	};
-	class Category1
+	class Category2
 	{
 		name="Scenario";
 		class Attribute0
