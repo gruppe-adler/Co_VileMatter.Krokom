@@ -20,4 +20,6 @@ _unit addEventHandler ["AnimDone", {
 
     if (isNull _unit) exitWith { _unit removeEventHandler ["AnimDone", _thisEventHandler]; };
     if (!alive _unit) exitWith { _unit removeEventHandler ["AnimDone", _thisEventHandler]; };
+
+        _unit playMoveNow _anim;
 }];

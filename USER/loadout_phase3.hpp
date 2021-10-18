@@ -43,6 +43,10 @@ class vm_vilematter_phase3 {
             };
         };
 
+        class B_soldier_exp_F: Soldier_F {
+
+        };
+
         //Asst. Autorifleman
         class soldier_AAR_F: Soldier_F {
             addItemsToBackpack[] = {

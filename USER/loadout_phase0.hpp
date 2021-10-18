@@ -47,7 +47,7 @@ class vm_vilematter_phase0 {
             vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_2("SmokeShell"),LIST_2("HandGrenade")};
             backpack = "B_ViperLightHarness_oli_F";
-            addItemsToBackpack[] = {LIST_4("ACE_tourniquet"),LIST_4("ACE_splint"),LIST_2("ACE_morphine"),LIST_2("ACE_epinephrine")};
+            addItemsToBackpack[] = {};
             headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";
@@ -56,6 +56,10 @@ class vm_vilematter_phase0 {
             compass = "ItemCompass";
             watch = "ItemWatch";
             nvgoggles = "NVGoggles_OPFOR";
+        };
+
+        class B_soldier_exp_F: Soldier_F {
+            addItemsToBackpack[] = {LIST_2("SatchelCharge_Remote_Mag"),LIST_1("ACE_Clacker")
         };
 
         //Asst. Autorifleman
