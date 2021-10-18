@@ -12,7 +12,7 @@
     _actionUnits pushBackUnique _player;
     _object setVariable ["GRAD_VM_ACTION_UNITS", _actionUnits, true];
 
-    private _unitsNeeded = _object getVariable ["GRAD_VM_ACTION_UNITS_NEEDED", 1];
+    private _unitsNeeded = _object getVariable ["GRAD_VM_ACTION_UNITS_NEEDED", 3];
     // Enough people, exit and unflip Object
     if (_unitsNeeded <= count _actionUnits) exitWith {
         diag_log text format ["[GRAD VM ACTION] Object '%1', enough people to do action (%2)", _object, _unitsNeeded];

@@ -2,7 +2,7 @@ params ["_object", ["_eventCalled", "none"]];
 
 #define PLAYER                  ([] call CBA_fnc_currentUnit)
 
-private _unitsNeeded = _object getVariable ["GRAD_VM_ACTION_UNITS_NEEDED", 1];
+private _unitsNeeded = _object getVariable ["GRAD_VM_ACTION_UNITS_NEEDED", 3];
 PLAYER playActionNow "PlayerStand";
 
 GRAD_VM_ACTION_UNITS = (_object getVariable ["GRAD_VM_ACTION_UNITS", []]);
