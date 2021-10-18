@@ -1,4 +1,8 @@
-private _phase = call GRAD_VM_main_fnc_getCurrentPhase;
+params [["_phase", -1]];
+
+if (_phase < 0) then {
+    _phase = call GRAD_VM_main_fnc_getCurrentPhase;
+};
 
 private _result = [];
 
