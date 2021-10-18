@@ -81,7 +81,7 @@ class vm_vilematter_phase3 {
         //Combat Life Saver
         class medic_F: Soldier_F {
             addItemsToBackpack[] = {
-                LIST_10("FirstAidKit"),
+                LIST_20("FirstAidKit"),
                 LIST_1("Medikit")
             };
         };

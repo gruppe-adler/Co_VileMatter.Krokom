@@ -199,7 +199,7 @@ class vm_vilematter_phase0 {
             vest = "UK3CB_TKA_I_V_6Sh92_vog_Oli";
             addItemsToVest[] = {LIST_12("ACE_packingBandage"),LIST_2("SmokeShell"),LIST_2("HandGrenade")};
             backpack = "B_ViperLightHarness_oli_F";
-            addItemsToBackpack[] = {LIST_6("ACE_tourniquet"),LIST_12("ACE_splint"),LIST_15("ACE_epinephrine"),LIST_15("ACE_morphine"),LIST_10("ACE_bloodIV_500"),LIST_10("ACE_salineIV_500")};
+            addItemsToBackpack[] = {LIST_20("FirstAidKit")};
             headgear = "H_HelmetSpecB_snakeskin";
             goggles = "rhs_googles_clear";
             map = "ItemMap";

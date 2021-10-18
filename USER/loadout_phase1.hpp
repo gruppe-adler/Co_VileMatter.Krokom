@@ -94,7 +94,7 @@ class vm_vilematter_phase1 {
             handgunWeaponMuzzle = "RM_torch_fluid";
             vest = "JMSL_Celt_CapeMail_1_A";
             backpack = "JMSL_back_arrowpack_full_1";
-            addItemsToBackpack[] = { "RM_torch_fluid", LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag")};
+            addItemsToBackpack[] = {"RM_torch_fluid", LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("JMSL_WM_Arrow_Mag"), LIST_20("FirstAidKit")};
         };
 
         //Explosive Specialist

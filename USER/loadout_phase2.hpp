@@ -83,7 +83,7 @@ class vm_vilematter_phase2 {
             addItemsToBackpack[] = {
                 LIST_1("Medikit"),
                 LIST_7("LIB_8Rnd_762x63"),
-                LIST_5("FirstAidKit")
+                LIST_20("FirstAidKit")
             };
         };
 
