@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=13160;
+		nextID=13171;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={524.53058,291.60867,633.08734};
-		dir[]={-0.15549786,-0.65827477,0.73655182};
-		up[]={-0.1359763,0.75277191,0.64408267};
-		aside[]={0.97843683,-2.7939677e-008,0.20656395};
+		pos[]={645.74664,291.13251,762.56635};
+		dir[]={-0.6940524,-0.092624597,0.71399349};
+		up[]={-0.064590298,0.99569958,0.06644614};
+		aside[]={0.71706986,-6.6775829e-007,0.69704479};
 	};
 };
 binarizationWanted=0;
@@ -7203,7 +7203,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=849;
+		items=850;
 		class Item0
 		{
 			dataType="Layer";
@@ -40412,7 +40412,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4107;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40430,7 +40430,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4169;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40448,7 +40448,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4170;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40466,7 +40466,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4171;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40484,7 +40484,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4172;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40502,7 +40502,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4173;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40520,7 +40520,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4174;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40538,7 +40538,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4175;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40556,7 +40556,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4176;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40574,7 +40574,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4177;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40592,7 +40592,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4178;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40610,7 +40610,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4179;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40628,7 +40628,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4180;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40646,7 +40646,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4181;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40664,7 +40664,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4182;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40682,7 +40682,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4183;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40700,7 +40700,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4184;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40718,7 +40718,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4185;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40736,7 +40736,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4186;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40754,7 +40754,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4187;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40772,7 +40772,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4188;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40790,7 +40790,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4189;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40808,7 +40808,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4190;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40826,7 +40826,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4191;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40844,7 +40844,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4192;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40862,7 +40862,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4193;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40880,7 +40880,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4194;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40898,7 +40898,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4195;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40916,7 +40916,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4196;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40934,7 +40934,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4197;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40952,7 +40952,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4198;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40970,7 +40970,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4199;
 							type="land_gm_euro_misc_tank_01_e";
@@ -40988,7 +40988,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4200;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41006,7 +41006,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4201;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41024,7 +41024,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4202;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41042,7 +41042,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4203;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41060,7 +41060,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4204;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41078,7 +41078,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4205;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41096,7 +41096,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4206;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41114,7 +41114,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4207;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41132,7 +41132,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4208;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41150,7 +41150,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4209;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41168,7 +41168,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4210;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41186,7 +41186,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4211;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41204,7 +41204,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4212;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41222,7 +41222,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4213;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41240,7 +41240,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4214;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41258,7 +41258,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4215;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41276,7 +41276,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4216;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41294,7 +41294,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4217;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41312,7 +41312,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4218;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41330,7 +41330,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4219;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41348,7 +41348,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4220;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41366,7 +41366,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4221;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41384,7 +41384,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4222;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41402,7 +41402,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4223;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41420,7 +41420,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4224;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41438,7 +41438,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4225;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41456,7 +41456,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4226;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41474,7 +41474,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4227;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41492,7 +41492,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4228;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41510,7 +41510,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4229;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41528,7 +41528,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4230;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41546,7 +41546,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4231;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41564,7 +41564,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4232;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41582,7 +41582,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4233;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41600,7 +41600,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4234;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41618,7 +41618,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4235;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41636,7 +41636,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4236;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41654,7 +41654,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4237;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41672,7 +41672,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4238;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41690,7 +41690,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4239;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41708,7 +41708,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4240;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41726,7 +41726,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4241;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41744,7 +41744,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4242;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41762,7 +41762,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4243;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41780,7 +41780,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4244;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41798,7 +41798,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4245;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41816,7 +41816,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4246;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41834,7 +41834,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4247;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41852,7 +41852,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4248;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41870,7 +41870,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4249;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41888,7 +41888,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4250;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41906,7 +41906,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4251;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41924,7 +41924,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4252;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41942,7 +41942,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4253;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41960,7 +41960,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4254;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41978,7 +41978,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4255;
 							type="land_gm_euro_misc_tank_01_e";
@@ -41996,7 +41996,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4256;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42014,7 +42014,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4257;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42032,7 +42032,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4258;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42050,7 +42050,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4259;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42068,7 +42068,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4260;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42086,7 +42086,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4261;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42104,7 +42104,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4262;
 							type="land_gm_euro_misc_tank_01_e";
@@ -42122,7 +42122,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, 0.2] call GRAD_VM_common_fnc_setObjectScaleSafe";
+								init="[this, 0.2] call GRAD_VM_common_fnc_createCentrifuges;";
 							};
 							id=4263;
 							type="land_gm_euro_misc_tank_01_e";
@@ -204261,6 +204261,23 @@ class Mission
 			};
 			id=13157;
 			atlOffset=6.1035156e-005;
+		};
+		class Item849
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={638.27618,292.1738,769.23602};
+				angles[]={0,3.9209707,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="GRAD_VM_rockShowerSource_8";
+			};
+			id=13170;
+			type="Land_HelipadEmpty_F";
+			atlOffset=3.8138123;
 		};
 	};
 	class Connections

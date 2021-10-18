@@ -4,6 +4,7 @@ class GRAD_VM_phase0 {
     file = "USER\functions\phase0";
     class addActionKeypad;
     class createDruid;
+    class destroyHall;
     class forceAI;
     class civAnimate;
     class flickerLight;

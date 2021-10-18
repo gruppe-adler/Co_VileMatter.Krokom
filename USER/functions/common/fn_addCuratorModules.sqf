@@ -6,6 +6,14 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+
+["Vile Matter - Phase 0", "Destroy Zentrifuge Hall", {
+     params ["_position", "_object"];
+
+     [] call GRAD_VM_phase0_fnc_DestroyHall;
+}] call zen_custom_modules_fnc_register;
+
+
 ["Vile Matter - Phase 1", "Spawn marching Roman Soldiers", {
      params ["_position", "_object"];
 
