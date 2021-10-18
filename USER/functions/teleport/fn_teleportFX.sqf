@@ -129,6 +129,7 @@ if (local _unit && !isPlayer _unit) then {
 
             [[_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
             _unit switchMove "Acts_UnconsciousStandUp_part1";
+            [_unit] call zen_common_fnc_healUnit
 
             // should be unnecessary but still was executed multiple times for presumingly AI :o
             if (isPlayer _unit) then {
