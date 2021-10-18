@@ -3,10 +3,10 @@ if (!isServer) exitWith {};
 params ["_object", "_scale"];
 
 [{
-    time > 3
+    CBA_missionTime > 10
 }, {
     params ["_object", "_scale"];
 
-    _object attachTo [_object];
-    [_object, _scale] remoteExec ["setObjectScale", _object, true];
+    _object attachTo [teleportcenter_phase0];
+    [_object, _scale] remoteExec ["setObjectScale", _object, _object];
 }, [_object, _scale]] call CBA_fnc_waitUntilAndExecute;
