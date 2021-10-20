@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=192;
+		nextID=239;
 	};
 	class Camera
 	{
-		pos[]={4901.6406,258.51917,2002.7991};
-		dir[]={0.12055939,-0.45357904,0.88302678};
-		up[]={0.061357915,0.89121509,0.44941106};
-		aside[]={0.99080932,-1.3224781e-007,-0.13527492};
+		pos[]={4778.2231,201.11116,2157.8889};
+		dir[]={-0.79419029,-0.57108915,0.20769516};
+		up[]={-0.55251652,0.82088125,0.14449401};
+		aside[]={0.25301129,-1.5366822e-007,0.96747178};
 	};
 };
 binarizationWanted=0;
@@ -19966,7 +19966,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={592.20776,293.33075,689.73633};
-								angles[]={0,3.9837673,-0};
+								angles[]={0,3.9837673,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19983,7 +19983,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={598.36292,293.33075,681.97272};
-								angles[]={0,3.9729984,-0};
+								angles[]={0,3.9729984,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21756,18 +21756,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4854.6694,4.5991921,3458.1147};
-				angles[]={0,4.4157,0};
+				position[]={4854.6689,4.599298,3458.115};
+				angles[]={0,4.4156828,0};
 			};
 			side="Empty";
 			class Attributes
 			{
 				init="[this] call GRAD_VM_phase1_fnc_addActionToCrystal;";
+				name="crystal_phase1";
 				disableSimulation=1;
 			};
 			id=1364;
 			type="JMS_st_crystal_small1_red";
-			atlOffset=1.0268629;
+			atlOffset=1.0269997;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -55489,6 +55490,7 @@ class Mission
 			class Attributes
 			{
 				init="[this] call GRAD_VM_phase2_fnc_addBunkerAction;";
+				name="bunkerEntry_top";
 			};
 			id=6486;
 			type="Land_Drainage_01_F";
@@ -57701,7 +57703,7 @@ class Mission
 			};
 			id=7307;
 			type="gm_shell_155mm_icm_dm602_static";
-			atlOffset=0.035324097;
+			atlOffset=0.010547638;
 		};
 		class Item484
 		{
@@ -86119,6 +86121,7 @@ class Mission
 							class Attributes
 							{
 								name="GRAD_VM_HangarDoor";
+								dynamicSimulation=1;
 							};
 							id=6774;
 							type="TIOW_Hangar_01_Door_down";
@@ -86249,6 +86252,8 @@ class Mission
 							flags=1;
 							class Attributes
 							{
+								name="GRAD_VM_HangarDoor2";
+								dynamicSimulation=1;
 							};
 							id=6779;
 							type="TIOW_Hangar_01_Door_up";
@@ -90320,19 +90325,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4705.2656,163.41325,2108.8481};
-								angles[]={0,1.398113,0};
+								position[]={4705.2661,163.41312,2108.8479};
+								angles[]={0,1.3981135,0};
 							};
 							side="Empty";
 							class Attributes
 							{
-								init="[this] call GRAD_VM_phase3_fnc_addJumpAction;";
-								name="phase3_teleportcrystal_3";
 								disableSimulation=1;
 							};
 							id=7061;
 							type="JMS_st_crystal_Huge1_red";
-							atlOffset=7.2081909;
+							atlOffset=7.2080078;
 						};
 						class Item169
 						{
@@ -92734,7 +92737,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="EXPORT_phase2";
-			state=1;
 			class Entities
 			{
 				items=14;
@@ -152383,6 +152385,7 @@ class Mission
 							};
 							id=1838;
 							type="LIB_CG4_WACO_Wreck2";
+							atlOffset=-0.4151535;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -152615,7 +152618,7 @@ class Mission
 						};
 					};
 					id=1800;
-					atlOffset=0.25063705;
+					atlOffset=0.24376297;
 				};
 				class Item8
 				{
@@ -176211,7 +176214,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={652.8999,283.57959,465.40308};
+								position[]={652.90002,283.57959,465.40302};
 								angles[]={0,4.6495571,0};
 							};
 							side="Empty";
@@ -178400,7 +178403,7 @@ class Mission
 				};
 			};
 			id=7402;
-			atlOffset=7.6645203;
+			atlOffset=7.6644592;
 		};
 		class Item514
 		{
@@ -184506,11 +184509,11 @@ class Mission
 						};
 					};
 					id=116;
-					atlOffset=-325.67526;
+					atlOffset=0.05034256;
 				};
 			};
 			id=7403;
-			atlOffset=-94.638306;
+			atlOffset=0.088260651;
 		};
 		class Item515
 		{
@@ -200751,6 +200754,7 @@ class Mission
 					class Attributes
 					{
 						init="[this] execVM ""USER\functions\phase0\fn_switch.sqf"";";
+						name="transferSwitch";
 					};
 					id=1103;
 					type="Land_TransferSwitch_01_F";
@@ -201398,7 +201402,7 @@ class Mission
 				};
 			};
 			id=7404;
-			atlOffset=0.14093018;
+			atlOffset=0.36593628;
 		};
 		class Item516
 		{
@@ -201406,7 +201410,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={595.38342,299.9234,685.77429};
-				angles[]={0,3.9718776,-0};
+				angles[]={0,3.9718776,0};
 			};
 			side="Empty";
 			flags=5;
@@ -202174,7 +202178,7 @@ class Mission
 					};
 					id=6656;
 					type="roman_brazier";
-					atlOffset=6.6757202e-006;
+					atlOffset=7.1525574e-006;
 				};
 				class Item28
 				{
