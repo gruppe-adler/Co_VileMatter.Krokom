@@ -1,5 +1,7 @@
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
+[] call GRAD_VM_common_fnc_extractEdenObjects;
+[] call GRAD_VM_common_fnc_deleteExtractedObjects;
 
 // only relevant, when Space Marines are used:
 
