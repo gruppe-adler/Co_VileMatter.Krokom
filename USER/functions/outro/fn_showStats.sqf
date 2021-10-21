@@ -17,28 +17,12 @@ private _allTexts = [
     ["Gruppe", "ADLER", [_centerH, _centerW, safeZoneW, safeZoneH]]
 ];
 
-private _group = createGroup civilian;
-private _types = [
-    "Roman_praetorian_cent_IMS_red",
-    "Barb_warrior_IMS",
-    "LIB_GER_mgunner2",
-    "LIB_GER_lieutenant",
-    "TIOW_Comissar_Red",
-    "TIOW_Cad_GM776th_Indep"
-];
+
 
 {
     _x params ["_label", "_value", "_position"];
 
-    private _unit = _group createUnit [_x, [0,0,0], [], 0, "CAN_COLLIDE"];
-    _unit setPos (getPos outroStatsCamPos);
-
-    _unit playMoveNow "anim_jump_Loop";
-
-    _unit addEventHandler ["AnimDone", {
-        params ["_unit"];
-        _unit playMoveNow "anim_jump_Loop";
-    }];
+    
 
     [parseText ("<t font='RobotoCondensedBold' size='1' align='center'>" + _label + "</t>"), 
     parseText ("<t font='RobotoCondensedBold' size='4' align='center'>" + _value + "</t>"), 
