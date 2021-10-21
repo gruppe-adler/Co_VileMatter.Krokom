@@ -18,18 +18,20 @@ private _units = [];
     private _unit = _group createUnit [_x, [0,0,0], [], 0, "CAN_COLLIDE"];
     _unit setPos [0,0,0];
     _unit setDir 90;
+    _unit setCaptive true;
+    _unit disableAI "ANIM";
 
-    _unit playMoveNow "Acts_Dance_01";
+    [_unit, "Acts_Dance_01"] remoteExec ["switchMove"];
 
     _unit addEventHandler ["AnimDone", {
         params ["_unit"];
-        _unit playMoveNow "Acts_Dance_01";
+        [_unit, "Acts_Dance_01"] remoteExec ["switchMove"];
     }];
 
     _units pushBackUnique _unit;
 } forEach _types;
 
-
+sleep 3;
 {
     private _unit = _x;
 
@@ -38,10 +40,10 @@ private _units = [];
     if (!isNull _formerUnit) then {
         _formerUnit setPos [0,0,0];
     };
-    _unit setPos (getPos outroStatsCamPos);
+    _unit setPos [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 5.8];
     missionNamespace setVariable ["GRAD_VM_formerUnit", _unit];
 
-    sleep 10;
+    sleep 2;
 } forEach _units;
 
 // cleanup
