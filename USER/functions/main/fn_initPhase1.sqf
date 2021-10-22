@@ -37,7 +37,7 @@ if (!isServer) exitWith {};
                 params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase2", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
                 [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_teleport;
-            }, [_x, (call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
+            }, [_x, ([] call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
             (_forEachIndex/_count)*_duration+((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
         } forEach playableUnits + switchableUnits;
 

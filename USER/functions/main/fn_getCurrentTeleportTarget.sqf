@@ -6,9 +6,13 @@
 
 params [["_phase", -1]];
 
+diag_log ("GRAD VM getCurrentTeleportTarget 1: " + str _phase);
+
 if (_phase < 0) then {
     _phase = call GRAD_VM_main_fnc_getCurrentPhase;
 };
+
+diag_log ("GRAD VM getCurrentTeleportTarget 2: " + str _phase);
 
 private _result = [];
 
