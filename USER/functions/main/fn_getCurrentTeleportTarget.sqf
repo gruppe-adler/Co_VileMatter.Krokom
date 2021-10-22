@@ -1,3 +1,9 @@
+/*
+
+    gives back array of valid teleport targets
+
+*/
+
 params [["_phase", -1]];
 
 if (_phase < 0) then {

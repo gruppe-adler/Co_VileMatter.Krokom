@@ -1,5 +1,10 @@
 #define PLAYER                  ([] call CBA_fnc_currentUnit)
 
+["GRAD_VM_ACTION_start_client", {
+    diag_log text "[GRAD ACTION] Starting action";
+    _this call GRAD_VM_main_fnc_activateAction;
+}] call CBA_fnc_addEventHandler;
+
 ["GRAD_VM_action_ready", {
 
     diag_log text "GRAD VM Action Ready";
