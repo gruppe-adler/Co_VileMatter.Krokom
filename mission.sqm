@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=286;
+		nextID=333;
 	};
 	class Camera
 	{
-		pos[]={523.46252,308.90707,893.3725};
-		dir[]={-0.83024687,-0.48234606,0.27955836};
-		up[]={-0.45713839,0.87595731,0.15392543};
-		aside[]={0.31913102,6.7451037e-007,0.94776368};
+		pos[]={4772.9995,59.914684,7410.6709};
+		dir[]={-0.99140596,-0.11050585,-0.070081621};
+		up[]={-0.11023413,0.99387485,-0.007792417};
+		aside[]={-0.070513368,-4.8370566e-008,0.99751556};
 	};
 };
 binarizationWanted=0;
@@ -56625,13 +56625,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4574.7261,53.414295,7395.8862};
+				position[]={4574.7261,53.414295,7396.418};
 				angles[]={0,4.712389,0};
 			};
 			side="Empty";
 			class Attributes
 			{
 				init="this setObjectTexture [0, ""USER\images\luftschutz.paa""];";
+				name="picturereichstag";
 			};
 			id=7094;
 			type="land_gm_euro_furniture_picture_06";
@@ -202331,7 +202332,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={502.35199,292.00012,900.59601};
-				angles[]={0,5.3149295,-0};
+				angles[]={0,5.3149295,0};
 			};
 			side="Empty";
 			flags=5;
@@ -202456,8 +202457,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={524.31702,300.483,892.20898};
-				angles[]={6.1662312,0,6.205832};
+				position[]={515.64984,296.71463,891.97046};
+				angles[]={0.00075285399,5.2887845,6.1430645};
 			};
 			side="Empty";
 			class Attributes
@@ -202466,7 +202467,7 @@ class Mission
 			};
 			id=7441;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=13.233002;
+			atlOffset=8.7600098;
 		};
 	};
 	class Connections

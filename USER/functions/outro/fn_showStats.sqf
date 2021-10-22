@@ -2,7 +2,7 @@ params ["_unit", "_duration"];
 
 playSound "chilladi";
 
-
+1 fadeSound 1;
 
 private _cam = "camera" camCreate (getPos outroStatsCamPos);
 _cam camSetPos (getPos outroStatsCamPos);

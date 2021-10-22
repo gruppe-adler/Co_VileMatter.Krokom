@@ -44,4 +44,7 @@ _hitlerWatchPoint attachTo [GRAD_VM_phase4_exfilHeli_1, [-0.033783,7.48343,-0.32
 sleep 2;
 _copilot lookAt _hitlerWatchPoint;
 
+sleep 17;
+[] spawn GRAD_VM_outro_fnc_createDance;
+
 // "pilot_heli_transport_03_idle"

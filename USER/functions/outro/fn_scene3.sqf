@@ -40,3 +40,4 @@ sleep 2;
 [0] call GRAD_VM_outro_fnc_fadeToBlack;
 0 fadeSound 0;
 0 fadeSpeech 0;
+
