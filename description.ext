@@ -24,7 +24,7 @@ ReviveMedicSpeedMultiplier = 2;         //speed multiplier for revive performed 
 ReviveForceRespawnDelay = 60;            //time needed to perform force respawn (in secs)
 ReviveBleedOutDelay = 99999;              //unconscious state duration (in secs)
 
-enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198053987023", "76561197976281256", "76561197992511162"};
 
 #include "USER\missionInfo.hpp"
 #include "USER\loadouts.hpp"
