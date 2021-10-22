@@ -1,13 +1,7 @@
 params ["_unit", "_currentPosition", "_destinationPositions", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
 
-drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,5,[1,1,0],[0,0,0],0,9,7,0,[.5,.5],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
-
-private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", getPosWorld _unit, true];
-getPosWorld _unit params ["_xPos", "_yPos"];
-_beam setPos [_xPos, _yPos, 2];
-[_beam, 90, 0] call BIS_fnc_setPitchBank;
-
-[_unit, _currentPosition] call GRAD_VM_teleport_fnc_despawnEffect;
+private _timeToTeleport = 1;
+[_unit, _currentPosition, true, _timeToTeleport] call GRAD_VM_teleport_fnc_despawnEffect;
 
 if (local _unit && isPlayer _unit) then {
 
@@ -24,7 +18,7 @@ if (local _unit && isPlayer _unit) then {
     _mask ctrlSetFade 1;
     _mask ctrlCommit 0;
     _mask ctrlSetFade 0;
-    _mask ctrlCommit 1;
+    _mask ctrlCommit _timeToTeleport;
 
     [{
         ctrlCommitted (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull])
@@ -58,12 +52,10 @@ if (local _unit && !isPlayer _unit) then {
 };
 
 [{
-    params ["_currentPosition", "_destinationPositions", "_unit", "_beam"];
+    params ["_currentPosition", "_destinationPositions", "_unit"];
     _currentPosition distance2d _unit > 200
 },{
-    params ["_currentPosition", "_destinationPositions", "_unit", "_beam"];
-
-    deleteVehicle _beam;
+    params ["_currentPosition", "_destinationPositions", "_unit"];
 
     ["GRAD_VM_curatorInfo",[_unit, "teleport_start"]] call CBA_fnc_serverEvent;
 
@@ -89,7 +81,7 @@ if (local _unit && !isPlayer _unit) then {
     _fireflyEnd setParticleCircle [0,[0,0,0]];
     _fireflyEnd setParticleRandom [0,[0,0,0],[0.1,0.1,0.1],1,0,[0,0,0,0.1],1,1];
     _fireflyEnd setParticleParams [["\A3\data_f\proxies\muzzle_flash\mf_machineGun_Cheetah.p3d",1,0,1],"","SpaceObject",1,5,[0,0,0],[0,0,0],13,1.3,1,0,[0.01,0.01],[[1,1,1,1],[0,0,0,0]],[1],1,0.1,"","",_fireflyEnd, 0,true,1,[[200,200,200,10],[200,200,200,0]]];
-    _fireflyEnd setDropInterval 0.05;
+    _fireflyEnd setDropInterval 0.01;
 
     [{
         params ["_fireflyEnd"];
@@ -126,4 +118,4 @@ if (local _unit && !isPlayer _unit) then {
     };
 
 
-}, [_currentPosition, _destinationPositions, _unit, _beam]] call CBA_fnc_waitUntilAndExecute;
+}, [_currentPosition, _destinationPositions, _unit]] call CBA_fnc_waitUntilAndExecute;

@@ -1,8 +1,13 @@
-params ["_unit", "_position", ["_spawnIn", false]];
+params ["_unit", "_position", ["_spawnIn", false], ["_timeToTeleport", 2]];
 
+drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,1,[1,1,0],[0,0,0],0,9,7,0,[.01,4,.01],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
+private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", getPosWorld _unit, true];
+getPosWorld _unit params ["_xPos", "_yPos"];
+_beam setPos [_xPos, _yPos, 2];
+[_beam, 90, 0] call BIS_fnc_setPitchBank;
 
-private _firefly = "#particlesource" createVehicleLocal [0,0,0];
+private _firefly = "#particlesource" createVehicleLocal _position;
 _firefly setParticleCircle [.5,[0,0,0]];
 _firefly setParticleRandom [0,[0,0,0],[0,0,0],0,0,[0,0,0,0],1,0];
 _firefly setParticleParams [["\A3\data_f\proxies\muzzle_flash\mf_machineGun_Cheetah.p3d",1,0,1],"","SpaceObject",1,1,[0,0,0],[0,0,2],3,1.3,1,0,[0.1,0.1],[[1,1,1,1],[0,0,0,0]],[0],0,0,"","",_unit, 0,true,0,[[255,255,255,10],[255,0,0,0]],[0,1,0]];
@@ -32,9 +37,9 @@ if (!_spawnIn) then {
             params ["_lightPoint"];
 
             deleteVehicle _lightPoint;
-        }, [_lightPoint], 2]  call CBA_fnc_waitAndExecute;
+        }, [_lightPoint], 0.5]  call CBA_fnc_waitAndExecute;
         
-    }, [_position], 1]  call CBA_fnc_waitAndExecute;
+    }, [_position, _beam], _timeToTeleport]  call CBA_fnc_waitAndExecute;
 } else {
     private _lightPoint = "#lightpoint" createvehiclelocal (_unit modelToWorldVisual [0,0,1]);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
@@ -51,7 +56,8 @@ if (!_spawnIn) then {
 };
 
 [{
-    params ["_firefly", "_despawnEffect"];
+    params ["_firefly", "_despawnEffect", "_beam"];
     [_despawnEffect] call CBA_fnc_removePerFrameHandler;
     deleteVehicle _firefly;
-}, [_firefly, _despawnEffect], 1]  call CBA_fnc_waitAndExecute;
+    deleteVehicle _beam;
+}, [_firefly, _despawnEffect, _beam], 1]  call CBA_fnc_waitAndExecute;
