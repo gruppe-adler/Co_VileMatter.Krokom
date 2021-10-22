@@ -12,5 +12,6 @@ class GRAD_VM_outro {
 		class scene3 {};
 		class fadeToBlack {};
 		class fadeFromBlack {};
+		class endMissionLocal;
    };
 };

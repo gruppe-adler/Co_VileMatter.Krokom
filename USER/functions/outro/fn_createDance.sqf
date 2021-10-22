@@ -4,9 +4,6 @@ if (!canSuspend) exitWith {
 
 if (!isServer) exitWith {};
 
-private _singleDuration = 10;
-
-private _group = createGroup civilian;
 private _types = [
     ["Roman_praetorian_cent_IMS_red", "GreekHead_A3_13"],
     ["Barb_warrior_IMS", "WhiteHead_04"],
@@ -16,17 +13,25 @@ private _types = [
     ["TIOW_Cad_GM776th_Indep", "LivonianHead_1"]
 ];
 
+private _totalDuration = 89;
+private _singleDuration = _totalDuration/(count _types);
+
+private _group = createGroup civilian;
 private _unit = _group createUnit [_types#0#0, [0,0,0], [], 0, "CAN_COLLIDE"];
 _unit setPos [0,0,0];
 _unit setDir 90;
 _unit setCaptive true;
 _unit disableAI "ANIM";
 _unit disableAI "MOVE";
-[_unit, "Acts_Dance_02"] remoteExec ["switchMove"];
+[_unit, "Acts_Dance_01"] remoteExec ["switchMove"];
 
 _unit addEventHandler ["AnimDone", {
-    params ["_unit"];
-    [_unit, "Acts_Dance_02"] remoteExec ["switchMove"];
+    params ["_unit", "_anim"];
+    if (_anim == "Acts_Dance_01") then {
+        [_unit, "Acts_Dance_02"] remoteExec ["switchMove"];
+    } else {
+        [_unit, "Acts_Dance_01"] remoteExec ["switchMove"];
+    };
 }];
 
 private _spotlight = "Land_PortableLight_double_F" createVehicleLocal [0,0,0];
@@ -41,11 +46,11 @@ _spotlight2 setPos (outroStatsTarget getPos [5, -90]);
 
 sleep 3;
 
-_unit setPos [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 5.8];
-
-sleep 1;
-[(count _types * _singleDuration)] remoteExec ["GRAD_VM_outro_fnc_createDiscoBall"];
-[_unit, (count _types * _singleDuration)] remoteExec ["GRAD_VM_outro_fnc_showStats"];
+private _position = [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 5.8];
+[_totalDuration] remoteExec ["GRAD_VM_outro_fnc_createDiscoBall"];
+[_unit, _totalDuration] remoteExec ["GRAD_VM_outro_fnc_showStats"];
+sleep 3;
+_unit setPos _position;
 
 {
     _x params ["_loadout", "_face"];

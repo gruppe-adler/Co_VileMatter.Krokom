@@ -33,19 +33,17 @@ params
     ["_label", "#(argb,8,8,3)color(1,0,1,1)", ["", parsetext ""]],
     ["_value", "#(argb,8,8,3)color(1,0,1,1)", ["", parsetext ""]],
     ["_pos", [0,0,1,1]],
-    ["_duration", 5],
-    ["_fade", []],
-    ["_maxAlpha", 0.3]
+    ["_duration", 5]
 ];
 
 
-private _fadeIn = _fade param [0, 0.5, [0]];
-private _fadeOut = _fade param [1, _fadeIn, [0]];
+private _fadeIn = 0.25;
+private _fadeOut = 0.25;
 
 _pos params ["_posX", "_posY", "_posW", "_posH"];
 
 
-playSound "GRAD_VM_tick";
+playSound "GRAD_electricFence_sound_spark1";
 
 private _display = findDisplay 46;
 
@@ -53,12 +51,10 @@ private _labelContent = _display ctrlCreate ["RscStructuredText", -1];
 _labelContent ctrlsetstructuredtext _label;
 
 //_color = random 0.5;
-private _color = random 0.4;
+private _color = 0;
+private _alpha = 0;
 
-//_alpha = if (random 1 > 0.1) then {0.3} else {0};
-private _alpha = if (random 1 > 0.1) then {_maxAlpha} else {_maxAlpha * 0.5};
-
-_labelContent ctrlsetbackgroundcolor [_color,_color,_color,_alpha];
+_labelContent ctrlsetbackgroundcolor [_color,_color,_color,0];
 _labelContent ctrlsetfade 1;
 _labelContent ctrlsetposition [
     _posX,
@@ -69,22 +65,14 @@ _labelContent ctrlsetposition [
 _labelContent ctrlcommit 0;
 
 _labelContent ctrlsetfade 0;
-_labelContent ctrlcommit (random _fadeIn);
-
-sleep _duration;
-
-playsound "GRAD_VM_teleport2";
+_labelContent ctrlcommit 0.25;
 
 sleep _fadeIn;
 
+playsound "GRAD_electricFence_sound_spark1";
+
 private _valueContent = _display ctrlCreate ["RscStructuredText", -1];
 _valueContent ctrlsetstructuredtext _value;
-
-//_color = random 0.5;
-private _color = random 0.4;
-
-//_alpha = if (random 1 > 0.1) then {0.3} else {0};
-private _alpha = if (random 1 > 0.1) then {_maxAlpha} else {_maxAlpha * 0.5};
 
 _valueContent ctrlsetbackgroundcolor [_color,_color,_color,_alpha];
 _valueContent ctrlsetposition [
@@ -97,16 +85,23 @@ _valueContent ctrlsetfade 1;
 _valueContent ctrlcommit 0;
 
 _valueContent ctrlsetfade 0;
-_valueContent ctrlcommit (random _fadeIn/2);
+_valueContent ctrlcommit 0.25;
 
+[{
+    params ["_args", "_handle"];
 
-sleep (_fadeIn + _fadeOut + _duration);
+    if (isNull _valueContent) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+
+    _valueContent ctrlsetFade (random 1 max 0.5);
+}, 0.1, [_valueContent]] call CBA_fnc_addPerFrameHandler;
+
+sleep (_duration);
 
 _labelContent ctrlsetfade 1;
-_labelContent ctrlcommit (random _fadeOut);
+_labelContent ctrlcommit (_fadeOut);
 
 _valueContent ctrlsetfade 1;
-_valueContent ctrlcommit (random _fadeOut);
+_valueContent ctrlcommit (_fadeOut);
 
 sleep _fadeOut;
 

@@ -2,20 +2,12 @@ params ["_unit", "_currentPosition", "_destinationPositions", "_index", "_durati
 
 drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,5,[1,1,0],[0,0,0],0,9,7,0,[.5,.5],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
-private _firefly = "#particlesource" createVehicleLocal _currentPosition;
-_firefly setParticleCircle [.5,[0,0,0]];
-_firefly setParticleRandom [0,[0,0,0],[0,0,0],0,0,[0,0,0,0],1,0];
-_firefly setParticleParams [["\A3\data_f\proxies\muzzle_flash\mf_machineGun_Cheetah.p3d",1,0,1],"","SpaceObject",1,1,[0,0,0],[0,0,2],3,1.3,1,0,[0.1,0.1],[[1,1,1,1],[0,0,0,0]],[0],0,0,"","",_firefly, 0,true,0,[[255,255,255,10],[255,0,0,0]],[0,1,0]];
-_firefly setDropInterval 0.001;
-_firefly attachTo [_unit, [0,0,-1]];
-
-
 private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", getPosWorld _unit, true];
 getPosWorld _unit params ["_xPos", "_yPos"];
 _beam setPos [_xPos, _yPos, 2];
 [_beam, 90, 0] call BIS_fnc_setPitchBank;
 
-[_currentPosition] call GRAD_VM_teleport_fnc_despawnEffect;
+[_unit, _currentPosition] call GRAD_VM_teleport_fnc_despawnEffect;
 
 if (local _unit && isPlayer _unit) then {
 
@@ -65,12 +57,6 @@ if (local _unit && !isPlayer _unit) then {
 
 };
 
-
-[{
-        params ["_firefly"];
-        deleteVehicle _firefly;
-}, [_firefly], 2.5] call CBA_fnc_waitAndExecute;
-
 [{
     params ["_currentPosition", "_destinationPositions", "_unit", "_beam"];
     _currentPosition distance2d _unit > 200
@@ -108,7 +94,7 @@ if (local _unit && !isPlayer _unit) then {
     [{
         params ["_fireflyEnd"];
         deleteVehicle _fireflyEnd;
-    }, [_fireflyEnd], 0.2] call CBA_fnc_waitAndExecute;
+    }, [_fireflyEnd], 0.5] call CBA_fnc_waitAndExecute;
 
 
     if (local _unit) then {
@@ -127,7 +113,7 @@ if (local _unit && !isPlayer _unit) then {
 
             ["GRAD_VM_curatorInfo",[_unit, "teleport_end"]] call CBA_fnc_serverEvent;
 
-            [[_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
+            [_unit, [_customPosition#0, _customPosition#1, (_destination#2 max 0)]] call GRAD_VM_teleport_fnc_despawnEffect;
             _unit switchMove "Acts_UnconsciousStandUp_part1";
             [_unit] call zen_common_fnc_healUnit;
 

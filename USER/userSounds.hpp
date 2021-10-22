@@ -562,6 +562,16 @@ class GRAD_VM_tick
     titles[] = {  };
 };
 
+class GRAD_VM_tock
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "GRAD_VM_tock";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\tock.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
 
 
 
