@@ -552,6 +552,17 @@ class phase2_ambient
     titles[] = {  };
 };
 
+class GRAD_VM_tick
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "GRAD_VM_tick";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\tick.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
 
 
 

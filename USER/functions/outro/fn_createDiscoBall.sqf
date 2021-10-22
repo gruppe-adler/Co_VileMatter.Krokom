@@ -1,17 +1,20 @@
+params ["_duration"];
+
 private _position = [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 10];
 private _radius = 0.5;
-private _discoBall = createVehicle ["Sign_Sphere100cm_F", _position, [], 0, "CAN_COLLIDE"];
+private _discoBall = "Sign_Sphere100cm_F" createVehicleLocal _position;
+_discoBall setPos _position;
 _discoBall setObjectTexture [0, "#(argb,8,8,3)color(0.5,0.5,0.5,1,NOHQ)"];
 _discoBall setObjectMaterial [0,"A3\Structures_F\Data\Windows\window_set.rvmat"];
 private _cones = [];
 
 for "_i" from 1 to 10 do {
     private _types = ["Reflector_Cone_01_narrow_white_F", "Reflector_Cone_01_narrow_orange_F", "Reflector_Cone_01_narrow_red_F", "Reflector_Cone_01_narrow_green_F", "Reflector_Cone_01_narrow_blue_F"];
-    private _cone = createVehicle [selectRandom _types, [0,0,0], [], 0, "CAN_COLLIDE"];
+    private _cone = (selectRandom _types) createVehicleLocal [0,0,0];
     _cone setPosASL (getPosASL _discoBall);
     // _cone attachTo [_discoBall, [0,0,0], "", true];
 
-    private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", [0,0,0]];
+    private _beam = createSimpleObject ["A3\data_f\VolumeLight_searchLight.p3d", [0,0,0], true];
     _beam setPosASL (getPosASL _discoBall);
     // _beam attachTo [_cone, [0,0,0], "", true];
 
@@ -35,7 +38,7 @@ private _handle = [{
         private _randomYaw = (_cone getVariable ["GRAD_VM_randomYaw", random 360]) + 2;
 
         [_cone, _randomPitch, _randomBank, _randomYaw] call ace_common_fnc_setPitchBankYaw;
-        _cone setOBjectScale 0.25;
+        _cone setObjectScale 0.25;
 
         _cone setVariable ["GRAD_VM_randomPitch", _randomPitch];
         _cone setVariable ["GRAD_VM_randomBank", _randomBank];
@@ -50,4 +53,4 @@ private _handle = [{
     { deleteVehicle _x; } forEach _cones;
     deleteVehicle _discoBall;
     [_handle] call CBA_fnc_removePerFrameHandler;
-}, [_handle, _cones, _discoBall], 20] call CBA_fnc_waitAndExecute;
+}, [_handle, _cones, _discoBall], _duration + 1] call CBA_fnc_waitAndExecute;

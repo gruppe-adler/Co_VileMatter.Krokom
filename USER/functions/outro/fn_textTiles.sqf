@@ -44,8 +44,10 @@ private _fadeOut = _fade param [1, _fadeIn, [0]];
 
 _pos params ["_posX", "_posY", "_posW", "_posH"];
 
-("bis_fnc_textTiles" call bis_fnc_rscLayer) cutrsc ["RscTilesGroup","plain"];
-private _display = uinamespace getvariable "RscTilesGroup";
+
+playSound "GRAD_VM_tick";
+
+private _display = findDisplay 46;
 
 private _labelContent = _display ctrlCreate ["RscStructuredText", -1];
 _labelContent ctrlsetstructuredtext _label;
