@@ -64,8 +64,9 @@ if (!_spawnIn) then {
 };
 
 [{
-    params ["_firefly", "_beam", "_beam2"];
+    params ["_firefly", "_beam", "_beam2", "_unit", "_position"];
     deleteVehicle _firefly;
     deleteVehicle _beam;
     deleteVehicle _beam2;
-}, [_firefly, _beam, _beam2], 1]  call CBA_fnc_waitAndExecute;
+    playSound3D [getMissionPath "USER\sounds\teleport_fade.ogg", player, false, AGLtoASL _position, 1, 1, 500, 0, true];
+}, [_firefly, _beam, _beam2, _unit, _position], 1]  call CBA_fnc_waitAndExecute;

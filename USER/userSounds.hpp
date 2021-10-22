@@ -105,6 +105,13 @@ class grad_VM_teleport2
     titles[] = {0, ""};
 };
 
+class grad_VM_teleport_fade
+{
+    name = "grad_VM_teleport_fade";
+    sound[] = {"USER\sounds\teleport_fade.ogg", VOLUME, 1, DISTANCE};
+    titles[] = {0, ""};
+};
+
 class grad_VM_teleport3
 {
     name = "grad_VM_teleport3";
