@@ -85,8 +85,7 @@ private _handle = [{
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
     _lightPoint setLightAttenuation [0, 0, 0, 0, 0, 4000];
     _lightPoint setLightBrightness 10;
-    
-    _lightPoint say3D "grad_VM_hum2";
+        
     _lightPoint say3d "teleport_flash";
     playSound "grad_VM_drone";
     // lightpoint moving in center of stoneHenge

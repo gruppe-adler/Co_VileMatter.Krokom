@@ -24,4 +24,10 @@ private _devicesNew = [];
         { _x hideObjectGlobal true; } forEach _devicesNew;
         { _x hideObjectGlobal false; } forEach _devicesOriginal;
 
+        playSound3D [getMissionPath "USER\sounds\hum2.ogg", phase2_devicestatue, false, getPosasl phase2_devicestatue, 2,1,300];
+
+        [{
+            ["grad_VM_phaseControl", [2, 2]] call CBA_fnc_serverEvent;
+        }, [], 7] call CBA_fnc_waitAndExecute;
+
 }, [_devicesOriginal, _devicesNew]] call CBA_fnc_waitUntilAndExecute;

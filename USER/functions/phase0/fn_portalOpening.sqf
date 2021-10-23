@@ -83,7 +83,7 @@ private _lightPoints = [];
 },
 {
     params ["_light_top", "_teleportcenter_phase0"];
-    private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL _light_top);
+    private _lightPoint = "#lightpoint" createvehiclelocal (ASLtoAGL [_light_top#0, _light_top#1, ((_light_top#2) + 1.6)]);
     _lightPoint setLightDayLight true;_lightPoint setLightUseFlare true;
     _lightPoint setLightFlareSize 5; _lightPoint setLightFlareMaxDistance 5000;
     _lightPoint setLightAmbient[0.5,0.5,1]; _lightPoint setLightColor[0.5,0.7,0.9];
