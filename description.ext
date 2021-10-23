@@ -33,6 +33,14 @@ enableDebugConsole[] = {"76561198053987023", "76561197976281256", "7656119799251
 #include "cfgIslands.hpp"
 #include "cfgCivilians.hpp"
 
+class CLib {
+    Modules[] = {"CLib", "Streamator"};
+    useExperimentalAutoload = 0;
+    useCompressedFunction = 0;
+    useFallbackRemoteExecution = 0;
+    FrameGraphSize = 128;
+};
+
 class missionSettings {
 	#include "USER\missionSettings.hpp"
 

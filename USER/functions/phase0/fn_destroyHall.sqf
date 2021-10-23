@@ -10,6 +10,6 @@ _rubble2 setPos [626.817,785.961,4.85208];
 [10, 10, 35] remoteexec ["addCamShake"];
 
 
-private _lamps = nearestObjects [GRAD_VM_rockShowerSource_8, ["Land_JMS_light_UpLight_1"], 100];
+private _lamps = nearestObjects [GRAD_VM_rockShowerSource_8, ["Land_JMS_light_UpLight_1", "Land_JMS_light_SideLight_1"], 100];
 
 { _x setDamage 1; } forEach _lamps;

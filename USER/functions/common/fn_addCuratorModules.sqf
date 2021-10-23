@@ -42,14 +42,22 @@
 ["Vile Matter - Phase 1", "Roman Horns Sound 2", {
      params ["_position", "_object"];
 
-     playSound3D ["\Roman_props\sounds\Roman_horn_corn.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
+     playSound3D ["Roman_props\sounds\Roman_horn_corn.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Barb Horn", {
      params ["_position", "_object"];
 
-     playSound3D ["\Roman_props\sounds\barb_horn_3.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
+     playSound3D ["Roman_props\sounds\barb_horn_3.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
 }] call zen_custom_modules_fnc_register;
+
+
+["Vile Matter - Phase 1", "Distant Battle Sound", {
+     params ["_position", "_object"];
+
+     playSound3D [getMissionPath "USER\sounds\phase1_battlesound_1.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
+}] call zen_custom_modules_fnc_register;
+
 
 ["Vile Matter - Phase 1", "Remove Formation", {
      params ["_position", "_object"];

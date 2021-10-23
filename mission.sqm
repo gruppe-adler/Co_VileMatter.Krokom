@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=7534;
+		nextID=7537;
 	};
 	class LayerIndexProvider
 	{
-		nextID=523;
+		nextID=571;
 	};
 	class Camera
 	{
-		pos[]={493.28561,285.93701,469.24176};
-		dir[]={-0.028672773,-0.33424285,-0.94206935};
-		up[]={-0.010168049,0.94248354,-0.33409879};
-		aside[]={-0.99955618,-8.1236067e-009,0.03042355};
+		pos[]={4775.2144,47.578869,3464.4341};
+		dir[]={0.81311888,-0.57935739,-0.056565739};
+		up[]={0.57796472,0.81507224,-0.040206999};
+		aside[]={-0.06939926,2.4734618e-008,-0.99759829};
 	};
 };
 binarizationWanted=0;
@@ -1399,7 +1399,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -1441,7 +1441,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -5273,7 +5273,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=569;
+		items=570;
 		class Item0
 		{
 			dataType="Layer";
@@ -55149,17 +55149,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={636.1582,291.55991,771.92065};
-						angles[]={0,2.427129,0};
+						position[]={636.15802,291.55969,771.92102};
+						angles[]={0,2.4271245,0};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="ceiling_lamp_10";
 					};
 					id=6453;
 					type="Land_JMS_light_UpLight_1";
-					atlOffset=3.1946411;
+					atlOffset=3.1944275;
 				};
 				class Item3
 				{
@@ -55379,17 +55380,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={638.3689,291.5553,768.86841};
-						angles[]={0,5.6450543,0};
+						position[]={638.36902,291.55493,768.86798};
+						angles[]={0,5.6450577,0};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="sidewall_lamp";
 					};
 					id=6467;
 					type="Land_JMS_light_SideLight_1";
-					atlOffset=0.30062866;
+					atlOffset=0.30026245;
 				};
 				class Item17
 				{
@@ -176226,17 +176228,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={488.06519,290.27386,465.99829};
+								position[]={488.065,290.27359,465.99799};
 								angles[]={3.1415927,0,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilinglamp_bunker_1";
 							};
 							id=7177;
 							type="Land_LampDecor_F";
-							atlOffset=3.3937683;
+							atlOffset=3.3934937;
 						};
 						class Item83
 						{
@@ -176373,17 +176376,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={491.88263,284.95905,466.55518};
+								position[]={491.88272,284.95898,466.55499};
 								angles[]={0,5.5850539,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
+								name="desklamp";
 								disableSimulation=1;
 							};
 							id=7184;
 							type="land_gm_euro_furniture_lampfixture_03";
+							atlOffset=0.85961914;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -176700,51 +176704,54 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={539.93994,289.67273,465.85767};
+								position[]={539.94,289.67258,465.858};
 								angles[]={3.1415927,0,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilinglamp_bunker_4";
 							};
 							id=7233;
 							type="Land_LampDecor_F";
-							atlOffset=3.3937683;
+							atlOffset=3.3936157;
 						};
 						class Item104
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={526.51221,289.67273,465.85767};
+								position[]={526.51202,289.67258,465.858};
 								angles[]={3.1415927,0,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilinglamp_bunker_3";
 							};
 							id=7234;
 							type="Land_LampDecor_F";
-							atlOffset=2.4866333;
+							atlOffset=2.4864807;
 						};
 						class Item105
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={513.44409,289.67273,465.85767};
+								position[]={513.44397,289.67258,465.858};
 								angles[]={3.1415927,0,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilinglamp_bunker_2";
 							};
 							id=7235;
 							type="Land_LampDecor_F";
-							atlOffset=3.3937683;
+							atlOffset=3.3936157;
 						};
 						class Item106
 						{
@@ -194309,17 +194316,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={613.97729,294.39441,801.20605};
-						angles[]={0,5.6357083,0};
+						position[]={613.97699,294.39407,801.20599};
+						angles[]={0,5.6357031,0};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="sidewall_lamp_2";
 					};
 					id=1172;
 					type="Land_JMS_light_SideLight_1";
-					atlOffset=0.14004517;
+					atlOffset=0.13970947;
 				};
 				class Item301
 				{
@@ -203642,6 +203650,55 @@ class Mission
 			};
 			id=7521;
 			type="Land_Bucket_painted_F";
+		};
+		class Item569
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={492.84399,283.36142,562.30298};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="this getVariable [""Streamator_isSpectator"", true]";
+						name="streamator_1";
+						description="Streamator";
+						isPlayable=1;
+					};
+					id=7535;
+					type="gm_gc_civ_man_02_80_gry";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=7534;
 		};
 	};
 	class Connections

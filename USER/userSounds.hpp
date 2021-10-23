@@ -580,6 +580,17 @@ class GRAD_VM_tock
 };
 
 
+class GRAD_VM_battlesound
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "GRAD_VM_battlesound";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\phase1_battlesound_1.ogg", 1, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
 
 
 
