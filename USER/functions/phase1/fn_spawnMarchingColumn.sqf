@@ -19,10 +19,20 @@ _leader addWeapon "RM_Fire_torch";
 _leader addHandgunItem "RM_torch_fluid";
 _leader removeWeapon "JMSL_W_Melee_Gladius_1";
 _leader selectWeapon "RM_Fire_torch";
+_leader setBehaviour "SAFE";
 
 [_leader] execVM "USER\functions\phase1\fn_addTorch.sqf";
 
 _leader setVariable ["GRAD_VM_inFormation", true, true];
+
+// disable formation in combat
+[{
+    params ["_leader"];
+    behaviour _leader in ["AWARE","COMBAT"]
+},{
+    params ["_leader"];
+    _leader setVariable ["GRAD_VM_inFormation", false, true];
+}, [_leader]] call CBA_fnc_waitUntilAndExecute;
 
 // prevent prone romans
 _leader addEventHandler ["AnimStateChanged",
