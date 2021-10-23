@@ -45,7 +45,7 @@ private _handle = [{
     {
         private _lightpoint = _x;
         private _position = (_lightPoint getPos [0.05, (_lightpoint getRelDir _statueCenterTop)]);
-        _position set [2, 1.5];
+        _position set [2, 2];
 
         _lightpoint setPos _position;
 
