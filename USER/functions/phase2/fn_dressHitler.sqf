@@ -7,62 +7,16 @@ _adi setUnitLoadout [[],[],["LIB_P08","","","",["LIB_8Rnd_9x19_P08",8],[],""],["
 _adi setVariable ["GRAD_VM_isHitler", true, true];
 _adi allowDamage false;
 
-[_adi, "adi_identity"] remoteExec ["setIdentity", 0, _adi];
+_adi setCaptive true;
 
-[_adi] spawn GRAD_VM_phase2_fnc_hitlerSpeech;
+[_adi, "adi_identity"] remoteExec ["setIdentity", 0, _adi];
 
 _adi addEventHandler ["Fired", {
     params ["_adi", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-    if (needReload _adi == 1) then {
-        _adi addMagazine ["LIB_8Rnd_9x19_P08", 1];
+    if ((weaponState _adi) select 4 == 0) then {
+        _adi addMagazine "LIB_8Rnd_9x19_P08";
     };
 }];
 
-
-GRAD_VM_phase2_fnc_suicideHitler = {
-    _unit = _this select 0;
-
-    objNull remoteControl _unit;     // removes the remoteControlling
-
-    _handgun = handgunWeapon _unit;
-    if (_handgun == "") exitWith {};
-
-    private _animation = "murshun_ActsPercMstpSnonWpstDnon_suicide1B";
-
-    [_unit, _animation] remoteExec ["switchMove"];
-
-    _unit selectWeapon handgunWeapon _unit;
-    
-    sleep 3.9;
-
-    sleep 0.5;
-
-    _unit addEventHandler ["Fired", {
-        params ["_unit"];
-        _unit setDamage 1;
-        _unit removeEventHandler ["Fired", _thisEventHandler];
-    ];
-    _unit forceWeaponFire [handgunWeapon _unit, "Single"];    
-};
-
-
-_adi addAction
-[
-    "Die now",    // title
-    {
-        params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-        [_target] spawn GRAD_VM_phase2_fnc_suicideHitler;
-    },
-    nil,        // arguments
-    1.5,        // priority
-    true,       // showWindow
-    true,       // hideOnUse
-    "",         // shortcut
-    "_target == _this && murshun_easywayout_canSuicide && !murshun_suicideInProgress && alive _target",     // condition
-    50,         // radius
-    false,      // unconscious
-    "",         // selection
-    ""          // memoryPoint
-];
+[_adi] remoteexec ["GRAD_VM_phase2_fnc_adiAction", [0,-2] select isDedicated];
