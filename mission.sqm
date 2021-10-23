@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=380;
+		nextID=427;
 	};
 	class Camera
 	{
-		pos[]={4772.9995,59.914684,7410.6709};
-		dir[]={-0.99140173,-0.11050537,-0.070081174};
-		up[]={-0.11023033,0.99387562,-0.0077920691};
-		aside[]={-0.070513032,0,0.99751103};
+		pos[]={634.8476,289.83395,774.37842};
+		dir[]={-0.71077794,0.059777472,0.70088297};
+		up[]={0.042558707,0.99820995,-0.041967012};
+		aside[]={0.70213777,-7.6927245e-007,0.7120477};
 	};
 };
 binarizationWanted=0;
@@ -17665,43 +17665,45 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={616.21387,294.53793,797.8064};
-								angles[]={0,5.6382189,0};
+								position[]={616.21399,294.53745,797.80603};
+								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_1";
 								dynamicSimulation=1;
 							};
 							id=1125;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1740723;
+							atlOffset=3.173584;
 						};
 						class Item1
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={617.61621,294.52103,795.91968};
-								angles[]={0,5.6382189,0};
+								position[]={617.61603,294.5209,795.91998};
+								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_17";
 								dynamicSimulation=1;
 							};
 							id=1126;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1571655;
+							atlOffset=3.1570435;
 						};
 						class Item2
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={618.94189,294.52866,794.13599};
+								position[]={618.94202,294.52866,794.13599};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
@@ -17709,6 +17711,7 @@ class Mission
 							class Attributes
 							{
 								init="[this] execVM ""USER\functions\phase0\fn_flickerLight.sqf"";";
+								name="ceilingLamp_16";
 								dynamicSimulation=1;
 							};
 							id=1127;
@@ -17720,31 +17723,33 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={620.65771,294.52347,791.88721};
-								angles[]={0,5.6382189,0};
-							};
-							side="Empty";
-							flags=1;
-							class Attributes
-							{
-								dynamicSimulation=1;
-							};
-							id=1128;
-							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1596069;
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={612.20508,294.48645,794.96997};
+								position[]={620.65802,294.5238,791.88702};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_15";
+								dynamicSimulation=1;
+							};
+							id=1128;
+							type="Land_JMS_light_UpLight_1";
+							atlOffset=3.1599426;
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={612.20502,294.48645,794.96997};
+								angles[]={0,5.638216,0};
+							};
+							side="Empty";
+							flags=1;
+							class Attributes
+							{
+								name="ceilingLamp_14";
 								dynamicSimulation=1;
 							};
 							id=1129;
@@ -17756,13 +17761,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={613.60693,294.38855,793.08301};
+								position[]={613.60699,294.38855,793.08301};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_13";
 								dynamicSimulation=1;
 							};
 							id=1130;
@@ -17774,13 +17780,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={614.93311,294.30811,791.30005};
+								position[]={614.93298,294.30811,791.29999};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_12";
 								dynamicSimulation=1;
 							};
 							id=1131;
@@ -17792,13 +17799,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={616.64893,294.22437,789.05103};
+								position[]={616.64899,294.22437,789.05103};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_11";
 								dynamicSimulation=1;
 							};
 							id=1132;
@@ -17810,13 +17818,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={619.84814,294.59546,800.68506};
+								position[]={619.84802,294.59546,800.685};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_10";
 								dynamicSimulation=1;
 							};
 							id=1133;
@@ -17828,13 +17837,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={621.25,294.48294,798.7981};
+								position[]={621.25,294.48294,798.79797};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_9";
 								dynamicSimulation=1;
 							};
 							id=1134;
@@ -17846,13 +17856,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={622.57593,294.39154,797.01489};
+								position[]={622.57599,294.39154,797.01501};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_8";
 								dynamicSimulation=1;
 							};
 							id=1135;
@@ -17864,13 +17875,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={624.29199,294.29388,794.76587};
+								position[]={624.29199,294.29388,794.76599};
 								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_7";
 								dynamicSimulation=1;
 							};
 							id=1136;
@@ -17882,90 +17894,95 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={622.4834,294.53119,788.67407};
-								angles[]={0,5.6382189,0};
+								position[]={622.48297,294.53162,788.67401};
+								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_6";
 								dynamicSimulation=1;
 							};
 							id=1137;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1673279;
+							atlOffset=3.1677551;
 						};
 						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={626.45996,291.55185,783.08228};
-								angles[]={0,5.6382189,0};
+								position[]={626.46002,291.5517,783.08197};
+								angles[]={0,5.638216,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_5";
 								dynamicSimulation=1;
 							};
 							id=1138;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1699829;
+							atlOffset=3.1698303;
 						};
 						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={624.729,293.00763,785.77856};
-								angles[]={5.8927598,5.7396803,6.0332499};
+								position[]={624.729,293.00742,785.77899};
+								angles[]={5.892755,5.7396727,6.0332541};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_4";
 								dynamicSimulation=1;
 							};
 							id=1139;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1636047;
+							atlOffset=3.163208;
 						};
 						class Item15
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={630.72266,291.54208,777.81836};
-								angles[]={0,2.427129,0};
+								position[]={630.72302,291.54166,777.81799};
+								angles[]={0,2.4271245,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_3";
 								dynamicSimulation=1;
 							};
 							id=1140;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1768188;
+							atlOffset=3.1763916;
 						};
 						class Item16
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={634.16553,291.5209,776.9834};
-								angles[]={0,2.427129,0};
+								position[]={634.16602,291.52115,776.98297};
+								angles[]={0,2.4271245,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
+								name="ceilingLamp_2";
 								dynamicSimulation=1;
 							};
 							id=1141;
 							type="Land_JMS_light_UpLight_1";
-							atlOffset=3.1452942;
+							atlOffset=3.1455383;
 						};
 						class Item17
 						{
