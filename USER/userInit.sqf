@@ -4,5 +4,3 @@
 */
 
 setPlayerRespawnTime 1;
-
-if !(isNil "CLib_fnc_loadModules") then { call CLib_fnc_loadModules; };

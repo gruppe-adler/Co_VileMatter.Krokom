@@ -65,8 +65,11 @@ if (hasInterface) then {
         },{
 
             [{
-                playSound "grad_VM_ropethump";
+                if ([] call GRAD_VM_main_fnc_getCurrentPhase < 1) then {
+                    playSound "grad_VM_ropethump";
+                };
                 [player] call grad_loadout_fnc_doLoadoutForUnit;
+                player setPosWorld (selectRandom ([(_currentPhase - 1)] call GRAD_VM_main_fnc_getCurrentTeleportTarget));
             }, [], 5] call CBA_fnc_waitAndExecute;
 
             [{
