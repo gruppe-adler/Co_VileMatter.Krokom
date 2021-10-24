@@ -168,7 +168,7 @@ class CfgSFX
 
 	class phase2_ambient
 	{
-		sound0[] = {"USER\sounds\phase2_ambient.ogg", db+3, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
+		sound0[] = {"USER\sounds\phase2_ambient.ogg", db+10, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};	
