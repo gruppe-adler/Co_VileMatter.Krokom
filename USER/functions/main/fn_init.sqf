@@ -24,6 +24,8 @@ if (isServer) then {
     missionNamespace setVariable ["grad_VM_portalPhase", _grad_VM_portalPhase, true];
     ["BLU_F", "vm_vilematter_phase0", true] call GRAD_Loadout_fnc_FactionSetLoadout;
 
+    [2500, false] remoteExecCall ["ace_viewdistance_fnc_changeViewDistance", [0, -2] select isMultiplayer];
+
     // relevant only for AI
     { 
         [_x] call grad_loadout_fnc_doLoadoutForUnit;

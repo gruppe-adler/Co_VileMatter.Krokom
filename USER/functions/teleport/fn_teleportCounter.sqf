@@ -1,4 +1,4 @@
-params ["_firstPipePos", "_lastPipePos", ["_startDate", 2035], ["_endDate", 9]];
+params ["_firstPipePos", "_lastPipePos", ["_startDate", 2035], ["_endDate", 9], ["_duration"]];
 
 private _verticalCenter = safeZoneH * 0.245;
 private _height = safeZoneH * 0.5;
@@ -17,7 +17,7 @@ _control ctrlSetFade 0;
 _control ctrlCommit 2;
 
 
-[{
+private _handle = [{
     params ["_args", "_handle"];
     _args params ["_firstPipePos", "_lastPipePos", "_startDate", "_endDate", "_control"];
 
@@ -52,6 +52,15 @@ _control ctrlCommit 2;
     };
 
 }, 0, [_firstPipePos, _lastPipePos, _startDate, _endDate, _control]] call CBA_fnc_addPerFramehandler;
+
+// failsafe
+[{
+    params ["_handle", "_control"];
+    if (!isNull _control) then {
+        [_handle] call CBA_fnc_removePerFrameHandler;
+        ctrldelete _control;
+    };
+}, [_handle, _control], (_duration + 10)] call CBA_fnc_waitAndExecute;
 
 _control
 /*

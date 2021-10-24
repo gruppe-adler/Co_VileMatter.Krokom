@@ -47,7 +47,7 @@ for "_i" from 0 to 100 do {
         };
 };
 
-private _counterControl = [_firstPipePos, _lastPipePos, _startDate, _endDate] call GRAD_VM_teleport_fnc_teleportCounter;
+private _counterControl = [_firstPipePos, _lastPipePos, _startDate, _endDate, _duration] call GRAD_VM_teleport_fnc_teleportCounter;
 
 
 private _cam = "camera" camCreate _firstPipePos;

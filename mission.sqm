@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=619;
+		nextID=667;
 	};
 	class Camera
 	{
-		pos[]={577.02087,322.46252,679.20959};
-		dir[]={0.50954431,-0.75308001,0.41621524};
-		up[]={0.58323568,0.65792894,0.47640917};
-		aside[]={0.63261425,0,-0.77446711};
+		pos[]={568.12903,310.28632,677.67285};
+		dir[]={0.54275638,-0.64066994,0.54310447};
+		up[]={0.45287797,0.76781595,0.45316863};
+		aside[]={0.70733607,-1.9278377e-007,-0.70688319};
 	};
 };
 binarizationWanted=0;
@@ -1465,7 +1465,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=107;
+									items=111;
 									class Item0
 									{
 										class data
@@ -2322,6 +2322,38 @@ class CustomAttributes
 											value="ace_cookoff_enablefire";
 										};
 									};
+									class Item107
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_viewdistance_viewdistanceonfoot";
+										};
+									};
+									class Item108
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_viewdistance_viewdistancelandvehicle";
+										};
+									};
+									class Item109
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_viewdistance_viewdistanceairvehicle";
+										};
+									};
+									class Item110
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_viewdistance_objectviewdistancecoeff";
+										};
+									};
 								};
 							};
 						};
@@ -2332,7 +2364,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=107;
+									items=111;
 									class Item0
 									{
 										class data
@@ -5209,6 +5241,114 @@ class CustomAttributes
 													{
 														singleType="BOOL";
 														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item107
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=2500;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item108
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=2500;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item109
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=2500;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item110
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=6;
 													};
 												};
 												class Item1
