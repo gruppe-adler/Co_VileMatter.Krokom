@@ -209,6 +209,17 @@
      [] remoteExec ["Grad_VM_outro_fnc_initOutro", 2];
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 4", "Start Earthquake", {
+     params ["_position", "_object"];
+
+     private _alreadyActivated = missionNamespace getVariable ["GRAD_VM_phase4_earthquakeActivated", false];
+     if (_alreadyActivated) exitWith {
+          systemChat "'Start Earthquake' has already been activated!";
+     };
+     missionNamespace setVariable ["GRAD_VM_phase4_earthquakeActivated", true, true];
+     [] remoteExec ["GRAD_VM_phase4_fnc_initPhase4Effects", 2];
+}] call zen_custom_modules_fnc_register;
+
 {
      _x addEventHandler ["CuratorGroupPlaced", {
            params ["_curator", "_group"];
