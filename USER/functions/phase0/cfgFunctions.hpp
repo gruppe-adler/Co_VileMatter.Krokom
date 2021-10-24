@@ -7,6 +7,7 @@ class GRAD_VM_phase0 {
     class destroyHall;
     class forceAI;
     class civAnimate;
+    class createCentrifuges;
     class flickerLight;
     class introText;
     class keyPadInit { postInit = 1; };
