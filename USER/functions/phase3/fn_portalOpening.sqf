@@ -41,7 +41,7 @@ private _lightPoints = [];
 
     _lightPoints pushBackUnique _lightPoint;
 
-    systemchat "bla";
+    // systemchat "bla";
 
 } forEach _stoneTips;
 
