@@ -14,11 +14,11 @@ if (!isServer) exitWith {};
 // enhance intensity
 private _light_phase2_1 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_1, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_1, 50] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_1, 150] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 private _light_phase2_2 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_2, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_2, 100] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_2, 150] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 private _light_phase2_3 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_3, -90, 0] call BIS_fnc_setPitchBank;
@@ -30,11 +30,11 @@ private _light_phase2_4 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
 
 private _light_phase2_5 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_5, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_5, 250] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_5, 200] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, _posY, _posZ]];
 [_light_phase2_6, -90, 0] call BIS_fnc_setPitchBank;
-[_light_phase2_6, 300] call GRAD_VM_common_fnc_setObjectScaleSafe;
+[_light_phase2_6, 200] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 [{
   private _currentPhaseProgress = [2] call GRAD_VM_main_fnc_getPhaseProgress;
@@ -72,7 +72,7 @@ private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
                 params ["_unit", "_targetposition", "_index", "_duration", "_numberStart", "_numberEnd", "_date"];
                 ["BLU_F", "vm_vilematter_phase3", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
                 [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_teleport;
-            }, [_x, ([] call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
+            }, [_x, ([2] call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
             (_forEachIndex/_count)*_duration+((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
         } forEach playableUnits + switchableUnits;
 

@@ -26,7 +26,6 @@
      [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnHorseRoman;
 }] call zen_custom_modules_fnc_register;
 
-
 ["Vile Matter - Phase 1", "Marching Sound", {
      params ["_position", "_object"];
 
@@ -51,13 +50,11 @@
      playSound3D ["Roman_props\sounds\barb_horn_3.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
 }] call zen_custom_modules_fnc_register;
 
-
 ["Vile Matter - Phase 1", "Distant Battle Sound", {
      params ["_position", "_object"];
 
      playSound3D [getMissionPath "USER\sounds\phase1_battlesound_1.ogg", objNull, false, ASLtoAGL _position, 1, 1, 2000];
 }] call zen_custom_modules_fnc_register;
-
 
 ["Vile Matter - Phase 1", "Remove Formation", {
      params ["_position", "_object"];
@@ -99,9 +96,6 @@
      _tiger setObjectTextureGlobal [0, "USER\images\lion_small.paa"];
      _tiger setObjectTextureGlobal [2, "#(rgb,8,8,3)color(0,0,0,0)"];
 
-
-
-
      _tiger addAction
      [
           "Stretch",  // title
@@ -142,7 +136,6 @@
           ""             // memoryPoint
      ];
 
-
       _tiger addAction
      [
           "Sleep",  // title
@@ -163,12 +156,7 @@
           ""             // memoryPoint
      ];
 
-
-
-
 }] call zen_custom_modules_fnc_register;
-
-
 
 
 ["Vile Matter - Phase 2", "Kill Hitler", {
@@ -178,7 +166,6 @@
           [_object] spawn GRAD_VM_phase2_fnc_suicideHitler;
      };
 }] call zen_custom_modules_fnc_register;
-
 
 ["Vile Matter - Phase 2", "Spawn Hitler", {
      params ["_position", "_object"];
@@ -197,6 +184,7 @@
      missionNamespace setVariable ["GRAD_VM_phase3_shipJumpActivated", true, true];
      [] remoteExec ["Grad_VM_phase3_fnc_battleshipJump", 2];
 }] call zen_custom_modules_fnc_register;
+
 
 ["Vile Matter - Phase 4", "Start Outro", {
      params ["_position", "_object"];
