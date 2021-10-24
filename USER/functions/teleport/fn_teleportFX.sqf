@@ -109,8 +109,8 @@ if (local _unit && !isPlayer _unit) then {
             _unit switchMove "Acts_UnconsciousStandUp_part1";
             [_unit] call zen_common_fnc_healUnit;
 
-            // should be unnecessary but still was executed multiple times for presumingly AI :o
-            if (isPlayer _unit && (call GRAD_VM_main_fnc_getCurrentPhase == 0)) then {
+            // only destination positions in phase 1 are multiple, thus great way to detect intro
+            if (isPlayer _unit && (count _destinationPositions > 1)) then {
                 [] spawn GRAD_VM_phase0_fnc_introText;
             };
 
