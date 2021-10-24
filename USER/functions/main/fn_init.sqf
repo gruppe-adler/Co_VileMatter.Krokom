@@ -40,17 +40,6 @@ if (isServer) then {
         publicVariable "bis_revive_bleedOutDuration";
     }, []] call CBA_fnc_waitUntilAndExecute;
 
-    // MARCHING FIX
-    ["lambs_danger_OnContact", {
-        params ["_unit", "_group"];
-
-        if (_unit getVariable ["GRAD_VM_isRoman", false]) then {
-            {
-                detach _x;
-            } forEach attachedObjects _unit;
-        };
-
-    }] call CBA_fnc_addEventHandler;
 };
 
 
