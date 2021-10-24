@@ -20,6 +20,9 @@ switch (_phase) do {
     case 3 : {
         _result = [getPosWorld teleportcenter_phase0];
     };
+    case 4 : {
+        _result = [getPosWorld teleportcenter_phase0];
+    };
     case 0 : {
         _result = [
             getPosWorld teleportcenter_phase1_1,
