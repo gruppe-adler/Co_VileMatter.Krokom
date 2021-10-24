@@ -72,6 +72,7 @@ if (hasInterface) then {
                     playSound "grad_VM_ropethump";
                 };
                 [player] call grad_loadout_fnc_doLoadoutForUnit;
+                private _currentPhase = [] call GRAD_VM_main_fnc_getCurrentPhase;
                 player setPosWorld (selectRandom ([(_currentPhase - 1)] call GRAD_VM_main_fnc_getCurrentTeleportTarget));
             }, [], 5] call CBA_fnc_waitAndExecute;
 
@@ -82,5 +83,12 @@ if (hasInterface) then {
         }, []] call CBA_fnc_waitUntilAndExecute;
 
     }] call CBA_fnc_addEventHandler;
+
+
+    ["weapon", {
+        if (currentWeapon player == "RM_Fire_torch") then {
+            hintSilent "Light Torch with <L>";
+        };
+    }] call CBA_fnc_addPlayerEventHandler;
 
 };
