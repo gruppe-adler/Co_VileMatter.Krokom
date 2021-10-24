@@ -42,6 +42,18 @@ if (isServer) then {
         publicVariable "bis_revive_bleedOutDuration";
     }, []] call CBA_fnc_waitUntilAndExecute;
 
+
+    addMissionEventHandler ["PlayerConnected",
+    {
+        params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+
+        private _allObjects = missionNamespace getVariable ["GRAD_VM_scaledObjects", []];
+        {
+            _x params ["_object", "_scale"];
+            _object setObjectScale _scale;
+        } forEach _allObjects;
+    }];
+
 };
 
 

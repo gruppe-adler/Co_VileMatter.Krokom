@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={568.12903,310.28632,677.67285};
-		dir[]={0.54275638,-0.64066994,0.54310447};
-		up[]={0.45287797,0.76781595,0.45316863};
-		aside[]={0.70733607,-1.9278377e-007,-0.70688319};
+		pos[]={4627.2241,65.713921,7349.9355};
+		dir[]={-0.86604375,-0.47239015,-0.16377558};
+		up[]={-0.46416423,0.88138837,-0.087777115};
+		aside[]={-0.1858151,-3.7864083e-008,0.98258704};
 	};
 };
 binarizationWanted=0;
@@ -54675,6 +54675,7 @@ class Mission
 			class Attributes
 			{
 				init="[this, 1.5] call GRAD_VM_common_fnc_setObjectScaleSafe;";
+				name="bloodgod_texture";
 			};
 			id=6424;
 			type="UserTexture_1x2_F";

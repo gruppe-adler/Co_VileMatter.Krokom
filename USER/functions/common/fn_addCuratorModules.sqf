@@ -228,3 +228,15 @@
      }];
 
 } forEach allCurators;
+
+
+["Vile Matter - Common", "Fix SetObjectScale", {
+     params ["_position", "_object"];
+
+     private _allObjects = missionNamespace getVariable ["GRAD_VM_scaledObjects", []];
+   {
+       _x params ["_object", "_scale"];
+       _object setObjectScale _scale;
+   } forEach _allObjects;
+   
+}] call zen_custom_modules_fnc_register;
