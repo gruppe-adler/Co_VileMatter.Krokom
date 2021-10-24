@@ -42,7 +42,8 @@ if (isServer) then {
         publicVariable "bis_revive_bleedOutDuration";
     }, []] call CBA_fnc_waitUntilAndExecute;
 
-
+    // NOT NECESSARY I GUESS
+    /*
     addMissionEventHandler ["PlayerConnected",
     {
         params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
@@ -53,6 +54,7 @@ if (isServer) then {
             _object setObjectScale _scale;
         } forEach _allObjects;
     }];
+    */
 
 };
 
