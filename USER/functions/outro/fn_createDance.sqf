@@ -47,7 +47,7 @@ _spotlight2 setPos (outroStatsTarget getPos [5, -90]);
 sleep 3;
 
 private _position = [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 5.8];
-[_totalDuration] remoteExec ["GRAD_VM_outro_fnc_createDiscoBall"];
+[_totalDuration+10] remoteExec ["GRAD_VM_outro_fnc_createDiscoBall"];
 [_unit, _totalDuration] remoteExec ["GRAD_VM_outro_fnc_showStats"];
 sleep 3;
 _unit setPos _position;
@@ -60,7 +60,7 @@ _unit setPos _position;
     sleep _singleDuration;
 } forEach _types;
 
-sleep 1;
+sleep 10;
 
 
 // cleanup

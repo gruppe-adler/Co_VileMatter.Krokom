@@ -28,7 +28,7 @@ private _allTexts = [
     ["Gefixte Modfehler", "Dutzende", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Bauzeit", "10 Wochen", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Missionsbauer", "3", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Abgebissene Tischkanten", "1337", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Commits", "> 250", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Besonderen Dank an", "diwako", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["brought to you by", "Gruppe Adler", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]]
 ];
