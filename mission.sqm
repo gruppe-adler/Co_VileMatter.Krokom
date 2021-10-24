@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={522.73102,299.25873,621.35815};
-		dir[]={-0.48654911,-0.86307907,-0.13553065};
-		up[]={-0.83142596,0.50506723,-0.23159777};
-		aside[]={-0.26833937,1.1341763e-007,0.96332598};
+		pos[]={687.57135,296.86264,647.89636};
+		dir[]={0.73633707,-0.18981759,0.6494444};
+		up[]={0.14235784,0.98181885,0.12555857};
+		aside[]={0.66147012,-5.5355486e-008,-0.74997175};
 	};
 };
 binarizationWanted=0;
@@ -203838,7 +203838,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={698.20386,295.52991,661.09039};
+				position[]={702.4151,299.98914,652.89612};
 			};
 			side="Empty";
 			class Attributes
@@ -203847,7 +203847,7 @@ class Mission
 			};
 			id=7539;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=6.0821533;
+			atlOffset=4.8563843;
 		};
 		class Item572
 		{
