@@ -72,8 +72,7 @@ if (hasInterface) then {
                     playSound "grad_VM_ropethump";
                 };
                 [player] call grad_loadout_fnc_doLoadoutForUnit;
-                private _currentPhase = [] call GRAD_VM_main_fnc_getCurrentPhase;
-                player setPosWorld (selectRandom ([(_currentPhase - 1)] call GRAD_VM_main_fnc_getCurrentTeleportTarget));
+                player setPosWorld (selectRandom ([-1] call GRAD_VM_main_fnc_getCurrentTeleportTarget));
             }, [], 5] call CBA_fnc_waitAndExecute;
 
             [{

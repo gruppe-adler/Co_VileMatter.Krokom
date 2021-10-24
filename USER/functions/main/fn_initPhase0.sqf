@@ -37,6 +37,7 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
 
 
 [_machineCircle] call grad_VM_phase0_fnc_sparksEffectServer;
+[] remoteExec ["GRAD_VM_phase0_fnc_lightSourceTeleporter", 0, true];
 
 
 // phase 0 init

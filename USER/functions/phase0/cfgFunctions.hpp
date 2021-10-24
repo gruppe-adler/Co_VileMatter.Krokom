@@ -20,6 +20,7 @@ class GRAD_VM_phase0 {
     class sparksGetPos;
     class sparkSmall { postInit = 1; };
     class steamEffect;
+    class lightSourceTeleporter;
     class switch;
     };
 };
