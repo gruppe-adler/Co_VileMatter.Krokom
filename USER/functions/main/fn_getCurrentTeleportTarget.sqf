@@ -34,7 +34,7 @@ switch (_phase) do {
     };
     case -1 : {
         _result = [
-            getPosWorld teleportcenter_phase_minusone;
+            getPosWorld teleportcenter_phase_minusone
         ];
     };
     case 1 : {
