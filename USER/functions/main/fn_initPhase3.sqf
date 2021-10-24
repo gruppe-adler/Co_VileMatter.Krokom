@@ -21,13 +21,13 @@ if (!isServer) exitWith {};
 
     private _light = createSimpleObject ["\A3\data_f\VolumeLight", getPosASL GRAD_VM_phase3_volumeLightPos];
     [_light, -90, 0] call BIS_fnc_setPitchBank;
-    _light setObjectScale 15;
+    [_light, 15] call GRAD_VM_common_fnc_setObjectScaleSafe;
     private _light2 = createSimpleObject ["\A3\data_f\VolumeLight", getPosASL GRAD_VM_phase3_volumeLightPos];
     [_light2, -90, 0] call BIS_fnc_setPitchBank;
-    _light2 setObjectScale 15;
+    [_light2, 15] call GRAD_VM_common_fnc_setObjectScaleSafe;
     private _light3 = createSimpleObject ["\A3\data_f\VolumeLight", getPosASL GRAD_VM_phase3_volumeLightPos];
     [_light3, -90, 0] call BIS_fnc_setPitchBank;
-    _light3 setObjectScale 15;    
+    [_light3, 15] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
 },[]] call CBA_fnc_waitUntilAndExecute;
 

@@ -1,6 +1,6 @@
 params ["_duration"];
 
-private _position = [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 10];
+private _position = [(getpos outroStatsTarget)#0, (getpos outroStatsTarget)#1, 8.3];
 private _radius = 0.5;
 private _discoBall = "Sign_Sphere100cm_F" createVehicleLocal _position;
 _discoBall setPos _position;
