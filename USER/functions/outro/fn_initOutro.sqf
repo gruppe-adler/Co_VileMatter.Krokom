@@ -45,6 +45,15 @@ sleep 2;
 _copilot lookAt _hitlerWatchPoint;
 
 sleep 17;
+
+{
+	private _group = group _x;
+	{
+		deleteVehicle _x;
+	} forEach (units _group);	
+	deleteVehicle _x;
+} forEach [GRAD_VM_phase4_exfilHeli_1, GRAD_VM_phase4_exfilHeli_2];
+
 [] spawn GRAD_VM_outro_fnc_createDance;
 
 // "pilot_heli_transport_03_idle"

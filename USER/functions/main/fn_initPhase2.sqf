@@ -63,7 +63,7 @@ private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
         params ["_light_phase2_1", "_light_phase2_2", "_light_phase2_3"];
         // playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", light_phase0];
         private _duration = 38;
-        private _date = [2035,2,9,6,25];
+        private _date = [2035,2,9,6,35];
         private _numberStart = 1945;
         private _numberEnd = 40560;
         private _count = count (playableUnits + switchableUnits);

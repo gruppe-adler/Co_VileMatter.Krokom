@@ -4,7 +4,7 @@ _cam camSetTarget GRAD_VM_outro_Target_1;
 _cam camCommit 0;
 _cam cameraEffect ["internal", "BACK"];
 
-[] call ace_goggles_fnc_removeDirtEffect;
+// [] call ace_goggles_fnc_removeDirtEffect;
 [2] call GRAD_VM_outro_fnc_fadeFromBlack;
 2 fadeSound 0.1;
 2 fadeSpeech 0;

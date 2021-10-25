@@ -1,4 +1,4 @@
-[] call ace_goggles_fnc_removeDirtEffect;
+// [] call ace_goggles_fnc_removeDirtEffect;
 
 diwako_dui_main_toggled_off = true;
 [5] call GRAD_VM_outro_fnc_fadeToBlack;

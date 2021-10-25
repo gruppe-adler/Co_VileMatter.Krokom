@@ -41,3 +41,8 @@ sleep 2;
 0 fadeSound 0;
 0 fadeSpeech 0;
 
+player allowDamage false;
+[player] remoteExec ["moveOut", [0, -2] select isMultiplayer];
+sleep 1;
+player setVelocity [0,0,0];
+player setPos [25 + (random 100), 8173 + random (100), 0];
