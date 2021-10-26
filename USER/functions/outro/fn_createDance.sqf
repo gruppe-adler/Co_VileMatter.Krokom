@@ -60,10 +60,12 @@ _unit setPos _position;
     sleep _singleDuration;
 } forEach _types;
 
+[getPos _unit] call GRAD_VM_localEffects_fnc_meatSplashEffect;
+deleteVehicle _unit;
+
 sleep 10;
 
-
 // cleanup
-deleteVehicle _unit;
+
 deleteVehicle _spotlight;
 deleteVehicle _spotlight2;

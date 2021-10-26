@@ -10,7 +10,7 @@ private _stoneCircle = nearestObjects [_statueCenter, ["Land_Device_assembled_F"
 private _effectDuration = 5;
 private _stoneTips = [];
 private _statueCenterTop = getPosWorld _statueCenter;
-_statueCenterTop set [2,1.5];
+_statueCenterTop set [2,2];
 
 
 {

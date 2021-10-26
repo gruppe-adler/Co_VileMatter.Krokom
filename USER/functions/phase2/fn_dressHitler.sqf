@@ -20,3 +20,14 @@ _adi addEventHandler ["Fired", {
 }];
 
 [_adi] remoteexec ["GRAD_VM_phase2_fnc_adiAction", [0,-2] select isDedicated];
+
+
+[{
+    params ["_args", "_handle"];
+    _args params ["_adi"];
+
+    if (!alive _adi) exitWith { [_handle] call CBA_fnc_removePerFrameHandler; };
+
+    [_adi, false] remoteExec ["allowDamage", _adi];
+
+}, 0.1, [_adi]] call CBA_fnc_addPerFrameHandler;

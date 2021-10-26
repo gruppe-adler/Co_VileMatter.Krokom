@@ -21,6 +21,7 @@ class GRAD_VM_phase0 {
     class sparkSmall { postInit = 1; };
     class steamEffect;
     class lightSourceTeleporter;
+    class screenBlink;
     class switch;
     };
 };
