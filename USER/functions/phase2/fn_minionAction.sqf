@@ -13,7 +13,7 @@ _minion addAction
     false,      // showWindow
     true,       // hideOnUse
     "",         // shortcut
-    "_target == _this && murshun_easywayout_canSuicide && !murshun_suicideInProgress && alive _target",     // condition
+    "_target == _this && alive _target",     // condition
     50,         // radius
     false,      // unconscious
     "",         // selection

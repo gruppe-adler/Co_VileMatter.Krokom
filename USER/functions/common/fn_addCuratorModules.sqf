@@ -159,18 +159,34 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["Vile Matter - Phase 2", "Spawn Hitler", {
+     params ["_position", "_object"];
+
+     [] remoteExec ["GRAD_VM_phase2_fnc_spawnHitler", 2];
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 2", "Hitler Speech Long", {
+     params ["_position", "_object"];
+
+     if (_object getVariable ["GRAD_VM_isHitler", false]) then {
+          [_object] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeechAlternative", [0,-2] select isDedicated];
+     };
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 2", "Hitler Speech Random Ranting", {
+     params ["_position", "_object"];
+
+     if (_object getVariable ["GRAD_VM_isHitler", false]) then {
+          [_object] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeech", 2];
+     };
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 2", "Kill Hitler", {
      params ["_position", "_object"];
 
      if (_object getVariable ["GRAD_VM_isHitler", false]) then {
           [_object] spawn GRAD_VM_phase2_fnc_suicideHitler;
      };
-}] call zen_custom_modules_fnc_register;
-
-["Vile Matter - Phase 2", "Spawn Hitler", {
-     params ["_position", "_object"];
-
-     [] remoteExec ["GRAD_VM_phase2_fnc_spawnHitler", 2];
 }] call zen_custom_modules_fnc_register;
 
 
