@@ -209,17 +209,17 @@ class CfgVehicles
 		sound = "phase2_ambient"; // reference to CfgSFX class
 	};	
 
-	class phase1_ambient_frogs // class name to be used with createSoundSource
+	class phase1_ambient_frogs_sound // class name to be used with createSoundSource
 	{
 		sound = "phase1_ambient_frogs"; // reference to CfgSFX class
 	};
 
-	class phase1_ambient_owl_1 // class name to be used with createSoundSource
+	class phase1_ambient_owl_1_sound // class name to be used with createSoundSource
 	{
 		sound = "phase1_ambient_owl_1"; // reference to CfgSFX class
 	};
 
-	class phase1_ambient_owl_2 // class name to be used with createSoundSource
+	class phase1_ambient_owl_2_sound // class name to be used with createSoundSource
 	{
 		sound = "phase1_ambient_owl_2"; // reference to CfgSFX class
 	};
