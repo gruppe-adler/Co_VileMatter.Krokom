@@ -2,7 +2,8 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 
 private _soundSources = [];
 {
-    private _source = createSoundSource ["phase1_ambient_frogs_source", _x, [], 0];
+    private _frogSound = selectRandom ["phase1_ambient_frogs_1_source", "phase1_ambient_frogs_2_source"];
+    private _source = createSoundSource [_frogSound, _x, [], 0];
     _soundSources pushBack _source;
     _x setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
     sleep ((random 5) + 0.5);
@@ -17,14 +18,10 @@ private _soundSources = [];
     grad_vm_phase1_ambient_frogs_8
 ];
 
+missionNamespace setVariable ["GRAD_VM_phase1_ambientSources", _soundSources, true];
 
-{
-    private _owlSound = selectRandom ["phase1_ambient_owl_1_source", "phase1_ambient_owl_2_source"];
-    private _source = createSoundSource [_owlSound, _x, [], 0];
-    _soundSources pushBack _source;
-    _x setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
-    sleep ((random 5) + 0.5);
-} forEach [
+
+private _owls = [
     grad_vm_phase1_ambient_owl_1,
     grad_vm_phase1_ambient_owl_2,
     grad_vm_phase1_ambient_owl_3,
@@ -32,4 +29,33 @@ private _soundSources = [];
     grad_vm_phase1_ambient_owl_5
 ];
 
-missionNamespace setVariable ["GRAD_VM_phase1_ambientSources", _soundSources, true];
+{
+    _x setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
+} forEach _owls;
+
+
+
+[{
+    params ["_args", "_handle"];
+    _args params ["_owls"];
+
+    if (count (missionNamespace getVariable ["GRAD_VM_phase1_ambientSources", []]) == 0) exitWith {
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
+    if (random 5 > 4) then {
+        [selectRandom _owls, [selectRandom [
+            "phase1_ambient_owl_1",
+            "phase1_ambient_owl_2",
+            "phase1_ambient_owl_3",
+            "phase1_ambient_owl_4",
+            "phase1_ambient_owl_5",
+            "phase1_ambient_owl_6",
+            "phase1_ambient_owl_7",
+            "phase1_ambient_owl_8",
+            "phase1_ambient_owl_9",
+            "phase1_ambient_owl_10"
+        ], 1000]] remoteExec ["say3D"];
+    };
+
+}, 1, [_owls]] call CBA_fnc_addPerFrameHandler;

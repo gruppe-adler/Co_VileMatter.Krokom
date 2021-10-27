@@ -93,6 +93,9 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
     },
     {
         params ["_light_phase0"];
+
+        [] spawn GRAD_VM_phase1_fnc_ambientSounds;
+
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", _light_phase0];
         private _duration = 38;
         private _date = [2035,2,9,6,50];

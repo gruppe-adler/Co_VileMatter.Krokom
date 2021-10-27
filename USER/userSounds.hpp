@@ -689,7 +689,87 @@ class phase1_ambient_owl_2
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase1_ambient_owl_2";
     // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_2.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_3
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_3";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_3.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_4
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_4";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_4.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_5
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_5";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_5.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_6
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_6";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_6.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_7
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_7";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_7.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_8
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_8";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_8.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_9
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_9";
+    // filename, volume, pitch, distance (optional)
     sound[] = { "USER\sounds\owl_9.ogg", 3, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_10
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_10";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_10.ogg", 3, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };

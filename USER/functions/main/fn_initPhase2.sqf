@@ -101,6 +101,8 @@ private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
         {
             deleteVehicle _x;   
         } forEach _sounds;
+
+        missionNamespace setVariable ["GRAD_VM_phase2_ambientSources", []];
     },
     []
 ] call CBA_fnc_waitUntilAndExecute;
