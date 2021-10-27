@@ -673,7 +673,35 @@ class GRAD_VM_lion_scream_5
 };
 
 
+class phase1_ambient_frogs
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_frogs";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\frogs_1.ogg", 1, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 
+class phase1_ambient_owl_1
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_1";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_1.ogg", 1, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_ambient_owl_2
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_ambient_owl_2";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\owl_9.ogg", 1, 1, 400 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
 
 
 // Space-Marine voicelines:

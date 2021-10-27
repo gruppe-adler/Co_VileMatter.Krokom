@@ -2,7 +2,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 
 private _soundSources = [];
 {
-    private _source = createSoundSource ["phase1_ambient_frogs_sound", _x, [], 0];
+    private _source = createSoundSource ["phase1_ambient_frogs_source", _x, [], 0];
     _soundSources pushBack _source;
     _x setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
     sleep ((random 5) + 0.5);
@@ -19,7 +19,7 @@ private _soundSources = [];
 
 
 {
-    private _owlSound = selectRandom ["phase1_ambient_owl_1_sound", "phase1_ambient_owl_2_sound"];
+    private _owlSound = selectRandom ["phase1_ambient_owl_1_source", "phase1_ambient_owl_2_source"];
     private _source = createSoundSource [_owlSound, _x, [], 0];
     _soundSources pushBack _source;
     _x setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];

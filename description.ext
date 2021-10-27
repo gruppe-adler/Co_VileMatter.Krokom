@@ -166,7 +166,7 @@ class CfgSFX
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 
-	class phase1_ambient_frogs
+	class phase1_ambient_frogs_sfx
 	{
 		sound0[] = {"USER\sounds\frogs_1.ogg", db+10, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
 		sound1[] = {"USER\sounds\frogs_2.ogg", db+10, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
@@ -174,7 +174,7 @@ class CfgSFX
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 
-	class phase1_ambient_owl_1
+	class phase1_ambient_owl_1_sfx
 	{
 		sound0[] = {"USER\sounds\owl_1.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
 		sound1[] = {"USER\sounds\owl_2.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
@@ -188,7 +188,7 @@ class CfgSFX
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 
-	class phase1_ambient_owl_2
+	class phase1_ambient_owl_2_sfx
 	{
 		sound0[] = {"USER\sounds\owl_9.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
 		sound1[] = {"USER\sounds\owl_10.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
@@ -209,18 +209,18 @@ class CfgVehicles
 		sound = "phase2_ambient"; // reference to CfgSFX class
 	};	
 
-	class phase1_ambient_frogs_sound // class name to be used with createSoundSource
+	class phase1_ambient_frogs_source // class name to be used with createSoundSource
 	{
-		sound = "phase1_ambient_frogs"; // reference to CfgSFX class
+		sound = "phase1_ambient_frogs_sfx"; // reference to CfgSFX class
 	};
 
-	class phase1_ambient_owl_1_sound // class name to be used with createSoundSource
+	class phase1_ambient_owl_1_source // class name to be used with createSoundSource
 	{
-		sound = "phase1_ambient_owl_1"; // reference to CfgSFX class
+		sound = "phase1_ambient_owl_1_sfx"; // reference to CfgSFX class
 	};
 
-	class phase1_ambient_owl_2_sound // class name to be used with createSoundSource
+	class phase1_ambient_owl_2_source // class name to be used with createSoundSource
 	{
-		sound = "phase1_ambient_owl_2"; // reference to CfgSFX class
+		sound = "phase1_ambient_owl_2_sfx"; // reference to CfgSFX class
 	};
 };

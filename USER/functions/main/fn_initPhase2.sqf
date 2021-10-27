@@ -6,8 +6,6 @@
 
 if (!isServer) exitWith {};
 
-[] spawn GRAD_VM_phase2_fnc_ambientSounds;
-
 // todo insert correct object
 (getPos phase2_reichstagskuppel) params ["_posX", "_posY", "_posZ"];
 

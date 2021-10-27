@@ -28,6 +28,9 @@ if (!isServer) exitWith {};
     },
     {
         diag_log "phase 1 done";
+
+        [] spawn GRAD_VM_phase2_fnc_ambientSounds; // prepare phase 2 to be final for teleport, not AFTER
+
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
         private _duration = 38;
         private _date = [2035,2,9,7,00];
