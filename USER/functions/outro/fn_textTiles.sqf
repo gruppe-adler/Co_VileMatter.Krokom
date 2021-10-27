@@ -43,6 +43,8 @@ private _fadeOut = 0.25;
 _pos params ["_posX", "_posY", "_posW", "_posH"];
 
 
+sleep 1;
+
 playSound "GRAD_electricFence_sound_spark1";
 
 private _display = findDisplay 46;
@@ -95,7 +97,7 @@ _valueContent ctrlcommit 0.25;
     _valueContent ctrlsetFade (random 1 max 0.5);
 }, 0.1, [_valueContent]] call CBA_fnc_addPerFrameHandler;
 
-sleep (_duration);
+sleep (_duration-2);
 
 _labelContent ctrlsetfade 1;
 _labelContent ctrlcommit (_fadeOut);

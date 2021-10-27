@@ -45,7 +45,8 @@ _maskBlack ctrlSetPosition [safeZoneX, safeZoneY, safeZoneW, safeZoneH];
 _maskBlack ctrlCommit 0;
 
 // delete mask before
-ctrldelete (player getVariable ["GRAD_VM_outro_currentMask", ctrlnull]);
+private _maskBefore = player getVariable ["GRAD_VM_outro_currentMask", controlNull];
+if (!isNull _maskBefore) then { ctrldelete _maskBefore };
 
 _maskBlack ctrlSetFade 1;
 _maskBlack ctrlCommit 3;
