@@ -3,6 +3,34 @@
 [] call GRAD_common_fnc_extractEdenObjects;
 [] call GRAD_common_fnc_deleteExtractedObjects;
 
+[
+	"LIB_GER_Soldier_base",
+	"init",
+	{
+		private _unit = _this # 0;
+		private _group = group _unit;
+		if ((side _unit) isEqualTo east) exitWith { /*systemChat "already east";*/ };
+		[
+			{
+				params ["_unit", "_group"];
+				(leader _group) isNotEqualTo objNull
+			},
+			{
+				params ["_unit", "_group"];
+				if ((leader _group) isNotEqualTo _unit) exitWith { /*systemChat format["not leader. Actual leader: %1 | unit: %2", leader _group, _unit];*/ };
+				private _newGroup = createGroup east;
+				{
+					[_x] joinSilent _newGroup;
+				} forEach (units _group);				
+			},
+			[_unit, _group]
+		] call CBA_fnc_waitUntilAndExecute;
+	},
+	true,
+	[],
+	true
+] call CBA_fnc_addClassEventHandler;
+
 // only relevant, when Space Marines are used:
 
 // [
