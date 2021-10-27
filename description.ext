@@ -169,29 +169,22 @@ class CfgSFX
 	class phase1_ambient_frogs_sfx
 	{
 		sound0[] = {"USER\sounds\frogs_1.ogg", db+10, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
-		sound1[] = {"USER\sounds\frogs_2.ogg", db+10, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
-		sounds[] = {sound0, sound1};
-		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
-	};
-
-	class phase1_ambient_frogs_2_sfx
-	{
-		sound0[] = {"USER\sounds\phase2_ambient.ogg", db+10, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
-		sounds[] = {sound0};
+		sound1[] = {"USER\sounds\frogs_2.ogg", db+10, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
+		sounds[] = {sound0,sound1};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 
 	class phase1_ambient_owl_1_sfx
 	{
-		sound0[] = {"USER\sounds\owl_1.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound1[] = {"USER\sounds\owl_2.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound2[] = {"USER\sounds\owl_3.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound3[] = {"USER\sounds\owl_4.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound4[] = {"USER\sounds\owl_5.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound5[] = {"USER\sounds\owl_6.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound6[] = {"USER\sounds\owl_7.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound7[] = {"USER\sounds\owl_8.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
-		sound[] = {sound0, sound1, sound2, sound3, sound4, sound5, sound6, sound7};
+		owl1[] = {"USER\sounds\owl_1.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl2[] = {"USER\sounds\owl_2.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl3[] = {"USER\sounds\owl_3.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl4[] = {"USER\sounds\owl_4.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl5[] = {"USER\sounds\owl_5.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl6[] = {"USER\sounds\owl_6.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl7[] = {"USER\sounds\owl_7.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		owl8[] = {"USER\sounds\owl_8.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sounds[] = {owl1,owl2,owl3,owl4,owl5,owl6,owl7,owl8};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 

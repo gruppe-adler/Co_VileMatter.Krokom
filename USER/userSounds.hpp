@@ -596,7 +596,7 @@ class GRAD_VM_lion_growl_1
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_growl_1";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_growl_1.ogg", 1, 1, 100 };
+    sound[] = { "USER\sounds\lion_growl_1.ogg", 5, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -606,7 +606,7 @@ class GRAD_VM_lion_growl_2
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_growl_2";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_growl_2.ogg", 1, 1, 100 };
+    sound[] = { "USER\sounds\lion_growl_2.ogg", 5, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -616,7 +616,7 @@ class GRAD_VM_lion_growl_3
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_growl_3";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_growl_3.ogg", 1, 1, 100 };
+    sound[] = { "USER\sounds\lion_growl_3.ogg", 5, 1, 100 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -627,7 +627,7 @@ class GRAD_VM_lion_scream_1
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_1";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_1.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\lion_1.ogg", 2, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -637,7 +637,7 @@ class GRAD_VM_lion_scream_2
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_2";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_2.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\lion_2.ogg", 2, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -647,7 +647,7 @@ class GRAD_VM_lion_scream_3
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_3";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_3.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\lion_3.ogg", 2, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -657,20 +657,11 @@ class GRAD_VM_lion_scream_4
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_4";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_4.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\lion_4.ogg", 2, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
 
-class GRAD_VM_lion_scream_5
-{
-    // how the sound is referred to in the editor (e.g. trigger effects)
-    name = "GRAD_VM_lion_scream_5";
-    // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_5.ogg", 1, 1, 400 };
-    // subtitle delay in seconds, subtitle text
-    titles[] = {  };
-};
 
 
 class phase1_ambient_frogs
@@ -678,7 +669,7 @@ class phase1_ambient_frogs
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase1_ambient_frogs";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\frogs_1.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\frogs_1.ogg", 3, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -688,7 +679,7 @@ class phase1_ambient_owl_1
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase1_ambient_owl_1";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\owl_1.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\owl_1.ogg", 3, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -698,7 +689,7 @@ class phase1_ambient_owl_2
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase1_ambient_owl_2";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\owl_9.ogg", 1, 1, 400 };
+    sound[] = { "USER\sounds\owl_9.ogg", 3, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
