@@ -22,13 +22,13 @@ private _centerW = safeZoneY + safeZoneH/1.5;
 
 private _allTexts = [
     ["Verbaute Objekte", "8048", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Custom Functions", "103", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Custom Sounds", "84", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Custom Functions", "> 100", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Custom Sounds", "> 100", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Zusätzliche Mods", "15", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Gefixte Modfehler", "Dutzende", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Bauzeit", "10 Wochen", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Missionsbauer", "3", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Commits", "> 250", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Commits", "> 300", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Besonderen Dank an", "diwako", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["brought to you by", "Gruppe Adler", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]]
 ];
