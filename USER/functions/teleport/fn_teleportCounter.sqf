@@ -1,4 +1,4 @@
-params ["_firstPipePos", "_lastPipePos", ["_startDate", 2035], ["_endDate", 9], ["_duration"]];
+params ["_firstPipePos", "_lastPipePos", ["_startDate", 2035], ["_endDate", 9], ["_duration", 60]];
 
 private _verticalCenter = safeZoneH * 0.245;
 private _height = safeZoneH * 0.5;
