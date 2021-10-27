@@ -6,6 +6,8 @@
 
 if (!isServer) exitWith {};
 
+[] spawn GRAD_VM_phase1_fnc_ambientSounds;
+
 [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
 [] remoteExec ["GRAD_VM_phase1_fnc_brighterNight", [0,-2] select isDedicated, true];
 
@@ -53,3 +55,17 @@ if (!isServer) exitWith {};
         }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
 
 }, []] call CBA_fnc_waitUntilAndExecute;
+
+// delete phase1 sound sources
+[
+    {
+        ([1] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3
+    },
+    {
+        private _sounds = missionNamespace getVariable ["GRAD_VM_phase1_ambientSources", []];
+        {
+            deleteVehicle _x;   
+        } forEach _sounds;
+    },
+    []
+] call CBA_fnc_waitUntilAndExecute;

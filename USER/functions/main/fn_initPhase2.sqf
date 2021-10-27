@@ -96,7 +96,7 @@ private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
 // delete phase2 sound sources
 [
     {
-        ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3
+        ([2] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 3
     },
     {
         private _sounds = missionNamespace getVariable ["GRAD_VM_phase2_ambientSources", []];

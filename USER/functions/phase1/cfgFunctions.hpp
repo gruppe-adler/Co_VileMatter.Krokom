@@ -14,5 +14,6 @@ class GRAD_VM_phase1 {
     class spawnMarchingColumn;
     class spawnHorseRoman;
     class stoneHengeFX;
+    class ambientSounds;
    };
 };

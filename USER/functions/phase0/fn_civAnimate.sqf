@@ -18,6 +18,7 @@ _unit playMoveNow (selectRandom [
     "ApanPknlMstpSnonWnonDnon_G03"
 ]);
 
+
 _unit addEventHandler ["AnimDone", {
     params ["_unit", "_anim"];
 
@@ -39,4 +40,13 @@ _unit addEventHandler ["AnimDone", {
         "ApanPknlMstpSnonWnonDnon_G03"
         ]);
     };
+}];
+
+_unit setVariable ["GRAD_VM_animdone_eh", _handle];
+
+_unit addEventHandler ["Killed", {
+    params ["_unit", "_anim"];
+
+    _unit removeAllEventHandlers "AnimDone";
+    [_unit, ""] remoteExec ["switchMove"];
 }];
