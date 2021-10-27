@@ -164,7 +164,37 @@ class CfgSFX
 		sound0[] = {"USER\sounds\phase2_ambient.ogg", db+10, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
-	};	
+	};
+
+	class phase1_ambient_frogs
+	{
+		sound0[] = {"USER\sounds\frogs_1.ogg", db+10, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
+		sound1[] = {"USER\sounds\frogs_2.ogg", db+10, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
+		sounds[] = {sound0, sound1};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
+
+	class phase1_ambient_owl_1
+	{
+		sound0[] = {"USER\sounds\owl_1.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound1[] = {"USER\sounds\owl_2.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound2[] = {"USER\sounds\owl_3.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound3[] = {"USER\sounds\owl_4.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound4[] = {"USER\sounds\owl_5.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound5[] = {"USER\sounds\owl_6.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound6[] = {"USER\sounds\owl_7.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound7[] = {"USER\sounds\owl_8.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound[] = {sound0, sound1, sound2, sound3, sound4, sound5, sound6, sound7};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
+
+	class phase1_ambient_owl_2
+	{
+		sound0[] = {"USER\sounds\owl_9.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sound1[] = {"USER\sounds\owl_10.ogg", db+10, 1.0, 150, 0, 0, 10, 30};  // path to addon sound
+		sounds[] = {sound0, sound1};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
 };
 
 class CfgVehicles
@@ -178,4 +208,19 @@ class CfgVehicles
 	{
 		sound = "phase2_ambient"; // reference to CfgSFX class
 	};	
+
+	class phase1_ambient_frogs // class name to be used with createSoundSource
+	{
+		sound = "phase1_ambient_frogs"; // reference to CfgSFX class
+	};
+
+	class phase1_ambient_owl_1 // class name to be used with createSoundSource
+	{
+		sound = "phase1_ambient_owl_1"; // reference to CfgSFX class
+	};
+
+	class phase1_ambient_owl_2 // class name to be used with createSoundSource
+	{
+		sound = "phase1_ambient_owl_2"; // reference to CfgSFX class
+	};
 };
