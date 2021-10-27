@@ -7,6 +7,8 @@ _adi setUnitLoadout [[],[],["LIB_P08","","","",["LIB_8Rnd_9x19_P08",8],[],""],["
 _adi setVariable ["GRAD_VM_isHitler", true, true];
 _adi allowDamage false;
 
+_adi setUnitPos "UP";
+
 _adi setCaptive true;
 
 [_adi, "adi_identity"] remoteExec ["setIdentity", 0, _adi];
