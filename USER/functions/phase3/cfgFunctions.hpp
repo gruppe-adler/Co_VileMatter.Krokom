@@ -17,5 +17,8 @@ class GRAD_VM_phase3 {
       class handleBattleshipLocal {};
       class handleBattleshipServer {};
       class hideTreesLocal {};
+      class moduleLightsource {};
+      class startLightFlickering {};
+      class startLightFlickeringLocal {};
    };
 };
