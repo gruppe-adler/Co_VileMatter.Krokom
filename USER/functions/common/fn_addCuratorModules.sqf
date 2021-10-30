@@ -138,6 +138,28 @@
 
      _tiger addAction
      [
+          "ATTACK",  // title
+          {
+               params ["_target", "_caller", "_actionId", "_arguments"]; // script
+
+               _target playMoveNow (selectRandom ["TigerAttack", "TigerAttackClaws"];
+          },
+          nil,      // arguments
+          1.5,      // priority
+          true,          // showWindow
+          true,          // hideOnUse
+          "",            // shortcut
+          "_target == _this",   // condition
+          50,            // radius
+          false,         // unconscious
+          "",            // selection
+          ""             // memoryPoint
+     ];
+
+     
+
+     _tiger addAction
+     [
           "Lie Down",  // title
           {
                params ["_target", "_caller", "_actionId", "_arguments"]; // script

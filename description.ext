@@ -168,14 +168,14 @@ class CfgSFX
 
 	class phase1_ambient_frogs_sfx
 	{
-		sound0[] = {"USER\sounds\frogs_1.ogg", db+10, 1.0, 800, 0, 0, 0, 0};
+		sound0[] = {"USER\sounds\frogs_1.ogg", db+15, 1.0, 500, 0, 0, 0, 0};
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 
 	class phase1_ambient_frogs_2_sfx
 	{
-		sound0[] = {"USER\sounds\frogs_2.ogg", db+10, 1.0, 800, 0, 0, 0, 0};  // path to addon sound
+		sound0[] = {"USER\sounds\frogs_2.ogg", db+15, 1.0, 500, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
