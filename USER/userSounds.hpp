@@ -867,6 +867,18 @@ class phase2_bunker_expl_5
 };
 
 
+class phase2_bombfall
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase2_bombfall";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\phase2_bombfall.ogg", 6, 1, 1500 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+
 // Space-Marine voicelines:
 
 // class Captain_voiceLine

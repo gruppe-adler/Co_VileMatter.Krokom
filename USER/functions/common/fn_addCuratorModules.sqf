@@ -268,6 +268,15 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 2", "Move player into bunker", {
+     params ["_position", "_object"];
+
+     if (isPlayer _object) then {
+          ((getPos bunkerEntry) getPos [random 5, random 360]) params ["_xPos", "_yPos"];
+          _object setPos [_xPos, _yPos, 0.5];
+     };
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 2", "Kill Hitler", {
      params ["_position", "_object"];
 

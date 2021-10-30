@@ -31,7 +31,7 @@ if (!isServer) exitWith {};
 
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
         private _duration = 38;
-        private _date = [2035,2,9,7,00];
+        private _date = [2035,2,9,7,05];
         private _numberStart = 9;
         private _numberEnd = 1945;
         private _count = count (playableUnits + switchableUnits);
