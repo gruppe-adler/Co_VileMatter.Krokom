@@ -142,7 +142,7 @@
           {
                params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-               _target playMoveNow (selectRandom ["TigerAttack", "TigerAttackClaws"];
+               _target playMoveNow (selectRandom ["TigerAttack", "TigerAttackClaws"]);
           },
           nil,      // arguments
           1.5,      // priority
@@ -243,6 +243,12 @@
           ""             // memoryPoint
      ];
 
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Phase 2", "Spawn Bomber Formation", {
+     params ["_position", "_object"];
+
+     [] remoteExec ["GRAD_VM_phase2_fnc_bomberSpawn", 2];
 }] call zen_custom_modules_fnc_register;
 
 
