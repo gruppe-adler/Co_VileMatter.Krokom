@@ -1,7 +1,7 @@
 private _adi = (creategroup east) createUnit ["LIB_GER_gun_lieutenant", [492.579,464.512,0.73938], [], 0, "CAN_COLLIDE"];
 
 [_adi] call GRAD_VM_phase2_fnc_dressHitler;
-
+[_adi] spawn GRAD_VM_phase2_fnc_hitlerSpeechAlternative;
 
 private _minionGroup = (creategroup civilian);
 

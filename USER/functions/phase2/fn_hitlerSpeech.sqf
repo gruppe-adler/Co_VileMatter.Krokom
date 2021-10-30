@@ -5,6 +5,9 @@ if (!canSuspend) exitWith {
     [_unit] spawn GRAD_VM_phase2_fnc_hitlerSpeech;
 };
 
+if (missionNameSpace getVariable ["GRAD_VM_phase2_hitlerSpeechActive", false]) exitWith {};
+missionNameSpace setVariable ["GRAD_VM_phase2_hitlerSpeechActive", true, true];
+
 private _sounds = [
     ["dasisteinbefehl", 2.5],
     ["dasisteinbefehl2", 3.5],
@@ -22,7 +25,7 @@ while {true} do {
     if (!alive _unit) exitWith {};
     if (!isGamePaused && isGameFocused) then {
 
-        private _cachedSound = missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", false];
+        private _cachedSound = missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", []];
         (selectRandom ([_sounds, _sounds2] select _cachedSound)) params ["_sound", "_duration"];
 
         missionNamespace setVariable ["GRAD_VM_hitlerSoundCache", !_cachedSound];
