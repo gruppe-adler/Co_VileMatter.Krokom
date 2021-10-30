@@ -4,6 +4,11 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 {
 	_x hideObjectGlobal false;
 	_x enableSimulationGlobal true;
+
+	if (isNull (driver _x)) then {
+        [_x, createGroup west] call BIS_fnc_spawnCrew;
+        _x engineOn true;
+    };
 } forEach [GRAD_VM_phase4_exfilHeli_1, GRAD_VM_phase4_exfilHeli_2];
 
 private _copilotTurrets = allTurrets GRAD_VM_phase4_exfilHeli_1 select { getNumber ([GRAD_VM_phase4_exfilHeli_1, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0 };
