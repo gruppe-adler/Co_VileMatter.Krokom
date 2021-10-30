@@ -17,5 +17,7 @@ class GRAD_VM_phase2 {
     class ambientSounds {};
     class spawnHitler;
     class suicideHitler;
+    class bunkerBombardment;
+    class activateBunkerLamp;
    };
 };
