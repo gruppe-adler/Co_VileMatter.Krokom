@@ -349,28 +349,6 @@
      [] remoteExec ["GRAD_VM_phase4_fnc_initPhase4Effects", 2];
 }] call zen_custom_modules_fnc_register;
 
-{
-     _x addEventHandler ["CuratorGroupPlaced", {
-           params ["_curator", "_group"];
-
-           if (faction leader _group == "LIB_WEHRMACHT") then {
-               private _groupNew = createGroup east;
-               (units _group) joinSilent _groupNew;
-           };
-     }];
-
-     _x addEventHandler ["CuratorObjectPlaced", {
-          params ["_curator", "_entity"];
-
-          if (faction _entity == "LIB_WEHRMACHT") then {
-               private _groupNew = createGroup east;
-               [_entity] joinSilent _groupNew;
-           };
-     }];
-
-} forEach allCurators;
-
-
 ["Vile Matter - Common", "Fix SetObjectScale", {
      params ["_position", "_object"];
 

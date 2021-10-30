@@ -1,5 +1,7 @@
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
+missionNamespace setVariable ["GRAD_VM_outroStarted", true, true];
+
 // failsafe and for debug reasons
 {
 	_x hideObjectGlobal false;
