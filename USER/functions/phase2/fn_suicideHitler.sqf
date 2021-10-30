@@ -26,3 +26,6 @@ _unit addEventHandler ["Fired", {
 
 _unit forceWeaponFire [handgunWeapon _unit, "Single"];    
 [_unit, "LIB_P08"] call BIS_fnc_fire;
+
+GRAD_VM_phase2_bunkerBombardment = false; 
+publicVariable "GRAD_VM_phase2_bunkerBombardment";

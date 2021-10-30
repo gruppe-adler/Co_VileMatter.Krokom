@@ -320,7 +320,9 @@
           // _unit setDir (getDir _x);
           [_unit, ["Teleport_phase3", 500, 0.85]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 
-          deleteVehicle _pad;
+          [{
+               deleteVehicle _this;
+          }, _pad, 5] call CBA_fnc_waitAndExecute;
      };
     
 }] call zen_custom_modules_fnc_register;

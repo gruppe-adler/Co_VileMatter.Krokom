@@ -44,14 +44,13 @@ _adi addAction
 ];
 
 
-
 _adi addAction
 [
-    "Staccato Speech now",    // title
+    "Give me magazine",    // title
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        [_target] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeech", 2];
+        _target addMagazine "LIB_8Rnd_9x19_P08";
     },
     nil,        // arguments
     1.5,        // priority
@@ -66,13 +65,16 @@ _adi addAction
 ];
 
 
+
+
+
 _adi addAction
 [
-    "Long Speech now",    // title
+    "Staccato Speech now",    // title
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        [_target] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeechAlternative", [0,-2] select isDedicated];
+        [_target] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeech", 2];
     },
     nil,        // arguments
     1.5,        // priority
