@@ -16,5 +16,6 @@ class GRAD_VM_common {
         class ropeCreate;
         class setObjectScaleSafe;
         class respawnPlayer;
+        class healSelf;
     };
 };

@@ -6,7 +6,7 @@ _minion addAction
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        [_target, "ApanPercMstpSnonWnonDnon_ApanPknlMstpSnonWnonDnon"] remoteExec ["switchMove"];
+        [_target, "ApanPercMrunSnonWnonDf"] remoteExec ["switchMove"];
     },
     nil,        // arguments
     1.5,        // priority

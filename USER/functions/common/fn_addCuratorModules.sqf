@@ -7,6 +7,24 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["Vile Matter - Common", "Wake up Player", {
+     params ["_position", "_object"];
+
+     if (isPlayer _x) then {
+          _object setUnconscious false;
+     };
+}] call zen_custom_modules_fnc_register;
+
+
+["Vile Matter - Common", "Heal Player", {
+     params ["_position", "_object"];
+
+     if (isPlayer _x) then {
+          [_object] remoteExec ["GRAD_VM_common_fnc_healSelf", _object];
+     };
+}] call zen_custom_modules_fnc_register;
+
+
 ["Vile Matter - Phase 0", "Destroy Zentrifuge Hall", {
      params ["_position", "_object"];
 
@@ -75,6 +93,7 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+/*
 ["Vile Matter - Phase 1", "Add enhanced Horse Sound", {
      params ["_position", "_object"];
 
@@ -88,6 +107,7 @@
      _object setVariable ["GRAD_VM_horseSound", false, true];
      
 }] call zen_custom_modules_fnc_register;
+*/
 
 ["Vile Matter - Phase 1", "Spawn Lion", {
      params ["_positionASL", "_object"];
