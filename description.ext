@@ -168,7 +168,7 @@ class CfgSFX
 
 	class phase1_ambient_frogs_sfx
 	{
-		sound0[] = {"USER\sounds\frogs_1.ogg", db+10, 1.0, 150, 0, 0, 0, 0};
+		sound0[] = {"USER\sounds\frogs_1.ogg", db+10, 1.0, 800, 0, 0, 0, 0};
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
