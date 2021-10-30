@@ -21,9 +21,9 @@ private _centerH = safeZoneX + safeZoneW/3;
 private _centerW = safeZoneY + safeZoneH/1.5;
 
 private _allTexts = [
-    ["Verbaute Objekte", "8048", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Verbaute Objekte", "8313", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Custom Functions", "> 100", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Custom Sounds", "> 100", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Custom Sounds", "> 110", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Zusätzliche Mods", "15", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Gefixte Modfehler", "Dutzende", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Bauzeit", "10 Wochen", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],

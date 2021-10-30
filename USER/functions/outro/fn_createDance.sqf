@@ -60,8 +60,8 @@ _unit setPos _position;
     sleep _singleDuration;
 } forEach _types;
 
-[ASLtoAGL (getPosASL _unit)] call GRAD_VM_localEffects_fnc_meatSplashEffect;
-deleteVehicle _unit;
+[_unit modelToWorldVisual (_unit selectionPosition "spine")] call GRAD_VM_localEffects_fnc_meatSplashEffect;
+hideObjectGlobal  _unit;
 
 sleep 10;
 
@@ -69,3 +69,4 @@ sleep 10;
 
 deleteVehicle _spotlight;
 deleteVehicle _spotlight2;
+deleteVehicle _unit;
