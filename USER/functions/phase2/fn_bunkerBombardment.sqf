@@ -19,7 +19,20 @@ private _phase2Lamps = [
     Grad_VM_bunkerLamp_10,
     Grad_VM_bunkerLamp_11,
     Grad_VM_bunkerLamp_12,
-    Grad_VM_bunkerLamp_13
+    Grad_VM_bunkerLamp_13,
+    Grad_VM_bunkerLamp_14,
+    Grad_VM_bunkerLamp_15,
+    Grad_VM_bunkerLamp_16,
+    Grad_VM_bunkerLamp_17,
+    Grad_VM_bunkerLamp_18,
+    Grad_VM_bunkerLamp_19,
+    Grad_VM_bunkerLamp_20,
+    Grad_VM_bunkerLamp_21,
+    Grad_VM_bunkerLamp_22,
+    Grad_VM_bunkerLamp_23,
+    Grad_VM_bunkerLamp_24,
+    Grad_VM_bunkerLamp_25,
+    Grad_VM_bunkerLamp_26
  ];
 
  private _ceilingLamps = [ceilinglamp_bunker_1, ceilinglamp_bunker_2, ceilinglamp_bunker_3, ceilinglamp_bunker_4];

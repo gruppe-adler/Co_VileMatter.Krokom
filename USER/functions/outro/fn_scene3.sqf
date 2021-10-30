@@ -33,9 +33,9 @@ sleep 5;
 _copilot lookAt (driver vehicle _copilot);
 _copilot setMimic "combat";
 _copilot setRandomLip true;
-_copilot say3D ["feiglinge_default", 5, 1, true];
+["feiglinge_default"] remoteExec ["playSound", 5, 1, true]; // say3d didnt work on dedicated due to unknown reasons
 sleep 1;
-_copilot say3D ["verraeterversager_default", 5, 1, true];
+["verraeterversager_default"] remoteExec ["playSound", 5, 1, true];
 sleep 2;
 [0] call GRAD_VM_outro_fnc_fadeToBlack;
 0 fadeSound 0;

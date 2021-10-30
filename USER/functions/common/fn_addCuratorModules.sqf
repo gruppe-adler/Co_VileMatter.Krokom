@@ -235,6 +235,23 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["Vile Matter - Phase 2", "Start Bunker Bombardment", {
+     params ["_position", "_object"];
+
+      [] remoteExec ["GRAD_VM_phase2_fnc_bunkerBombardment", 2];
+}] call zen_custom_modules_fnc_register;
+
+
+["Vile Matter - Phase 2", "Stop Bunker Bombardment", {
+     params ["_position", "_object"];
+
+      GRAD_VM_phase2_bunkerBombardment = false; publicVariable "GRAD_VM_phase2_bunkerBombardment";
+
+     [{
+          GRAD_VM_phase2_bunkerBombardment = nil; publicVariable "GRAD_VM_phase2_bunkerBombardment";
+     }, [], 2] call CBA_fnc_waitAndExecute;
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 3", "Spawn Battleship", {
      params ["_position", "_object"];
 
