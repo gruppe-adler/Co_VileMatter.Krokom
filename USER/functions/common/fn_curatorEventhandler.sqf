@@ -6,26 +6,30 @@
 
 if (!isServer) exitWith {
 
-  // not sure if those two work as expected
-  [ missionNamespace, "reviveIncapacitated", {
+    [missionNamespace, "reviveRevived", [player]] call BIS_fnc_callScriptedEventHandler;
+    [missionNamespace, "reviveIncapacitated", [player]] call BIS_fnc_callScriptedEventHandler;
+
+    // not sure if those two work as expected
+    [ missionNamespace, "reviveIncapacitated", {
       params ["_unit"];
 
       if (local _unit) then {
         ["GRAD_VM_curatorInfo", [_unit, "unconscious"]] call CBA_fnc_serverEvent;
       };
 
-  } ] call BIS_fnc_addScriptedEventHandler;
+    } ] call BIS_fnc_addScriptedEventHandler;
 
-  [ missionNamespace, "reviveRevived", {
+    [ missionNamespace, "reviveRevived", {
       params ["_unit"];
 
       if (local _unit) then {
         ["GRAD_VM_curatorInfo", [_unit, "revived"]] call CBA_fnc_serverEvent;
       };
 
-  } ] call BIS_fnc_addScriptedEventHandler;
+    } ] call BIS_fnc_addScriptedEventHandler;
 
 };
+
 
 ["GRAD_VM_curatorInfo", {
     params ["_unit", "_type"];
@@ -49,10 +53,14 @@ if (!isServer) exitWith {
         case ("unconscious"): {
             _message = format ["%1 was knocked out.", [_unit, false, true] call ace_common_fnc_getName];
             _color = [0.5,0.1,0.1,1];
+
+            [_unit, false] remoteExec ["allowDamage", _unit];
         };
         case ("revived"): {
             _message = format ["%1 got revived.", [_unit, false, true] call ace_common_fnc_getName];
             _color = [0.1,0.5,0.5,1];
+
+             [_unit, true] remoteExec ["allowDamage", _unit];
         };
         case ("respawned"): {
             _message = format ["%1 respawned.", [_unit, false, true] call ace_common_fnc_getName];
