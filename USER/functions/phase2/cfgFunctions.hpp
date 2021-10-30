@@ -19,5 +19,7 @@ class GRAD_VM_phase2 {
     class suicideHitler;
     class bunkerBombardment;
     class activateBunkerLamp;
+    class flickerBunkerLamp;
+    class flickerBunkerLamps;
    };
 };

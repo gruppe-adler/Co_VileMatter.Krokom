@@ -821,7 +821,7 @@ class phase2_bunker_expl_1
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase2_bunker_expl_1";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\phase2_bunker_expl_1.ogg", 3, 1, 400 };
+    sound[] = { "USER\sounds\phase2_bunker_expl_1.ogg", 6, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -831,7 +831,7 @@ class phase2_bunker_expl_2
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase2_bunker_expl_2";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\phase2_bunker_expl_2.ogg", 3, 1, 400 };
+    sound[] = { "USER\sounds\phase2_bunker_expl_2.ogg", 6, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -841,7 +841,7 @@ class phase2_bunker_expl_3
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase2_bunker_expl_3";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\phase2_bunker_expl_3.ogg", 3, 1, 400 };
+    sound[] = { "USER\sounds\phase2_bunker_expl_3.ogg", 6, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -851,7 +851,7 @@ class phase2_bunker_expl_4
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase2_bunker_expl_4";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\phase2_bunker_expl_4.ogg", 3, 1, 400 };
+    sound[] = { "USER\sounds\phase2_bunker_expl_4.ogg", 6, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -861,7 +861,7 @@ class phase2_bunker_expl_5
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "phase2_bunker_expl_5";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\phase2_bunker_expl_5.ogg", 3, 1, 400 };
+    sound[] = { "USER\sounds\phase2_bunker_expl_5.ogg", 6, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
