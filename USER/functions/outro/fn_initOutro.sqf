@@ -20,7 +20,7 @@ sleep 3;
 		[_x],
 		random 3 + 1
 	] call CBA_fnc_waitAndExecute;
-} forEach [GRAD_VM_outro_platform_1, GRAD_VM_outro_platform_2, GRAD_VM_outro_tower_1];
+} forEach [GRAD_VM_outro_platform_1, GRAD_VM_outro_platform_2];
 
 {                    
 	private _group = group _x;

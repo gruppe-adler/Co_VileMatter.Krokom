@@ -6,7 +6,6 @@ private _soundSources = [];
     private _source = createSoundSource [_frogSound, _x, [], 0];
     _soundSources pushBack _source;
     _x setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
-    sleep ((random 5) + 0.5);
 } forEach [
     grad_vm_phase1_ambient_frogs_1,
     grad_vm_phase1_ambient_frogs_2,
@@ -58,4 +57,4 @@ private _owls = [
         ], 1000]] remoteExec ["say3D"];
     };
 
-}, 1, [_owls]] call CBA_fnc_addPerFrameHandler;
+}, 3, [_owls]] call CBA_fnc_addPerFrameHandler;

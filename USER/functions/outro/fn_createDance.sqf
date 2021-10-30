@@ -60,7 +60,7 @@ _unit setPos _position;
     sleep _singleDuration;
 } forEach _types;
 
-[getPos _unit] call GRAD_VM_localEffects_fnc_meatSplashEffect;
+[ASLtoAGL (getPosASL _unit)] call GRAD_VM_localEffects_fnc_meatSplashEffect;
 deleteVehicle _unit;
 
 sleep 10;
