@@ -9,7 +9,7 @@ deleteVehicle _speech;
 private _speech = _hitler say3D ["Hitler_Monolog_close", 300, 1, true, (_break - _startTime)];
 // systemChat "switched from 'far' to 'close'";
 
-waitUntil { (_hitler distance player) <=  65 && gate_bunker_adi animationPhase "door_1_rot" != 1 };
+waitUntil { (_hitler distance player) <=  67 && gate_bunker_adi animationPhase "door_1_rot" != 1 };
 private _break = time;
 deleteVehicle _speech;
 private _speech = _hitler say3D ["Hitler_Monolog_default", 300, 1, true, (_break - _startTime)];

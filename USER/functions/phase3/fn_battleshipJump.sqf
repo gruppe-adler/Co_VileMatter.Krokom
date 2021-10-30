@@ -19,7 +19,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 ["Ship_Detected"] remoteExec ["playSound", [0, -2] select isMultiplayer];
 [3500, false] remoteExecCall ["ace_viewdistance_fnc_changeViewDistance", [0, -2] select isMultiplayer];
 [GRAD_VM_BattleshipSound, ["Hyperspace_Jump", 10000, 1, false, 0]] remoteExec ["say3D", [0, -2] select isMultiplayer];
-[getPos phase3_teleportcrystal, 200, 12] spawn GRAD_VM_phase3_fnc_startLightFlickering;
+// [getPos phase3_teleportcrystal, 200, 12] spawn GRAD_VM_phase3_fnc_startLightFlickering;
 sleep 11;
 
 // create and manage the movement of the local battleships

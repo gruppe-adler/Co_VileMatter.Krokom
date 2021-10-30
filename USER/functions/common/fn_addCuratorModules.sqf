@@ -246,6 +246,25 @@
      [] remoteExec ["Grad_VM_phase3_fnc_battleshipJump", 2];
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 3", "Spawn Guardsman", {
+     params ["_position", "_object"];
+
+     [_position, _object] spawn {
+          params ["_position", "_object"];
+
+          private _pad = createVehicle ["Land_HelipadEmpty_F", ASLToAGL _position, [], 0, "CAN_COLLIDE"];
+
+          [_pad] remoteExec ["Grad_VM_phase3_fnc_guardsmenSpawnEffect", [0, -2] select isMultiplayer];
+          sleep 0.1;
+          private _group = createGroup independent;
+          private _unit = _group createUnit [selectRandom ["TIOW_Cad_GM776th_Indep", "TIOW_Cad_SGT776th_Indep", "TIOW_Cad_VET776th_Indep"], _pad, [], 0, "NONE"];
+          // _unit setDir (getDir _x);
+          [_unit, ["Teleport_phase3", 500, 0.85]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+
+          deleteVehicle _pad;
+     };
+    
+}] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 4", "Start Outro", {
      params ["_position", "_object"];

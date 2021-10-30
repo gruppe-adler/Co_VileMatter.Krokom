@@ -32,12 +32,12 @@ if (_voicelines) then {
 	[
 		{
 			params ["_unit", "_group"];
-			[_unit, ["Charge", 500, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+			[_unit, ["Charge", 600, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 
 			[
 				{
 					params ["_unit"];
-					[_unit, ["For_the_empirium_of_man", 500, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
+					[_unit, ["For_the_empirium_of_man", 600, 1]] remoteExec ["say3D", [0, -2] select isMultiplayer];
 				},
 				[selectRandom (units _group)],
 				5
