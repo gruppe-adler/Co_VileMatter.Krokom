@@ -57,4 +57,4 @@ private _owls = [
         ], 1000]] remoteExec ["say3D"];
     };
 
-}, 3, [_owls]] call CBA_fnc_addPerFrameHandler;
+}, 7, [_owls]] call CBA_fnc_addPerFrameHandler;
