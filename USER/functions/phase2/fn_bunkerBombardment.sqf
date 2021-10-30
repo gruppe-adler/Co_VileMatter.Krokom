@@ -22,15 +22,17 @@ private _phase2Lamps = [
     Grad_VM_bunkerLamp_13
  ];
 
+ private _ceilingLamps = [ceilinglamp_bunker_1, ceilinglamp_bunker_2, ceilinglamp_bunker_3, ceilinglamp_bunker_4];
+
 {
     private _brightness = _x getVariable ["Grad_VM_brightness", 0.42];
     [_x, _brightness] remoteExec ["Grad_VM_phase2_fnc_activateBunkerLamp", [0, -2] select isMultiplayer];
-} forEach _phase2Lamps;
+} forEach (_phase2Lamps + _ceilingLamps);
 
 
 while {GRAD_VM_phase2_bunkerBombardment} do {
 
-    [_phase2Lamps] remoteExec ["Grad_VM_phase2_fnc_flickerBunkerLamps", [0, -2] select isMultiplayer];    
+    [(_phase2Lamps + _ceilingLamps)] remoteExec ["Grad_VM_phase2_fnc_flickerBunkerLamps", [0, -2] select isMultiplayer];    
 
     private _soundExpl = selectRandom [
             "phase2_bunker_expl_1",

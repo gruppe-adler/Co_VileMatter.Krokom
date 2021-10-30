@@ -17,11 +17,6 @@ private _pfh = [{
 
    } forEach _lamps;
 
-   private _onOff = selectRandom ["ON", "OFF"];
-   {
-        _x switchLight _onOff;
-   } forEach [ceilinglamp_bunker_1, ceilinglamp_bunker_2, ceilinglamp_bunker_3, ceilinglamp_bunker_4];
-
 }, 0, [_lamps]] call CBA_fnc_addPerFrameHandler;
 
 
@@ -43,10 +38,6 @@ private _pfh = [{
         _lightPoint setLightBrightness _brightness;
 
     } forEach _lamps;
-
-    {
-        _x switchLight "ON";
-   } forEach [ceilinglamp_bunker_1, ceilinglamp_bunker_2, ceilinglamp_bunker_3, ceilinglamp_bunker_4];
     
 }, [_lamps, _pfh], (random 3 max 1)] call CBA_fnc_waitAndExecute;
 
