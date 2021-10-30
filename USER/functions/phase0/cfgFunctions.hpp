@@ -23,5 +23,6 @@ class GRAD_VM_phase0 {
     class lightSourceTeleporter;
     class screenBlink;
     class switch;
+    class keyPadDoorInit { postInit = 1; };
     };
 };

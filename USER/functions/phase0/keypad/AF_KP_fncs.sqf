@@ -23,7 +23,7 @@ switch (_this select 0) do {
 		publicVariable "GRAD_VM_keypad_InputText";
 
 		if (GRAD_VM_keypad_OutputText == "31337") then {
-			call GRAD_VM_phase0_fnc_keyPadUnlock;
+			[] remoteExec ["GRAD_VM_phase0_fnc_keyPadUnlock", 2];
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
 			 [player, "zoom_fail"] remoteExec ["say3D", 0];
