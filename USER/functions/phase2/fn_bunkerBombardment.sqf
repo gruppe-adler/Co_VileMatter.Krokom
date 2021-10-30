@@ -30,7 +30,9 @@ private _phase2Lamps = [
 
 while {GRAD_VM_phase2_bunkerBombardment} do {
 
-    [_phase2Lamps] remoteExec ["Grad_VM_phase2_fnc_flickerBunkerLamps", [0, -2] select isMultiplayer];    
+    private _sleepTime = (random 20 max 3);
+
+    [_phase2Lamps, _sleepTime * 0.5] remoteExec ["Grad_VM_phase2_fnc_flickerBunkerLamps", [0, -2] select isMultiplayer];    
 
     private _soundExpl = selectRandom [
             "phase2_bunker_expl_1",
@@ -52,5 +54,5 @@ while {GRAD_VM_phase2_bunkerBombardment} do {
     sleep (1);
     playSound3D [getMissionPath ("USER\sounds\" + _soundDust) + ".ogg", _lamp, false, [_posX, _posY, _posZ], 1, 1, 0];
 
-    sleep (random 20 max 3);
+    sleep _sleepTime;
 };
