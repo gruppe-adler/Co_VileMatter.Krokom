@@ -193,6 +193,20 @@ class CfgSFX
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};	
+
+	class phase1_ambient_trance_1_sfx
+    {
+        sound0[] = {"USER\sounds\phase1_trance_1.ogg", db+3, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
+        sounds[] = {sound0};
+        empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+    };
+
+    class phase1_ambient_trance_2_sfx
+    {
+        sound0[] = {"USER\sounds\phase1_trance_2.ogg", db+3, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
+        sounds[] = {sound0};
+        empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+    };
 };
 
 class CfgVehicles
@@ -226,4 +240,14 @@ class CfgVehicles
 	{
 		sound = "caveChanting_sfx";
 	};
+
+	 class phase1_ambient_trance_1_source // class name to be used with createSoundSource
+    {
+        sound = "phase1_ambient_trance_1_sfx"; // reference to CfgSFX class
+    };
+
+    class phase1_ambient_trance_2_source // class name to be used with createSoundSource
+    {
+        sound = "phase1_ambient_trance_2_sfx"; // reference to CfgSFX class
+    };
 };

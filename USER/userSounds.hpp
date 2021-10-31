@@ -879,6 +879,28 @@ class phase2_bombfall
 
 
 
+class phase1_trance_1
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_trance_1";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\phase1_trance_1.ogg", 3, 1, 150 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+class phase1_trance_2
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "phase1_trance_2";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\phase1_trance_2.ogg", 3, 1, 150 };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
+
+
 // Space-Marine voicelines:
 
 // class Captain_voiceLine

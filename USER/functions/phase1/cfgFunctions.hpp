@@ -17,5 +17,8 @@ class GRAD_VM_phase1 {
     class ambientSounds;
     class tigerActions;
     class legionActions;
+    class dressAndAnimateDruid;
+    class dressAndAnimatePushDruid;
    };
 };
+
