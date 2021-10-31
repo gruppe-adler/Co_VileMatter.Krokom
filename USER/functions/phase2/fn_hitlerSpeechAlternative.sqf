@@ -13,7 +13,6 @@ private _speech = _hitler say3D ["Hitler_Monolog_close", 300, 1, true, (_break -
 
 waitUntil { (_hitler distance player) <=  67 };
 
-if (count (missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", []] > 0)) exitWith {};
 private _break = time;
 deleteVehicle _speech;
 private _speech = _hitler say3D ["Hitler_Monolog_default", 300, 1, true, (_break - _startTime)];

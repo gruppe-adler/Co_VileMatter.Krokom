@@ -25,7 +25,7 @@ while {true} do {
     if (!alive _unit) exitWith {};
     if (!isGamePaused && isGameFocused) then {
 
-        private _cachedSound = missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", []];
+        private _cachedSound = missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", false];
         (selectRandom ([_sounds, _sounds2] select _cachedSound)) params ["_sound", "_duration"];
 
         missionNamespace setVariable ["GRAD_VM_hitlerSoundCache", !_cachedSound];
@@ -51,3 +51,23 @@ while {true} do {
     };
     sleep (random 1);
 };
+
+
+/*
+
+
+22:06:53 Server: Object 2:34486 not found (message Type_118)
+22:06:55 Error in expression <etVariable ["GRAD_VM_hitlerSoundCache", !_cachedSound];
+
+[_unit, true] remoteExe>
+22:06:55   Error position: <!_cachedSound];
+
+[_unit, true] remoteExe>
+22:06:55   Error !: Type Array, expected Bool
+22:06:55 File mpmissions\__cur_mp.krokom\USER\functions\phase2\fn_hitlerSpeech.sqf..., line 31
+22:06:55  ➥ Context:    [] L23 (mpmissions\__cur_mp.krokom\USER\functions\phase2\fn_hitlerSpeech.sqf)
+    [] L26 (mpmissions\__cur_mp.krokom\USER\functions\phase2\fn_hitlerSpeech.sqf)
+    [] L31 (mpmissions\__cur_mp.krokom\USER\functions\phase2\fn_hitlerSpeech.sqf)
+
+
+*/
