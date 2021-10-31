@@ -6,9 +6,9 @@ private _stoneCircle = nearestObjects [phase1_pedestal, ["Land_Bare_boulder_04_F
 
     private _posBetween = _pos getPos [3, _pos getdir phase1_pedestal];
 
-    [_posBetween, (createGroup civilian)] execVM "USER\functions\phase1\fn_dressAndAnimateDruid.sqf"; // GRAD_VM_phase1_fnc_dressAndAnimateDruid;
+    [_posBetween, (createGroup civilian)] call GRAD_VM_phase1_fnc_dressAndAnimateDruid;
 
 } forEach _stoneCircle;
 
 
-[getPos crystal_phase1, (createGroup civilian)] execVM "USER\functions\phase1\fn_dressAndAnimatePushDruid.sqf"; // GRAD_VM_phase1_fnc_dressAndAnimatePushDruid;
+[getPos crystal_phase1, (createGroup civilian)] call GRAD_VM_phase1_fnc_dressAndAnimatePushDruid;
