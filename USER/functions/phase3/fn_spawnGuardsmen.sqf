@@ -52,7 +52,7 @@ if (_voicelines) then {
 {
 	
 	[_x] remoteExec ["Grad_VM_phase3_fnc_guardsmenSpawnEffect", [0, -2] select isMultiplayer];
-	sleep 0.1;
+	sleep 0.15;
 	private _unit = _group createUnit [selectRandom ["TIOW_Cad_GM776th_Indep", "TIOW_Cad_SGT776th_Indep", "TIOW_Cad_VET776th_Indep"], _x, [], 0, "NONE"];
 	_unit setDir (getDir _x);
 	// _unit disableAI "MOVE";

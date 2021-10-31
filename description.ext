@@ -179,6 +179,20 @@ class CfgSFX
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
+
+	class caveSounds_sfx
+	{
+		sound0[] = {"USER\sounds\cave_sounds.ogg", db+1, 1.0, 100, 0, 0, 0, 0};  // path to addon sound
+		sounds[] = {sound0};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
+
+	class caveChanting_sfx
+	{
+		sound0[] = {"USER\sounds\demonic_chanting.ogg", db-1, 0.9, 40, 0, 0, 0, 0};  // path to addon sound
+		sounds[] = {sound0};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};	
 };
 
 class CfgVehicles
@@ -201,5 +215,15 @@ class CfgVehicles
 	class phase1_ambient_frogs_2_source // class name to be used with createSoundSource
 	{
 		sound = "phase1_ambient_frogs_2_sfx"; // reference to CfgSFX class
+	};
+
+	class caveSounds_source
+	{
+		sound = "caveSounds_sfx";
+	};
+
+	class caveChanting_source
+	{
+		sound = "caveChanting_sfx";
 	};
 };

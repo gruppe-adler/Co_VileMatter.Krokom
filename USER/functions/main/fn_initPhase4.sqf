@@ -14,6 +14,16 @@ if (!isServer) exitWith {};
         ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 4
     },
     {
+        private _caveSounds = missionNamespace getVariable ["GRAD_VM_phase3_caveSounds", []];
+        {
+            deleteVehicle _x;
+        } forEach _caveSounds;
+        
+        [{
+            private _source = player getVariable ["GRAD_VM_phase3_skyLightSource", objNull];
+            deleteVehicle _source;
+        }] remoteExec ["call", [0, -2] select isMultiplayer];
+
         GRAD_VM_outro_showHelis = true;
 
         // create civilian scientist

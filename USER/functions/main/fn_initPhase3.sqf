@@ -29,6 +29,39 @@ if (!isServer) exitWith {};
     [_light3, -90, 0] call BIS_fnc_setPitchBank;
     [_light3, 15] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
+    // GRAD_VM_phase3_caveSound_4
+    private _caveSounds = missionNamespace getVariable ["GRAD_VM_phase3_caveSounds", []];
+    {
+        private _sound = createSoundSource ["caveSounds_source", position _x, [], 0];
+        _sound setPos (getPos _x);
+        _caveSounds pushBack _sound;
+    } forEach [GRAD_VM_phase3_caveSound_1, GRAD_VM_phase3_caveSound_2];
+    missionNamespace setVariable ["GRAD_VM_phase3_caveSounds", _caveSounds];
+
+    {
+        [
+            {
+                params ["_pad"];
+
+                private _caveSounds = missionNamespace getVariable ["GRAD_VM_phase3_caveSounds", []];
+                private _sound = createSoundSource ["caveChanting_source", position _pad, [], 0];
+                _caveSounds pushBack _sound;
+                missionNamespace setVariable ["GRAD_VM_phase3_caveSounds", _caveSounds];
+                _sound setPos (getPos _pad);
+            },
+            [_x],
+            (random 5) + 1
+        ] call CBA_fnc_waitAndExecute;
+    } forEach [GRAD_VM_phase3_caveSound_3, GRAD_VM_phase3_caveSound_4, GRAD_VM_phase3_caveSound_5];
+
+    [{
+        private _light = "#lightPoint" createVehicleLocal (getPos GRAD_VM_phase3_brightenSky);
+        _light setPos (getPos GRAD_VM_phase3_brightenSky);
+        _light setLightColor [1,1,1];
+        _light setLightBrightness 30;
+        player setVariable ["GRAD_VM_phase3_skyLightSource", _light];
+    }] remoteExec ["call", [0, -2] select isMultiplayer];
+
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 
