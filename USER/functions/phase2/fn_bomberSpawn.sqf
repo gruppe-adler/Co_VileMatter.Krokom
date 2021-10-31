@@ -21,7 +21,7 @@ for "_i" from 1 to 3 do {
 for "_i" from 1 to 3 do {
 
         for "_j" from 1 to 3 do {
-        
+
             private _bomber = createSimpleObject ["LIB_Pe2_2_w", [0,0,0]];
             _bomber attachTo [_bomberParent, [_i * 50, _j * 50, 0]];
             createVehicleCrew _bomber;
@@ -39,4 +39,23 @@ _bomberParent setSpeedMode "LIMITED";
 _bomberParent engineOn true;
 _bomberParent setVelocityModelSpace [0,150,0];
 _bomberParent doMove _positionTarget;
-_bomberParent setVelocityModelSpace [0,150,0];
+_bomberParent allowDamage  false;
+
+// fix initial skydrop
+[{
+    _this setVelocityModelSpace [0,150,0];
+}, _bomberParent, 1] call CBA_fnc_waitAndExecute;
+
+// delete completely
+[{
+    params ["_bomberParent", "_positionTarget"];
+    _bomberParent distance2d _positionTarget < 200
+},{
+    params ["_bomberParent", "_positionTarget"];
+
+    private _attachedPlanes = attachedObjects _bomberParent;
+    { deleteVehicleCrew _x; } forEach (_attachedPlanes + [_bomberParent]);
+    { deleteVehicle _x; } forEach (_attachedPlanes);
+    deleteVehicle _bomberParent;
+
+}, [_bomberParent, _positionTarget]] call CBA_fnc_waitUntilAndExecute;
