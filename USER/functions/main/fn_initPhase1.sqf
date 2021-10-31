@@ -27,8 +27,6 @@ if (!isServer) exitWith {};
     {
         diag_log "phase 1 done";
 
-        [] spawn GRAD_VM_phase2_fnc_ambientSounds; // prepare phase 2 to be final for teleport, not AFTER
-
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", phase1_pedestal];
         private _duration = 38;
         private _date = [2035,2,9,7,05];
@@ -52,6 +50,8 @@ if (!isServer) exitWith {};
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase2", true] call GRAD_Loadout_fnc_FactionSetLoadout;
             [_date] remoteExec ["setDate"];
+
+            [] spawn GRAD_VM_phase2_fnc_ambientSounds; // prepare phase 2 to be final for teleport, not AFTER
 
         }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
 

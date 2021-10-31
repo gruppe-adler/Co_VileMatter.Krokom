@@ -94,8 +94,6 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
     {
         params ["_light_phase0"];
 
-        [] spawn GRAD_VM_phase1_fnc_ambientSounds;
-
         playSound3D [getMissionPath "USER\sounds\teleport_global.ogg", _light_phase0];
         private _duration = 38;
         private _date = [2035,2,9,6,50];
@@ -121,6 +119,8 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
             // 3rd param is broadcast
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
             [_date] remoteExec ["setDate"];
+
+            [] spawn GRAD_VM_phase1_fnc_ambientSounds;
 
         }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
 
