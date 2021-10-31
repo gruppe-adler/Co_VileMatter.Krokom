@@ -31,7 +31,7 @@ for "_i" from 1 to 3 do {
 
 
 
-_bomberParent flyInHeight 700;
+_bomberParent flyinheightASL 700;
 _bomberParent setCaptive true;
 _bomberParent disableAI "FSM";
 _bomberParent disableAI "AUTOTARGET";
@@ -40,6 +40,10 @@ _bomberParent engineOn true;
 _bomberParent setVelocityModelSpace [0,150,0];
 _bomberParent doMove _positionTarget;
 _bomberParent allowDamage  false;
+
+
+[] call GRAD_VM_phase2_fnc_bunkerBombardment;
+
 
 // fix initial skydrop
 [{

@@ -1,6 +1,6 @@
 if (!isServer) exitWith {};
 if (!canSuspend) exitWith {
-    [] spawn GRAD_VM_phase2_fnc_bunkerBombardment;
+    [] remoteExec ["GRAD_VM_phase2_fnc_bunkerBombardment", 2];
 };
 
 if (!isNil "GRAD_VM_phase2_bunkerBombardment") exitWith {};
@@ -32,7 +32,15 @@ private _phase2Lamps = [
     Grad_VM_bunkerLamp_23,
     Grad_VM_bunkerLamp_24,
     Grad_VM_bunkerLamp_25,
-    Grad_VM_bunkerLamp_26
+    Grad_VM_bunkerLamp_26,
+    Grad_VM_bunkerLamp_27,
+    Grad_VM_bunkerLamp_28,
+    Grad_VM_bunkerLamp_29,
+    Grad_VM_bunkerLamp_30,
+    Grad_VM_bunkerLamp_31,
+    Grad_VM_bunkerLamp_32,
+    Grad_VM_bunkerLamp_33,
+    Grad_VM_bunkerLamp_34
  ];
 
  private _ceilingLamps = [ceilinglamp_bunker_1, ceilinglamp_bunker_2, ceilinglamp_bunker_3, ceilinglamp_bunker_4];
