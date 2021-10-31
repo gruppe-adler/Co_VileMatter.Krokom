@@ -16,6 +16,21 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["Vile Matter - Common", "Go into Zeus TFAR Spectator", {
+     params ["_position", "_object"];
+
+     [player, true] call TFAR_fnc_forceSpectator;
+
+}] call zen_custom_modules_fnc_register;
+
+["Vile Matter - Common", "Leave Zeus TFAR Spectator", {
+     params ["_position", "_object"];
+
+     [player, false] call TFAR_fnc_forceSpectator;
+
+}] call zen_custom_modules_fnc_register;
+
+
 ["Vile Matter - Common", "Heal Player", {
      params ["_position", "_object"];
 
