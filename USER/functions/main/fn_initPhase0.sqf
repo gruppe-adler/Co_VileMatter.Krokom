@@ -120,9 +120,11 @@ private _machineCircle = nearestObjects [_light_phase0, ["Land_DPP_01_transforme
             ["BLU_F", "vm_vilematter_phase1", true] call GRAD_Loadout_fnc_FactionSetLoadout;
             [_date] remoteExec ["setDate"];
 
-            [] spawn GRAD_VM_phase1_fnc_ambientSounds;
-
         }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
+
+        [{
+            [] spawn GRAD_VM_phase1_fnc_ambientSounds;
+        }, [], 90] call CBA_fnc_waitAndExecute;
 
 }, [_light_phase0]] call CBA_fnc_waitUntilAndExecute;
 
