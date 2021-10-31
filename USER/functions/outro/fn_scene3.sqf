@@ -18,7 +18,7 @@ _cam camCommit 0;
 _cam cameraEffect ["internal", "BACK"];
 
 [2] call GRAD_VM_outro_fnc_fadeFromBlack;
-5 fadeSound 0.1;
+5 fadeSound 0.04;
 5 fadeSpeech 2;
 sleep 7;
 

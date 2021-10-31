@@ -21,14 +21,15 @@ private _centerH = safeZoneX + safeZoneW/3;
 private _centerW = safeZoneY + safeZoneH/1.5;
 
 private _allTexts = [
-    ["Verbaute Objekte", "8313", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Verbaute Objekte", "8509", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Custom Functions", "> 100", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Custom Sounds", "> 110", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Custom Sounds", "> 120", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Zusätzliche Mods", "15", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Gefixte Modfehler", "Dutzende", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Bauzeit", "10 Wochen", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Durchschnittliche FPS", "96.35", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Missionsbauer", "3", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Commits", "> 300", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Commits", "> 350", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Besonderen Dank an", "diwako", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["brought to you by", "Gruppe Adler", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]]
 ];
