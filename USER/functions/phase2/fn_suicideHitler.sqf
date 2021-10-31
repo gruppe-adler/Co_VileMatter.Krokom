@@ -20,7 +20,7 @@ _unit addEventHandler ["Fired", {
     params ["_unit"];
     [{
         _this setDamage 1;
-    }, _unit, 0.2] call CBA_fnc_waitAndExecute;
+    }, _unit, 1] call CBA_fnc_waitAndExecute;
     _unit removeEventHandler ["Fired", _thisEventHandler];
 }];
 
