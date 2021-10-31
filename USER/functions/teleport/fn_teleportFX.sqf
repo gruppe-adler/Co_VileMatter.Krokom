@@ -106,7 +106,7 @@ if (local _unit && !isPlayer _unit) then {
             ["GRAD_VM_curatorInfo",[_unit, "teleport_end"]] call CBA_fnc_serverEvent;
 
             [_unit, [_customPosition#0, _customPosition#1, (_destination#2 max 0)], true] call GRAD_VM_teleport_fnc_despawnEffect;
-            _unit switchMove "Acts_UnconsciousStandUp_part1";
+            [_unit, "Acts_UnconsciousStandUp_part1"] remoteExec ["switchMove"];
             [_unit] call zen_common_fnc_healUnit;
 
             // only destination positions in phase 1 are multiple, thus great way to detect intro
