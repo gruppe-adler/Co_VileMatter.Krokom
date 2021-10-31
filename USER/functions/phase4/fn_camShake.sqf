@@ -26,6 +26,5 @@ while {true} do {
 	};
 	// systemChat str _count;
 	addCamShake [_count, _sleepTime * 10, 35];
-	[] call GRAD_VM_phase4_fnc_flickerLights;
 	sleep _sleepTime;
 };
