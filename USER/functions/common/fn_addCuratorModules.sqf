@@ -172,6 +172,16 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 2", "Hitler Speech LONG", {
+     params ["_position", "_object"];
+
+     if (_object getVariable ["GRAD_VM_isHitler", false]) then {
+          [_object] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeechAlternative", 0];
+     };
+}] call zen_custom_modules_fnc_register;
+
+
+
 ["Vile Matter - Phase 2", "Move player into bunker", {
      params ["_position", "_object"];
 

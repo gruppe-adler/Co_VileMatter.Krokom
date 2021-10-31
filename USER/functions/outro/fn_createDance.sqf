@@ -60,7 +60,7 @@ _unit setPos _position;
     sleep _singleDuration;
 } forEach _types;
 
-[(_unit modelToWorldVisual [0,0,0])] call GRAD_VM_localEffects_fnc_meatSplashEffect;
+[(_unit modelToWorldVisual [0,0,0])] remoteExec ["GRAD_VM_localEffects_fnc_meatSplashEffect", [0,-2] isDedicated];
 hideObjectGlobal  _unit;
 
 sleep 10;

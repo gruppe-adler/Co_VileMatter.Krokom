@@ -79,6 +79,7 @@ if (hasInterface) then {
 
             [{
                 "normal" cutText ["", "BLACK IN", 5];
+                [player] call grad_loadout_fnc_doLoadoutForUnit;
             }, [], 20] call CBA_fnc_waitAndExecute;
 
         }, []] call CBA_fnc_waitUntilAndExecute;

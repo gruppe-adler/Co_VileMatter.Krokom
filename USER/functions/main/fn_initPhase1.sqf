@@ -8,7 +8,7 @@ if (!isServer) exitWith {};
 
 [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
 [] remoteExec ["GRAD_VM_phase1_fnc_brighterNight", [0,-2] select isDedicated, true];
-[] call createDruidCircle;
+[] call GRAD_VM_phase1_fnc_createDruidCircle;
 // phase 0 init
 [
     {
@@ -51,9 +51,12 @@ if (!isServer) exitWith {};
             ["BLU_F", "vm_vilematter_phase2", true] call GRAD_Loadout_fnc_FactionSetLoadout;
             [_date] remoteExec ["setDate"];
 
-            [] spawn GRAD_VM_phase2_fnc_ambientSounds; // prepare phase 2 to be final for teleport, not AFTER
 
         }, [_date], (_duration+5)] call CBA_fnc_waitAndExecute;
+
+        [{
+            [] spawn GRAD_VM_phase2_fnc_ambientSounds;
+        }, [], 90] call CBA_fnc_waitAndExecute;
 
 }, []] call CBA_fnc_waitUntilAndExecute;
 
