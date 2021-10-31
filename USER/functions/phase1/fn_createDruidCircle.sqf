@@ -4,7 +4,7 @@ private _stoneCircle = nearestObjects [phase1_pedestal, ["Land_Bare_boulder_04_F
 {
     private _pos = getPosWorld _x;
 
-    private _posBetween = _pos getPos [2, _pos getdir phase1_pedestal];
+    private _posBetween = _pos getPos [3, _pos getdir phase1_pedestal];
 
     [_posBetween, (createGroup civilian)] execVM "USER\functions\phase1\fn_dressAndAnimateDruid.sqf"; // GRAD_VM_phase1_fnc_dressAndAnimateDruid;
 

@@ -20,8 +20,8 @@ _unit setCaptive true;
 _unit disableAI "autoTarget";
 
 private _sounds = [
-    "phase1_trance_1",
-    "phase1_trance_2"
+    "phase1_ambient_trance_1_source",
+    "phase1_ambient_trance_2_source"
 ];
 
 private _source = createSoundSource [selectRandom _sounds, position _unit, [], 0];
