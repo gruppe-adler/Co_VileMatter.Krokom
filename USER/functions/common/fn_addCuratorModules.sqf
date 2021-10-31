@@ -105,7 +105,7 @@
      params ["_position", "_object"];
 
      _object setVariable ["GRAD_VM_horseSound", false, true];
-     
+
 }] call zen_custom_modules_fnc_register;
 */
 
@@ -136,6 +136,52 @@
           ""             // memoryPoint
      ];
 
+
+     _tiger addAction
+    [
+         "Make vulnerable",  // title
+         {
+              params ["_target", "_caller", "_actionId", "_arguments"]; // script
+
+              [_target, true] remoteExec ["allowDamage", _target];
+              systemChat "vulnerable";
+         },
+         nil,      // arguments
+         1.5,      // priority
+         true,          // showWindow
+         true,          // hideOnUse
+         "",            // shortcut
+         "_target == _this",   // condition
+         50,            // radius
+         false,         // unconscious
+         "",            // selection
+         ""             // memoryPoint
+    ];
+
+
+    _tiger addAction
+   [
+        "Make invincible",  // title
+        {
+             params ["_target", "_caller", "_actionId", "_arguments"]; // script
+
+             [_target, false] remoteExec ["allowDamage", _target];
+             systemChat "invincible";
+        },
+        nil,      // arguments
+        1.5,      // priority
+        true,          // showWindow
+        true,          // hideOnUse
+        "",            // shortcut
+        "_target == _this",   // condition
+        50,            // radius
+        false,         // unconscious
+        "",            // selection
+        ""             // memoryPoint
+   ];
+
+
+
      _tiger addAction
      [
           "ATTACK",  // title
@@ -156,7 +202,7 @@
           ""             // memoryPoint
      ];
 
-     
+
 
      _tiger addAction
      [
@@ -348,7 +394,7 @@
                deleteVehicle _this;
           }, _pad, 5] call CBA_fnc_waitAndExecute;
      };
-    
+
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 4", "Start Outro", {
@@ -381,5 +427,5 @@
        _x params ["_object", "_scale"];
        _object setObjectScale _scale;
    } forEach _allObjects;
-   
+
 }] call zen_custom_modules_fnc_register;
