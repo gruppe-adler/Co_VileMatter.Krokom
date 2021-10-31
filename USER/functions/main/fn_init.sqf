@@ -62,7 +62,7 @@ if (isServer) then {
 // LOADING SCREEN MASK
 if (hasInterface) then {
 
-    "normal" cutText ["", "BLACK FADED", 15];
+    "normal" cutText ["", "BLACK FADED", 20];
 
     ["CBA_loadingScreenDone", {
         [{
@@ -75,11 +75,11 @@ if (hasInterface) then {
                 };
                 [player] call grad_loadout_fnc_doLoadoutForUnit;
                 player setPosWorld (selectRandom ([-1] call GRAD_VM_main_fnc_getCurrentTeleportTarget));
-            }, [], 5] call CBA_fnc_waitAndExecute;
+            }, [], 10] call CBA_fnc_waitAndExecute;
 
             [{
                 "normal" cutText ["", "BLACK IN", 5];
-            }, [], 15] call CBA_fnc_waitAndExecute;
+            }, [], 20] call CBA_fnc_waitAndExecute;
 
         }, []] call CBA_fnc_waitUntilAndExecute;
 
