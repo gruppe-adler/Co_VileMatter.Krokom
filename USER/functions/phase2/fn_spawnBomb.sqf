@@ -2,7 +2,7 @@ params ["_spawnPos"];
 
 private _type = selectRandom ["LIB_FAB500_Bomb", "LIB_OF471_HE_Arty"];
 private _bomb = _type createVehicle _spawnPos; 
-_bomb setVelocity [0,0,10];
+_bomb setVelocity [0,0,-150];
 
 
 /*
