@@ -11,7 +11,7 @@ deleteVehicle _speech;
 private _speech = _hitler say3D ["Hitler_Monolog_close", 300, 1, true, (_break - _startTime)];
 // systemChat "switched from 'far' to 'close'";
 
-waitUntil { (_hitler distance player) <=  67 && gate_bunker_adi animationPhase "door_1_rot" != 1 };
+waitUntil { (_hitler distance player) <=  67 };
 
 if (count (missionNamespace getVariable ["GRAD_VM_hitlerSoundCache", []] > 0)) exitWith {};
 private _break = time;

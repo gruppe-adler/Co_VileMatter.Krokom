@@ -148,15 +148,8 @@
      [] remoteExec ["GRAD_VM_phase2_fnc_spawnHitler", 2];
 }] call zen_custom_modules_fnc_register;
 
-["Vile Matter - Phase 2", "Hitler Speech Long", {
-     params ["_position", "_object"];
 
-     if (_object getVariable ["GRAD_VM_isHitler", false]) then {
-          [_object] remoteExec ["GRAD_VM_phase2_fnc_hitlerSpeechAlternative", [0,-2] select isDedicated];
-     };
-}] call zen_custom_modules_fnc_register;
-
-["Vile Matter - Phase 2", "Hitler Speech Random Ranting", {
+["Vile Matter - Phase 2", "Hitler Speech Random Ranting (better call from remoteControl)", {
      params ["_position", "_object"];
 
      if (_object getVariable ["GRAD_VM_isHitler", false]) then {
@@ -254,6 +247,7 @@
      [] remoteExec ["GRAD_VM_phase4_fnc_initPhase4Effects", 2];
 }] call zen_custom_modules_fnc_register;
 
+/*
 ["Vile Matter - Common", "Fix SetObjectScale", {
      params ["_position", "_object"];
 
@@ -264,3 +258,4 @@
    } forEach _allObjects;
 
 }] call zen_custom_modules_fnc_register;
+*/
