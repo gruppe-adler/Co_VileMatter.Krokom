@@ -252,6 +252,15 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["Vile Matter - Phase 2", "Spawn Bomb in Sky", {
+     params ["_position", "_object"];
+
+     _position set [2, 450];
+
+     [ASLtoAGL _position] remoteExec ["GRAD_VM_phase2_fnc_spawnBomb", 2];
+}] call zen_custom_modules_fnc_register;
+
+
 ["Vile Matter - Phase 2", "Spawn Hitler", {
      params ["_position", "_object"];
 

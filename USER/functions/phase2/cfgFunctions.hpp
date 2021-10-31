@@ -22,5 +22,6 @@ class GRAD_VM_phase2 {
     class flickerBunkerLamps;
     class spawnDust;
     class bomberSpawn;
+    class spawnBomb;
    };
 };
