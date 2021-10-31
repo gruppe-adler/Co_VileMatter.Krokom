@@ -5,7 +5,7 @@
 [position player, 0] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
 */
 
-params ["_position", "_dir", ["_rows", 3]];
+params ["_position", "_dir", ["_rows", 3], ["_hasHorse", false]];
 
 private _group = createGroup EAST;
 private _leader = _group createUnit ["Roman_legioner_cent_IMS_red", _position, [], 0, "NONE"];
@@ -20,6 +20,8 @@ _leader addHandgunItem "RM_torch_fluid";
 _leader removeWeapon "JMSL_W_Melee_Gladius_1";
 _leader selectWeapon "RM_Fire_torch";
 _leader setBehaviour "SAFE";
+_leader setSpeedMode "LIMITED";
+_leader limitSpeed 5;
 
 [_leader] execVM "USER\functions\phase1\fn_addTorch.sqf";
 
@@ -64,15 +66,17 @@ for "_i" from 1 to _rows do {
     ];
 };
 
-private _horse = _group createUnit ["dbo_horse_snow", [0,0,0], [], 0, "NONE"];
-_horse setPos (_leader modelToWorld [0, -(_rows+5), 0]);
-_horse setDir _dir;
+if (_hasHorse) then {
 
+    private _horse = _group createUnit ["dbo_horse_snow", [0,0,0], [], 0, "NONE"];
+    _horse setPos (_leader modelToWorld [0, -(_rows+5), 0]);
+    _horse setDir _dir;
 
-private _rearlight = _group createUnit ["Roman_legioner_sign_red", [0,0,0], [], 0, "NONE"];
-_rearlight setPos (_leader modelToWorld [0, -(_rows+5), 0]);
-_rearlight setDir _dir;
+    private _rearlight = _group createUnit ["Roman_legioner_sign_red", [0,0,0], [], 0, "NONE"];
+    _rearlight setPos (_leader modelToWorld [0, -(_rows+5), 0]);
+    _rearlight setDir _dir;
 
-[_rearlight, _horse] call GRAD_VM_phase1_fnc_horseMountAI;
+    [_rearlight, _horse] call GRAD_VM_phase1_fnc_horseMountAI;
+};
 
 [_leader] execVM "USER\functions\phase1\fn_marchSoldier.sqf";

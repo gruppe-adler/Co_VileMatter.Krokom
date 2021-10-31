@@ -32,10 +32,16 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["Vile Matter - Phase 1", "Spawn marching Roman Soldiers with Horse", {
+     params ["_position", "_object"];
+
+     [ASLtoAGL _position, 90, 3, true] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 1", "Spawn marching Roman Soldiers", {
      params ["_position", "_object"];
 
-     [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
+     [ASLtoAGL _position, 90, 3, false] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Spawn Roman on Horse", {
@@ -116,178 +122,7 @@
      _tiger setObjectTextureGlobal [0, "USER\images\lion_small.paa"];
      _tiger setObjectTextureGlobal [2, "#(rgb,8,8,3)color(0,0,0,0)"];
 
-     _tiger addAction
-     [
-          "Stretch",  // title
-          {
-               params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-               _target playMoveNow "TigerStretch";
-          },
-          nil,      // arguments
-          1.5,      // priority
-          true,          // showWindow
-          true,          // hideOnUse
-          "",            // shortcut
-          "_target == _this",   // condition
-          50,            // radius
-          false,         // unconscious
-          "",            // selection
-          ""             // memoryPoint
-     ];
-
-
-     _tiger addAction
-    [
-         "Make vulnerable",  // title
-         {
-              params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-              [_target, true] remoteExec ["allowDamage", _target];
-              systemChat "vulnerable";
-         },
-         nil,      // arguments
-         1.5,      // priority
-         true,          // showWindow
-         true,          // hideOnUse
-         "",            // shortcut
-         "_target == _this",   // condition
-         50,            // radius
-         false,         // unconscious
-         "",            // selection
-         ""             // memoryPoint
-    ];
-
-
-    _tiger addAction
-   [
-        "Make invincible",  // title
-        {
-             params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-             [_target, false] remoteExec ["allowDamage", _target];
-             systemChat "invincible";
-        },
-        nil,      // arguments
-        1.5,      // priority
-        true,          // showWindow
-        true,          // hideOnUse
-        "",            // shortcut
-        "_target == _this",   // condition
-        50,            // radius
-        false,         // unconscious
-        "",            // selection
-        ""             // memoryPoint
-   ];
-
-
-
-     _tiger addAction
-     [
-          "ATTACK",  // title
-          {
-               params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-               _target playMoveNow (selectRandom ["TigerAttack", "TigerAttackClaws"]);
-          },
-          nil,      // arguments
-          1.5,      // priority
-          true,          // showWindow
-          true,          // hideOnUse
-          "",            // shortcut
-          "_target == _this",   // condition
-          50,            // radius
-          false,         // unconscious
-          "",            // selection
-          ""             // memoryPoint
-     ];
-
-
-
-     _tiger addAction
-     [
-          "Lie Down",  // title
-          {
-               params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-               _target playMoveNow "TigerLyingIdle";
-          },
-          nil,      // arguments
-          1.5,      // priority
-          true,          // showWindow
-          true,          // hideOnUse
-          "",            // shortcut
-          "_target == _this",   // condition
-          50,            // radius
-          false,         // unconscious
-          "",            // selection
-          ""             // memoryPoint
-     ];
-
-      _tiger addAction
-     [
-          "Sleep",  // title
-          {
-               params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-               _target playMoveNow "TigerSleep";
-          },
-          nil,      // arguments
-          1.5,      // priority
-          true,          // showWindow
-          true,          // hideOnUse
-          "",            // shortcut
-          "_target == _this",   // condition
-          50,            // radius
-          false,         // unconscious
-          "",            // selection
-          ""             // memoryPoint
-     ];
-
-
-      _tiger addAction
-     [
-          "Growl",  // title
-          {
-               params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-               private _sound = selectRandom ["GRAD_VM_lion_growl_1", "GRAD_VM_lion_growl_2", "GRAD_VM_lion_growl_3"];
-               [_target, _sound] remoteExec ["say3D"];
-          },
-          nil,      // arguments
-          1.5,      // priority
-          true,          // showWindow
-          true,          // hideOnUse
-          "",            // shortcut
-          "_target == _this",   // condition
-          50,            // radius
-          false,         // unconscious
-          "",            // selection
-          ""             // memoryPoint
-     ];
-
-
-
-      _tiger addAction
-     [
-          "Scream",  // title
-          {
-               params ["_target", "_caller", "_actionId", "_arguments"]; // script
-
-               private _sound = selectRandom ["GRAD_VM_lion_scream_1", "GRAD_VM_lion_scream_2", "GRAD_VM_lion_scream_3", "GRAD_VM_lion_scream_4", "GRAD_VM_lion_scream_5"];
-               [_target, _sound] remoteExec ["say3D"];
-          },
-          nil,      // arguments
-          1.5,      // priority
-          true,          // showWindow
-          true,          // hideOnUse
-          "",            // shortcut
-          "_target == _this",   // condition
-          50,            // radius
-          false,         // unconscious
-          "",            // selection
-          ""             // memoryPoint
-     ];
+     [_tiger] remoteExec ["GRAD_VM_phase1_fnc_tigerActions"];
 
 }] call zen_custom_modules_fnc_register;
 
