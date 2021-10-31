@@ -33,6 +33,7 @@ private _pfh = [{
     params ["_args", "_handle"];
 
     if (!alive _unit || lifeState _unit == "INCAPACITATED") exitWith {
+        _unit setDamage 1;
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
     [_unit, "Acts_JetsMarshallingStop_loop"] remoteExec ["switchMove"];
@@ -40,28 +41,14 @@ private _pfh = [{
 }, 2, [_unit]] call CBA_fnc_addPerFrameHandler;
 
 
-
-_unit addEventHandler ["Killed", {
-    params ["_unit", "_killer", "_instigator", "_useEffects"];
-
+[{
+    params ["_unit"];
+    lifeState _unit == "INCAPACITATED" || !alive _unit
+},{
+    params ["_unit"];
     deleteVehicle (_unit getVariable ["GRAD_VM_soundSource", objNull]);
+}, [_unit]] call CBA_fnc_waitUntilAndExecute;
 
-    private _animation = selectRandom [
-        "lightsaber_death_1",
-        "lightsaber_death_13",
-        "lightsaber_death_15",
-        "lightsaber_death_17",
-        "lightsaber_death_19",
-        "lightsaber_death_21",
-        "lightsaber_death_21",
-        "lightsaber_death_3",
-        "lightsaber_death_3",
-        "lightsaber_death_4",
-        "lightsaber_death_5"
-    ];
-
-    [_unit, _animation] remoteExec ["switchMove"]; 
-}];
 
 /*
 
