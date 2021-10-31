@@ -28,26 +28,26 @@
 ["Vile Matter - Phase 0", "Destroy Zentrifuge Hall", {
      params ["_position", "_object"];
 
-     [] call GRAD_VM_phase0_fnc_DestroyHall;
+     [] remoteExec ["GRAD_VM_phase0_fnc_DestroyHall", 2];
 }] call zen_custom_modules_fnc_register;
 
 
 ["Vile Matter - Phase 1", "Spawn marching Roman Soldiers with Horse", {
      params ["_position", "_object"];
 
-     [ASLtoAGL _position, 90, 3, true] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
+     [ASLtoAGL _position, 90, 3, true] remoteExec ["GRAD_VM_phase1_fnc_spawnMarchingColumn", 2];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Spawn marching Roman Soldiers", {
      params ["_position", "_object"];
 
-     [ASLtoAGL _position, 90, 3, false] call GRAD_VM_phase1_fnc_spawnMarchingColumn;
+     [ASLtoAGL _position, 90, 3, false] remoteExec ["GRAD_VM_phase1_fnc_spawnMarchingColumn", 2];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Spawn Roman on Horse", {
      params ["_position", "_object"];
 
-     [ASLtoAGL _position, 90] call GRAD_VM_phase1_fnc_spawnHorseRoman;
+     [ASLtoAGL _position, 90] remoteExec ["GRAD_VM_phase1_fnc_spawnHorseRoman", 2];
 }] call zen_custom_modules_fnc_register;
 
 ["Vile Matter - Phase 1", "Marching Sound", {
@@ -122,7 +122,7 @@
      _tiger setObjectTextureGlobal [0, "USER\images\lion_small.paa"];
      _tiger setObjectTextureGlobal [2, "#(rgb,8,8,3)color(0,0,0,0)"];
 
-     [_tiger] remoteExec ["GRAD_VM_phase1_fnc_tigerActions"];
+     [_tiger] remoteExec ["GRAD_VM_phase1_fnc_tigerActions", [0,-2] select isDedicated];
 
 }] call zen_custom_modules_fnc_register;
 

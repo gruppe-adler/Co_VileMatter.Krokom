@@ -16,5 +16,6 @@ class GRAD_VM_phase1 {
     class stoneHengeFX;
     class ambientSounds;
     class tigerActions;
+    class legionActions;
    };
 };

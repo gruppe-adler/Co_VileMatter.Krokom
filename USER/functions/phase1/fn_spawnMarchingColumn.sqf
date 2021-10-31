@@ -27,6 +27,8 @@ _leader limitSpeed 5;
 
 _leader setVariable ["GRAD_VM_inFormation", true, true];
 
+[_leader] remoteExec ["GRAD_VM_phase1_fnc_legionActions"];
+
 // disable formation in combat
 [{
     params ["_leader"];
