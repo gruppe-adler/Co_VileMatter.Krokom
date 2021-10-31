@@ -19,6 +19,7 @@ class GRAD_VM_phase1 {
     class legionActions;
     class dressAndAnimateDruid;
     class dressAndAnimatePushDruid;
+    class createDruidCircle;
    };
 };
 

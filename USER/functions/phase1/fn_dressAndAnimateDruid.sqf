@@ -6,7 +6,8 @@
 
 if (!isServer) exitWith {};
 
-params ["_unit"];
+params ["_position", "_group"];
+private _unit = _group createUnit ["B_RangeMaster_F", _position, [], 0, "CAN_COLLIDE"];
 _unit setUnitLoadout [[],[],[],["U_TIOW_Cultist",[]],[],[],"JMSL_Rome_LegionerHelmet_1_5_H","G_JMSL_Beard_1_black",[],["ItemMap","","","","",""]];
 
 _unit setDir (_unit getDir phase1_pedestal);
@@ -16,7 +17,7 @@ _unit setDir (_unit getDir phase1_pedestal);
 _unit disableAI "FSM";
 _unit disableAI "MOVE";
 _unit setCaptive true;
-
+_unit disableAI "autoTarget";
 
 private _sounds = [
     "phase1_trance_1",

@@ -8,7 +8,7 @@ if (!isServer) exitWith {};
 
 [phase1_pedestal] remoteExec ["GRAD_VM_phase1_fnc_stoneHengeFX", [0,-2] select isDedicated, true];
 [] remoteExec ["GRAD_VM_phase1_fnc_brighterNight", [0,-2] select isDedicated, true];
-
+[] call createDruidCircle;
 // phase 0 init
 [
     {
