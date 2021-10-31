@@ -17,5 +17,6 @@ class GRAD_VM_common {
         class setObjectScaleSafe;
         class respawnPlayer;
         class healSelf;
+        class checkLifestate { postInit = 1; };
     };
 };

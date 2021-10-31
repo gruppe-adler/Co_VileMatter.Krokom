@@ -4,31 +4,7 @@
 
 */
 
-if (!isServer) exitWith {
-
-    [missionNamespace, "reviveRevived", [player]] call BIS_fnc_callScriptedEventHandler;
-    [missionNamespace, "reviveIncapacitated", [player]] call BIS_fnc_callScriptedEventHandler;
-
-    // not sure if those two work as expected
-    [ missionNamespace, "reviveIncapacitated", {
-      params ["_unit"];
-
-      if (local _unit) then {
-        ["GRAD_VM_curatorInfo", [_unit, "unconscious"]] call CBA_fnc_serverEvent;
-      };
-
-    } ] call BIS_fnc_addScriptedEventHandler;
-
-    [ missionNamespace, "reviveRevived", {
-      params ["_unit"];
-
-      if (local _unit) then {
-        ["GRAD_VM_curatorInfo", [_unit, "revived"]] call CBA_fnc_serverEvent;
-      };
-
-    } ] call BIS_fnc_addScriptedEventHandler;
-
-};
+if (!isServer) exitWith {};
 
 
 ["GRAD_VM_curatorInfo", {
