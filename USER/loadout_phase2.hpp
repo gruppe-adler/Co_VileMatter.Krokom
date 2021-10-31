@@ -138,7 +138,7 @@ class vm_vilematter_phase2 {
             primaryWeaponMagazine= "LIB_15Rnd_762x33";
             vest = "V_LIB_US_Vest_Carbine_nco";
             backpack = "";
-            headgear = "U_LIB_US_Cap";
+            headgear = "H_LIB_US_Helmet_Second_lieutenant";
             addItemsToUniform[] = {
                 LIST_7("LIB_15Rnd_762x33")
             };
