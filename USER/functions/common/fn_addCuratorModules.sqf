@@ -133,11 +133,13 @@
 ["Vile Matter - Phase 1", "Spawn Lion", {
      params ["_positionASL", "_object"];
 
-     private _tiger = (creategroup east) createUnit ["Edaly_Tiger", ASLtoAGL _positionASL, [], 0, "CAN_COLLIDE"];
-     _tiger setObjectTextureGlobal [0, "USER\images\lion_small.paa"];
-     _tiger setObjectTextureGlobal [2, "#(rgb,8,8,3)color(0,0,0,0)"];
+     private _lion = (creategroup east) createUnit ["Edaly_Tiger", ASLtoAGL _positionASL, [], 0, "CAN_COLLIDE"];
+     _lion setObjectTextureGlobal [0, "USER\images\lion_small.paa"];
+     _lion setObjectTextureGlobal [2, "#(rgb,8,8,3)color(0,0,0,0)"];
 
-     [_tiger] remoteExec ["GRAD_VM_phase1_fnc_tigerActions", [0,-2] select isDedicated];
+     [_lion] call GRAD_VM_phase1_fnc_lionDeathHandler;
+
+     [_lion] remoteExec ["GRAD_VM_phase1_fnc_tigerActions", [0,-2] select isDedicated];
 
 }] call zen_custom_modules_fnc_register;
 

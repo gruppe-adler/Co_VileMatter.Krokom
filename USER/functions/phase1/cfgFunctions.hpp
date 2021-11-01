@@ -20,6 +20,6 @@ class GRAD_VM_phase1 {
     class dressAndAnimateDruid;
     class dressAndAnimatePushDruid;
     class createDruidCircle;
+    class lionDeathHandler;
    };
 };
-
