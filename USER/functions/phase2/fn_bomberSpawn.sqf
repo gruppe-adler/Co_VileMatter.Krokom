@@ -31,7 +31,7 @@ for "_i" from 1 to 6 do {
 
 
 
-_bomberParent flyinheightASL 700;
+_bomberParent flyinheightASL [700, 700, 700];
 _bomberParent setCaptive true;
 _bomberParent disableAI "FSM";
 _bomberParent disableAI "AUTOTARGET";
