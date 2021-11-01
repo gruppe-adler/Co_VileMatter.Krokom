@@ -54,13 +54,13 @@ _unit setPos _position;
 
 {
     _x params ["_loadout", "_face"];
-    
+
     [_unit, _face] remoteExec ["setFace"];
     _unit setUnitLoadout _loadout;
     sleep _singleDuration;
 } forEach _types;
 
-[(_unit modelToWorldVisual [0,0,0])] remoteExec ["GRAD_VM_localEffects_fnc_meatSplashEffect", [0,-2] isDedicated];
+[(_unit modelToWorldVisual [0,0,0])] remoteExec ["GRAD_VM_localEffects_fnc_meatSplashEffect", [0,-2] select isDedicated];
 hideObjectGlobal  _unit;
 
 sleep 10;
