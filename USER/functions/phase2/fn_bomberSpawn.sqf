@@ -13,8 +13,6 @@ for "_i" from 1 to 6 do {
 
             private _bomber = createSimpleObject ["LIB_Pe2_2_w", [0,0,0]];
             _bomber attachTo [_bomberParent, [_i * 50, _j * 50, 0]];
-            createVehicleCrew _bomber;
-            _bomber engineOn true;
         };
 };
 
@@ -24,8 +22,6 @@ for "_i" from 1 to 6 do {
 
             private _bomber = createSimpleObject ["LIB_Pe2_2_w", [0,0,0]];
             _bomber attachTo [_bomberParent, [_i * 50, _j * 50, 0]];
-            createVehicleCrew _bomber;
-            _bomber engineOn true;
         };
 };
 
@@ -35,7 +31,7 @@ _bomberParent flyinheightASL [700, 700, 700];
 _bomberParent setCaptive true;
 _bomberParent disableAI "FSM";
 _bomberParent disableAI "AUTOTARGET";
-_bomberParent setSpeedMode "LIMITED";
+_bomberParent setSpeedMode "NORMAL";
 _bomberParent engineOn true;
 _bomberParent setVelocityModelSpace [0,300,0];
 _bomberParent doMove _positionTarget;
