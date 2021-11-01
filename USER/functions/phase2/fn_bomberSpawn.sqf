@@ -7,9 +7,9 @@ _bomberParent setDir (_bomberParent getRelDir (getPos phase2_bomberTarget));
 
 createVehicleCrew _bomberParent;
 
-for "_i" from 1 to 3 do {
+for "_i" from 1 to 6 do {
 
-        for "_j" from 1 to 3 do {
+        for "_j" from 1 to 5 do {
 
             private _bomber = createSimpleObject ["LIB_Pe2_2_w", [0,0,0]];
             _bomber attachTo [_bomberParent, [_i * 50, _j * 50, 0]];
@@ -18,9 +18,9 @@ for "_i" from 1 to 3 do {
         };
 };
 
-for "_i" from 1 to 3 do {
+for "_i" from 1 to 6 do {
 
-        for "_j" from 1 to 3 do {
+        for "_j" from 1 to 5 do {
 
             private _bomber = createSimpleObject ["LIB_Pe2_2_w", [0,0,0]];
             _bomber attachTo [_bomberParent, [_i * 50, _j * 50, 0]];
