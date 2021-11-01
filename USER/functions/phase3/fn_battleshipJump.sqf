@@ -24,7 +24,7 @@ sleep 11;
 
 // create and manage the movement of the local battleships
 [] remoteExec ["GRAD_VM_phase3_fnc_handleBattleshipLocal", [0, -2] select isMultiplayer];
-[] call GRAD_VM_phase3_fnc_handleBattleshipServer;
+// [] call GRAD_VM_phase3_fnc_handleBattleshipServer;
 sleep 4;
 
 // spawn the Alarm sound at the comms-Array
