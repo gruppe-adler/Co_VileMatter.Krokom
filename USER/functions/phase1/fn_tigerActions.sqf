@@ -6,7 +6,7 @@ _tiger addAction
      {
           params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-          _target playMoveNow "TigerStretch";
+          [_target, "TigerStretch"] remoteExec ["switchMove"];
      },
      nil,      // arguments
      1.5,      // priority
@@ -72,7 +72,7 @@ _tiger addAction
      {
           params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-          _target playMoveNow (selectRandom ["TigerAttack", "TigerAttackClaws"]);
+          [_target, (selectRandom ["TigerAttack", "TigerAttackClaws"])] remoteExec ["switchMove"];
      },
      nil,      // arguments
      1.5,      // priority
@@ -94,7 +94,7 @@ _tiger addAction
      {
           params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-          _target playMoveNow "TigerLyingIdle";
+          [_target, "TigerLyingIdle"] remoteExec ["switchMove"];
      },
      nil,      // arguments
      1.5,      // priority
@@ -114,7 +114,8 @@ _tiger addAction
      {
           params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-          _target playMoveNow "TigerSleep";
+
+          [_target, "TigerSleep"] remoteExec ["switchMove"];
      },
      nil,      // arguments
      1.5,      // priority
@@ -158,7 +159,7 @@ _tiger addAction
      {
           params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-          private _sound = selectRandom ["GRAD_VM_lion_scream_1", "GRAD_VM_lion_scream_2", "GRAD_VM_lion_scream_3", "GRAD_VM_lion_scream_4", "GRAD_VM_lion_scream_5"];
+          private _sound = selectRandom ["GRAD_VM_lion_scream_1", "GRAD_VM_lion_scream_2", "GRAD_VM_lion_scream_3", "GRAD_VM_lion_scream_4"];
           [_target, _sound] remoteExec ["say3D"];
      },
      nil,      // arguments
