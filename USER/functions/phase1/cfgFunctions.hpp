@@ -22,5 +22,6 @@ class GRAD_VM_phase1 {
     class createDruidCircle;
     class lionDeathHandler;
     class ambientDruids;
+    class ambientFrogs;
    };
 };
