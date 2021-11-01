@@ -37,6 +37,8 @@ class vm_vilematter_phase2 {
                 LIST_2("LIB_8Rnd_762x63"),
                 LIST_2("LIB_US_Mk_2")
             };
+            map = "";
+            gps = "";
         };
 
         class B_soldier_exp_F: Soldier_F {

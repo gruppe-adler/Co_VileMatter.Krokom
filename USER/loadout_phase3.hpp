@@ -25,10 +25,10 @@ class vm_vilematter_phase3 {
         addItemsToUniform[] = {
             LIST_2("FirstAidKit")
         };
-        // addItemsToVest[] = {            
+        // addItemsToVest[] = {
         //     LIST_5("TIOW_pulse_pistol_mag"),
         //     LIST_12("DMCLS_pulse_mag_36"),
-        // };        
+        // };
     };
 
     class Type {
@@ -37,10 +37,12 @@ class vm_vilematter_phase3 {
             addItemsToUniform[] = {
                 LIST_2("FirstAidKit")
             };
-            addItemsToVest[] = {            
+            addItemsToVest[] = {
                 LIST_5("TIOW_pulse_pistol_mag"),
-                LIST_12("DMCLS_pulse_mag_36"),
+                LIST_12("DMCLS_pulse_mag_36")
             };
+            map = "";
+            gps = "";
         };
 
         class B_soldier_exp_F: Soldier_F {
@@ -51,7 +53,7 @@ class vm_vilematter_phase3 {
         class soldier_AAR_F: Soldier_F {
             addItemsToBackpack[] = {
                 LIST_8("DMCLS_pulse_mag_54"),
-            };               
+            };
         };
 
         //Asst. Gunner (MMG) / Ammo Bearer
@@ -75,7 +77,7 @@ class vm_vilematter_phase3 {
             addItemsToBackpack[] = {
                 LIST_5("TIOW_pulse_pistol_mag"),
                 LIST_5("DMCLS_pulse_mag_54")
-            };            
+            };
         };
 
         //Combat Life Saver
@@ -133,7 +135,7 @@ class vm_vilematter_phase3 {
             addItemsToBackpack[] = {
                 LIST_5("DMCLS_tau_fusion_grenade_uglmag"),
                 LIST_5("DMCLS_tau_smoke_grenade_uglmag")
-            };            
+            };
         };
 
         //Team Leader

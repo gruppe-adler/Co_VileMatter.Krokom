@@ -32,6 +32,8 @@ class vm_vilematter_phase1 {
             backpack = "";
             headgear = "JMSL_Celtic_Helmet_2_stal_H";
             nvgoggles = "";
+            map = "";
+            gps = "";
         };
 
         class B_soldier_exp_F: Soldier_F {
