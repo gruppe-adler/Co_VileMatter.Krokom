@@ -46,6 +46,12 @@
      [] remoteExec ["GRAD_VM_phase0_fnc_DestroyHall", 2];
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 1", "(Re)start Druid Sound", {
+     params ["_position", "_object"];
+
+     [] remoteExec ["GRAD_VM_phase1_fnc_ambientDruids", 2];
+}] call zen_custom_modules_fnc_register;
+
 
 ["Vile Matter - Phase 1", "Spawn marching Roman Soldiers with Horse", {
      params ["_position", "_object"];

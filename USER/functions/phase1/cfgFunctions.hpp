@@ -21,5 +21,6 @@ class GRAD_VM_phase1 {
     class dressAndAnimatePushDruid;
     class createDruidCircle;
     class lionDeathHandler;
+    class ambientDruids;
    };
 };

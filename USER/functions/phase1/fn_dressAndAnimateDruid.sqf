@@ -21,13 +21,9 @@ _unit disableAI "autoTarget";
 _unit disableAI "ANIM";
 _unit setCaptive true;
 
-private _sounds = [
-    "phase1_ambient_trance_1_source",
-    "phase1_ambient_trance_2_source"
-];
-
-private _source = createSoundSource [selectRandom _sounds, position _unit, [], 0];
-_unit setVariable ["GRAD_VM_soundSource", _source];
+private _druids = missionNamespace getVariable ["GRAD_VM_druids", []];
+_druids pushBackUnique _unit;
+missionNamespace setVariable ["GRAD_VM_druids", _druids, true];
 
 private _pfh = [{
     params ["_args", "_handle"];
