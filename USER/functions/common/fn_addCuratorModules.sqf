@@ -219,6 +219,12 @@
      }, [], 2] call CBA_fnc_waitAndExecute;
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Phase 2", "Ambient Bomber Flyby", {
+     params ["_position", "_object"];
+
+      [] spawn GRAD_VM_phase2_fnc_ambientBomberFlyby;
+}] call zen_custom_modules_fnc_register;
+
 ["Vile Matter - Phase 3", "Spawn Battleship", {
      params ["_position", "_object"];
 
