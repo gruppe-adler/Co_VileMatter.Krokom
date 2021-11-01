@@ -37,7 +37,7 @@ _bomberParent disableAI "FSM";
 _bomberParent disableAI "AUTOTARGET";
 _bomberParent setSpeedMode "LIMITED";
 _bomberParent engineOn true;
-_bomberParent setVelocityModelSpace [0,150,0];
+_bomberParent setVelocityModelSpace [0,300,0];
 _bomberParent doMove _positionTarget;
 _bomberParent allowDamage  false;
 
@@ -47,7 +47,7 @@ _bomberParent allowDamage  false;
 
 // fix initial skydrop
 [{
-    _this setVelocityModelSpace [0,150,0];
+    _this setVelocityModelSpace [0,300,0];
 }, _bomberParent, 1] call CBA_fnc_waitAndExecute;
 
 // delete completely
