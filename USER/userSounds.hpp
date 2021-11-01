@@ -627,7 +627,7 @@ class GRAD_VM_lion_scream_1
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_1";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_1.ogg", 2, 1, 400 };
+    sound[] = { "USER\sounds\lion_1.ogg", 12, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -637,7 +637,7 @@ class GRAD_VM_lion_scream_2
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_2";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_2.ogg", 2, 1, 400 };
+    sound[] = { "USER\sounds\lion_2.ogg", 12, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -647,7 +647,7 @@ class GRAD_VM_lion_scream_3
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_3";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_3.ogg", 2, 1, 400 };
+    sound[] = { "USER\sounds\lion_3.ogg", 12, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
@@ -657,7 +657,7 @@ class GRAD_VM_lion_scream_4
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "GRAD_VM_lion_scream_4";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\lion_4.ogg", 2, 1, 400 };
+    sound[] = { "USER\sounds\lion_4.ogg", 12, 1, 400 };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };
