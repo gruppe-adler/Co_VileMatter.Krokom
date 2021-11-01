@@ -182,14 +182,14 @@ class CfgSFX
 
 	class caveSounds_sfx
 	{
-		sound0[] = {"USER\sounds\cave_sounds.ogg", db+1, 1.0, 100, 0, 0, 0, 0};  // path to addon sound
+		sound0[] = {"USER\sounds\cave_sounds.ogg", db+1.5, 1.0, 150, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};
 
 	class caveChanting_sfx
 	{
-		sound0[] = {"USER\sounds\demonic_chanting.ogg", db-1, 0.9, 40, 0, 0, 0, 0};  // path to addon sound
+		sound0[] = {"USER\sounds\demonic_chanting.ogg", db-0, 0.9, 50, 0, 0, 0, 0};  // path to addon sound
 		sounds[] = {sound0};
 		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 	};	

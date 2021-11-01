@@ -14,6 +14,9 @@ if (!isServer) exitWith {};
         ([] call GRAD_VM_main_fnc_getCurrentPhase) isEqualTo 4
     },
     {
+        private _alarmPhase3 = missionNamespace getVariable ["GRAD_VM_phase3_alarmSoundsource", objNull];
+        deleteVehicle _alarmPhase3;
+        
         private _caveSounds = missionNamespace getVariable ["GRAD_VM_phase3_caveSounds", []];
         {
             deleteVehicle _x;

@@ -29,6 +29,7 @@ sleep 4;
 
 // spawn the Alarm sound at the comms-Array
 private _soundSource = createSoundSource ["GRAD_VM_AlarmSound", Grad_VM_commsArray, [], 0];
+missionNamespace setVariable ["GRAD_VM_phase3_alarmSoundsource", _soundSource, true];
 sleep 3.5;
 
 // Chaos mocking the imperium

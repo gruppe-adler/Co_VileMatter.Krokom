@@ -16,8 +16,7 @@ params [["_voicelines", true]];
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, [0, -2] select isMultiplayer]; };
 
 private _spawnPads = [Grad_VM_marinePos_1, Grad_VM_marinePos_2, Grad_VM_marinePos_3, Grad_VM_marinePos_4, Grad_VM_marinePos_5, Grad_VM_marinePos_6,
-					  Grad_VM_marinePos_7, Grad_VM_marinePos_8, Grad_VM_marinePos_9, Grad_VM_marinePos_10, Grad_VM_marinePos_11, Grad_VM_marinePos_12,
-					  Grad_VM_marinePos_13, Grad_VM_marinePos_14, Grad_VM_marinePos_15];
+					  Grad_VM_marinePos_7, Grad_VM_marinePos_8, Grad_VM_marinePos_9, Grad_VM_marinePos_10];
 
 private _group = createGroup independent;
 
