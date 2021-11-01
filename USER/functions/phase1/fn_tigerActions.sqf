@@ -158,7 +158,7 @@ _tiger addAction
      {
           params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-          private _sound = selectRandom ["GRAD_VM_lion_scream_1", "GRAD_VM_lion_scream_2", "GRAD_VM_lion_scream_3", "GRAD_VM_lion_scream_4", "GRAD_VM_lion_scream_5"];
+          private _sound = selectRandom ["GRAD_VM_lion_scream_1", "GRAD_VM_lion_scream_2", "GRAD_VM_lion_scream_3", "GRAD_VM_lion_scream_4"];
           [_target, _sound] remoteExec ["say3D"];
      },
      nil,      // arguments
