@@ -33,5 +33,7 @@ private _typesToExclude = [];
 GRAD_VM_common_extractedEdenObjects = _objects;
 GRAD_VM_common_extractedEdenObjectConfigs = _configs;
 
-publicVariable "GRAD_VM_common_extractedEdenObjects";
-publicVariable "GRAD_VM_common_extractedEdenObjectConfigs";
+// copyToClipboard str GRAD_VM_common_extractedEdenObjectConfigs;
+
+// publicVariable "GRAD_VM_common_extractedEdenObjects";
+// publicVariable "GRAD_VM_common_extractedEdenObjectConfigs";
