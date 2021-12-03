@@ -6,7 +6,6 @@ private _objectsToExtract =
 ((getMissionLayerEntities "EXPORT_phase2")#0) +
 ((getMissionLayerEntities "EXPORT_phase3")#0);
 
-private _objects = [];
 private _configs = [];
 private _typesToExclude = [];
 {
@@ -27,11 +26,11 @@ private _typesToExclude = [];
 	};
 
 	_configs pushBack [_type, _pos, [_dir, _up], getObjectTextures _x];
-	_objects pushBack _x;
 } forEach _objectsToExtract;
 
-GRAD_VM_common_extractedEdenObjects = _objects;
-GRAD_VM_common_extractedEdenObjectConfigs = _configs;
+// GRAD_VM_objects_extractedEdenObjectConfigs = _configs;
+// publicVariable "GRAD_VM_objects_extractedEdenObjectConfigs";
+copyToClipboard str _configs;
 
 // copyToClipboard str GRAD_VM_common_extractedEdenObjectConfigs;
 

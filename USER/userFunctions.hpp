@@ -13,3 +13,4 @@
 #include "functions\phase4\cfgFunctions.hpp"
 #include "functions\teleport\cfgFunctions.hpp"
 #include "functions\outro\cfgFunctions.hpp"
+#include "functions\object-management\cfgFunctions.hpp"

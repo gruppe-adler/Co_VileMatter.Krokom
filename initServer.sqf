@@ -1,7 +1,7 @@
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
-[] call GRAD_common_fnc_extractEdenObjects;
-[] call GRAD_common_fnc_deleteExtractedObjects;
+// [] call GRAD_VM_objects_fnc_extractEdenObjects;
+// [] call GRAD_common_fnc_deleteExtractedObjects;
 
 [
 	"LIB_GER_Soldier_base",
