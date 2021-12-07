@@ -73,6 +73,8 @@ _cam camPreload 3;
 
     _cam say3d "grad_VM_teleport3";
 
+    player unlinkItem "NVGoggles"; // only relevant for phase 3
+
     (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlSetFade 1;
     (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlCommit 2;
 
