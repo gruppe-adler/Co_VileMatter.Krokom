@@ -29,7 +29,6 @@ class vm_vilematter_phase2 {
         class Soldier_F {
             headgear = "H_LIB_US_Helmet";
             addItemsToUniform[] = {
-                LIST_1("LIB_ACC_M1_Bayo"),
                 LIST_1("FirstAidKit"),
                 LIST_5("LIB_8Rnd_762x63")
             };
