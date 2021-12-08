@@ -2,6 +2,8 @@ params ["_unit", "_position", ["_spawnIn", false], ["_timeToTeleport", 2]];
 
 drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,1,[1,1,0],[0,0,0],0,9,7,0,[.01,3,.01],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
+(getPosWorld _unit) params ["_xPos", "_yPos", "_zPos"];
+
 private _firefly = "#particlesource" createVehicleLocal [_xPos, _yPos, _zPos];
 _firefly setParticleCircle [.5,[0,0,0]];
 _firefly setParticleRandom [0,[0,0,0],[0,0,0],0,0,[0,0,0,0],1,0];
