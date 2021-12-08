@@ -15,6 +15,17 @@
      };
 }] call zen_custom_modules_fnc_register;
 
+["Vile Matter - Common", "Force Loadout on Player", {
+     params ["_position", "_object"];
+
+     if (isPlayer _object) then {
+          ["GRAD_VM_loadoutControl", [_object]] call CBA_fnc_serverEvent;
+     } else {
+          hint "not a player";
+     };
+
+}] call zen_custom_modules_fnc_register;
+
 
 ["Vile Matter - Common", "Go into Zeus TFAR Spectator", {
      params ["_position", "_object"];
