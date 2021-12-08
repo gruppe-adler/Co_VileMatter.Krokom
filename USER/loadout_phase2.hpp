@@ -29,7 +29,6 @@ class vm_vilematter_phase2 {
         class Soldier_F {
             headgear = "H_LIB_US_Helmet";
             addItemsToUniform[] = {
-                LIST_1("LIB_ACC_M1_Bayo"),
                 LIST_1("FirstAidKit"),
                 LIST_5("LIB_8Rnd_762x63")
             };
@@ -68,6 +67,14 @@ class vm_vilematter_phase2 {
             handgunWeapon = "";
             vest = "V_LIB_US_Vest_Bar";
             backpack = "";
+            addItemsToUniform[] = {
+                LIST_1("FirstAidKit"),
+                LIST_10("LIB_20Rnd_762x63")
+            };
+            addItemsToVest[] = {
+                LIST_2("LIB_20Rnd_762x63"),
+                LIST_2("LIB_US_Mk_2")
+            };
         };
 
         //Combat Life Saver

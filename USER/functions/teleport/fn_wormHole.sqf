@@ -73,13 +73,15 @@ _cam camPreload 3;
 
     _cam say3d "grad_VM_teleport3";
 
+    player unlinkItem "NVGoggles"; // only relevant for phase 3
+
     (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlSetFade 1;
     (uiNamespace getVariable ["GRAD_VM_teleportMask", controlNull]) ctrlCommit 2;
 
     private _firefly = "#particlesource" createvehiclelocal (_firstPipePos);
     _firefly setParticleRandom [0,[0,0,0],[1,1,0.1],1,0,[0,0,0,0.1],1,1];
     _firefly setParticleParams [["\a3\data_f\proxies\muzzle_flash\muzzle_flash_rifle_gm6.p3d",1,0,1],"","SpaceObject",1,3,[0,6,0],[0,0,0],13,1.3,1,0,[0.01,0.01],[[1,1,1,1],[0,0,0,0]],[1],1,0.2,"","",_cam, 0,true,1,[[200,200,200,10],[200,200,200,0]]];
-    _firefly setDropInterval 0.001;
+    _firefly setDropInterval 0.01;
 
     private _refract = "#particlesource" createvehiclelocal (_firstPipePos);
     _refract setParticleRandom [0,[0,0,0],[1,1,0],1,0,[0,0,0,0.1],1,1];

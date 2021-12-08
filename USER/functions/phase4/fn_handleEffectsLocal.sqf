@@ -10,3 +10,5 @@ private _sound2 = playSound ["phase4_earthquake", true, _switch - _start];
 deleteVehicle _sound;
 10 fadeSpeech 0.9;
 player setVariable ["phase4_earthquake", _sound2];
+
+player setCaptive true;

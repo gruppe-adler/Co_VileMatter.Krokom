@@ -17,6 +17,14 @@ if (!isServer) exitWith {};
 
 }] call CBA_fnc_addEventHandler;
 
+
+["grad_VM_loadoutControl", {
+    params ["_player"];
+
+    [_player] call GRAD_Loadout_fnc_doLoadoutForUnit;
+
+}] call CBA_fnc_addEventHandler;
+
 /*
 
 private _grad_VM_portalPhase = [

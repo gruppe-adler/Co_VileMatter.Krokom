@@ -71,7 +71,7 @@ if (!isServer) exitWith {};
                 ["BLU_F", "vm_vilematter_phase0", false] remoteExec ["GRAD_Loadout_fnc_FactionSetLoadout", _unit];
                 [_unit, _targetposition, _index, _duration, _numberStart, _numberEnd, _date] call GRAD_VM_teleport_fnc_teleport;
             }, [_x, ([3] call GRAD_VM_main_fnc_getCurrentTeleportTarget), _forEachIndex, _duration, _numberStart, _numberEnd, _date], 
-            (_forEachIndex/_count)*_duration+((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
+            ((_forEachIndex/_count) max 1)*_duration+((random 1) max 0.5)] call CBA_fnc_waitAndExecute;
         } forEach playableUnits + switchableUnits;
 
         // end light effects

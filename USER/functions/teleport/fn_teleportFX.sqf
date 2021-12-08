@@ -5,6 +5,8 @@ private _timeToTeleport = 1;
 
 if (local _unit && isPlayer _unit) then {
 
+    ["GRAD_VM_curatorInfo",[_unit, "teleport_start"]] call CBA_fnc_serverEvent;
+
     playsound "grad_VM_teleport2";
 
     diwako_dui_main_toggled_off = true;
@@ -39,6 +41,7 @@ if (local _unit && isPlayer _unit) then {
 // ONLY FOR AI TESTING
 if (local _unit && !isPlayer _unit) then {
     // systemChat "control";
+    ["GRAD_VM_curatorInfo",[_unit, "teleport_start"]] call CBA_fnc_serverEvent;
 
     // park unit off map for tunnel fx
     _unit setPos [(_index * -1000), (_index * -1000), 0];
@@ -56,8 +59,6 @@ if (local _unit && !isPlayer _unit) then {
     _currentPosition distance2d _unit > 200
 },{
     params ["_currentPosition", "_destinationPositions", "_unit"];
-
-    ["GRAD_VM_curatorInfo",[_unit, "teleport_start"]] call CBA_fnc_serverEvent;
 
     drop [["\A3\data_f\ParticleEffects\Universal\Refract.p3d",1,0,1],"","Billboard",1,1,[1,1,0],[0,0,0],0,9,7,0,[2,2,2,.1],[[0,0,0,0],[0,0,0,1],[0,0,0,0]],[1],0,0,"","",_unit];
 
