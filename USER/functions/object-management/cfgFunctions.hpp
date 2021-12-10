@@ -8,5 +8,6 @@ class GRAD_VM_objects {
 		};
 		class importEdenObjectsEden {};
 		class deleteExtractedObjects {};
+		class filterVarNames {};
 	};
 };
