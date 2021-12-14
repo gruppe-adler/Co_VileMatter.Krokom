@@ -50,6 +50,8 @@ if (!isServer) exitWith {};
                 } forEach [GRAD_VM_phase4_exfilHeli_1, GRAD_VM_phase4_exfilHeli_2];
             }
         ] call CBA_fnc_waitUntilAndExecute;
+
+        [] remoteExec ["GRAD_VM_main_fnc_manageViewDistance", [0,-2] select isDedicated];
     },
     []
 ] call CBA_fnc_waitUntilAndExecute;

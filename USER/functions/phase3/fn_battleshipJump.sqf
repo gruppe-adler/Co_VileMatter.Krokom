@@ -15,6 +15,8 @@
 
 if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; };
 
+GRAD_VM_phase3_shipActive = true;
+publicVariable "GRAD_VM_phase3_shipActive";
 // plays some sounds and sets the ace_viewdistance to 3500m, so that the battlehsip will be visible
 ["Ship_Detected"] remoteExec ["playSound", [0, -2] select isMultiplayer];
 [3500, false] remoteExecCall ["ace_viewdistance_fnc_changeViewDistance", [0, -2] select isMultiplayer];

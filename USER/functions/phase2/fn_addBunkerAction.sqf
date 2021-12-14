@@ -3,7 +3,7 @@ params ["_object"];
 
 _object addAction
 [
-    "In Bunker springen (kein Weg zurück!)",    // title
+    "Jump into bunker (no way back!)",    // title
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 

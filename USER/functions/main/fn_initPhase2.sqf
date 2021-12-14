@@ -34,6 +34,8 @@ private _light_phase2_6 = createSimpleObject ["\A3\data_f\VolumeLight", [_posX, 
 [_light_phase2_6, -90, 0] call BIS_fnc_setPitchBank;
 [_light_phase2_6, 200] call GRAD_VM_common_fnc_setObjectScaleSafe;
 
+[] remoteExec ["GRAD_VM_main_fnc_manageViewDistance", [0,-2] select isDedicated];
+
 [{
   private _currentPhaseProgress = [2] call GRAD_VM_main_fnc_getPhaseProgress;
   _currentPhaseProgress > 0

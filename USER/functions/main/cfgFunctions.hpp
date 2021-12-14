@@ -14,5 +14,6 @@ class GRAD_VM_main {
       class initPhase3;
       class initPhase4;
       class phaseEventHandler { postInit = 1; };
+      class manageViewDistance {};
    };
 };

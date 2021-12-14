@@ -5,7 +5,8 @@ if (didJIP) then {
 ["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 
-
+sleep 5;
+[] call GRAD_VM_main_fnc_manageViewDistance;
 
 // To add to the transition between pahse 2 and phase 3:
 

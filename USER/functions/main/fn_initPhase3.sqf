@@ -39,6 +39,8 @@ if (!isServer) exitWith {};
         player setVariable ["GRAD_VM_phase3_skyLightSource", _light];
     }] remoteExec ["call", [0, -2] select isMultiplayer];
 
+    [] remoteExec ["GRAD_VM_main_fnc_manageViewDistance", [0,-2] select isDedicated];
+
 },[]] call CBA_fnc_waitUntilAndExecute;
 
 
