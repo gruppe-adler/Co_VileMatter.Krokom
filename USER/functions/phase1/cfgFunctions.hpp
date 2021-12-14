@@ -3,8 +3,10 @@ class GRAD_VM_phase1 {
    class phase1 {
     file = "USER\functions\phase1";
     class addTorchToRider;
+    class addTorchRiderLocal;
     class addActionToCrystal;
     class addTorch;
+    class addTorchLocal;
     class brighterNight;
     class horseDismountAI;
     class horseMountAI;
