@@ -2,7 +2,7 @@ params ["_switch"];
 
 _switch addAction
 [
-    "Hebel bewegen",
+    "Move Lever",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 

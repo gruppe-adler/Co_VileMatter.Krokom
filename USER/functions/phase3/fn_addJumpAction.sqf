@@ -3,7 +3,7 @@ params ["_object"];
 
 _object addAction
 [
-    "Kristall berühren",    
+    "Touch Crystall",
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; 
         

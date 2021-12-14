@@ -21,17 +21,17 @@ private _centerH = safeZoneX + safeZoneW/3;
 private _centerW = safeZoneY + safeZoneH/1.5;
 
 private _allTexts = [
-    ["Verbaute Objekte", "8509", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Placed Objects", "8544", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Custom Functions", "> 100", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Custom Sounds", "> 120", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Zusätzliche Mods", "15", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Gefixte Modfehler", "Dutzende", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Bauzeit", "10 Wochen", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Durchschnittliche FPS", "96.35", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Missionsbauer", "3", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Additional Mods", "15", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Fixed Mod-Bugs", "Dozens", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Time spent building the Mission", "10 weeks", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Average FPS", "133.7", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["People contributing", "3", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
     ["Commits", "> 350", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["Besonderen Dank an", "diwako", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
-    ["brought to you by", "Gruppe Adler", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]]
+    ["Special thanks to", "diwako", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]],
+    ["Brought to you by", "Gruppe Adler", [_leftSide, _lowerHalf, safeZoneW, safeZoneH]]
 ];
 
 private _mask = (findDisplay 46) ctrlcreate ["RscPicture", -1];

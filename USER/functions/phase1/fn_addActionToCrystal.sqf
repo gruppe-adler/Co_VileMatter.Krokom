@@ -2,7 +2,7 @@ params ["_crystal"];
 
 _crystal addAction
 [
-    "Kristall aufs Podest schieben",    // title
+    "Push crystal onto pedestal",    // title
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
