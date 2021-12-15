@@ -1,4 +1,4 @@
-params ["_rider"];
+params ["_rider", "_torch"];
 
 private _fire = "#particlesource" createVehicleLocal [0,0,0];   
 _fire setParticleClass "SmallFireBarrel";

@@ -7,7 +7,7 @@ private _torch2 = createSimpleObject ["\medieval_Torch_weapon\Medieval_torch1.p3
 _torch2 attachTo [_rider, [0,0,0], "righthand", true];
 
 
-[_rider] remoteexec ["GRAD_VM_phase1_fnc_addTorchRiderLocal", 0, _rider];
+[_rider, _torch] remoteexec ["GRAD_VM_phase1_fnc_addTorchRiderLocal", 0, _rider];
 
 [{
     params ["_rider"];
