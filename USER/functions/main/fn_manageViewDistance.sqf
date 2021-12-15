@@ -15,7 +15,7 @@ switch (_currentPhase) do {
 		[2500, false] call ace_viewdistance_fnc_changeViewDistance;
 	 };
 	case 3: {
-		if (GRAD_VM_phase3_shipActive) then {
+		if (missionNamespace getVariable ["GRAD_VM_phase3_shipActive", false]) then {
 			[3500, false] call ace_viewdistance_fnc_changeViewDistance;
 		} else {
 			[1000, false] call ace_viewdistance_fnc_changeViewDistance;

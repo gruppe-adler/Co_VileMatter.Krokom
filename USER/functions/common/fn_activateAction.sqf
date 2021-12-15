@@ -14,13 +14,13 @@ if !(PLAYER in GRAD_VM_ACTION_UNITS) exitWith {
 // Notify
 [
     ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
-    format ["Noch %1 andere Personen nötig...", (_unitsNeeded-1)]
+    format ["Requiring %1 more players...", (_unitsNeeded-1)]
 ] call CBA_fnc_notify;
 
 // Exec next frame, othwerwise we will crash the client
 [{
     [
-        "Warte auf andere Personen...",
+        "Waiting for more players...",
         15,
         {
             _this#0 params ["_object"];
@@ -34,7 +34,7 @@ if !(PLAYER in GRAD_VM_ACTION_UNITS) exitWith {
             // Notify
             [
                 ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
-                ["Warten beendet. Noch mehr Personen benötigt!"]
+                ["Done waiting. More players needed!"]
             ] call CBA_fnc_notify;
         },
         // onFailure
