@@ -19,6 +19,10 @@ _lightPoint attachTo [_fire, [0,0,0]];
     !(_rider getVariable ["GRAD_VM_isRider", false]) || !alive _rider
 }, {
     params ["_rider", "_fire", "_lightPoint"];
-    deleteVehicle _fire;
-    deleteVehicle _lightPoint;
+    if (!isNull _fire) then {
+        deleteVehicle _fire;
+    };
+    if (!isNull _lightPoint) then {
+        deleteVehicle _lightPoint;
+    };
 }, [_rider, _fire, _lightPoint]] call CBA_fnc_waitUntilAndExecute;
